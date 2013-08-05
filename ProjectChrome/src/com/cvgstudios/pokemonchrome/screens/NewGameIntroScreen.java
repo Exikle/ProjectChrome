@@ -20,7 +20,7 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 	String[] script;
 	String[] hold;
 
-	private int counter = 35;
+	private int counter = 0;
 	private int len;
 
 	BitmapFont font = new BitmapFont();
