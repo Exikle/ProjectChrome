@@ -21,16 +21,16 @@ public class InputHandler implements InputProcessor {
 		if (keyNotDown) {
 			switch (keycode) {
 			case Keys.RIGHT:
-				playScreen.setXD(2);
+				playScreen.setXD(5);
 				break;
 			case Keys.LEFT:
-				playScreen.setXD(-2);
+				playScreen.setXD(-5);
 				break;
 			case Keys.DOWN:
-				playScreen.setYD(-2);
+				playScreen.setYD(-5);
 				break;
 			case Keys.UP:
-				playScreen.setYD(2);
+				playScreen.setYD(5);
 				break;
 			}
 			keyNotDown = false;

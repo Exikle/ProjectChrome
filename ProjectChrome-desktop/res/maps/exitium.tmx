@@ -57,7 +57,6 @@
   <object x="451" y="2320" width="25" height="46"/>
   <object x="836" y="2615" width="22" height="41"/>
   <object x="453" y="2613" width="23" height="46"/>
-  <object x="929" y="2278" width="82" height="52"/>
   <object x="1036" y="2233" width="120" height="47"/>
   <object x="257" y="2083" width="317" height="23"/>
   <object x="253" y="2104" width="20" height="645"/>
@@ -78,6 +77,9 @@
   <object x="641" y="2433" width="28" height="31"/>
   <object x="769" y="2437" width="30" height="24"/>
   <object x="771" y="2342" width="27" height="23"/>
+  <object x="643" y="2345" width="23" height="21"/>
+  <object x="935" y="2283" width="67" height="43"/>
+  <object x="529" y="2748" width="383" height="11"/>
  </objectgroup>
  <objectgroup name="interactable" width="45" height="90" visible="0">
   <object x="575" y="2065" width="65" height="45"/>
