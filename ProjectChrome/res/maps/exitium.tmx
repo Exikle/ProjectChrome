@@ -23,17 +23,12 @@
  </layer>
  <layer name="Ridge" width="45" height="90">
   <data encoding="base64" compression="zlib">
-   eJzt1sEJg0AQhlH77yzkGD1Ga4gVxAYMzKC/Bt6DuS4fLOzsMAAAAAAAAB2PqwMaXlcHNGjO0JyhOePM5udJ5763mQtT2UHToaV9lXvR3Kc5467Nn23WnRkL5ySbj3qzNf+mOaO6z/dmCTZ3+B9maM6o7EcAAAAAAP7PF78+P/o=
+   eJzt1jsKAkEQhOG9pbGmxga+7+CFXF+BGKqhegY9gXWBWehmp2fE/4MKlGEo2MWyaQAAAAAAAAAAgMe5dAGHa+kCDnSOQecYdI6Rs/Ml070P5WmIZYPuvTb1szwXOvvROUatnd/KJ5Gb4Z7Izn39ZtO5G51jWPc8lVdgZw/+H8agcwzLPgIA8AsGpQs4DEsXcBiXLuAwKV2gw1SZKXNloSyVlbI2nN8qrbJT9spBOSqnjL1Hie83ic+p8/gfqXejVtZNqWGDrJtSwwZZN6WGDbJuSuQG9bEpXedzsW4EmwIANl/pplpz
   </data>
  </layer>
  <layer name="House" width="45" height="90">
   <data encoding="base64" compression="zlib">
-   eJzt1TdLg1EYhuEM+VFZ7IN9sA/2wT7YB/viENco2AW7YBfsgt3f5S0oSMh39Mh5F3luuJbwQM4Q8sZiSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppf5b8W8Sn+KG35eFbOQgF3nIR4HnPvELoSpEEYpRglKUofwP+/Q3zmIu4Fu/qkAlqlCNGtSizmM/jwUsYgnLWMEq1gzeXI8GNKIJzWhBq8d+HRvYxBa2sYNd7Bm8uQ3t6EAnutCNHo/9Pg5wiCMc4wSnODN4cy/60I8BDGIIwx77c1zgEle4xg1ucWfw5hGMYgzjmMAkppBM2yYj9vd4wCOe8IwXvOLN4M0f/6PTGT6fQSrts9QPexWd66Zk+m343iCLXDci02/D9wZZFOKmuPYWhbgprr1FIW6Ka29RiJvi2lvkuikh9hZF3QjfvW6KUkpF9w5Uh2tz
-  </data>
- </layer>
- <layer name="Interactable" width="45" height="90">
-  <data encoding="base64" compression="zlib">
-   eJzt1SEOwDAQA8HDpflccd7Sh4dHCmgk68gMNljmKgAAAAAAAAAAAICcrzsA4ODpDvhpdAcABLzhfcIM7wG441MA2C2AjQOK
+   eJzt1rdKBVEUQFELK1t/xsZcmAsjgrExNsZPsNBawSyYBbNgtva73KKCiDN65V4F2Qt2MY9TnGJ4ZwoKJEmSJEmSJEmSJEmSJEmS0pn56wUkKUPRXy8QqDhwvvBdJa8Vxl7qnVIqo3KqoEqqourA+ZJvFEsN1VId1VMDNVLTD+Y/7jhPCxF3fdNMLdRKbdROHYHzi7REy7RCq7RG67SRYOcu6qYe6qU+6g+c36Qt2qYd2qU92qeDBDsP0CAN0TCN0Gjg/CEd0TGd0Cmd0TldJNh5jMZpgiZpiqYD5y/piq7phm7pju7pIcHOzzozfp/NeM6a/8xj+DpfyvofnYs0rxd5N+WzdyP0BqUQ86b8lhg3JW8+hRg3JW8+hRg3JW8+hRg3JW8+lZAb8ZP52EK/zVN+y0vSf/UELlRR6g==
   </data>
  </layer>
  <layer name="Fence" width="45" height="90">
@@ -46,7 +41,7 @@
    eJztm0EPATEQhcuVK1euXIlfhSOO+OXmsGLTVNrudF87vC95mVs7/bJZMumunHNrycpQ3Ui2xupOsjdWx+QoOXU5j7xXKS6Sa5db5V5SYc8Y2DOGu+TR5Vm3FZLARDLtVQvMJPNetXCGhWTZq/4ZWsTv0T9Di9AzBnrGQM8Y6BkDPWOgZwz0jIGeMdAzBnrGQM8Y6BkDPWOgZwz0jIGeMdAzBnrGQM8Y6BkDPWP4Rc/+PYPcGkK7ZsyztqZ40lb/DNoaovQesTPl3psNkbuG1nPuvdkQuWtoPefemw2Ru4bWcw20nmtg0XPsuW7Rc+y5btHzoYslz++e6XlcLHr+9n+uZc8W38/8HcRAzxjoGQM9Y/hHz0PmRjFy50al50hH9/l+NCXnAntqZzoX9/neLiW3Antq50hDeq49RxrSs3aO9AJyaojw
   </data>
  </layer>
- <objectgroup name="Collision" width="45" height="90" visible="0">
+ <objectgroup name="Collision" width="45" height="90">
   <object x="645" y="1926" width="25" height="180"/>
   <object x="653" y="1925" width="10"/>
   <object x="659" y="1924"/>
@@ -80,6 +75,9 @@
   <object x="811" y="2576" width="77" height="47"/>
   <object x="929" y="2570" width="77" height="50"/>
   <object x="578" y="2065" width="64" height="29"/>
+  <object x="641" y="2433" width="28" height="31"/>
+  <object x="769" y="2437" width="30" height="24"/>
+  <object x="771" y="2342" width="27" height="23"/>
  </objectgroup>
  <objectgroup name="interactable" width="45" height="90" visible="0">
   <object x="575" y="2065" width="65" height="45"/>

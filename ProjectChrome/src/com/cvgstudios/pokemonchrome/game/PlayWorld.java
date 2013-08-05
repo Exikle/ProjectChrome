@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -16,6 +15,7 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.InputHandler;
 
@@ -34,8 +34,8 @@ public class PlayWorld implements Screen {
 
 	int amount;
 
-	int[] bgLayers = { 0, 1, 2, 3, 4 };
-	int[] fgLayers = { 5, 6, 7 };
+	int[] bgLayers = { 0, 1, 2, 3 };
+	int[] fgLayers = { 4, 5, 6 };
 
 	ShapeRenderer sRender = new ShapeRenderer();
 
@@ -57,39 +57,41 @@ public class PlayWorld implements Screen {
 
 	@Override
 	public void render(float delta) {
-		moveUser();
 
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+
+		moveUser();
 
 		camera.update();
 		batch.setProjectionMatrix(camera.combined);
 
 		renderer.setView(camera);
+		sRender.setProjectionMatrix(camera.combined);
 
-		// renderer.render(bgLayers);
-		renderer.render();
+		 renderer.render(bgLayers);
 
 		batch.begin();
 
 		batch.draw(player, player.getX(), player.getY());
 
 		batch.end();
+		 renderer.render(fgLayers);
 
 	}
 
 	private void moveUser() {
-		float orgX = player.getX();
-		float orgY = player.getY();
-		
+		Vector2 oPos = new Vector2(player.getX(), player.getY());
+
+		player.translate(xD, yD);
+
 		user = new Rectangle(player.getX(), player.getY(), player.getWidth(),
 				player.getHeight());
-		
 		if (collision()) {
-			player.setPosition(orgX, orgY);
-		} else
-			player.translate(xD, yD);
-		
+			Gdx.app.log(ChromeGame.LOG, "");
+			player.setPosition(oPos.x, oPos.y);
+		}
+
 		camera.position.set(player.getX(), player.getY(), 0);
 		Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
 	}
