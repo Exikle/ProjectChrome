@@ -32,6 +32,8 @@ public class PlayWorld implements Screen {
 
 	float xD = 0, yD = 0;
 
+	int amount;
+
 	int[] bgLayers = { 0, 1, 2, 3, 4 };
 	int[] fgLayers = { 5, 6, 7 };
 
@@ -55,12 +57,13 @@ public class PlayWorld implements Screen {
 
 	@Override
 	public void render(float delta) {
-		translateCamera();
+		moveUser();
 
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
 		camera.update();
+		batch.setProjectionMatrix(camera.combined);
 
 		renderer.setView(camera);
 
@@ -69,36 +72,38 @@ public class PlayWorld implements Screen {
 
 		batch.begin();
 
-		batch.draw(player, Gdx.graphics.getWidth() / 2,
-				Gdx.graphics.getHeight() / 2);
+		batch.draw(player, player.getX(), player.getY());
 
 		batch.end();
 
-		sRender.begin(ShapeType.Line);
-		sRender.rect(Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2,
-				player.getWidth(), player.getHeight());
-		sRender.end();
-		// renderer.render(fgLayers);
-
 	}
 
-	private void translateCamera() {
-		camera.translate(xD, yD);
-		checkCollision();
-
-	}
-
-	private void checkCollision() {
-		Rectangle user = new Rectangle(Gdx.graphics.getWidth() / 2,
-				Gdx.graphics.getHeight() / 2, player.getWidth(),
+	private void moveUser() {
+		float orgX = player.getX();
+		float orgY = player.getY();
+		
+		user = new Rectangle(player.getX(), player.getY(), player.getWidth(),
 				player.getHeight());
+		
+		if (collision()) {
+			player.setPosition(orgX, orgY);
+		} else
+			player.translate(xD, yD);
+		
+		camera.position.set(player.getX(), player.getY(), 0);
+		Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
+	}
 
-		for (int x = 0; x < mObjs.getCount(); x++) {
-			if (user.overlaps(collsionRect[x])) {
-				resetCameraDirection();
+	private boolean collision() {
+		for (int x = 0; x < amount; x++) {
+			if (collsionRect[x].overlaps(user)) {
+				Gdx.app.log(ChromeGame.LOG, "Overlap");
+				xD = 0;
+				yD = 0;
+				return true;
 			}
 		}
-
+		return false;
 	}
 
 	public void setXD(float x) {
@@ -134,9 +139,13 @@ public class PlayWorld implements Screen {
 		batch = new SpriteBatch();
 
 		mObjs = map.getLayers().get("Collision").getObjects();
-		
+
 		gameObjects = new RectangleMapObject[mObjs.getCount()];
 		collsionRect = new Rectangle[mObjs.getCount()];
+
+		amount = mObjs.getCount();
+
+		player.setPosition(509, 500);
 
 		for (int x = 0; x < mObjs.getCount(); x++) {
 			gameObjects[x] = (RectangleMapObject) mObjs.get(x);
