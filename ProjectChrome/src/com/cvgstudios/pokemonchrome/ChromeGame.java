@@ -1,7 +1,6 @@
 package com.cvgstudios.pokemonchrome;
 
 import com.badlogic.gdx.Game;
-import com.cvgstudios.pokemonchrome.game.PlayWorld;
 import com.cvgstudios.pokemonchrome.screens.SplashScreen;
 
 public class ChromeGame extends Game {
