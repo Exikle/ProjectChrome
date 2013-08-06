@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="40" height="50" tilewidth="32" tileheight="32">
  <tileset firstgid="1" source="ExitiumTileSheet.tsx"/>
- <layer name="Terrain 1" width="40" height="50" visible="0">
+ <layer name="Terrain 1" width="40" height="50">
   <data encoding="base64" compression="zlib">
    eJztzqERACAMA8B2Crr/pCAQlRUc6sWLmCQZEQkAAAAAAAAA1zqq5fq8P/3Xvejdq7IIhw==
   </data>
  </layer>
- <layer name="Tall Grass 2" width="40" height="50" visible="0">
+ <layer name="Tall Grass 2" width="40" height="50">
   <data encoding="base64" compression="zlib">
    eJztl01OwkAYQKfiQkUwUWtZqICnYOt91KW6BE/GASAuTdx6Bf9gAb6aktRmSprSGT7we8lLu2jD65fppITGmLYjQ2OGNxxvE++wl/iGoxyfU0fX3OND4mOq79WY/uKa6yBf333xTMaC+uKIQeJTpmvBO37gJ37hN05w6rgtXmPjjC+W62Y4j0+YV4A7WMNdD/Mrwh4d+3iAdTzEBjaF9B3TcYKnGOIZRtgS0ndOxwVeYhs72MWr4HePsu5dRektUQJl+5bdV+WzSenL2yul9JX5Hel9tr3Yd19ZtE/ZVqpcJy6+QaWv403t8/F/oQibOj8paN9q/Ne+qt7/bZrfOvZESfOzPb+kPhvatxrS+5T1IeUbUVFcoutckUQDmxnTHHkv+kuELYtScNX3A4e8Umo=
   </data>
@@ -16,12 +16,12 @@
    eJztmU0KwjAQRrPVhS5U0JU36Nrj9XouioiIIFQRwQN4Aqco2IbpZJI0P+g8+DZNyDzaNGmJUvnySC1g4JyobsXsl8ovJ6pWcgOeT5nagSIHvxPRFtJvwRzb1e8O2ROB+mpNjF0E9jPd28JQV/zEr+Gmumswdz2O5eeK+PlBzdtPfVN7OZAKSiy/HRG9X/vdieV3INo2REyIn/j9up8P4ueH+PkxlN8x0D4tfn6Inx0wTmd/+Re/JxKXNSeUH4b4vf1sv4nET/xy8KshI8gYcmHmGtGvYQaZa9f6/kW2eP2gfhh9fth8EL+8/SZapoRf7ejXnD9wgp2VLLWs1PdMgxOTnw3YXo35udR8AVzJraE=
   </data>
  </layer>
- <layer name="Red Trees 4" width="40" height="50" visible="0">
+ <layer name="Red Trees 4" width="40" height="50">
   <data encoding="base64" compression="zlib">
    eJztlaEOwkAYg+8E2GFhkk0CEnj/xxqCmqqbuKziKvolTX61W9ImXykhhBAcmWspV+RW29uBFf9xR5ba3iPZkB/ywn88kGdt75Gc8P4Z+SJv5LNzj2TC+5edzbnsj/267o/9uu6P/bruj/267o/9uu6P/bruj/267o/9uu6P/bruL/7ViH814l+N+Fcj/tWIfzXiX434VyP+1Yh/NeJfjfhXI/7V6PFvz32Enu+y3z8UgU6V
   </data>
  </layer>
- <objectgroup name="Collision" width="40" height="50">
+ <objectgroup name="Collision" width="40" height="50" visible="0">
   <object x="0" y="248" height="248"/>
   <object x="-2" y="258" width="228" height="1346"/>
   <object x="220" y="1536" width="358" height="80"/>

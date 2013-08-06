@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Route2TileSheet" tilewidth="32" tileheight="32">
+  <image source="Route2TileSheet.png" width="320" height="960"/>
+ </tileset>
+ <layer name="terrain 1" width="40" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt0rkNwDAMA0BlC+8/qUeIJX9AcgVb6gioRURL5jmYrI1vn6/S9dbNx1f1Vf6fj4+Pb2YHH99q34iFj4/vvi+zg4/vb77qLT4+Pj4+Pj6+Fd18fKO+HeH7tq8Dts9sFQ==
+  </data>
+ </layer>
+ <layer name="Fence 2" width="40" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt1jEOgCAQBVFO4ZU8k1qqpXplt7GBSCCACziT/P4VgBoT3ygbCi1HLfpqCl9a+NLqyVf6LcGHr0ZfaPjcevJpFOqbZLNnSxFduG+VbZ7tRXTvPvts4cP3pc9OyxfaITs9u/RozaTxfYsJn9tzf2v/P8WHDx8+fPj+6tMIX1r40mrRl2v48vpu6ENSGA==
+  </data>
+ </layer>
+</map>
