@@ -1,5 +1,7 @@
 package com.cvgstudios.pokemonchrome.images;
 
+//Any specific reason for this being an interface?
+//If its non-abstract + class, it can easily be integrated with the javascript stuff.
 public abstract interface ImgPathConstants {
 
 	static final String PIC_FOLDER = "res/imgs";
