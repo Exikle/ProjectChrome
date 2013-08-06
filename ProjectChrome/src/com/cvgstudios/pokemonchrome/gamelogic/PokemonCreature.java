@@ -23,7 +23,8 @@ public class PokemonCreature {
 	private PokemonCreature(PokemonType pokemonType) {
 		theBaseType = pokemonType;
 		actionsAvailable = new Vector<Boolean>();
-		for (String s : theBaseType.actions) {
+		for (@SuppressWarnings("unused")
+		String s : theBaseType.actions) {
 			actionsAvailable.add(false);
 		}
 		JSExecutor.setThisScope(this);

@@ -19,7 +19,9 @@ import com.cvgstudios.pokemonchrome.images.ImgPathConstants;
  */
 public class JSExecutor {
 
+	@SuppressWarnings("unused")
 	private static String moduleDirectory;
+	@SuppressWarnings("unused")
 	private static FileLister lister;
 
 	private static JSPokemonEngineHandler pokemonEngineHandler;
@@ -29,6 +31,7 @@ public class JSExecutor {
 	private static ScriptEngine jsEngine;
 	private static Bindings binds;
 
+	@SuppressWarnings("unused")
 	private static ImgPathConstants pathconstants;
 
 	public static void initializeExecutor(String resDirectory) {
@@ -74,6 +77,7 @@ public class JSExecutor {
 
 	}
 
+	@SuppressWarnings("unused")
 	public static void loadPokemon() {
 		FileLister fl = new FileLister("res/pokemon");
 		File[] pokemonFiles = fl.getFiles();
