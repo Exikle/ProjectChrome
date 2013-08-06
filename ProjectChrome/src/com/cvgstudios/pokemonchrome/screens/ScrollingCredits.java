@@ -59,7 +59,7 @@ public class ScrollingCredits implements Screen {
 
 		font.setScale(1.1f);
 		font.draw(batch, "PROGRAMMING/ENGINEERING",
-				middle - font.getBounds("PROGRAMMING/ENGINEERING").width / 2, -125
+				middle - font.getBounds("PROGRAMMING/ENGINEERING").width / 2, -400
 						+ movingY);
 
 		batch.end();
