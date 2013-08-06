@@ -34,8 +34,8 @@ public class PlayWorld implements Screen {
 
 	int amount;
 
-	int[] bgLayers = { 0, 1, 2, 3 };
-	int[] fgLayers = { 4, 5, 6 };
+	int[] bgLayers = { 0, 1, 2 };
+	int[] fgLayers = { 3 };
 
 	ShapeRenderer sRender = new ShapeRenderer();
 
@@ -130,7 +130,7 @@ public class PlayWorld implements Screen {
 
 	@Override
 	public void show() {
-		map = new TmxMapLoader().load("maps/exitium.tmx");
+		map = new TmxMapLoader().load("maps/Route1.tmx");
 
 		renderer = new OrthogonalTiledMapRenderer(map);
 
@@ -147,7 +147,7 @@ public class PlayWorld implements Screen {
 
 		amount = mObjs.getCount();
 
-		player.setPosition(509, 500);
+		player.setPosition(450, 500);
 
 		for (int x = 0; x < mObjs.getCount(); x++) {
 			gameObjects[x] = (RectangleMapObject) mObjs.get(x);

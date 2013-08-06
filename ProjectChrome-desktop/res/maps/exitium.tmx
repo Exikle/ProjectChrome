@@ -6,9 +6,14 @@
  <tileset firstgid="1" name="ExitiumTileSheet" tilewidth="32" tileheight="32">
   <image source="ExitiumTileSheet.png" trans="fc00ff" width="320" height="960"/>
  </tileset>
+ <layer name="Ridge" width="45" height="90">
+  <data encoding="base64" compression="zlib">
+   eJzt20sOAVEQhWG9SmOmxgbee7Ah74EYYog1sAI1kYi4Wl2361bH/yUnQpCTEKelaTSQQlESr+rU2WsvAAAAAAAAAP9rm7tAhH3uAhHobIPONuhso8rOu4qe9yQ5K6LZoGPSpvE0r4uX84J0tkHndK6SWyCHwGPenYu37JzqM9vys47ONurYWbvnoVwMO8fg+NAGnW2E9hEAoOPlu5pG8XRZl/7f/M67adQlpVbuAhE6uQtE6OYu8EFP0pcMJEPJSDKWTBT3n0nmkoVkKVlJ1pJNhb3bgdungeuh++N/hN4bXmk3xcMGvW5K2f+lPBwDvG7Kc0evnd9tyqdjK8sN0mzKo6tmg6qi3YhfN8XD+wgALN0BjcJUYw==
+  </data>
+ </layer>
  <layer name="Terrain" width="45" height="90">
   <data encoding="base64" compression="zlib">
-   eJztwwEJAAAMBKHr8f17rsdQcNVUVVVVVVVVVVVVVVVVVVX1yQPsK6s2
+   eJztlksOAiEQROEc3v+eblyQDjMCXf0jtXiJTgZ8XVOKvbX2+dGH1+N7ef3pfi9Gr5HszjNWneWaTM5drJHXZ/fMulaB1YyyUM2Xzr7Oo3u0T6Sz5fxvZ1Z2Z+0eb2dvtDP6XPTK+QbnlTmyOa/MQOd6fT6d8+m/LJ3xvjve0TlLX2tnq7OUzvWdLYhy1uwfda5oPif6LEQ7R3Qye86nn3Wr82zNbh+RmaCcNTmjns8/Z3RvdvbUOsvcT1xne1o7a/Od+VfoRsU+ezp7+9I5h+ubl+Z36cQV4azJxCpbxPOPcrboXtacKzpHdkMzS0VnBJ7OyJm8vFHOaN8b+4H4HmbJWa472cu7F0/OXvlre3riHNWNcb1nNxDPUjtzJDudz0glV0IIIYQQQgghhBBCyB18AZ+2+E0=
   </data>
  </layer>
  <layer name="Path" width="45" height="90">
@@ -19,11 +24,6 @@
  <layer name="InteractableGrass" width="45" height="90">
   <data encoding="base64" compression="zlib">
    eJzt1jEOhSAURUH337hlexoF8eILM8kv4Z5fkHgcAAB7OZtfBZozNGdoztCcUbEZ/q59VxXemeYMzRnp5hn3a+7fm3GH5vu9GXdUaE7TnKE5s1exeWTnzabm5zuav/GH5tR3wZPt0XOa+7ZHz2nu2x49t1tz6v9r1pzYWfmeAQAAAABY5wI2bcZO
-  </data>
- </layer>
- <layer name="Ridge" width="45" height="90">
-  <data encoding="base64" compression="zlib">
-   eJzt1jsKAkEQhOG9pbGmxga+7+CFXF+BGKqhegY9gXWBWehmp2fE/4MKlGEo2MWyaQAAAAAAAAAAgMe5dAGHa+kCDnSOQecYdI6Rs/Ml070P5WmIZYPuvTb1szwXOvvROUatnd/KJ5Gb4Z7Izn39ZtO5G51jWPc8lVdgZw/+H8agcwzLPgIA8AsGpQs4DEsXcBiXLuAwKV2gw1SZKXNloSyVlbI2nN8qrbJT9spBOSqnjL1Hie83ic+p8/gfqXejVtZNqWGDrJtSwwZZN6WGDbJuSuQG9bEpXedzsW4EmwIANl/pplpz
   </data>
  </layer>
  <layer name="House" width="45" height="90">
@@ -88,4 +88,21 @@
   <object x="452" y="2614" width="23" height="41"/>
   <object x="836" y="2613" width="25" height="42"/>
  </objectgroup>
+ <layer name="Tile Layer 8" width="45" height="90">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAAAAD8GD9IAAE=
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 3" width="45" height="90"/>
+ <imagelayer name="Image Layer 1" width="45" height="90"/>
+ <layer name="Copy of Tile Layer 9" width="45" height="90">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAAAAD8GD9IAAE=
+  </data>
+ </layer>
+ <layer name="Tile Layer 10" width="45" height="90">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAAAAD8GD9IAAE=
+  </data>
+ </layer>
 </map>
