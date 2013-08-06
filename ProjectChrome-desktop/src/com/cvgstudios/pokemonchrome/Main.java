@@ -2,7 +2,6 @@ package com.cvgstudios.pokemonchrome;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.cvgstudios.pokemonchrome.ChromeGame;
 
 public class Main {
 	public static final int WIDTH = 720;
@@ -17,7 +16,7 @@ public class Main {
 		cfg.width = WIDTH;
 		cfg.height = HEIGHT;
 		cfg.resizable = false;
-
+		
 		new LwjglApplication(new ChromeGame(), cfg);
 	}
 }

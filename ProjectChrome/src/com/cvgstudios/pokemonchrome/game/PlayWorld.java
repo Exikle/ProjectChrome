@@ -20,6 +20,7 @@ import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.InputHandler;
 
 public class PlayWorld implements Screen {
+	@SuppressWarnings("unused")
 	private ChromeGame game;
 
 	private TiledMap map;
@@ -51,8 +52,6 @@ public class PlayWorld implements Screen {
 	public PlayWorld(ChromeGame game) {
 		this.game = game;
 		Gdx.input.setInputProcessor(new InputHandler(this, camera));
-
-		MapObjects mObjs = new MapObjects();
 	}
 
 	@Override
@@ -69,14 +68,14 @@ public class PlayWorld implements Screen {
 		renderer.setView(camera);
 		sRender.setProjectionMatrix(camera.combined);
 
-		 renderer.render(bgLayers);
+		renderer.render(bgLayers);
 
 		batch.begin();
 
 		batch.draw(player, player.getX(), player.getY());
 
 		batch.end();
-		 renderer.render(fgLayers);
+		renderer.render(fgLayers);
 
 	}
 

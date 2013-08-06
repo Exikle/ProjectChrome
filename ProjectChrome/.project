@@ -14,4 +14,10 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<variableList>
+		<variable>
+			<name>GIT_REPOS</name>
+			<value>file:/C:/Users/Dixon%20D&apos;Cunha/git</value>
+		</variable>
+	</variableList>
 </projectDescription>
