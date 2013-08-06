@@ -35,7 +35,7 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 	Sprite bg, box, prof;
 
 	private boolean optionsBoxVisible = false;
-	private boolean profVisible = true;
+//	private boolean profVisible = true;
 	private Music m = Gdx.audio.newMusic(Gdx.files
 			.internal("music/ProfessorIntro.mp3"));
 

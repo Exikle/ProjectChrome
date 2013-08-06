@@ -1,12 +1,15 @@
 package com.cvgstudios.pokemonchrome.screens;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 
-public class RollingCreditsScreen implements Screen {
+public class ScrollingCredits implements Screen {
 	ChromeGame game;
+	Sprite logo = new Sprite(new Texture("imgs/TitleScreen.png"));
 
-	public RollingCreditsScreen(ChromeGame game) {
+	public ScrollingCredits(ChromeGame game) {
 		this.game = game;
 	}
 
