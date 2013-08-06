@@ -5,3 +5,13 @@ function basic_tackle(){
 	TARGET.inflict_damage(THIS.get_stat_attack());
 	
 }
+function basic_bite(){
+
+	TARGET.inflict_damage(THIS.get_stat_attack());
+	
+}
+function basic_scratch(){
+
+	TARGET.inflict_damage(THIS.get_stat_attack());
+	
+}
