@@ -8,18 +8,18 @@ import java.util.Vector;
 import javax.imageio.ImageIO;
 
 /**
- * A class that describes a "type" of pokemon.
- * So, a class that describes Charizards in general, or Kirbys in general.
+ * A class that describes a "type" of pokemon. So, a class that describes
+ * Charizards in general, or Kirbys in general.
+ * 
  * @author qmpzaltb
  */
 public class PokemonType {
 
 	protected static Vector<PokemonType> typesOfPokemon;
 
-	
 	protected Vector<String> actions;
 	protected Vector<String> actionNames;
-	
+
 	protected String baseName;
 	protected String typeName;
 
@@ -29,7 +29,7 @@ public class PokemonType {
 	protected int baseSpAttack;
 	protected int baseSpDefense;
 	protected int baseSpeed;
-	
+
 	protected Image frontImage;
 	protected Image backImage;
 
@@ -38,50 +38,53 @@ public class PokemonType {
 		actions = new Vector<String>();
 		actionNames = new Vector<String>();
 	}
-	
-	public String getBaseName(){
+
+	public String getBaseName() {
 		return baseName;
 	}
-	
-	public Image getFrontImage(){
+
+	public Image getFrontImage() {
 		return frontImage;
 	}
-	public Image getBackImage(){
+
+	public Image getBackImage() {
 		return backImage;
 	}
-	
-	public Vector<String> getActions(){
+
+	public Vector<String> getActions() {
 		return actions;
 	}
-	public Vector<String> getActionNames(){
+
+	public Vector<String> getActionNames() {
 		return actionNames;
 	}
-	
-	public void setTypeName(String name){
+
+	public void setTypeName(String name) {
 		typeName = name;
 	}
-	
-	public String getTypeName(){
+
+	public String getTypeName() {
 		return typeName;
 	}
-	
-	public void setFrontImage(String filepath){
+
+	public void setFrontImage(String filepath) {
 		try {
 			frontImage = ImageIO.read(new File(filepath));
 		} catch (IOException e) {
 			System.err.println("Could not load image at: " + filepath);
-			//e.printStackTrace();
+			// e.printStackTrace();
 		}
 	}
-	public void setBackImage(String filepath){
+
+	public void setBackImage(String filepath) {
 		try {
 			backImage = ImageIO.read(new File(filepath));
 		} catch (IOException e) {
 			System.err.println("Could not load image at: " + filepath);
-			//e.printStackTrace();
+			// e.printStackTrace();
 		}
 	}
-	
+
 	public void setHP(int hp) {
 		baseHP = hp;
 	}
@@ -101,34 +104,34 @@ public class PokemonType {
 	public void setSpDefense(int spDefense) {
 		baseSpDefense = spDefense;
 	}
-	
+
 	public void setSpeed(int speed) {
 		baseSpeed = speed;
 	}
-	
-	public void giveAction(String actionname, String actionTrueName){
+
+	public void giveAction(String actionname, String actionTrueName) {
 		actions.add(actionname);
 		actionNames.add(actionTrueName);
 	}
-	
-	public static void initializeTypes(){
+
+	public static void initializeTypes() {
 		typesOfPokemon = new Vector<PokemonType>();
 	}
 
 	public static void addPokemon(String pokemonName) {
 		typesOfPokemon.add(new PokemonType(pokemonName));
 	}
-	
-	public static PokemonType getPokemon(String pokemonName){
-		
-		for (int i = 0; i < typesOfPokemon.size(); i ++){
-			if (typesOfPokemon.get(i).baseName.equalsIgnoreCase(pokemonName)){
+
+	public static PokemonType getPokemon(String pokemonName) {
+
+		for (int i = 0; i < typesOfPokemon.size(); i++) {
+			if (typesOfPokemon.get(i).baseName.equalsIgnoreCase(pokemonName)) {
 				return typesOfPokemon.get(i);
 			}
 		}
-		
+
 		return null;
-		
+
 	}
-	
+
 }

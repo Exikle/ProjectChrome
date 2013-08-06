@@ -8,11 +8,11 @@ public class PokemonCreature {
 
 	protected PokemonType theBaseType;
 	protected String type;
-	
+
 	protected String givenName;
-	
+
 	protected Vector<Boolean> actionsAvailable;
-	
+
 	protected int ivHP;
 	protected int ivAttack;
 	protected int ivDefense;
@@ -23,23 +23,24 @@ public class PokemonCreature {
 	private PokemonCreature(PokemonType pokemonType) {
 		theBaseType = pokemonType;
 		actionsAvailable = new Vector<Boolean>();
-		for (String s : theBaseType.actions){
+		for (String s : theBaseType.actions) {
 			actionsAvailable.add(false);
 		}
 		JSExecutor.setThisScope(this);
 	}
-	
-	public void setActionAvailability(String actionName, boolean availability){
-		if (theBaseType.actions.contains(actionName)){
-			actionsAvailable.set(theBaseType.actions.indexOf(actionName), availability);
+
+	public void setActionAvailability(String actionName, boolean availability) {
+		if (theBaseType.actions.contains(actionName)) {
+			actionsAvailable.set(theBaseType.actions.indexOf(actionName),
+					availability);
 		}
 	}
-	
-	public void setName(String newName){
+
+	public void setName(String newName) {
 		givenName = newName;
 	}
-	
-	public String getName(){
+
+	public String getName() {
 		return givenName;
 	}
 
@@ -66,23 +67,25 @@ public class PokemonCreature {
 	public void setIvSpeed(int speed) {
 		ivSpeed = speed;
 	}
-	
-	public void setType(String theType){
+
+	public void setType(String theType) {
 		type = theType;
 	}
-	
-	public PokemonType getType(){
+
+	public PokemonType getType() {
 		return theBaseType;
 	}
-	
-	public boolean getActionAvailability(int actionIndex){
+
+	public boolean getActionAvailability(int actionIndex) {
 		return actionsAvailable.get(actionIndex);
 	}
-	public boolean getActionAvailability(String actionCodeName){
-		return actionsAvailable.get(theBaseType.actions.indexOf(actionCodeName));
+
+	public boolean getActionAvailability(String actionCodeName) {
+		return actionsAvailable
+				.get(theBaseType.actions.indexOf(actionCodeName));
 	}
-	
-	public static PokemonCreature makePokemon(PokemonType pokemonType){
+
+	public static PokemonCreature makePokemon(PokemonType pokemonType) {
 		PokemonCreature newPokemon = new PokemonCreature(pokemonType);
 		JSExecutor.setThisScope(newPokemon);
 		JSExecutor.evaluate(pokemonType.baseName.concat(".on_create()"));
