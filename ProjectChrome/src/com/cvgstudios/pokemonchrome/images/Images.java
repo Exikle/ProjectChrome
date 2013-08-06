@@ -14,7 +14,7 @@ import javax.imageio.ImageIO;
  *            must be an operation that has registered itself with the object
  * @return imported Images that are imported
  */
-public enum Images implements ImgPathConstants {
+public enum Images implements ImgPathConstants{
 
 	StartMenuLogo("res/imgs/TitleScreen.png"),
 

@@ -87,18 +87,18 @@ public class PlayWorld implements Screen {
 		user = new Rectangle(player.getX(), player.getY(), player.getWidth(),
 				player.getHeight());
 		if (collision()) {
-			Gdx.app.log(ChromeGame.LOG, "");
+			//Gdx.app.log(ChromeGame.LOG, "");
 			player.setPosition(oPos.x, oPos.y);
 		}
 
 		camera.position.set(player.getX(), player.getY(), 0);
-		Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
+		//Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
 	}
 
 	private boolean collision() {
 		for (int x = 0; x < amount; x++) {
 			if (collsionRect[x].overlaps(user)) {
-				Gdx.app.log(ChromeGame.LOG, "Overlap");
+				//Gdx.app.log(ChromeGame.LOG, "Overlap");
 				xD = 0;
 				yD = 0;
 				return true;

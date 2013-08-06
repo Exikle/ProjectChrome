@@ -3,8 +3,8 @@
 pokemon.register_pokemon("tykepol");
 
 //Sets tykepol's images
-tykepol.register_image_front(PATH.POKEMON_SPRITES_PATH + "Tykepol.png");
-tykepol.register_image_back("PokemonChrome/Pictures/Sprites/PokemonB/TykepolB.png");
+tykepol.register_image_front(PATH.POKEMON_SPRITES_PATH + "/Tykepol.png");
+tykepol.register_image_back(PATH.POKEMONB_SPRITES_PATH + "/TykepolB.png");
 
 //Sets tykepol's stats
 //??? Unfinished. These stats are tykepol stats
@@ -17,14 +17,15 @@ tykepol.set_base_sp_defense(50);
 tykepol.set_base_speed(45);
 
 tykepol.register_action("tackle" , "Tackle");
+tykepol.register_action("tailwhip" , "Tail Whip");
 tykepol.register_action("supertyke" , "Super Tyke");
 
 //Hmm... maybe there should be a better way to do this sort of thing...
 //Sets what happens on an tykepol's creation.
 function tykepol_on_spawn(){
-	THIS.set_type("Grass (Blazer 420)");
+	THIS.set_type("Grass (Blazer 420xxx)");
 	THIS.set_action_allowed("tackle");
-	THIS.set_action_allowed("supertyke");
+	THIS.set_action_allowed("tailwhip");
 	set_iv_stats();
 }
 
@@ -34,6 +35,11 @@ function tykepol_on_level(){
 }
 
 function tykepol_tackle(){
+
+
+}
+
+function tykepol_tailwhip(){
 
 
 }

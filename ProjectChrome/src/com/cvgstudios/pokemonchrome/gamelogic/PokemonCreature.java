@@ -89,7 +89,7 @@ public class PokemonCreature {
 	public static PokemonCreature makePokemon(PokemonType pokemonType) {
 		PokemonCreature newPokemon = new PokemonCreature(pokemonType);
 		JSExecutor.setThisScope(newPokemon);
-		JSExecutor.evaluate(pokemonType.baseName.concat(".on_create()"));
+		JSExecutor.evaluate(pokemonType.baseName.concat("_on_spawn()"));
 		return newPokemon;
 	}
 

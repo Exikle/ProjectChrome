@@ -13,6 +13,7 @@ import javax.imageio.ImageIO;
  * 
  * @author qmpzaltb
  */
+
 public class PokemonType {
 
 	protected static Vector<PokemonType> typesOfPokemon;
@@ -69,19 +70,25 @@ public class PokemonType {
 
 	public void setFrontImage(String filepath) {
 		try {
+			System.out.print("Loading " + filepath);
 			frontImage = ImageIO.read(new File(filepath));
 		} catch (IOException e) {
-			System.err.println("Could not load image at: " + filepath);
+			System.out.print(" File IO error!");
 			// e.printStackTrace();
+		} finally {
+			System.out.println();
 		}
 	}
 
 	public void setBackImage(String filepath) {
 		try {
+			System.out.print("Loading " + filepath);
 			backImage = ImageIO.read(new File(filepath));
 		} catch (IOException e) {
-			System.err.println("Could not load image at: " + filepath);
+			System.out.print(" File IO error!");
 			// e.printStackTrace();
+		} finally {
+			System.out.println();
 		}
 	}
 

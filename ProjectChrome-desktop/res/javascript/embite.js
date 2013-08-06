@@ -17,14 +17,14 @@ embite.set_base_sp_defense(50);
 embite.set_base_speed(45);
 
 embite.register_action("tackle" , "Tackle");
-embite.register_action("failwhip" , "Fail Whip");
+embite.register_action("growl" , "Growl");
 
 //Hmm... maybe there should be a better way to do this sort of thing...
 //Sets what happens on an embite's creation.
 function embite_on_spawn(){
 	THIS.set_type("Fire");
 	THIS.set_action_allowed("tackle");
-	THIS.set_action_allowed("failwhip");
+	THIS.set_action_allowed("growl");
 	set_iv_stats();
 }
 
@@ -33,3 +33,11 @@ function embite_on_level(){
 	THIS.set_max_hp();
 }
 
+
+function embite_tackle(){
+
+}
+
+function embite_leer(){
+
+}

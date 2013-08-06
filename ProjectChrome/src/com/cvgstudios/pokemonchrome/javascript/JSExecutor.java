@@ -21,8 +21,6 @@ public class JSExecutor {
 
 	@SuppressWarnings("unused")
 	private static String moduleDirectory;
-	@SuppressWarnings("unused")
-	private static FileLister lister;
 
 	private static JSPokemonEngineHandler pokemonEngineHandler;
 
@@ -38,11 +36,18 @@ public class JSExecutor {
 		PokemonType.initializeTypes();
 		JSPokemonEngineHandler.initializeTypeHandlers();
 		System.out.println("Initializing JavaScript...");
+		
+		//Init scope handlers (THIS, TARGET, etc)
+		pokemonHandlerTHIS = new JSPokemonHandler();
+		
+		
 		jsEngine = new ScriptEngineManager().getEngineByName("javascript");
 		pokemonEngineHandler = new JSPokemonEngineHandler();
 		binds = new SimpleBindings();
 		binds.put("pokemon", pokemonEngineHandler);
-		binds.put("PATH", ImgPathConstants.class);
+		binds.put("THIS", pokemonHandlerTHIS);
+		class pathconstants implements ImgPathConstants{}
+		binds.put("PATH", new pathconstants());
 		FileLister fl = new FileLister(resDirectory);
 
 		File[] jsFiles = fl.getFiles();
