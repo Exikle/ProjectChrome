@@ -235,7 +235,7 @@ public class MainMenu implements Screen, InputProcessor {
 			}
 		} else if (i == 3) {
 			Gdx.app.log(ChromeGame.LOG, "Credits");
-			// game.setScreen(new RollingCreditsScreen(game));
+			game.setScreen(new ScrollingCredits(game));
 		}
 	}
 

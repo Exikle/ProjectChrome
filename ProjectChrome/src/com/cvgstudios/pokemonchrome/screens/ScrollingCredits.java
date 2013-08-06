@@ -1,13 +1,19 @@
 package com.cvgstudios.pokemonchrome.screens;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 
 public class ScrollingCredits implements Screen {
 	ChromeGame game;
-	Sprite logo = new Sprite(new Texture("imgs/TitleScreen.png"));
+	Sprite logo = new Sprite(new Texture("imgs/BlackTitleScreen.png"));
+	SpriteBatch batch;
+
+	float movingY = 0;
 
 	public ScrollingCredits(ChromeGame game) {
 		this.game = game;
@@ -15,43 +21,44 @@ public class ScrollingCredits implements Screen {
 
 	@Override
 	public void render(float delta) {
-		// TODO Auto-generated method stub
+		Gdx.gl.glClearColor(0, 0, 0, 1);
+		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+
+		batch.begin();
+		batch.draw(logo, 0, 0 + movingY);
+		batch.end();
+
+		movingY += 1.5f;
 
 	}
 
 	@Override
 	public void resize(int width, int height) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void show() {
-		// TODO Auto-generated method stub
-
+		batch = new SpriteBatch();
 	}
 
 	@Override
 	public void hide() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void pause() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void resume() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
 
 	}
 

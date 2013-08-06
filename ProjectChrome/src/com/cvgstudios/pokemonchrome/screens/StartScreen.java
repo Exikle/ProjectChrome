@@ -90,7 +90,7 @@ public class StartScreen implements Screen, InputProcessor {
 
 	@Override
 	public void show() {
-		startBg = new Texture("imgs/TitleScreen.png");
+		startBg = new Texture("imgs/WhiteTitleScreen.png");
 		bg = new Sprite(startBg);
 		batch = new SpriteBatch();
 		font.setScale(2f);
