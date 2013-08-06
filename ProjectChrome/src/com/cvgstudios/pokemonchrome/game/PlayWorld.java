@@ -51,8 +51,6 @@ public class PlayWorld implements Screen {
 	public PlayWorld(ChromeGame game) {
 		this.game = game;
 		Gdx.input.setInputProcessor(new InputHandler(this, camera));
-
-		MapObjects mObjs = new MapObjects();
 	}
 
 	@Override
