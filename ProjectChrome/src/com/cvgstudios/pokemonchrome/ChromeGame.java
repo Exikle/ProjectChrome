@@ -12,7 +12,7 @@ public class ChromeGame extends Game {
 
 	@Override
 	public void create() {
-		//Mark yea it can be called here, I tried moving the res/ to the default project but it kept screwing up
+
 		JSExecutor.initializeExecutor(new File("res/javascript").getAbsolutePath());
 		
 		setScreen(new SplashScreen(this));

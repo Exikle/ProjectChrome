@@ -35,7 +35,7 @@ public class ScrollingCredits implements Screen {
 		font.draw(batch, "DESIGN/WRITING",
 				middle - font.getBounds("DESIGN/WRITING").width / 2, -125
 						+ movingY);
-		
+
 		font.setScale(.9f);
 		font.draw(batch, "Creative Director",
 				middle - font.getBounds("Creative Director").width / 2, -175
@@ -56,11 +56,80 @@ public class ScrollingCredits implements Screen {
 		font.draw(batch, "Julius D'Silva",
 				middle - font.getBounds("Julius D'Silva").width / 2, -300
 						+ movingY);
+		// ///
 
 		font.setScale(1.1f);
 		font.draw(batch, "PROGRAMMING/ENGINEERING",
-				middle - font.getBounds("PROGRAMMING/ENGINEERING").width / 2, -400
+				middle - font.getBounds("PROGRAMMING/ENGINEERING").width / 2,
+				-400 + movingY);
+
+		font.setScale(.9f);
+		font.draw(batch, "Program Manager",
+				middle - font.getBounds("Program Manager").width / 2, -450
 						+ movingY);
+
+		font.draw(batch, "Julius D'Silva",
+				middle - font.getBounds("Julius D'Silva").width / 2, -475
+						+ movingY);
+
+		font.draw(batch, "Lead Programmer",
+				middle - font.getBounds("Lead Programmer").width / 2, -525
+						+ movingY);
+
+		font.draw(batch, "Mark 'qmpzaltb' Bouchkevitch",
+				middle - font.getBounds("Mark 'qmpzaltb' Bouchkevitch").width
+						/ 2, -550 + movingY);
+
+		font.draw(batch, "Dixon 'Exikle' D'Cunha",
+				middle - font.getBounds("Dixon 'Exikle' D'Cunha").width / 2,
+				-575 + movingY);
+		
+		font.draw(batch, "Battle Programmer",
+				middle - font.getBounds("Battle Programmer").width / 2, -625
+						+ movingY);
+
+		font.draw(batch, "Mark 'qmpzaltb' Bouchkevitch",
+				middle - font.getBounds("Mark 'qmpzaltb' Bouchkevitch").width
+						/ 2, -650 + movingY);
+
+		font.draw(batch, "Gameplay Programmer",
+				middle - font.getBounds("Gameplay Programmer").width / 2, -700
+						+ movingY);
+
+		font.draw(batch, "Dixon 'Exikle' D'Cunha",
+				middle - font.getBounds("Dixon 'Exikle' D'Cunha").width / 2,
+				-725 + movingY);
+		
+		font.draw(
+				batch,
+				"Artificial Intelligence Programmer",
+				middle
+						- font.getBounds("Artificial Intelligence Programmer").width
+						/ 2, -775 + movingY);
+
+		font.draw(batch, "Mark 'qmpzaltb' Bouchkevitch",
+				middle - font.getBounds("Mark 'qmpzaltb' Bouchkevitch").width
+						/ 2, -800 + movingY);
+
+		font.draw(batch, "Graphics Programmer",
+				middle - font.getBounds("Graphics Programmer").width / 2, -850
+						+ movingY);
+
+		font.draw(batch, "Dixon 'Exikle' D'Cunha",
+				middle - font.getBounds("Dixon 'Exikle' D'Cunha").width / 2,
+				-875 + movingY);
+
+		font.draw(batch, "Julius D'Silva",
+				middle - font.getBounds("Julius D'Silva").width / 2, -900
+						+ movingY);
+
+		font.draw(batch, "User Interface Programmer",
+				middle - font.getBounds("User Interface Programmer").width / 2,
+				-950 + movingY);
+
+		font.draw(batch, "Dixon 'Exikle' D'Cunha",
+				middle - font.getBounds("Dixon 'Exikle' D'Cunha").width / 2,
+				-975 + movingY);
 
 		batch.end();
 
