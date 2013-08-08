@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="35" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Route1TileSheet" tilewidth="32" tileheight="32">
+  <image source="Route1TileSheet.png" width="320" height="960"/>
+ </tileset>
+ <layer name="Grass 1" width="50" height="35">
+  <data encoding="base64" compression="zlib">
+   eJztwwENAAAMw6DOv+k7uAJIWDVVVVVVVVX1faQ/Btc=
+  </data>
+ </layer>
+ <layer name="Fence 2" width="50" height="35">
+  <data encoding="base64" compression="zlib">
+   eJzt2LENgCAQheFzCGo2cAYHUku1ZDRH8xIsJSeJnBT/l7yK+OC1ijyLhQAAAAAA+jKKpEa9rthh9rpih9nrih1mryt2mL2u2GH2umq1I4hMpX/WMZ9X3Rvyd6kUPT+/XfDOrFkqsmqGOz3ZNHtFjn+eaWJHX3rZcQGu3y+a
+  </data>
+ </layer>
+</map>

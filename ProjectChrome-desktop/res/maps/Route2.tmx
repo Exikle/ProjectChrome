@@ -1,17 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="40" height="50" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" width="60" height="50" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="Route2TileSheet" tilewidth="32" tileheight="32">
   <image source="Route2TileSheet.png" width="320" height="960"/>
  </tileset>
- <layer name="terrain 1" width="40" height="50">
+ <layer name="Terrain 1" width="60" height="50">
   <data encoding="base64" compression="zlib">
-   eJzt0rkNwDAMA0BlC+8/qUeIJX9AcgVb6gioRURL5jmYrI1vn6/S9dbNx1f1Vf6fj4+Pb2YHH99q34iFj4/vvi+zg4/vb77qLT4+Pj4+Pj6+Fd18fKO+HeH7tq8Dts9sFQ==
+   eJzt1DkOgDAMBEDzCvj/S+kRCBQghzPFlj4mlrJFxHbIkjhHK2+u8LbZgZeXt773rP4uo3tL5vHm9b7twcvLy8vLy8ub2Vsyj5e3pvcqJRZeXt663j9rR/bOdl9e3qze2f4rXt5M3qteT/qP6n2zA2/EOpl3tvvy8vbkbfmGvP97ewxv+514v8sO330wSQ==
   </data>
  </layer>
- <layer name="Fence 2" width="40" height="50">
+ <layer name="Fence 2" width="60" height="50">
   <data encoding="base64" compression="zlib">
-   eJzt1jEOgCAQBVFO4ZU8k1qqpXplt7GBSCCACziT/P4VgBoT3ygbCi1HLfpqCl9a+NLqyVf6LcGHr0ZfaPjcevJpFOqbZLNnSxFduG+VbZ7tRXTvPvts4cP3pc9OyxfaITs9u/RozaTxfYsJn9tzf2v/P8WHDx8+fPj+6tMIX1r40mrRl2v48vpu6ENSGA==
+   eJztmr1OwzAQx90RJGAAAR2B52Bun4EdGJsJBGx8jMAIjMAIjNCHYEV8vA1nKZZO1cWJ47v4muQv/STLqir/6rMTJzUmfY6A44rY3AH3wIOnHZoJ0bcLrAsQ6vsIPAHPnjZHRkp8X4BX4M3TDs0Atd1cj/I2NxrqmYr13RRAQz0PiD4tvhL1TLlr8ZWo54zo0+Lb5P48O9YT4DSAMwbflPV8AVwGcMXgm3J/TuErXc/4+qvBV/p+w0WLb1/Pze3PbannGN8MMS/1XPV+I4Wvtnp2v5WUr7Z6ll6/70Z2j9Z2/bVpoqY1+VJ1jOeWo6Yp3+tEvramP4ApauO5nQr5ZoHOXL421Lr9Mnz71bjAN8SZ09fN56fhn1tDjLPOWub0lbwWafSl1jDX3Gr0tfkGfoBf4A/177XUVzL7wEEBh6Z9vvh9yoQYtwbfBWAxVjTPPPiuAmuxonk0+S4BywWs1HCj3odq8t0gvscxrOGL486zXfF16X173y752jPSTQm3Sn2Lnk/6fOuiwZdKV3zx87ou+Lp03dcHHs+w5LMafMv2qzJmfbn+b3Yu5Esl1NfNnx1D0b19XXzrQ2K/quLrwrXOqxLji8/Pdet5nnzx+TnEdwvYTsROhC/OOMA3NVxJ7RHr+w+OuqBz
   </data>
  </layer>
- <objectgroup name="Collision" width="40" height="50"/>
+ <layer name="Tile Layer 3" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztmssuBEEUho+N22pcVljiRZDYECEi8QJewXLeAkssscTSfeG+cBkWWGKJF/BLtziRmk71zOmpqZPzJ1/mpDKpqT+ZfOnumXmi8igRhWKK8mXR832TYA/sgwM2Y72c8yODJk/fU3AGztmsue8NuAV3bNbc9wk8gxc2a+77Ct7AO5s19/0An+CLzZr7mp919zU/6+5rftbd1/xcTN9W0AbapTem5vRzCXSBbumNKem7BJbBSrr2O/P1Rvq5D/SDAemNKem7CtbAesbcSD8PgiEwLL0xJX03wCbYypg1+Xkb7IDdjNn8HO/1M/eSa/75Tmu6fvb1lZbr52qO4pHw83j9x607Ll9ROvNo8jPPITgCx+CErWv18wW4BFfgmq1r8vME/f0+cQ8q4AE8gpF0XZOffZLHzx2gU+h80ini+UYP6BU6n3Ts+YY7Wv1cLZr87BPzc7zXzz6x58/m5xhifnbH/Gx+jiHmZ3ea2c8LOMo0Xn2Y8dwzhJ9D3keH8HPI++ha/dySEltq9XPMfTX42TcSfp6jYv7vLbHH2D9m0cvl5285Rm5m
+  </data>
+ </layer>
+ <objectgroup name="Collision" width="60" height="50" visible="0">
+  <object x="354" y="0" width="14" height="766"/>
+  <object x="355" y="896" width="16" height="704"/>
+  <object x="354" y="1576" width="717" height="28"/>
+  <object x="512" y="274" width="6" height="410"/>
+  <object x="534" y="254" width="373" height="6"/>
+  <object x="921" y="272" height="1"/>
+  <object x="923" y="276" width="5" height="915"/>
+  <object x="608" y="767" width="6" height="426"/>
+  <object x="639" y="1208" width="265" height="6"/>
+  <object x="512" y="679">
+   <polyline points="0,0 12,15 29,20 36,37 46,45 60,53 70,69 82,82 97,84 101,93"/>
+  </object>
+  <object x="610" y="1189">
+   <polyline points="0,0 7,12 15,18 30,23"/>
+  </object>
+  <object x="904" y="1212">
+   <polyline points="0,0 11,-8 17,-13 22,-24"/>
+  </object>
+  <object x="515" y="274">
+   <polyline points="0,0 9,-9 18,-17"/>
+  </object>
+  <object x="906" y="258">
+   <polyline points="0,0 9,7 16,17 18,22"/>
+  </object>
+  <object x="10" y="2" width="9" height="1601"/>
+  <object x="366" y="2" width="19" height="30"/>
+  <object x="386" y="1" width="691" height="25"/>
+  <object x="1058" y="1534" width="22" height="76"/>
+  <object x="1056" y="2" width="26" height="1404"/>
+  <object x="1062" y="1536" width="218" height="16"/>
+  <object x="1060" y="1388" width="224" height="20"/>
+ </objectgroup>
 </map>
