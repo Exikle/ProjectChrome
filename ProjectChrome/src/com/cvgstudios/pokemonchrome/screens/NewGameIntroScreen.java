@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.game.PlayWorld;
 
@@ -19,6 +20,8 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 
 	String[] script;
 	String[] hold;
+
+	private Sprite optionBox;
 
 	private int counter = 0;
 	private int len;
@@ -35,15 +38,17 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 	Sprite bg, box, prof;
 
 	private boolean optionsBoxVisible = false;
-//	private boolean profVisible = true;
+	// private boolean profVisible = true;
 	private Music m = Gdx.audio.newMusic(Gdx.files
 			.internal("music/ProfessorIntro.mp3"));
 
 	private int optionsScreen = 1;
 
+	private boolean optionsVisible = false;
+
 	public NewGameIntroScreen(ChromeGame game) {
 		this.game = game;
-		m.play();
+		// m.play();
 		m.setLooping(true);
 		Gdx.input.setInputProcessor(this);
 		script = NGScript.importScript();
@@ -64,6 +69,13 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 		prof.draw(batch);
 		font.draw(batch, lineOne, 190, 125);
 		font.draw(batch, lineTwo, 190, 75);
+
+		if (optionsVisible) {
+			optionBox.draw(batch);
+			font.draw(batch, "Yes", 60, 255);
+			font.draw(batch, "No", 60, 215);
+		}
+
 		batch.end();
 	}
 
@@ -74,6 +86,9 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 
 	@Override
 	public void show() {
+		optionBox = new Sprite(new Texture("imgs/OptionBox.png"));
+		optionBox.setPosition(25, 150);
+
 		bg = new Sprite(new Texture("imgs/WelcomeBG.png"));
 		box = new Sprite(new Texture("imgs/OptionBox.png"));
 		prof = new Sprite(new Texture("imgs/Professor.png"));
@@ -108,12 +123,13 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 		switch (keycode) {
 		case (Keys.SPACE):
 			if (counter < len) {
+
 				counter++;
+				optionsVisible = false;
+
 				if (script[counter].contains("(NAME)")) {
 					script[counter] = script[counter].replace("(NAME)",
 							playerName);
-				} else if (script[counter].contains("(OPTION)")) {
-					// show option box
 				} else if (script[counter].contains("(GENDERPICK)")) {
 					// allow user to choose gender
 				} else if (script[counter].contains("(NAME CREATION)")) {
@@ -122,6 +138,12 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 					script[counter] = script[counter].replace("(GENDER)",
 							playerGender);
 				}
+
+				if (script[counter].contains("(OPTION)")) {
+					optionsVisible = true;
+					script[counter] = script[counter].replace("(OPTION)", "");
+				}
+
 				getLines();
 			} else {
 				m.stop();
