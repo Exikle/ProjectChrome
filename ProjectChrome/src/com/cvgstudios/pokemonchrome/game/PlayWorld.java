@@ -95,7 +95,7 @@ public class PlayWorld implements Screen {
 		}
 
 		camera.position.set(player.getX(), player.getY(), 0);
-		Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
+		// Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
 	}
 
 	private boolean collision() {
@@ -155,8 +155,25 @@ public class PlayWorld implements Screen {
 			gameObjects[x] = (RectangleMapObject) mObjs.get(x);
 			collsionRect[x] = gameObjects[x].getRectangle();
 		}
+		changePlayerDirection(1);
 
-		playerR.setRegion(0, 0, 37, 42);
+	}
+
+	public void changePlayerDirection(int d) {
+		switch (d) {
+		case 1:// down
+			playerR.setRegion(0, 0, 37, 42);
+			break;
+		case 2:// up
+			playerR.setRegion(37, 0, 37, 42);
+			break;
+		case 3:// right
+			playerR.setRegion(74, 0, 37, 42);
+			break;
+		case 4:// left
+			playerR.setRegion(111, 0, 37, 42);
+			break;
+		}
 		player.setRegion(playerR);
 
 	}

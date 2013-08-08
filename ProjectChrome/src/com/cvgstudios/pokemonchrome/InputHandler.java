@@ -22,15 +22,19 @@ public class InputHandler implements InputProcessor {
 			switch (keycode) {
 			case Keys.RIGHT:
 				playScreen.setXD(5);
+				playScreen.changePlayerDirection(3);
 				break;
 			case Keys.LEFT:
 				playScreen.setXD(-5);
+				playScreen.changePlayerDirection(4);
 				break;
 			case Keys.DOWN:
 				playScreen.setYD(-5);
+				playScreen.changePlayerDirection(1);
 				break;
 			case Keys.UP:
 				playScreen.setYD(5);
+				playScreen.changePlayerDirection(2);
 				break;
 			}
 			keyNotDown = false;
