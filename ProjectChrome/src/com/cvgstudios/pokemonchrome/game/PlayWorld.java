@@ -49,7 +49,7 @@ public class PlayWorld implements Screen {
 	Rectangle user = new Rectangle(Gdx.graphics.getWidth() / 2,
 			Gdx.graphics.getHeight() / 2, player.getWidth(), player.getHeight());
 
-	Texture p = new Texture("imgs/PlayerSheet.png");
+	Texture p = new Texture("imgs/MalePlayer.png");
 	TextureRegion playerR = new TextureRegion(p);
 
 	public PlayWorld(ChromeGame game) {
