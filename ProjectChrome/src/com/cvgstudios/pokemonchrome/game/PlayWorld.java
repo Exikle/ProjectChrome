@@ -1,5 +1,7 @@
 package com.cvgstudios.pokemonchrome.game;
 
+import java.util.Iterator;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
@@ -11,11 +13,15 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.maps.tiled.tiles.AnimatedTiledMapTile;
+import com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Array;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.InputHandler;
 
@@ -35,8 +41,8 @@ public class PlayWorld implements Screen {
 
 	int amount;
 
-	int[] bgLayers = { 0, 1, 2, 3 };
-	int[] fgLayers = { 4, 5, 6 };
+	int[] bgLayers = { 0, 1, 2 };
+	int[] fgLayers = { 3 };
 
 	ShapeRenderer sRender = new ShapeRenderer();
 
@@ -87,18 +93,18 @@ public class PlayWorld implements Screen {
 		user = new Rectangle(player.getX(), player.getY(), player.getWidth(),
 				player.getHeight());
 		if (collision()) {
-			//Gdx.app.log(ChromeGame.LOG, "");
+			Gdx.app.log(ChromeGame.LOG, "");
 			player.setPosition(oPos.x, oPos.y);
 		}
 
 		camera.position.set(player.getX(), player.getY(), 0);
-		//Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
+		Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
 	}
 
 	private boolean collision() {
 		for (int x = 0; x < amount; x++) {
 			if (collsionRect[x].overlaps(user)) {
-				//Gdx.app.log(ChromeGame.LOG, "Overlap");
+				Gdx.app.log(ChromeGame.LOG, "Overlap");
 				xD = 0;
 				yD = 0;
 				return true;
@@ -129,7 +135,7 @@ public class PlayWorld implements Screen {
 
 	@Override
 	public void show() {
-		map = new TmxMapLoader().load("maps/exitium.tmx");
+		map = new TmxMapLoader().load("maps/Route1.tmx");
 
 		renderer = new OrthogonalTiledMapRenderer(map);
 
@@ -146,13 +152,12 @@ public class PlayWorld implements Screen {
 
 		amount = mObjs.getCount();
 
-		player.setPosition(509, 500);
+		player.setPosition(450, 500);
 
 		for (int x = 0; x < mObjs.getCount(); x++) {
 			gameObjects[x] = (RectangleMapObject) mObjs.get(x);
 			collsionRect[x] = gameObjects[x].getRectangle();
 		}
-		// Gdx.app.log(ChromeGame.LOG, "" + );
 
 	}
 

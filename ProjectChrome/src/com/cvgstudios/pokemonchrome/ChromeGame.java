@@ -4,9 +4,9 @@ import java.io.File;
 
 import com.badlogic.gdx.Game;
 import com.cvgstudios.pokemonchrome.gamelogic.PokemonCreature;
-import com.cvgstudios.pokemonchrome.gamelogic.PokemonType;
 import com.cvgstudios.pokemonchrome.javascript.JSExecutor;
 import com.cvgstudios.pokemonchrome.screens.BattleScreen;
+import com.cvgstudios.pokemonchrome.screens.MainMenu;
 import com.cvgstudios.pokemonchrome.screens.SplashScreen;
 
 public class ChromeGame extends Game {
@@ -15,7 +15,7 @@ public class ChromeGame extends Game {
 
 	@Override
 	public void create() {
-		//Mark yea it can be called here, I tried moving the res/ to the default project but it kept screwing up
+
 		JSExecutor.initializeExecutor(new File("res/javascript").getAbsolutePath());
 		
 		//setScreen(new SplashScreen(this));
