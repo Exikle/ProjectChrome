@@ -13,7 +13,6 @@
    eJztmr1OwzAQx90RJGAAAR2B52Bun4EdGJsJBGx8jMAIjMAIjNCHYEV8vA1nKZZO1cWJ47v4muQv/STLqir/6rMTJzUmfY6A44rY3AH3wIOnHZoJ0bcLrAsQ6vsIPAHPnjZHRkp8X4BX4M3TDs0Atd1cj/I2NxrqmYr13RRAQz0PiD4tvhL1TLlr8ZWo54zo0+Lb5P48O9YT4DSAMwbflPV8AVwGcMXgm3J/TuErXc/4+qvBV/p+w0WLb1/Pze3PbannGN8MMS/1XPV+I4Wvtnp2v5WUr7Z6ll6/70Z2j9Z2/bVpoqY1+VJ1jOeWo6Yp3+tEvramP4ApauO5nQr5ZoHOXL421Lr9Mnz71bjAN8SZ09fN56fhn1tDjLPOWub0lbwWafSl1jDX3Gr0tfkGfoBf4A/177XUVzL7wEEBh6Z9vvh9yoQYtwbfBWAxVjTPPPiuAmuxonk0+S4BywWs1HCj3odq8t0gvscxrOGL486zXfF16X173y752jPSTQm3Sn2Lnk/6fOuiwZdKV3zx87ou+Lp03dcHHs+w5LMafMv2qzJmfbn+b3Yu5Esl1NfNnx1D0b19XXzrQ2K/quLrwrXOqxLji8/Pdet5nnzx+TnEdwvYTsROhC/OOMA3NVxJ7RHr+w+OuqBz
   </data>
  </layer>
-<<<<<<< HEAD
  <layer name="Tile Layer 3" width="60" height="50">
   <data encoding="base64" compression="zlib">
    eJztmssuBEEUho+N22pcVljiRZDYECEi8QJewXLeAkssscTSfeG+cBkWWGKJF/BLtziRmk71zOmpqZPzJ1/mpDKpqT+ZfOnumXmi8igRhWKK8mXR832TYA/sgwM2Y72c8yODJk/fU3AGztmsue8NuAV3bNbc9wk8gxc2a+77Ct7AO5s19/0An+CLzZr7mp919zU/6+5rftbd1/xcTN9W0AbapTem5vRzCXSBbumNKem7BJbBSrr2O/P1Rvq5D/SDAemNKem7CtbAesbcSD8PgiEwLL0xJX03wCbYypg1+Xkb7IDdjNn8HO/1M/eSa/75Tmu6fvb1lZbr52qO4pHw83j9x607Ll9ROvNo8jPPITgCx+CErWv18wW4BFfgmq1r8vME/f0+cQ8q4AE8gpF0XZOffZLHzx2gU+h80ini+UYP6BU6n3Ts+YY7Wv1cLZr87BPzc7zXzz6x58/m5xhifnbH/Gx+jiHmZ3ea2c8LOMo0Xn2Y8dwzhJ9D3keH8HPI++ha/dySEltq9XPMfTX42TcSfp6jYv7vLbHH2D9m0cvl5285Rm5m
@@ -52,7 +51,4 @@
   <object x="1062" y="1536" width="218" height="16"/>
   <object x="1060" y="1388" width="224" height="20"/>
  </objectgroup>
-=======
- <objectgroup name="Collision" width="40" height="50"/>
->>>>>>> branch 'master' of https://github.com/Exikle/ProjectChromeLibgdx.git
 </map>
