@@ -11,11 +11,11 @@ Having pokemon battle one another;is particularly popular, and it deepens
 the bonds between people and Pokemon.;  
 And that is why I research Pokemon.;  
 Well, that's enough from me...;Could you tell me about yourself?
-Are you a boy?;or a girl?;  
+Are you a boy?;or a girl? (OPTION);  
 You're a (GENDER), right?;  
 I'd like to know your name.;Please tell me.
 What is your name?;(NAME CREATION)
-Your name is (NAME)?;  
+Your name is (NAME)?;(OPTION);  
 So your name's (NAME).;  
 What a wonderful name!;  
 Well then. I'm going to introduce you;to your two best friends!

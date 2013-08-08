@@ -4,6 +4,7 @@ import java.io.File;
 
 import com.badlogic.gdx.Game;
 import com.cvgstudios.pokemonchrome.javascript.JSExecutor;
+import com.cvgstudios.pokemonchrome.screens.MainMenu;
 import com.cvgstudios.pokemonchrome.screens.SplashScreen;
 
 public class ChromeGame extends Game {
@@ -15,7 +16,7 @@ public class ChromeGame extends Game {
 
 		JSExecutor.initializeExecutor(new File("res/javascript").getAbsolutePath());
 		
-		setScreen(new SplashScreen(this));
+		setScreen(new MainMenu(this));
 	}
 
 	@Override
