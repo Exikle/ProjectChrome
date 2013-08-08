@@ -156,6 +156,9 @@ public class PlayWorld implements Screen {
 			collsionRect[x] = gameObjects[x].getRectangle();
 		}
 
+		playerR.setRegion(0, 0, 37, 42);
+		player.setRegion(playerR);
+
 	}
 
 	@Override
