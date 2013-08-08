@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="CircleRoad" tilewidth="32" tileheight="32">
+  <image source="Downloads/CircleRoad.png" width="113" height="104"/>
+ </tileset>
+ <tileset firstgid="10" name="PokemonCenter" tilewidth="32" tileheight="32">
+  <image source="Downloads/PokemonCenter.png" width="190" height="230"/>
+ </tileset>
+ <tileset firstgid="45" name="PokemonLab" tilewidth="32" tileheight="32">
+  <image source="Downloads/PokemonLab.png" width="350" height="235"/>
+ </tileset>
+ <tileset firstgid="115" name="RedDuoTree" tilewidth="32" tileheight="32">
+  <image source="Downloads/RedDuoTree.png" width="96" height="224"/>
+ </tileset>
+ <tileset firstgid="136" name="Route2TileSheet" tilewidth="32" tileheight="32">
+  <image source="Downloads/Route2TileSheet.png" width="320" height="960"/>
+ </tileset>
+ <tileset firstgid="436" name="Legendary Statue (1)" tilewidth="32" tileheight="32">
+  <image source="Downloads/Legendary Statue (1).png" width="159" height="184"/>
+ </tileset>
+ <tileset firstgid="456" name="PokemonBattleField (2)" tilewidth="32" tileheight="32">
+  <image source="Downloads/PokemonBattleField (2).png" width="313" height="162"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="40" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztwwENAAAMw6DKn+wLOSSsmqqqqqqqqqo+f8mrJr0=
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="40" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztzstKAmAURWFfqMwUyitoWoJmKmhpQWYXSC17o17VNT6IhDv8B+4N3+icwcpktu83OMEpsjhDDufIoxDuh1jsu8AliiihjAqqqIV7ir46GrhCEy1c4wbtcE/R10EXt+jhDn0MMAz3FH0jjHGPB0wwxSOewj1F3zNmeMEcr3jDOz7CPUXfJxZYYoUvfGONn3BP0ZeK+9y36++/5z5t7tPmPm3u0+Y+be7T5j5t7tPmPm3u0+Y+be7T5j5t7tPmPm3u07ZvXyruO84+72/bAE+DdcQ=
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="40" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztmdlOFEEUhnsWZ8QVBMUNZRfQh+h3GvcFCvTGa29JvOMJlAAB0hAhKC5xJ4Jb3ICn4OtUMql0urGmqyrTF32SL31yajL1TTJ/p6an5nneVbgGNaV/5KWvKUs8hOtwA25GehO/sJ4UPO8pTBfSvwcO4hbX23AH1N7UbwavWZhT/Nbon8MLWIeX8Apew5uYzxH63eV6D0ZB7U395tlvARaVfd/Sv4P38AE+wif4DBsJfmNcBYyD2pv6Bey3BMvKvl/oN2ELvsI3+A4/4GeC3wTX+/AA1N7U7xn7rcCqsu8v+t/wB/7CP9iGHdhN8FMzayu/tir0c5VfG+UyvzbKZX5tlMv82ihX+X0cwcTPRX5t+rnIr00/F/m16ecivzb9XOTXpp9ufg/BYTgCR+GYnAnXfrr5PQ6t0AYnoF3OnPvp5rcDTsIp6ITTcubcTze/Z+AsnIPz0CVnzv1083sBLkI39ECvnNX9wuNbEUoxfswEa6KQ8Hn289PNbx/0wwAMwiU5q+9XhgNQifFjJlgT5RR+uvkdgmEYgctwRc7q+1XhILTE+DETrIlqCj/d/Eb3dEXUTze/zfLTzW+z/HTz2yw/3fz+r/ju+2TAJwt+TD4C1gJeEzTynjbPz9w7fO4hfiXGj1nAWlBO4Wfr/My91+ce7Jdi/JgFRflIoWG//Pxs5pefn8388t+/Zn55fs388vya+eX5NfPL8vk5rCw/fw4ry8+fw3KRX5uVlN9Jz97/pCb/ryblNyt9Un6z0u8Bfjzsrw==
+  </data>
+ </layer>
+</map>
