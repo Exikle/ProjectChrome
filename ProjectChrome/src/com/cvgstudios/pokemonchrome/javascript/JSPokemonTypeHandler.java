@@ -2,6 +2,11 @@ package com.cvgstudios.pokemonchrome.javascript;
 
 import com.cvgstudios.pokemonchrome.gamelogic.PokemonType;
 
+/**
+ * Class whose methods can be used in javascript.
+ * Part of the interface between Java and Javascript.
+ * @author qmpzaltb
+ */
 public class JSPokemonTypeHandler {
 
 	PokemonType pokemonType;
@@ -36,6 +41,10 @@ public class JSPokemonTypeHandler {
 
 	public void set_base_speed(int speed) {
 		pokemonType.setSpeed(speed);
+	}
+	
+	public void set_ID(int id){
+		pokemonType.setTypeID(id);
 	}
 
 	public void register_image_front(String imagepath) {

@@ -24,6 +24,8 @@ public class PokemonType {
 	protected String baseName;
 	protected String typeName;
 
+	protected int typeID;
+	
 	protected int baseHP;
 	protected int baseAttack;
 	protected int baseDefense;
@@ -115,10 +117,18 @@ public class PokemonType {
 	public void setSpeed(int speed) {
 		baseSpeed = speed;
 	}
+	
+	public void setTypeID(int id){
+		typeID = id;
+	}
 
 	public void giveAction(String actionname, String actionTrueName) {
 		actions.add(actionname);
 		actionNames.add(actionTrueName);
+	}
+	
+	public int getTypeID(){
+		return typeID;
 	}
 
 	public static void initializeTypes() {
