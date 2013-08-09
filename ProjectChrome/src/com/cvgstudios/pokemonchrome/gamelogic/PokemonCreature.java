@@ -13,6 +13,23 @@ public class PokemonCreature {
 
 	protected Vector<Boolean> actionsAvailable;
 
+	protected int currentHP;
+	protected int currentHPMax;
+	
+	//Battle stats are a pokemon's in-battle stats. These can change with different buffs/debuffs within a battle, such as what Leer does.
+	protected int battleAttack;
+	protected int battleDefense;
+	protected int battleSpAttack;
+	protected int battleSpDefense;
+	protected int battleSpeed;
+	
+	//Pokemon stats are a pokemon's stats overall, as in, when they begin a new battle.
+	protected int pokeAttack;
+	protected int pokeDefense;
+	protected int pokeSpAttack;
+	protected int pokeSpDefense;
+	protected int pokeSpeed;
+	
 	//IV stats are IndiVidual stats. They represent each pokemon's uniqueness in stat attributes.
 	protected int ivHP;
 	protected int ivAttack;
@@ -86,7 +103,55 @@ public class PokemonCreature {
 		return actionsAvailable
 				.get(theBaseType.actions.indexOf(actionCodeName));
 	}
+	
+	public int getHP(){
+		return currentHP;
+	}
+	
+	public int getHPMax(){
+		return currentHPMax;
+	}
+	
+	public int getBattleAttack(){
+		return battleAttack;
+	}
+	
+	public int getBattleDefense(){
+		return battleDefense;
+	}
 
+	public int getBattleSpAttack(){
+		return battleSpAttack;
+	}
+	
+	public int getBattleSpDefense(){
+		return battleSpDefense;
+	}
+	
+	public int getBattleSpeed(){
+		return battleSpeed;
+	}
+	
+	public int getPokeAttack(){
+		return pokeAttack;
+	}
+	
+	public int getPokeDefense(){
+		return pokeDefense;
+	}
+
+	public int getPokeSpAttack(){
+		return pokeSpAttack;
+	}
+	
+	public int getPokeSpDefense(){
+		return pokeSpDefense;
+	}
+	
+	public int getPokeSpeed(){
+		return pokeSpeed;
+	}
+	
 	public static PokemonCreature makePokemon(PokemonType pokemonType) {
 		PokemonCreature newPokemon = new PokemonCreature(pokemonType);
 		JSExecutor.setThisScope(newPokemon);
