@@ -29,7 +29,7 @@ public class PlayWorld implements Screen {
 	TiledMapTileLayer layer;
 	private SpriteBatch batch;
 
-	private String MAP_NAME = "Exitium";
+	private String MAP_NAME = "Route1";
 
 	Sprite player = new Sprite(new Texture("imgs/Up.png"));
 
@@ -170,6 +170,7 @@ public class PlayWorld implements Screen {
 			if (map.getLayers().get(x).getName()
 					.equalsIgnoreCase("playerLayer")) {
 				index = x;
+				Gdx.app.log(ChromeGame.LOG, "Index:" + index);
 			}
 		}
 		bgLayers = new int[index];
@@ -180,7 +181,7 @@ public class PlayWorld implements Screen {
 
 		fgLayers = new int[layerNum - (index + 1)];
 		Gdx.app.log(ChromeGame.LOG, "FG layers:" + fgLayers.length);
-		for (int x = index - 1; x < fgLayers.length; x++) {
+		for (int x = 0; x < fgLayers.length; x++) {
 			fgLayers[x] = layerNum - x - 1;
 		}
 
