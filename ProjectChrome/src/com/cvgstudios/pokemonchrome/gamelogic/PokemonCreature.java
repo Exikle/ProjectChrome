@@ -13,6 +13,7 @@ public class PokemonCreature {
 
 	protected Vector<Boolean> actionsAvailable;
 
+	//IV stats are IndiVidual stats. They represent each pokemon's uniqueness in stat attributes.
 	protected int ivHP;
 	protected int ivAttack;
 	protected int ivDefense;
