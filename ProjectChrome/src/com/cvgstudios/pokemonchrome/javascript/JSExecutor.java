@@ -25,6 +25,7 @@ public class JSExecutor {
 	private static JSPokemonEngineHandler pokemonEngineHandler;
 
 	private static JSPokemonHandler pokemonHandlerTHIS;
+	private static JSPokemonHandler pokemonHandlerTARGET;
 
 	private static ScriptEngine jsEngine;
 	private static Bindings binds;
@@ -39,6 +40,7 @@ public class JSExecutor {
 		
 		//Init scope handlers (THIS, TARGET, etc)
 		pokemonHandlerTHIS = new JSPokemonHandler();
+		pokemonHandlerTARGET = new JSPokemonHandler();
 		
 		
 		jsEngine = new ScriptEngineManager().getEngineByName("javascript");
@@ -46,6 +48,7 @@ public class JSExecutor {
 		binds = new SimpleBindings();
 		binds.put("pokemon", pokemonEngineHandler);
 		binds.put("THIS", pokemonHandlerTHIS);
+		binds.put("TARGET", pokemonHandlerTARGET);
 		class pathconstants implements ImgPathConstants{}
 		binds.put("PATH", new pathconstants());
 		FileLister fl = new FileLister(resDirectory);
