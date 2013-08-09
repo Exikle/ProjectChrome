@@ -8,11 +8,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
@@ -26,31 +24,28 @@ public class PlayWorld implements Screen {
 	private TiledMap map;
 	private OrthogonalTiledMapRenderer renderer;
 	private OrthographicCamera camera;
-	TiledMapTileLayer layer;
 	private SpriteBatch batch;
 
-	private String MAP_NAME = "Route1";
+	private String MAP_NAME = "Exitium";
 
-	Sprite player = new Sprite(new Texture("imgs/Up.png"));
+	private Sprite player = new Sprite(new Texture("imgs/Up.png"));
 
-	float xD = 0, yD = 0;
+	private float xD = 0, yD = 0;
 
-	int amount;
+	private int amount;
 
-	int[] bgLayers;
-	int[] fgLayers;
+	private int[] bgLayers;
+	private int[] fgLayers;
 
-	ShapeRenderer sRender = new ShapeRenderer();
+	private RectangleMapObject[] gameObjects;
 
-	RectangleMapObject[] gameObjects;
+	private Rectangle[] collsionRect;
 
-	Rectangle[] collsionRect;
-
-	Rectangle user = new Rectangle(Gdx.graphics.getWidth() / 2,
+	private Rectangle user = new Rectangle(Gdx.graphics.getWidth() / 2,
 			Gdx.graphics.getHeight() / 2, player.getWidth(), player.getHeight());
-
-	Texture p = new Texture("imgs/MalePlayer.png");
-	TextureRegion playerR = new TextureRegion(p);
+	
+	private TextureRegion playerR = new TextureRegion(new Texture(
+			"imgs/MalePlayer.png"));
 
 	public PlayWorld(ChromeGame game) {
 		this.game = game;
@@ -69,7 +64,6 @@ public class PlayWorld implements Screen {
 		batch.setProjectionMatrix(camera.combined);
 
 		renderer.setView(camera);
-		sRender.setProjectionMatrix(camera.combined);
 
 		renderer.render(bgLayers);
 
@@ -138,8 +132,10 @@ public class PlayWorld implements Screen {
 		importMap();
 
 		renderer = new OrthogonalTiledMapRenderer(map);
+
 		camera = new OrthographicCamera();
 		camera.position.set(507, 525, 0);
+		player.setPosition(450, 500);
 		Gdx.input.setInputProcessor(new InputHandler(this, camera));
 
 		batch = new SpriteBatch();
@@ -150,8 +146,6 @@ public class PlayWorld implements Screen {
 		collsionRect = new Rectangle[mCollisions.getCount()];
 
 		amount = mCollisions.getCount();
-
-		player.setPosition(450, 500);
 
 		for (int x = 0; x < mCollisions.getCount(); x++) {
 			gameObjects[x] = (RectangleMapObject) mCollisions.get(x);
@@ -164,37 +158,21 @@ public class PlayWorld implements Screen {
 	public void importMap() {
 		int index = 0;
 		int layerNum = map.getLayers().getCount() - 2;
-		Gdx.app.log(ChromeGame.LOG, "Layer Num: " + layerNum);
 
 		for (int x = 0; x < layerNum; x++) {
 			if (map.getLayers().get(x).getName()
 					.equalsIgnoreCase("playerLayer")) {
 				index = x;
-				Gdx.app.log(ChromeGame.LOG, "Index:" + index);
 			}
 		}
 		bgLayers = new int[index];
-		Gdx.app.log(ChromeGame.LOG, "BG layers:" + bgLayers.length);
 		for (int x = 0; x < index; x++) {
 			bgLayers[x] = x;
 		}
 
 		fgLayers = new int[layerNum - (index + 1)];
-		Gdx.app.log(ChromeGame.LOG, "FG layers:" + fgLayers.length);
 		for (int x = 0; x < fgLayers.length; x++) {
 			fgLayers[x] = layerNum - x - 1;
-		}
-
-		Gdx.app.log(ChromeGame.LOG, "");
-
-		Gdx.app.log(ChromeGame.LOG, "Foreground Layers:" + fgLayers.length);
-		for (int x = 0; x < fgLayers.length; x++) {
-			Gdx.app.log(ChromeGame.LOG, "FG[" + x + "]:" + fgLayers[x]);
-		}
-
-		Gdx.app.log(ChromeGame.LOG, "Background Layers:" + bgLayers.length);
-		for (int x = 0; x < bgLayers.length; x++) {
-			Gdx.app.log(ChromeGame.LOG, "BG[" + x + "]:" + bgLayers[x]);
 		}
 	}
 
