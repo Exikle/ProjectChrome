@@ -8,6 +8,11 @@
    H4sIAAAAAAAAC+3DAQ0AAAzDoM6/6Qs5JKyaqqqqqqqqqj5/r8CI0kAfAAA=
   </data>
  </layer>
+ <layer name="PlayerLayer" width="40" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BAQEAAACAkP6v7ggKAAAAAAAAABhk6EtKQB8AAA==
+  </data>
+ </layer>
  <layer name="Path" width="40" height="50">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAC+2XzU/CMBiHi3hAvg6AwAE9acLFRKOJnsgIFxL//39CRTj4yUH9NXFJrWx7S9/SAn2yJ9mh255sXbMJsd+MCWMe4CN8gjP4DOdw4bArhdL3Al/hG3yHH/ATLh12pVD6vuC33ClhgwewDA9LbtsklL4KOo5gFdZgHTZgM5C+FjrasAOPYRf2YN9Bn+y5UbzPGJfAuxWewXNFDsqKlPslGWnHpV4wNWVdx7aPm9hnx1TQ3gdJAq9/lcdNHPTYMPIdUEBofYn4++xD6Fs1513Of1N89CXwlqiPvorBWB99LYOxse8/u9RnQlXw9Of11RRN6QievgE8IToU9Pedq0+naI5R50Ps286+tue+S3hVoM8+rvUw9tHIWrtD6csi9tkR++zYlz59fQitTyf0PpPv1TxPHfVx4OqfhgvuvnX+f/JQ+7jPzUHoz5f6jW1LHTYINjfUo9OFPYL9He37AYHm2GZAHwAA
@@ -18,11 +23,13 @@
    H4sIAAAAAAAAC+2ZsQrCUAxFs/sbdrNzi7oI6iJUR/Uz+v+DqUUIQmvSC22Ee+DCm/IuOY8urUSkShxClqQOZIn3ugrkwH5vtpqdZp+wX6k5ak6as6YwaWX8W3mZqV+juWpumrv0u3xqNjPc/4uuX9fpIX0nu8ss/Wwnu8ss/b79fnaZpR/9Tod+MegXg34x6BeDfjHoF4N+MegXg34x6BeDfjHoF4N+MegXg34x/t1vEUgbvHvtmDnm1/4X8Zyj+y6dc4f82t6e85R+nrm20ws70kNQQB8AAA==
   </data>
  </layer>
- <layer name="PlayerLayer" width="40" height="50">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BAQEAAACAkP6v7ggKAAAAAAAAABhk6EtKQB8AAA==
-  </data>
- </layer>
- <objectgroup name="Collision" width="40" height="50"/>
+ <objectgroup name="Collision" width="40" height="50">
+  <object x="120" y="293" width="5" height="1061"/>
+  <object x="118" y="1353" width="7" height="188"/>
+  <object x="128" y="1526" width="381" height="8"/>
+  <object x="503" y="1526" width="5" height="84"/>
+  <object x="865" y="1533" width="9" height="69"/>
+  <object x="865" y="1527" width="297" height="8"/>
+ </objectgroup>
  <objectgroup name="Interactable" width="40" height="50"/>
 </map>

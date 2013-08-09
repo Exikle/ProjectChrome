@@ -29,20 +29,20 @@ public class PlayWorld implements Screen {
 	TiledMapTileLayer layer;
 	private SpriteBatch batch;
 
+	private String MAP_NAME = "Route1";
+
 	Sprite player = new Sprite(new Texture("imgs/Up.png"));
 
 	float xD = 0, yD = 0;
 
 	int amount;
 
-	int[] bgLayers = { 0, 1 };
-	int[] fgLayers = { 3, 4 };
+	int[] bgLayers;
+	int[] fgLayers;
 
 	ShapeRenderer sRender = new ShapeRenderer();
 
 	RectangleMapObject[] gameObjects;
-
-	MapObjects mObjs = new MapObjects();
 
 	Rectangle[] collsionRect;
 
@@ -101,7 +101,7 @@ public class PlayWorld implements Screen {
 	private boolean collision() {
 		for (int x = 0; x < amount; x++) {
 			if (collsionRect[x].overlaps(user)) {
-//				Gdx.app.log(ChromeGame.LOG, "Overlap");
+				// Gdx.app.log(ChromeGame.LOG, "Overlap");
 				xD = 0;
 				yD = 0;
 				return true;
@@ -132,31 +132,69 @@ public class PlayWorld implements Screen {
 
 	@Override
 	public void show() {
-		map = new TmxMapLoader().load("maps/Exitium.tmx");
+
+		map = new TmxMapLoader().load("maps/" + MAP_NAME + ".tmx");
+
+		importMap();
 
 		renderer = new OrthogonalTiledMapRenderer(map);
-
 		camera = new OrthographicCamera();
 		camera.position.set(507, 525, 0);
 		Gdx.input.setInputProcessor(new InputHandler(this, camera));
 
 		batch = new SpriteBatch();
 
-		mObjs = map.getLayers().get("Collision").getObjects();
+		MapObjects mCollisions = map.getLayers().get("Collision").getObjects();
 
-		gameObjects = new RectangleMapObject[mObjs.getCount()];
-		collsionRect = new Rectangle[mObjs.getCount()];
+		gameObjects = new RectangleMapObject[mCollisions.getCount()];
+		collsionRect = new Rectangle[mCollisions.getCount()];
 
-		amount = mObjs.getCount();
+		amount = mCollisions.getCount();
 
 		player.setPosition(450, 500);
 
-		for (int x = 0; x < mObjs.getCount(); x++) {
-			gameObjects[x] = (RectangleMapObject) mObjs.get(x);
+		for (int x = 0; x < mCollisions.getCount(); x++) {
+			gameObjects[x] = (RectangleMapObject) mCollisions.get(x);
 			collsionRect[x] = gameObjects[x].getRectangle();
 		}
 		changePlayerDirection(1);
 
+	}
+
+	public void importMap() {
+		int index = 0;
+		int layerNum = map.getLayers().getCount() - 2;
+		Gdx.app.log(ChromeGame.LOG, "Layer Num: " + layerNum);
+
+		for (int x = 0; x < layerNum; x++) {
+			if (map.getLayers().get(x).getName()
+					.equalsIgnoreCase("playerLayer")) {
+				index = x;
+			}
+		}
+		bgLayers = new int[index];
+		Gdx.app.log(ChromeGame.LOG, "BG layers:" + bgLayers.length);
+		for (int x = 0; x < index; x++) {
+			bgLayers[x] = x;
+		}
+
+		fgLayers = new int[layerNum - (index + 1)];
+		Gdx.app.log(ChromeGame.LOG, "FG layers:" + fgLayers.length);
+		for (int x = index - 1; x < fgLayers.length; x++) {
+			fgLayers[x] = layerNum - x - 1;
+		}
+
+		Gdx.app.log(ChromeGame.LOG, "");
+
+		Gdx.app.log(ChromeGame.LOG, "Foreground Layers:" + fgLayers.length);
+		for (int x = 0; x < fgLayers.length; x++) {
+			Gdx.app.log(ChromeGame.LOG, "FG[" + x + "]:" + fgLayers[x]);
+		}
+
+		Gdx.app.log(ChromeGame.LOG, "Background Layers:" + bgLayers.length);
+		for (int x = 0; x < bgLayers.length; x++) {
+			Gdx.app.log(ChromeGame.LOG, "BG[" + x + "]:" + bgLayers[x]);
+		}
 	}
 
 	public void changePlayerDirection(int d) {

@@ -10,7 +10,7 @@
  </layer>
  <layer name="Path" width="45" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2XOwvCMBSF01oHta2bOqrgYNG/5H/3PfgefA96BAtqU3oTkyA2F76lnNx8iOVQxtRPDdRBQ8NuXWOd5aYjQJ+9O/cEz6saHwQCRE/nruC5UKFz/LvpRuV/6dXZBa0MPImsTmfKXpF3UHQ3dXh7hw5jIzAGEzAFMzB3ks6UrAnnBe5bghVYgw3Ygh3HmZI14bzHfQdwBCdwBhdw5ThTsiacb7jv8ZI5wAUF4IGim3SmZE04l3BfGVSADwIQgirHmZLV6fzZE1HKM1423sHL6nSmMpA4YzvlPzqFkv81Z9uDtgfTnG0Pmu3Bb7+tfqkHZci7c5Nld7AK2gqd7eRz7hXduFAYFQAA
+   H4sIAAAAAAAAC+2XwU4CMRRFOwNIVAZwoy7FhIVEfol/V0AWAsICUFjgMXESgRJeZ9pCsC85m8nt6wlhcjNK2Z9buIN7B7tdTXDONk0D2mrT+dnwvK2pQGJA69f5yfBc1aJz+ru5xuZ/6a9zDI0DFDNkXTpL9pq8g6a7paPb+xIp9Qpd6EEf3mAQ7TpLsj6c37lvCCMYwwdMYKpxlmR9OM+4bw4L+IQvWMJK4yzJ+nBec9/PSxZBDAUoQinedZZkfThfct8VXEMFEqhCTeMsybp03u6J1p5numy6Q5d16Sylk+FM6JTz6BRJ/tScQw+GHtznHHrQbw/m/bY6pR7Mwn93flCHO9gGjxaddVOCixyUHfvppgb1HNz4Vz6q8zdeWgF9GBUAAA==
   </data>
  </layer>
  <layer name="PlayerLayer" width="45" height="30">
@@ -20,7 +20,7 @@
  </layer>
  <layer name="Fence" width="45" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3ROwqAMBBF0TRqqS7Cys/+l2fqgYmQTG4Q3oVX2EwOmFJst/m+gu/36I9m2wgz/ab9TzXJ/J3MTDIzycwkM5PMTDIzycwkM5PMTDIzRZkPZ0/lzbNwM8LsNeXNDVs62rzWvK1hO08ean4BtzAPGBgVAAA=
+   H4sIAAAAAAAAC+3RMQrAIBAFUS+TSpP7H89+QQXZTJDMAwub74Cl5LrDvSXvv+HE5uiLZvrN+E87bF6zmWEzw2aGzQybGTYzbGbYzLCZYTMjq/kanGdzs042M5r1Xx38t7Y1GBUAAA==
   </data>
  </layer>
  <layer name="Trees" width="45" height="30">
