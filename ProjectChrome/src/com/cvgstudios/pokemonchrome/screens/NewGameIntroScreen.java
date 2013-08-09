@@ -22,7 +22,7 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 
 	private Sprite optionBox;
 
-	private int counter = 0;
+	private int counter = 36;
 	private int len;
 
 	BitmapFont font = new BitmapFont();

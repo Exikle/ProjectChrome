@@ -3,8 +3,8 @@ package com.cvgstudios.pokemonchrome;
 import java.io.File;
 
 import com.badlogic.gdx.Game;
+import com.cvgstudios.pokemonchrome.game.PlayWorld;
 import com.cvgstudios.pokemonchrome.javascript.JSExecutor;
-import com.cvgstudios.pokemonchrome.screens.MainMenu;
 
 public class ChromeGame extends Game {
 	public static final String POKECHROME_VERSION = "0.0.0.03 Pre-Alpha";
@@ -16,7 +16,7 @@ public class ChromeGame extends Game {
 		JSExecutor.initializeExecutor(new File("res/javascript")
 				.getAbsolutePath());
 
-		setScreen(new MainMenu(this));
+		setScreen(new PlayWorld(this));
 	}
 
 	@Override
