@@ -35,8 +35,8 @@ public class PlayWorld implements Screen {
 
 	int amount;
 
-	int[] bgLayers = { 0, 1, 2 };
-	int[] fgLayers = { 3 };
+	int[] bgLayers = { 0, 1 };
+	int[] fgLayers = { 3, 4 };
 
 	ShapeRenderer sRender = new ShapeRenderer();
 
@@ -101,7 +101,7 @@ public class PlayWorld implements Screen {
 	private boolean collision() {
 		for (int x = 0; x < amount; x++) {
 			if (collsionRect[x].overlaps(user)) {
-				Gdx.app.log(ChromeGame.LOG, "Overlap");
+//				Gdx.app.log(ChromeGame.LOG, "Overlap");
 				xD = 0;
 				yD = 0;
 				return true;
@@ -132,7 +132,7 @@ public class PlayWorld implements Screen {
 
 	@Override
 	public void show() {
-		map = new TmxMapLoader().load("maps/Route1.tmx");
+		map = new TmxMapLoader().load("maps/Exitium.tmx");
 
 		renderer = new OrthogonalTiledMapRenderer(map);
 

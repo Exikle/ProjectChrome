@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="45" height="30" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="ChromeTiles" tilewidth="32" tileheight="32">
+  <image source="MapTileSheet.png" width="320" height="2625"/>
+ </tileset>
+ <layer name="Ground" width="45" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3OIQEAAAgDsJOC/k1JgEMgJuZXSQoAABb94AAAANcGPVr/lhgVAAA=
+  </data>
+ </layer>
+ <layer name="Path" width="45" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2XOwvCMBSF01oHta2bOqrgYNG/5H/3PfgefA96BAtqU3oTkyA2F76lnNx8iOVQxtRPDdRBQ8NuXWOd5aYjQJ+9O/cEz6saHwQCRE/nruC5UKFz/LvpRuV/6dXZBa0MPImsTmfKXpF3UHQ3dXh7hw5jIzAGEzAFMzB3ks6UrAnnBe5bghVYgw3Ygh3HmZI14bzHfQdwBCdwBhdw5ThTsiacb7jv8ZI5wAUF4IGim3SmZE04l3BfGVSADwIQgirHmZLV6fzZE1HKM1423sHL6nSmMpA4YzvlPzqFkv81Z9uDtgfTnG0Pmu3Bb7+tfqkHZci7c5Nld7AK2gqd7eRz7hXduFAYFQAA
+  </data>
+ </layer>
+ <layer name="PlayerLayer" width="45" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BAQEAAACCIP+vbkhAAQAAAAB8GRy7eecYFQAA
+  </data>
+ </layer>
+ <layer name="Fence" width="45" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3ROwqAMBBF0TRqqS7Cys/+l2fqgYmQTG4Q3oVX2EwOmFJst/m+gu/36I9m2wgz/ab9TzXJ/J3MTDIzycwkM5PMTDIzycwkM5PMTDIzRZkPZ0/lzbNwM8LsNeXNDVs62rzWvK1hO08ean4BtzAPGBgVAAA=
+  </data>
+ </layer>
+ <layer name="Trees" width="45" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2WOw7CQAxENwfiAkAZKIGCAij4lEAJOSa/UPC/C0OBtIqSYLNrVx7pSVPYWUs78iZ1znVAF6QVfgbmYEH0vri9VTP4vgf6YFDjl2AF1kTvi9tLmWcExmBS4zdgCzKCbxRm5vRmxHkod6GpWNnQVKxsaEoyG7vEuT04gCM4gRyck7BayWxccN4V3MAdPMATvErm4NRaNnRke0NHlg2ehn/2WTZ0JJkNqXdQMhtS76BlQ0e2N3Rk2dCRZaNc3P+KX/WxstEELdAu+I+mzJm/9VXfjJUNicyEnEu5C4l9EnIu5S4k9knIuW+DsdaQGBUAAA==
+  </data>
+ </layer>
+ <objectgroup name="Collision" width="45" height="30">
+  <object x="272" y="97" width="14" height="765"/>
+  <object x="286" y="849" width="200" height="13"/>
+  <object x="518" y="843" width="18" height="18"/>
+  <object x="902" y="843" width="20" height="18"/>
+  <object x="951" y="847" width="209" height="16"/>
+  <object x="1149" y="96" width="11" height="764"/>
+  <object x="284" y="96" width="364" height="6"/>
+  <object x="800" y="98" width="358" height="8"/>
+  <object x="790" y="0" width="9" height="106"/>
+  <object x="641" y="2" width="6" height="99"/>
+  <object x="799" y="258" width="195" height="105"/>
+  <object x="919" y="364" width="75" height="19"/>
+  <object x="797" y="363" width="77" height="21"/>
+  <object x="452" y="254" width="190" height="109"/>
+  <object x="448" y="362" width="75" height="19"/>
+  <object x="568" y="364" width="74" height="18"/>
+  <object x="449" y="576" width="193" height="104"/>
+  <object x="567" y="683" width="76" height="21"/>
+  <object x="450" y="680" width="71" height="23"/>
+  <object x="800" y="575" width="195" height="110"/>
+  <object x="920" y="683" width="74" height="19"/>
+  <object x="799" y="685" width="73" height="19"/>
+  <object x="474" y="874" width="487" height="17"/>
+  <object x="713" y="448" width="15" height="7"/>
+ </objectgroup>
+ <objectgroup name="Interaction" width="45" height="30"/>
+</map>
