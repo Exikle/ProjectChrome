@@ -8,11 +8,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
@@ -26,31 +24,28 @@ public class PlayWorld implements Screen {
 	private TiledMap map;
 	private OrthogonalTiledMapRenderer renderer;
 	private OrthographicCamera camera;
-	TiledMapTileLayer layer;
 	private SpriteBatch batch;
 
-	Sprite player = new Sprite(new Texture("imgs/Up.png"));
+	private String MAP_NAME = "Exitium";
 
-	float xD = 0, yD = 0;
+	private Sprite player = new Sprite(new Texture("imgs/Up.png"));
 
-	int amount;
+	private float xD = 0, yD = 0;
 
-	int[] bgLayers = { 0, 1 };
-	int[] fgLayers = { 3, 4 };
+	private int amount;
 
-	ShapeRenderer sRender = new ShapeRenderer();
+	private int[] bgLayers;
+	private int[] fgLayers;
 
-	RectangleMapObject[] gameObjects;
+	private RectangleMapObject[] gameObjects;
 
-	MapObjects mObjs = new MapObjects();
+	private Rectangle[] collsionRect;
 
-	Rectangle[] collsionRect;
-
-	Rectangle user = new Rectangle(Gdx.graphics.getWidth() / 2,
+	private Rectangle user = new Rectangle(Gdx.graphics.getWidth() / 2,
 			Gdx.graphics.getHeight() / 2, player.getWidth(), player.getHeight());
-
-	Texture p = new Texture("imgs/MalePlayer.png");
-	TextureRegion playerR = new TextureRegion(p);
+	
+	private TextureRegion playerR = new TextureRegion(new Texture(
+			"imgs/MalePlayer.png"));
 
 	public PlayWorld(ChromeGame game) {
 		this.game = game;
@@ -69,7 +64,6 @@ public class PlayWorld implements Screen {
 		batch.setProjectionMatrix(camera.combined);
 
 		renderer.setView(camera);
-		sRender.setProjectionMatrix(camera.combined);
 
 		renderer.render(bgLayers);
 
@@ -101,7 +95,7 @@ public class PlayWorld implements Screen {
 	private boolean collision() {
 		for (int x = 0; x < amount; x++) {
 			if (collsionRect[x].overlaps(user)) {
-//				Gdx.app.log(ChromeGame.LOG, "Overlap");
+				// Gdx.app.log(ChromeGame.LOG, "Overlap");
 				xD = 0;
 				yD = 0;
 				return true;
@@ -132,31 +126,54 @@ public class PlayWorld implements Screen {
 
 	@Override
 	public void show() {
-		map = new TmxMapLoader().load("maps/Exitium.tmx");
+
+		map = new TmxMapLoader().load("maps/" + MAP_NAME + ".tmx");
+
+		importMap();
 
 		renderer = new OrthogonalTiledMapRenderer(map);
 
 		camera = new OrthographicCamera();
 		camera.position.set(507, 525, 0);
+		player.setPosition(450, 500);
 		Gdx.input.setInputProcessor(new InputHandler(this, camera));
 
 		batch = new SpriteBatch();
 
-		mObjs = map.getLayers().get("Collision").getObjects();
+		MapObjects mCollisions = map.getLayers().get("Collision").getObjects();
 
-		gameObjects = new RectangleMapObject[mObjs.getCount()];
-		collsionRect = new Rectangle[mObjs.getCount()];
+		gameObjects = new RectangleMapObject[mCollisions.getCount()];
+		collsionRect = new Rectangle[mCollisions.getCount()];
 
-		amount = mObjs.getCount();
+		amount = mCollisions.getCount();
 
-		player.setPosition(450, 500);
-
-		for (int x = 0; x < mObjs.getCount(); x++) {
-			gameObjects[x] = (RectangleMapObject) mObjs.get(x);
+		for (int x = 0; x < mCollisions.getCount(); x++) {
+			gameObjects[x] = (RectangleMapObject) mCollisions.get(x);
 			collsionRect[x] = gameObjects[x].getRectangle();
 		}
 		changePlayerDirection(1);
 
+	}
+
+	public void importMap() {
+		int index = 0;
+		int layerNum = map.getLayers().getCount() - 2;
+
+		for (int x = 0; x < layerNum; x++) {
+			if (map.getLayers().get(x).getName()
+					.equalsIgnoreCase("playerLayer")) {
+				index = x;
+			}
+		}
+		bgLayers = new int[index];
+		for (int x = 0; x < index; x++) {
+			bgLayers[x] = x;
+		}
+
+		fgLayers = new int[layerNum - (index + 1)];
+		for (int x = 0; x < fgLayers.length; x++) {
+			fgLayers[x] = layerNum - x - 1;
+		}
 	}
 
 	public void changePlayerDirection(int d) {

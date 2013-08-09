@@ -49,7 +49,6 @@ public class JSPokemonHandler {
 	public void set_action_disallowed(String actioncodename) {
 		handledPokemon.setActionAvailability(actioncodename, false);
 	}
-
 	public int get_hp() {
 		return handledPokemon.getHP();
 	}
