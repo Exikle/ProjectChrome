@@ -29,7 +29,7 @@ public class PlayWorld implements Screen {
 	TiledMapTileLayer layer;
 	private SpriteBatch batch;
 
-	private String MAP_NAME = "Route1";
+	private String MAP_NAME = "Exitium";
 
 	Sprite player = new Sprite(new Texture("imgs/Up.png"));
 
