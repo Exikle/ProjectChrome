@@ -49,7 +49,6 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 		this.game = game;
 		// m.play();
 		m.setLooping(true);
-		Gdx.input.setInputProcessor(this);
 		script = NGScript.importScript();
 		len = script.length - 1;
 		getLines();
@@ -139,8 +138,8 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 				}
 
 				if (script[counter].contains("(OPTION)")) {
-					optionsVisible = true;
 					script[counter] = script[counter].replace("(OPTION)", "");
+					optionsVisible = true;
 				}
 
 				getLines();

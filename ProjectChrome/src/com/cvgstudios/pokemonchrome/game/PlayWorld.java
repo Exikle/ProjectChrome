@@ -1,6 +1,8 @@
 package com.cvgstudios.pokemonchrome.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputAdapter;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -32,20 +34,23 @@ public class PlayWorld implements Screen {
 
 	private float xD = 0, yD = 0;
 
-	private int amount;
+	private int collisionAmount;
 
 	private int[] bgLayers;
 	private int[] fgLayers;
 
-	private RectangleMapObject[] gameObjects;
-
 	private Rectangle[] collsionRect;
+	private Rectangle[] interactRect;
 
-	private Rectangle user = new Rectangle(Gdx.graphics.getWidth() / 2,
+	private RectangleMapObject[] interactObject;
+
+	public Rectangle user = new Rectangle(Gdx.graphics.getWidth() / 2,
 			Gdx.graphics.getHeight() / 2, player.getWidth(), player.getHeight());
-	
+
 	private TextureRegion playerR = new TextureRegion(new Texture(
 			"imgs/MalePlayer.png"));
+
+	private int interactionAmount;
 
 	public PlayWorld(ChromeGame game) {
 		this.game = game;
@@ -93,9 +98,9 @@ public class PlayWorld implements Screen {
 	}
 
 	private boolean collision() {
-		for (int x = 0; x < amount; x++) {
+		for (int x = 0; x < collisionAmount; x++) {
 			if (collsionRect[x].overlaps(user)) {
-				// Gdx.app.log(ChromeGame.LOG, "Overlap");
+				// Gdx.app.log(ChromeGame.LOG, "Collide");
 				xD = 0;
 				yD = 0;
 				return true;
@@ -127,9 +132,7 @@ public class PlayWorld implements Screen {
 	@Override
 	public void show() {
 
-		map = new TmxMapLoader().load("maps/" + MAP_NAME + ".tmx");
-
-		importMap();
+		importMap(MAP_NAME);
 
 		renderer = new OrthogonalTiledMapRenderer(map);
 
@@ -140,22 +143,63 @@ public class PlayWorld implements Screen {
 
 		batch = new SpriteBatch();
 
-		MapObjects mCollisions = map.getLayers().get("Collision").getObjects();
+		createCollisions();
+		createInteractions();
 
-		gameObjects = new RectangleMapObject[mCollisions.getCount()];
-		collsionRect = new Rectangle[mCollisions.getCount()];
-
-		amount = mCollisions.getCount();
-
-		for (int x = 0; x < mCollisions.getCount(); x++) {
-			gameObjects[x] = (RectangleMapObject) mCollisions.get(x);
-			collsionRect[x] = gameObjects[x].getRectangle();
-		}
 		changePlayerDirection(1);
 
 	}
 
-	public void importMap() {
+	public void checkPlayerInteraction() {
+		for (int x = 0; x < interactionAmount; x++) {
+			if (interactRect[x].overlaps(user)) {
+				Gdx.app.log(ChromeGame.LOG, interactObject[x].getName());
+				checkIfAction(interactObject[x].getName());
+			}
+		}
+	}
+
+	private void checkIfAction(String s) {
+		if (s.contains("(CHANGEMAP)")) {
+			String[] fields;
+			fields = s.split(":");
+			importMap(fields[1]);
+		}
+	}
+
+	private void createInteractions() {
+		MapObjects mInteractions = map.getLayers().get("Interaction")
+				.getObjects();
+
+		interactionAmount = mInteractions.getCount();
+		interactObject = new RectangleMapObject[interactionAmount];
+
+		interactRect = new Rectangle[interactionAmount];
+
+		for (int x = 0; x < interactionAmount; x++) {
+			interactObject[x] = (RectangleMapObject) mInteractions.get(x);
+			interactRect[x] = interactObject[x].getRectangle();
+		}
+
+	}
+
+	private void createCollisions() {
+		MapObjects mCollisions = map.getLayers().get("Collision").getObjects();
+
+		RectangleMapObject gameObject = new RectangleMapObject();
+		collsionRect = new Rectangle[mCollisions.getCount()];
+
+		collisionAmount = mCollisions.getCount();
+
+		for (int x = 0; x < mCollisions.getCount(); x++) {
+			gameObject = (RectangleMapObject) mCollisions.get(x);
+			collsionRect[x] = gameObject.getRectangle();
+		}
+	}
+
+	public void importMap(String m) {
+		map = new TmxMapLoader().load("maps/" + m + ".tmx");
+
 		int index = 0;
 		int layerNum = map.getLayers().getCount() - 2;
 
