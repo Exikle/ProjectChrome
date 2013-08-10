@@ -29,8 +29,6 @@ public class MainMenu implements Screen, InputProcessor {
 
 	public MainMenu(ChromeGame game) {
 		this.game = game;
-
-		Gdx.input.setInputProcessor(this);
 	}
 
 	@Override
@@ -137,6 +135,8 @@ public class MainMenu implements Screen, InputProcessor {
 
 	@Override
 	public void show() {
+
+		Gdx.input.setInputProcessor(this);
 		bg = new Sprite(new Texture("imgs/MainMenuBG.png"));
 
 		button = new Texture("imgs/menubutton.png");

@@ -65,17 +65,20 @@ public class InputHandler implements InputProcessor {
 				final Direction dir = MOVE_KEYS.get(keycode);
 				if (dir.getXis().equals("HORIZONTAL")) {
 					playScreen.setXD(dir.getSpeed());
+					keyNotDown = false;
 
 				} else if (dir.getXis().equals("VERTICAL")) {
 					playScreen.setYD(dir.getSpeed());
+					keyNotDown = false;
 				}
 
 				playScreen.changePlayerDirection(dir.getDirection());
 
-				keyNotDown = false;
+			}else{
+				
 			}
 		}
-		return false;
+		return true;
 	}
 
 	@Override
