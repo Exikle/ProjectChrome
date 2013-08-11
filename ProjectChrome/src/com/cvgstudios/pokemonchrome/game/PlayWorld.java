@@ -1,8 +1,6 @@
 package com.cvgstudios.pokemonchrome.game;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.InputAdapter;
-import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -134,17 +132,12 @@ public class PlayWorld implements Screen {
 
 		importMap(MAP_NAME);
 
-		renderer = new OrthogonalTiledMapRenderer(map);
-
 		camera = new OrthographicCamera();
 		camera.position.set(507, 525, 0);
 		player.setPosition(450, 500);
 		Gdx.input.setInputProcessor(new InputHandler(this, camera));
 
 		batch = new SpriteBatch();
-
-		createCollisions();
-		createInteractions();
 
 		changePlayerDirection(1);
 
@@ -218,6 +211,10 @@ public class PlayWorld implements Screen {
 		for (int x = 0; x < fgLayers.length; x++) {
 			fgLayers[x] = layerNum - x - 1;
 		}
+		renderer = new OrthogonalTiledMapRenderer(map);
+		
+		createCollisions();
+		createInteractions();
 	}
 
 	public void changePlayerDirection(int d) {

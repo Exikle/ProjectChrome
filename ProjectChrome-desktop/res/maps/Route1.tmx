@@ -31,5 +31,5 @@
   <object x="865" y="1533" width="9" height="69"/>
   <object x="865" y="1527" width="297" height="8"/>
  </objectgroup>
- <objectgroup name="Interactable" width="40" height="50"/>
+ <objectgroup name="Interaction" width="40" height="50"/>
 </map>
