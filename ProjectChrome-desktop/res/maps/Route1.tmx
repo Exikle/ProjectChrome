@@ -8,14 +8,14 @@
    H4sIAAAAAAAAC+3DAQ0AAAzDoM6/6Qs5JKyaqqqqqqqqqj5/r8CI0kAfAAA=
   </data>
  </layer>
- <layer name="PlayerLayer" width="40" height="50">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BAQEAAACAkP6v7ggKAAAAAAAAABhk6EtKQB8AAA==
-  </data>
- </layer>
  <layer name="Path" width="40" height="50">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAC+2XzU/CMBiHi3hAvg6AwAE9acLFRKOJnsgIFxL//39CRTj4yUH9NXFJrWx7S9/SAn2yJ9mh255sXbMJsd+MCWMe4CN8gjP4DOdw4bArhdL3Al/hG3yHH/ATLh12pVD6vuC33ClhgwewDA9LbtsklL4KOo5gFdZgHTZgM5C+FjrasAOPYRf2YN9Bn+y5UbzPGJfAuxWewXNFDsqKlPslGWnHpV4wNWVdx7aPm9hnx1TQ3gdJAq9/lcdNHPTYMPIdUEBofYn4++xD6Fs1513Of1N89CXwlqiPvorBWB99LYOxse8/u9RnQlXw9Of11RRN6QievgE8IToU9Pedq0+naI5R50Ps286+tue+S3hVoM8+rvUw9tHIWrtD6csi9tkR++zYlz59fQitTyf0PpPv1TxPHfVx4OqfhgvuvnX+f/JQ+7jPzUHoz5f6jW1LHTYINjfUo9OFPYL9He37AYHm2GZAHwAA
+  </data>
+ </layer>
+ <layer name="PlayerLayer" width="40" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BAQEAAACAkP6v7ggKAAAAAAAAABhk6EtKQB8AAA==
   </data>
  </layer>
  <layer name="Tree" width="40" height="50">

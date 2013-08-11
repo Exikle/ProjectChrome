@@ -208,11 +208,14 @@ public class PlayWorld implements Screen {
 		}
 
 		fgLayers = new int[layerNum - (index + 1)];
+		int topLayerStart = index + 1;
+
 		for (int x = 0; x < fgLayers.length; x++) {
-			fgLayers[x] = layerNum - x - 1;
+			fgLayers[x] = x + topLayerStart;
+			Gdx.app.log(ChromeGame.LOG, fgLayers[x] + "");
 		}
 		renderer = new OrthogonalTiledMapRenderer(map);
-		
+
 		createCollisions();
 		createInteractions();
 	}
