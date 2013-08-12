@@ -13,6 +13,14 @@ public class JSPokemonHandler {
 	public JSPokemonHandler() {
 
 	}
+	
+	public void set_action_allowed(String actioncodename) {
+		handledPokemon.setActionAvailability(actioncodename, true);
+	}
+
+	public void set_action_disallowed(String actioncodename) {
+		handledPokemon.setActionAvailability(actioncodename, false);
+	}
 
 	public void set_type(String type) {
 		handledPokemon.setType(type);
@@ -42,16 +50,44 @@ public class JSPokemonHandler {
 		handledPokemon.setIvSpeed(speed);
 	}
 
-	public void set_action_allowed(String actioncodename) {
-		handledPokemon.setActionAvailability(actioncodename, true);
-	}
 
-	public void set_action_disallowed(String actioncodename) {
-		handledPokemon.setActionAvailability(actioncodename, false);
-	}
-	
-	public int get_hp() {
+
+	public int get_hp(){
 		return handledPokemon.getHP();
 	}
+	public int get_max_hp(){
+		return handledPokemon.getHPMax();
+	}
+	public int get_battle_attack(){
+		return handledPokemon.getBattleAttack();
+	}
+	public int get_battle_defense(){
+		return handledPokemon.getBattleDefense();
+	}
+	public int get_battle_sp_attack(){
+		return handledPokemon.getBattleSpAttack();
+	}
+	public int get_battle_sp_defense(){
+		return handledPokemon.getBattleSpDefense();
+	}
+	public int get_battle_speed(){
+		return handledPokemon.getBattleSpeed();
+	}
+	public int get_normal_attack(){
+		return handledPokemon.getPokeAttack();
+	}
+	public int get_normal_defense(){
+		return handledPokemon.getPokeDefense();
+	}
+	public int get_normal_sp_attack(){
+		return handledPokemon.getPokeSpAttack();
+	}
+	public int get_normal_sp_defense(){
+		return handledPokemon.getPokeSpDefense();
+	}
+	public int get_normal_speed(){
+		return handledPokemon.getPokeSpeed();
+	}
+	
 
 }

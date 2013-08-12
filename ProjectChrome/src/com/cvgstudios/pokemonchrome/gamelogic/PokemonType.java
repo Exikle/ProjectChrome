@@ -7,6 +7,8 @@ import java.util.Vector;
 
 import javax.imageio.ImageIO;
 
+import com.badlogic.gdx.graphics.Texture;
+
 /**
  * A class that describes a "type" of pokemon. So, a class that describes
  * Charizards in general, or Kirbys in general.
@@ -35,6 +37,9 @@ public class PokemonType {
 
 	protected Image frontImage;
 	protected Image backImage;
+	
+	protected Texture frontTexture;
+	protected Texture backTexture;
 
 	public PokemonType(String basePokemonName) {
 		baseName = basePokemonName;
@@ -52,6 +57,13 @@ public class PokemonType {
 
 	public Image getBackImage() {
 		return backImage;
+	}
+	
+	public Texture getFrontTexture(){
+		return frontTexture;
+	}
+	public Texture getBackTexture(){
+		return backTexture;
 	}
 
 	public Vector<String> getActions() {
@@ -92,6 +104,16 @@ public class PokemonType {
 		} finally {
 			System.out.println();
 		}
+	}
+	
+	public void setFrontTexture(String filepath) {
+		System.out.print("Loading " + filepath);
+		frontTexture = new Texture(filepath);
+	}
+
+	public void setBackTexture(String filepath) {
+		System.out.print("Loading " + filepath);
+		backTexture = new Texture(filepath);
 	}
 
 	public void setHP(int hp) {

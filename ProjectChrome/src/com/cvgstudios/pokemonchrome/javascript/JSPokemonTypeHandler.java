@@ -49,10 +49,12 @@ public class JSPokemonTypeHandler {
 
 	public void register_image_front(String imagepath) {
 		pokemonType.setFrontImage(imagepath);
+		pokemonType.setFrontTexture(imagepath);
 	}
 
 	public void register_image_back(String imagepath) {
 		pokemonType.setBackImage(imagepath);
+		pokemonType.setBackTexture(imagepath);
 	}
 
 	public void register_action(String actionname, String actionTrueName) {

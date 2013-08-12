@@ -7,6 +7,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.cvgstudios.pokemonchrome.gamelogic.PokemonCreature;
@@ -27,6 +28,15 @@ public class BattleScreen implements Screen, InputProcessor{
 	int selectedActionIndex;
 
 	BattleState battleState;
+	
+	
+	Texture battleBackgroundTexture;
+	
+	Texture playerPokemonTexture;
+	Texture enemyPokemonTexture;
+	
+	Texture playerCharacter;
+	Texture enemyCharacter;
 
 	public BattleScreen(){
 		super();
@@ -53,8 +63,9 @@ public class BattleScreen implements Screen, InputProcessor{
 			}
 		}
 		
+		
+		
 		battleState = BattleState.PLAYER_CHOOSING_ACTION;
-
 
 	}
 

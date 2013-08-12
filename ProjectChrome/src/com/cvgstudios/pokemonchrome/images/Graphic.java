@@ -6,6 +6,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import com.badlogic.gdx.graphics.Texture;
+
 /**
  * Method to import Images.
  * 
@@ -14,7 +16,7 @@ import javax.imageio.ImageIO;
  *            must be an operation that has registered itself with the object
  * @return imported Images that are imported
  */
-public enum Images implements ImgPathConstants{
+public enum Graphic implements ImgPathConstants{
 
 	StartMenuLogo("res/imgs/TitleScreen.png"),
 
@@ -34,29 +36,37 @@ public enum Images implements ImgPathConstants{
 
 	private String filePath;
 	private Image image;
-	private boolean imageLoaded;
+	private Texture texture;
+	private boolean graphicLoaded;
 
-	private Images(String imagePath) {
+	private Graphic(String imagePath) {
 		filePath = imagePath;
-		imageLoaded = false;
+		graphicLoaded = false;
 
 	}
 
 	public Image getImage() {
-		if (!imageLoaded) {
-			loadImage();
+		if (!graphicLoaded) {
+			loadGraphic();
 		}
 		return image;
 
 	}
+	
+	public Texture getTexture(){
+		if (!graphicLoaded){
+			loadGraphic();
+		}
+		return texture;
+	}
 
-	public void loadImage() {
+	public void loadGraphic() {
 		try {
 			image = ImageIO.read(new File(filePath));
 		} catch (IOException e) {
 			System.err.println("Failed to load image!");
 			e.printStackTrace();
 		}
-		imageLoaded = true;
+		graphicLoaded = true;
 	}
 }
