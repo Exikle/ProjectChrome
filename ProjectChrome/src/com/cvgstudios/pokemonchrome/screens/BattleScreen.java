@@ -45,7 +45,7 @@ public class BattleScreen implements Screen, InputProcessor{
 		batch = new SpriteBatch();
 		guiFont = new BitmapFont();
 		//Something about setting up the fonts, perhaps?
-
+		battleBackgroundTexture = new Texture("res/imgs/GrassTile.png");
 
 	}
 
@@ -54,7 +54,9 @@ public class BattleScreen implements Screen, InputProcessor{
 		playerPokemon = pokemon;
 		actionList = new Vector<String>();
 		actionNameList = new Vector<String>();
-
+		
+		playerPokemonTexture = playerPokemon.getType().getFrontTexture();
+		
 		for (int i = 0; i < pokemon.getType().getActions().size(); i ++){
 			System.out.println("YO YO YO THIS IS A NEW ACTION BRO");
 			if (pokemon.getActionAvailability(i)){
@@ -70,7 +72,12 @@ public class BattleScreen implements Screen, InputProcessor{
 	}
 
 	public void setEnemyPokemon(PokemonCreature pokemon){
+		battleState = BattleState.LOADING;
+		
 		enemyPokemon = pokemon;
+		enemyPokemonTexture = enemyPokemon.getType().getFrontTexture();
+		
+		battleState = BattleState.PLAYER_CHOOSING_ACTION;
 	}
 
 	public void render(float delta) {
@@ -87,6 +94,7 @@ public class BattleScreen implements Screen, InputProcessor{
 		}
 		case PLAYER_CHOOSING_ACTION:{
 			guiFont.draw(batch, actionNameList.get(selectedActionIndex), 100, 100);
+			batch.draw(battleBackgroundTexture, 32, 96);
 			break;
 		}
 		default:{
