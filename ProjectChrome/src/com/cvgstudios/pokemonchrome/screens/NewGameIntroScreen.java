@@ -22,7 +22,7 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 
 	private Sprite optionBox;
 
-	private int counter = 36;
+	private int counter = 0;
 	private int len;
 
 	BitmapFont font = new BitmapFont();
@@ -47,7 +47,8 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 
 	public NewGameIntroScreen(ChromeGame game) {
 		this.game = game;
-		// m.play();
+		Gdx.input.setInputProcessor(this);
+		 m.play();
 		m.setLooping(true);
 		script = NGScript.importScript();
 		len = script.length - 1;

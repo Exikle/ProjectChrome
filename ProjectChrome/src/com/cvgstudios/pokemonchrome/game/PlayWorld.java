@@ -50,6 +50,8 @@ public class PlayWorld implements Screen {
 
 	private int interactionAmount;
 
+	private int step = 0;
+
 	public PlayWorld(ChromeGame game) {
 		this.game = game;
 		Gdx.input.setInputProcessor(new InputHandler(this, camera));
@@ -84,6 +86,12 @@ public class PlayWorld implements Screen {
 
 		player.translate(xD, yD);
 
+		// Gdx.app.log(ChromeGame.LOG, step + "");
+		if (step == 1) {
+			step = 2;
+		} else
+			step = 1;
+		
 		user = new Rectangle(player.getX(), player.getY(), player.getWidth(),
 				player.getHeight());
 		if (collision()) {
@@ -93,7 +101,8 @@ public class PlayWorld implements Screen {
 		checkPlayerInteraction();
 
 		camera.position.set(player.getX(), player.getY(), 0);
-//		Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
+		// Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
+
 	}
 
 	private boolean collision() {
@@ -110,6 +119,7 @@ public class PlayWorld implements Screen {
 
 	public void setXD(float x) {
 		this.xD = x;
+		step = 1;
 	}
 
 	public void setYD(float y) {
@@ -162,8 +172,8 @@ public class PlayWorld implements Screen {
 
 			Vector2 playerPos = new Vector2(x, y);
 			importMap(fields[1], playerPos);
-		}else{
-			
+		} else {
+
 		}
 	}
 
@@ -232,16 +242,16 @@ public class PlayWorld implements Screen {
 	public void changePlayerDirection(int d) {
 		switch (d) {
 		case 1:// down
-			playerR.setRegion(0, 0, 37, 42);
+			playerR.setRegion(0, 0 + (step * 42), 37, 42);
 			break;
 		case 2:// up
-			playerR.setRegion(37, 0, 37, 42);
+			playerR.setRegion(37, 0 + (step * 42), 37, 42);
 			break;
 		case 3:// right
-			playerR.setRegion(74, 0, 37, 42);
+			playerR.setRegion(74, 0 + (step * 42), 37, 42);
 			break;
 		case 4:// left
-			playerR.setRegion(111, 0, 37, 42);
+			playerR.setRegion(111, 0 + (step * 42), 37, 42);
 			break;
 		}
 		player.setRegion(playerR);
