@@ -1,38 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="60" height="50" tilewidth="32" tileheight="32">
- <tileset firstgid="1" name="MapTileSheet" tilewidth="32" tileheight="32">
-  <image source="MapTileSheet.png" width="320" height="2625"/>
+ <tileset firstgid="1" name="Route2TileSheet" tilewidth="32" tileheight="32">
+  <image source="Route2TileSheet.png" width="320" height="960"/>
  </tileset>
- <layer name="Ground" width="60" height="50">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3PsREAMAjEsGcEuuw/KWvARYV6u5LU596CBgAAAABu6wUNfv36BQAAAAAArhun+2wc4C4AAA==
+ <layer name="Terrain 1" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt10sKgDAMQMF4Cnv/k3oCQVJLP5nFW1oyKRS8IuKSpGRtgRl4eSt6W6LdvZn98O5Rxtt7Bi8vLy8vLy/vyd4/9sN7TrO9Pf+tmbl5eXnHekd+u7O32v3y8p7qrfZe8fKe5H0768v5u3p7ZuCNuIt5q90vL+9K3pk75B3vXTHe+TPx/tcD/DIlgQ==
   </data>
  </layer>
- <layer name="Tile Layer 4" width="60" height="50">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2YMQ6CMBhG/8FNZdBEHZHNE3gidVRH9QDqqhe2TSSp0AIpbf9Sv5e8ARzsC4VCiYi2Dh0Ck5bfZ0FGEQ+p964qx+jVsxPuO3hwM0xn2PYehacOnt0M0xnoJVoIl4o60Ite9PKDXvTqQG86vbpm9KbTqyOV3jml3WvC1CnJKL3eJuScQK+73rvwoRw/+wy2gXVFEyGv70v4Npy3pUujSkH/NZ8lqfbK/eqpYvY977N3rDEU1bW4XK99X1/0hiGG3pBw9HK1Sjh7OeCez9Xv0rbvmL5wz2f08vRehNcO3iz+U71/Y+n1SUy9G/p9vyx1SUy9fdC9FzdJNOxeG2LpbRpHKH08S3Kq73uMImgN9eyU6Pbj0Yte9KIXvfy9OdXXKA4Lz50gbj79DnnL4C4AAA==
+ <layer name="Fence 2" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztmb0vBEEYh6clQUG4K/HHoKVTaVDuVgSNzxIlOh8lSpQoUaI8dChROonfic2Ozdzszu47Hzf2lzzJm+zmMk/mfSezOcbsZwbMZqSRLbANdiQ1RUZArwZUfffAPjiQ1D75HoIjcCypqXwDDbjczxUNuNzPLvia7GcXfMt+NtfPc2BegQUCX5v9vAJWFVgj8LXZzzZ8bfazDd+yn8t+9snXtX4OOXT4noMLcCmpffK9AtfgRlKb9mUafW/BHbiX1CZ9dc9vDTyAR0ntk+8zeAGvkton3zfwDj4ktS7fdQu+n6AOviS1Lt9Q0ZnCt0hGFRhr4qviTH2fbOSJ86kzujtlcp15Zpn6PpkM5Z3SFV/ZvZHyTumK7wk4BWeCNUbPxj3yDbg1dYDOX7oEz4tkEkw1YdqgLx94TkS/g3qXSPUnQyz+DyQQrNu0byjwDRldXPNlAl9CXed9qwXcRDPvii+/NpFv0fMqmglXfPlQ7a8orvkmz6sqi/fGR18m8KVM6fuXxjfSRgqbBL46zivRHKT55qVV99e0r67zKuoP13yZwJcy/91XRh/nU015txXOqzSSvrJ3F8FSRpYTazK1v1l8o/2rsPibnBp+Lqh8RedVFt8oVHOeBoVvG2jP6WvKk9K3G/Tk8O0HA4YZJPDlM6zgaxuq2PYo6vsNnQy0MA==
   </data>
  </layer>
  <layer name="Tile Layer 2" width="60" height="50">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2aOy8EURiGz7pGsCzZtaiUtnIplELrf2hplVqUqNxKq3QpJPhPKJF4T+zEcXw7c+bcZ7Jf8mQmc7NP8piMsavM7qxpsA4mwGQKNXAADsGRwfomGAPjAlXCQz7GJlVF32NwAk4N1rlvA8wINAlf+RibNBV9L8AluDJY1/XtAwsGDGj42upZx5c6ZpvY1m3E66n6huyZH7MDdiVc+obsuZuvqrOOr8+e5Qnh67NnVV/Vib3nGHxj7Nmlb+w9v4I38G7JN/aeP8An+LLkG3vPgxXGhsBwxY5v7D2nTRF73vPsG7rnOuHs0jd0z3XC2aVv6J7r7L+zS19XPauwyP6+o8g7MfWsg2vfpMd9lt5r1v6i+F6DNvtpst25RrLthtjPt9ns2bfvLbgD952lPPJ+vlTtWefdlGvfJ/AMXoRlQzif2q97f14CyxmsOPatdc47A+fgQfJ9lJz56D5vTIF+AWpGPPlS12hKn4+zwfSfN1R8R/PpevHV7bmovi579u3L/7/TYr/PPlXCtyw9i67i857oXJaeKVfKuSw9NzKum/wul6XnPL5l6DmPb69nu755KHrP8mR9h0G8x/KfNwvmUpjX8HXVs+nfkirvj5IJ3bOpa4Lqd1taOXxd9CyeJ25TGfk8W+Pj/qwzLlz52O6ZIqax3XNRfG31XBTfXs/l9u31XG5flz3HhknP0xF8/rxsMbrnb1cn6UDgLgAA
+  <data encoding="base64" compression="zlib">
+   eJztmrlOw0AURR8NWxWWCiiBHwFKEA1C4ksoI34CKCElUFOyF+wFewGUQAn8AKeIxShyzDgaa+zHu9KRXkbWxFeWjsZKlkTq0yISi3nJl2XP6+ZgD/bhwJlZr+f8yqjJ0/cUzuDcmTX3vYFbuHNmzX2f4QVenVlz3zd4hw9n1tz3E77g25k19zU/6+5rftbd1/ysu6/5uZi+3dADvaE3lnL6uQYDMBh6Yymnn0dgFMZCbyzl9PM4TMBk6I3F/Nwu5ufqnp9XYQ3WM2ZN5+cN2IRGxqzp/LwF27CTMWs6P6d5yP28K3r9fAhHcAwnzrpWP1/AJVzBtbOuyc+z8vv7xD08wCM8wVRzXZOffZLHz33QH+j+QqeI8/MQDAe6v9D5q2/yrLT6uTXJs9Lq53bR5GefmJ+re372iabzs0/+i5+TmJ/Nz1WI+Tk95mfzc6zkuYEVz+ti+Dnme3QMP8d8j+7Uz11NqpZO/Vzlvhr87JsQfl6UYv7vHWKPmRYW6JXm5x/OnFjg
   </data>
  </layer>
- <layer name="PlayerLayer" width="60" height="50">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAA4G+ekqdq4C4AAA==
+ <layer name="Red Trees 4" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt1bEOAUEURuGtRClK8WwoUbIlSpQol4d1NqG77WSSO+dLTvaWW0zyd117JrSmDa2Ce1rrxwqZ0Y72tA3ueb1fK2JBR+rpENzLer9WxPiez3ShU3BnfM83utM1uDO+5ye96BHc2d7z6E0fGoI7G/fIPcrEPXKPsnGP3KMs3CP3KJOW9mj4fVvaI0mSJEmSJEmSJOnvC9SfSsY=
   </data>
  </layer>
- <layer name="Tile Layer 5" width="60" height="50">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3RsQ0AIAwDwSyREWH/EaCMaGgRuZNeHsARQEdjN0sA8KIsdZDH/q7bvwAAAAAAAAAA3C01shtL4C4AAA==
-  </data>
- </layer>
- <layer name="Tile Layer 3" width="60" height="50">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3WPUtCUQCHcb9Twh1td1LQhgJ11EZrNEdrTAd7AbU3qHwDi+rj9QwNLpLI8R6F5wfPdjn873I4mYwkSdL+KlGZjmIPSUmFqlSLvCMtdWrQaewhKWnSGZ3HHiJJkrSGAbXogtrUpxu6pTu6//tmSKM4E4Pr0CVd0QM90hM90wu90hu9b3B2gYphZgZzTV3q0ZgmNKUZzWlBH/S5wdnHdBJmZjDZpXL0Rd/0Q4d0sFQSZ6Kkf+ziXbpNu3iXSpIkaft890qSpFWSPSy/4l9+AWhufgPgLgAA
-  </data>
- </layer>
- <objectgroup name="Collision" width="60" height="50"/>
- <objectgroup name="Interaction" width="60" height="50"/>
+ <objectgroup name="Collision" width="60" height="50">
+  <object x="355" y="896" width="16" height="704"/>
+  <object x="354" y="1576" width="717" height="28"/>
+  <object x="512" y="274" width="6" height="410"/>
+  <object x="534" y="254" width="373" height="6"/>
+  <object x="921" y="272" height="1"/>
+  <object x="923" y="276" width="5" height="915"/>
+  <object x="608" y="767" width="6" height="426"/>
+  <object x="639" y="1208" width="265" height="6"/>
+  <object x="512" y="679">
+   <polyline points="0,0 12,15 29,20 36,37 46,45 60,53 70,69 82,82 97,84 101,93"/>
+  </object>
+  <object x="610" y="1189">
+   <polyline points="0,0 7,12 15,18 30,23"/>
+  </object>
+  <object x="904" y="1212">
+   <polyline points="0,0 11,-8 17,-13 22,-24"/>
+  </object>
+  <object x="515" y="274">
+   <polyline points="0,0 9,-9 18,-17"/>
+  </object>
+  <object x="906" y="258">
+   <polyline points="0,0 9,7 16,17 18,22"/>
+  </object>
+  <object x="10" y="2" width="9" height="1601"/>
+  <object x="386" y="1" width="691" height="25"/>
+  <object x="1056" y="2" width="26" height="1404"/>
+  <object x="1060" y="1388" width="379" height="17"/>
+  <object x="368" y="8" width="16" height="759"/>
+  <object x="12" y="749" width="363" height="17"/>
+  <object x="1748" y="845" width="12" height="753"/>
+  <object x="1436" y="837" width="97" height="25"/>
+  <object x="1671" y="837" width="85" height="24"/>
+  <object x="1664" y="943" width="64" height="47"/>
+  <object x="739" y="1424" width="63" height="48"/>
+  <object x="160" y="911" width="64" height="49"/>
+  <object x="1420" y="835" width="16" height="572"/>
+ </objectgroup>
 </map>
