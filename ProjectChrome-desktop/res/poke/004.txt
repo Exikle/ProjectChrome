@@ -1,3 +1,0 @@
-NAME:Embite
-ID:004
-TYPE:fire

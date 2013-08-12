@@ -28,7 +28,7 @@ public class PlayWorld implements Screen {
 
 	private String MAP_NAME = "Exitium";
 
-	private Sprite player = new Sprite(new Texture("imgs/Up.png"));
+	private Sprite player = new Sprite();
 
 	private float xD = 0, yD = 0;
 
@@ -91,7 +91,7 @@ public class PlayWorld implements Screen {
 			step = 2;
 		} else
 			step = 1;
-		
+
 		user = new Rectangle(player.getX(), player.getY(), player.getWidth(),
 				player.getHeight());
 		if (collision()) {

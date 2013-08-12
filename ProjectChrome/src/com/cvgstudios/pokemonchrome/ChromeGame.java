@@ -18,15 +18,16 @@ public class ChromeGame extends Game {
 
 		JSExecutor.initializeExecutor(new File("res/javascript").getAbsolutePath());
 
-		// setScreen(new PlayWorld(this));
+		 setScreen(new PlayWorld(this));
 		
-		if (true) { // So you can easily set it to if(false) without having to
+		
+		
+		if (false) { // So you can easily set it to if(false) without having to
 					// comment out the entire thing
 			BattleScreen tempScreen = new BattleScreen();
 			tempScreen.setPlayerPokemon(PokemonCreature.makePokemon(PokemonType.getPokemon("tykepol")));
 			setScreen(tempScreen);
 		}
-		
 		
 		
 	}

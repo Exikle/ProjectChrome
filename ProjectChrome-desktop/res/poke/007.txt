@@ -1,3 +1,0 @@
-NAME:Cosmet
-ID:007
-TYPE:water
