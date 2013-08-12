@@ -90,9 +90,10 @@ public class PlayWorld implements Screen {
 			Gdx.app.log(ChromeGame.LOG, "");
 			player.setPosition(oPos.x, oPos.y);
 		}
+		checkPlayerInteraction();
 
 		camera.position.set(player.getX(), player.getY(), 0);
-		// Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
+//		Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
 	}
 
 	private boolean collision() {
@@ -130,11 +131,10 @@ public class PlayWorld implements Screen {
 	@Override
 	public void show() {
 
-		importMap(MAP_NAME);
+		importMap(MAP_NAME, new Vector2(450, 500));
 
 		camera = new OrthographicCamera();
 		camera.position.set(507, 525, 0);
-		player.setPosition(450, 500);
 		Gdx.input.setInputProcessor(new InputHandler(this, camera));
 
 		batch = new SpriteBatch();
@@ -156,7 +156,14 @@ public class PlayWorld implements Screen {
 		if (s.contains("(CHANGEMAP)")) {
 			String[] fields;
 			fields = s.split(":");
-			importMap(fields[1]);
+			String[] pos = (fields[2].split(","));
+			float x = Integer.parseInt(pos[0]);
+			float y = Integer.parseInt(pos[1]);
+
+			Vector2 playerPos = new Vector2(x, y);
+			importMap(fields[1], playerPos);
+		}else{
+			
 		}
 	}
 
@@ -190,7 +197,7 @@ public class PlayWorld implements Screen {
 		}
 	}
 
-	public void importMap(String m) {
+	public void importMap(String m, Vector2 pos) {
 		map = new TmxMapLoader().load("maps/" + m + ".tmx");
 
 		int index = 0;
@@ -218,6 +225,8 @@ public class PlayWorld implements Screen {
 
 		createCollisions();
 		createInteractions();
+
+		player.setPosition(pos.x, pos.y);
 	}
 
 	public void changePlayerDirection(int d) {
