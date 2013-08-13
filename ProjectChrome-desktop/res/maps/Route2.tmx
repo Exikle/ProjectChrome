@@ -18,7 +18,12 @@
    eJztmrlOw0AURR8NWxWWCiiBHwFKEA1C4ksoI34CKCElUFOyF+wFewGUQAn8AKeIxShyzDgaa+zHu9KRXkbWxFeWjsZKlkTq0yISi3nJl2XP6+ZgD/bhwJlZr+f8yqjJ0/cUzuDcmTX3vYFbuHNmzX2f4QVenVlz3zd4hw9n1tz3E77g25k19zU/6+5rftbd1/ysu6/5uZi+3dADvaE3lnL6uQYDMBh6Yymnn0dgFMZCbyzl9PM4TMBk6I3F/Nwu5ufqnp9XYQ3WM2ZN5+cN2IRGxqzp/LwF27CTMWs6P6d5yP28K3r9fAhHcAwnzrpWP1/AJVzBtbOuyc+z8vv7xD08wCM8wVRzXZOffZLHz33QH+j+QqeI8/MQDAe6v9D5q2/yrLT6uTXJs9Lq53bR5GefmJ+re372iabzs0/+i5+TmJ/Nz1WI+Tk95mfzc6zkuYEVz+ti+Dnme3QMP8d8j+7Uz11NqpZO/Vzlvhr87JsQfl6UYv7vHWKPmRYW6JXm5x/OnFjg
   </data>
  </layer>
- <layer name="Red Trees 4" width="60" height="50">
+ <layer name="PlayerLayer" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAOBvLuAAAQ==
+  </data>
+ </layer>
+ <layer name="Red Trees 4" width="60" height="50" visible="0">
   <data encoding="base64" compression="zlib">
    eJzt1bEOAUEURuGtRClK8WwoUbIlSpQol4d1NqG77WSSO+dLTvaWW0zyd117JrSmDa2Ce1rrxwqZ0Y72tA3ueb1fK2JBR+rpENzLer9WxPiez3ShU3BnfM83utM1uDO+5ye96BHc2d7z6E0fGoI7G/fIPcrEPXKPsnGP3KMs3CP3KJOW9mj4fVvaI0mSJEmSJEmSJOnvC9SfSsY=
   </data>
@@ -32,21 +37,6 @@
   <object x="923" y="276" width="5" height="915"/>
   <object x="608" y="767" width="6" height="426"/>
   <object x="639" y="1208" width="265" height="6"/>
-  <object x="512" y="679">
-   <polyline points="0,0 12,15 29,20 36,37 46,45 60,53 70,69 82,82 97,84 101,93"/>
-  </object>
-  <object x="610" y="1189">
-   <polyline points="0,0 7,12 15,18 30,23"/>
-  </object>
-  <object x="904" y="1212">
-   <polyline points="0,0 11,-8 17,-13 22,-24"/>
-  </object>
-  <object x="515" y="274">
-   <polyline points="0,0 9,-9 18,-17"/>
-  </object>
-  <object x="906" y="258">
-   <polyline points="0,0 9,7 16,17 18,22"/>
-  </object>
   <object x="10" y="2" width="9" height="1601"/>
   <object x="386" y="1" width="691" height="25"/>
   <object x="1056" y="2" width="26" height="1404"/>
@@ -61,4 +51,5 @@
   <object x="160" y="911" width="64" height="49"/>
   <object x="1420" y="835" width="16" height="572"/>
  </objectgroup>
+ <objectgroup name="Interaction" width="60" height="50"/>
 </map>
