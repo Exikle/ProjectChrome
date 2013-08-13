@@ -13,11 +13,11 @@ public class ChromeGame extends Game {
 	public static final String POKECHROME_VERSION = "0.0.0.04 Pre-Alpha";
 	public static final String LOG = "Pokemon Chrome";
 
+	@SuppressWarnings("unused")
 	@Override
 	public void create() {
 
-		if (false) { // So you can easily set it to if(false) without having to
-						// comment out the entire thing
+		if (false) {
 			JSExecutor.initializeExecutor(new File("res/javascript")
 					.getAbsolutePath());
 			BattleScreen tempScreen = new BattleScreen();

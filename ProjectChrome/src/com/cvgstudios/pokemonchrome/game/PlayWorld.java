@@ -19,6 +19,7 @@ import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.InputHandler;
 
 public class PlayWorld implements Screen {
+	@SuppressWarnings("unused")
 	private ChromeGame game;
 
 	private TiledMap map;
@@ -26,7 +27,7 @@ public class PlayWorld implements Screen {
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
 
-	private String MAP_NAME = "Exitium";
+	private String MAP_NAME = "Route2";
 
 	private Sprite player = new Sprite();
 
