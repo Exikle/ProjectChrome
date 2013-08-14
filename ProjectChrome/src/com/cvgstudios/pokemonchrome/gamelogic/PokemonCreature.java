@@ -7,7 +7,6 @@ import com.cvgstudios.pokemonchrome.javascript.JSExecutor;
 public class PokemonCreature {
 
 	protected PokemonType theBaseType;
-	protected String type;
 
 	protected String givenName;
 
@@ -87,13 +86,49 @@ public class PokemonCreature {
 		ivSpeed = speed;
 	}
 
-	public void setType(String theType) {
-		type = theType;
-	}
-
 	public PokemonType getType() {
 		return theBaseType;
 	}
+	
+	public void setHP(int hp){
+		currentHP = hp;
+	}
+	
+	public void setMaxHP(int hp){
+		currentHPMax = hp;
+	}
+	
+	public void setBattleAttack(int attack){
+		battleAttack = attack;
+	}
+	public void setBattleDefense(int defense){
+		battleDefense = defense;
+	}
+	public void setBattleSpAttack(int spAttack){
+		battleSpAttack = spAttack;
+	}
+	public void setBattleSpDefense(int spDefense){
+		battleSpDefense = spDefense;
+	}
+	public void setBattleSpeed(int speed){
+		battleSpeed = speed;
+	}
+	public void setPokemonAttack(int attack){
+		pokeAttack = attack;
+	}
+	public void setPokemonDefense(int defense){
+		pokeDefense = defense;
+	}
+	public void setPokemonSpAttack(int spAttack){
+		pokeSpAttack = spAttack;
+	}
+	public void setPokemonSpDefense(int spDefense){
+		pokeSpDefense = spDefense;
+	}
+	public void setPokemonSpeed(int speed){
+		pokeSpeed = speed;
+	}
+	
 
 	public boolean getActionAvailability(int actionIndex) {
 		return actionsAvailable.get(actionIndex);

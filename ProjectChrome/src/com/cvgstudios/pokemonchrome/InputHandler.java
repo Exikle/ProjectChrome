@@ -20,6 +20,11 @@ public class InputHandler implements InputProcessor {
 	}
 
 	private static final Map<Integer, Direction> MOVE_KEYS = new HashMap<Integer, Direction>() {
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = -136331640107565190L;
+
 		{
 			this.put(Keys.RIGHT, Direction.RIGHT);
 			this.put(Keys.LEFT, Direction.LEFT);

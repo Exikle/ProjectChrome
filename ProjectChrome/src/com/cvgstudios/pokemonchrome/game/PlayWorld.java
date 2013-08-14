@@ -19,6 +19,7 @@ import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.InputHandler;
 
 public class PlayWorld implements Screen {
+	@SuppressWarnings("unused")
 	private ChromeGame game;
 
 	private TiledMap map;
@@ -26,9 +27,9 @@ public class PlayWorld implements Screen {
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
 
-	private String MAP_NAME = "Exitium";
+	private String MAP_NAME = "Route2";
 
-	private Sprite player = new Sprite(new Texture("imgs/Up.png"));
+	private Sprite player = new Sprite();
 
 	private float xD = 0, yD = 0;
 
@@ -50,6 +51,16 @@ public class PlayWorld implements Screen {
 
 	private int interactionAmount;
 
+	private int counter = 0;
+
+	private int step;
+
+	private int direction;
+
+	private boolean keyDown = false;
+
+	private final int STEP_DELAY = 15;
+
 	public PlayWorld(ChromeGame game) {
 		this.game = game;
 		Gdx.input.setInputProcessor(new InputHandler(this, camera));
@@ -62,7 +73,9 @@ public class PlayWorld implements Screen {
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
 		moveUser();
-
+		if (keyDown) {
+			changeUserSteps();
+		}
 		camera.update();
 		batch.setProjectionMatrix(camera.combined);
 
@@ -79,10 +92,26 @@ public class PlayWorld implements Screen {
 
 	}
 
+	private void changeUserSteps() {
+		counter++;
+		if (counter == STEP_DELAY) {
+			counter = 0;
+			if (step == 1) {
+				step = 2;
+			} else {
+				step = 1;
+			}
+			changePlayerDirection(direction);
+			Gdx.app.log(ChromeGame.LOG, "Step " + step);
+		}
+	}
+
 	private void moveUser() {
 		Vector2 oPos = new Vector2(player.getX(), player.getY());
 
 		player.translate(xD, yD);
+
+		// Gdx.app.log(ChromeGame.LOG, step + "");
 
 		user = new Rectangle(player.getX(), player.getY(), player.getWidth(),
 				player.getHeight());
@@ -93,7 +122,8 @@ public class PlayWorld implements Screen {
 		checkPlayerInteraction();
 
 		camera.position.set(player.getX(), player.getY(), 0);
-//		Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
+		// Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
+
 	}
 
 	private boolean collision() {
@@ -110,15 +140,21 @@ public class PlayWorld implements Screen {
 
 	public void setXD(float x) {
 		this.xD = x;
+		keyDown = true;
 	}
 
 	public void setYD(float y) {
 		this.yD = y;
+		keyDown = true;
 	}
 
 	public void resetCameraDirection() {
 		yD = 0;
 		xD = 0;
+		keyDown = false;
+		step = 0;
+		changePlayerDirection(direction);
+
 	}
 
 	@Override
@@ -162,8 +198,8 @@ public class PlayWorld implements Screen {
 
 			Vector2 playerPos = new Vector2(x, y);
 			importMap(fields[1], playerPos);
-		}else{
-			
+		} else {
+
 		}
 	}
 
@@ -230,18 +266,23 @@ public class PlayWorld implements Screen {
 	}
 
 	public void changePlayerDirection(int d) {
+		direction = d;
 		switch (d) {
 		case 1:// down
-			playerR.setRegion(0, 0, 37, 42);
+			playerR.setRegion(0, 0 + (step * 42), 37, 42);
+			// playerR.setRegion(0, 0, 37, 42);
 			break;
 		case 2:// up
-			playerR.setRegion(37, 0, 37, 42);
+			playerR.setRegion(37, 0 + (step * 42), 37, 42);
+			// playerR.setRegion(37, 0, 37, 42);
 			break;
 		case 3:// right
-			playerR.setRegion(74, 0, 37, 42);
+				// playerR.setRegion(74, 0, 37, 42);
+			playerR.setRegion(74, 0 + (step * 42), 37, 42);
 			break;
 		case 4:// left
-			playerR.setRegion(111, 0, 37, 42);
+			playerR.setRegion(111, 0 + (step * 42), 37, 42);
+			// playerR.setRegion(111, 0, 37, 42);
 			break;
 		}
 		player.setRegion(playerR);

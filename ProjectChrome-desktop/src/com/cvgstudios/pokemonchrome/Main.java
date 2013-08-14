@@ -19,6 +19,7 @@ public class Main {
 		cfg.height = HEIGHT;
 		cfg.resizable = false;
 		
+//		Display
 		new LwjglApplication(new ChromeGame(), cfg);
 		
 	}
