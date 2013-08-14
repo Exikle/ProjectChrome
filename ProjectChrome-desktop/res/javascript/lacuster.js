@@ -4,8 +4,8 @@
 pokemon.register_pokemon("lacuster");
 
 //Sets lacuster's images
-lacuster.register_image_front("PokemonChrome/Pictures/Sprites/Pokemon/lacuster.png");
-lacuster.register_image_back("PokemonChrome/Pictures/Sprites/PokemonB/lacusterB.png");
+lacuster.register_image_front(PATH.POKEMON_SPRITES_PATH + "/Cosmet.png"); //Temporary
+lacuster.register_image_back(PATH.POKEMON_SPRITES_PATH + "/CosmetB.png"); //Temporary until Lacuster.png is found
 
 //Sets lacuster's stats
 //Using torchic stats //???

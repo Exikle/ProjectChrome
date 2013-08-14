@@ -10,10 +10,16 @@ import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.gamelogic.PokemonCreature;
+import com.cvgstudios.pokemonchrome.images.Graphic;
 
 public class BattleScreen implements Screen, InputProcessor{
 
+	public static final int HUD_BAR_HEIGHT = 100;
+	public static final float PLAYER_POKEMON_Y_BACKGROUND_PERCENT_POSITION= 0.12f; //ten percent background height from the guibar
+	public static final float PLAYER_POKEMON_X_PERCENT_POSITION = 0.20f; //twenty percent screen width from the left
+	
 	BitmapFont guiFont;
 	SpriteBatch batch;
 	
@@ -31,6 +37,9 @@ public class BattleScreen implements Screen, InputProcessor{
 	
 	
 	Texture battleBackgroundTexture;
+	Texture statBarPlayer;
+	Texture statBarEnemy;
+	Texture hudBar;
 	
 	Texture playerPokemonTexture;
 	Texture enemyPokemonTexture;
@@ -45,8 +54,10 @@ public class BattleScreen implements Screen, InputProcessor{
 		batch = new SpriteBatch();
 		guiFont = new BitmapFont();
 		//Something about setting up the fonts, perhaps?
-		battleBackgroundTexture = new Texture("res/imgs/GrassTile.png");
-
+		battleBackgroundTexture = Graphic.GrassBattleSetting.getTexture();
+		statBarPlayer = Graphic.PlayerPokemonStatBar.getTexture();
+		statBarEnemy = Graphic.EnemyPokemonStatBar.getTexture();
+		hudBar = Graphic.BattleScreenMenu.getTexture();
 	}
 
 	public void setPlayerPokemon(PokemonCreature pokemon){
@@ -55,7 +66,7 @@ public class BattleScreen implements Screen, InputProcessor{
 		actionList = new Vector<String>();
 		actionNameList = new Vector<String>();
 		
-		playerPokemonTexture = playerPokemon.getType().getFrontTexture();
+		playerPokemonTexture = playerPokemon.getType().getBackTexture();
 		
 		for (int i = 0; i < pokemon.getType().getActions().size(); i ++){
 			System.out.println("YO YO YO THIS IS A NEW ACTION BRO");
@@ -81,6 +92,9 @@ public class BattleScreen implements Screen, InputProcessor{
 	}
 
 	public void render(float delta) {
+		int displayWidth = ChromeGame.display.getDisplayWidth();
+		int displayHeight = ChromeGame.display.getDisplayHeight();
+		
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 		batch.begin();
@@ -94,7 +108,12 @@ public class BattleScreen implements Screen, InputProcessor{
 		}
 		case PLAYER_CHOOSING_ACTION:{
 			guiFont.draw(batch, actionNameList.get(selectedActionIndex), 100, 100);
-			batch.draw(battleBackgroundTexture, 32, 96);
+			//Draws battle background
+			batch.draw(battleBackgroundTexture, 0, HUD_BAR_HEIGHT, displayWidth, displayHeight - HUD_BAR_HEIGHT);
+			//Draws choice menu
+			batch.draw(hudBar, 0, 0, displayWidth, HUD_BAR_HEIGHT);
+			
+			batch.draw(playerPokemonTexture , (displayWidth * PLAYER_POKEMON_X_PERCENT_POSITION) , (HUD_BAR_HEIGHT + PLAYER_POKEMON_Y_BACKGROUND_PERCENT_POSITION * (displayHeight - HUD_BAR_HEIGHT)));
 			break;
 		}
 		default:{
@@ -150,7 +169,7 @@ public class BattleScreen implements Screen, InputProcessor{
 			}
 			case(Keys.UP):{
 
-				selectedActionIndex = (selectedActionIndex -= 1) < 0 ? actionNameList.size() - 1 : selectedActionIndex; 
+				selectedActionIndex = (selectedActionIndex - 1) < 0 ? actionNameList.size() - 1 : selectedActionIndex; 
 				System.out.println(actionNameList.get(selectedActionIndex));
 
 			}

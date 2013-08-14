@@ -10,19 +10,20 @@ import com.cvgstudios.pokemonchrome.javascript.JSExecutor;
 import com.cvgstudios.pokemonchrome.screens.BattleScreen;
 
 public class ChromeGame extends Game {
+
 	public static final String POKECHROME_VERSION = "0.0.0.04 Pre-Alpha";
 	public static final String LOG = "Pokemon Chrome";
+
+	public static DisplayInterface display;
 
 	@SuppressWarnings("unused")
 	@Override
 	public void create() {
 
-		if (false) {
-			JSExecutor.initializeExecutor(new File("res/javascript")
-					.getAbsolutePath());
+		if (true) {
+			JSExecutor.initializeExecutor(new File("res/javascript").getAbsolutePath());
 			BattleScreen tempScreen = new BattleScreen();
-			tempScreen.setPlayerPokemon(PokemonCreature.makePokemon(PokemonType
-					.getPokemon("tykepol")));
+			tempScreen.setPlayerPokemon(PokemonCreature.makePokemon(PokemonType.getPokemon("tykepol")));
 			setScreen(tempScreen);
 		} else {
 			setScreen(new PlayWorld(this));
