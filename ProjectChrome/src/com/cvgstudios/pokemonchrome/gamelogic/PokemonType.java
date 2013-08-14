@@ -26,6 +26,8 @@ public class PokemonType {
 	protected String baseName;
 	protected String typeName;
 
+	protected String[] types;
+	
 	protected int typeID;
 	
 	protected int baseHP;
@@ -77,9 +79,23 @@ public class PokemonType {
 	public void setTypeName(String name) {
 		typeName = name;
 	}
+	
+	public void setTypes(String[] type){
+		types = type;
+	}
 
 	public String getTypeName() {
 		return typeName;
+	}
+	
+	public boolean hasType(String type){
+		for (String t : types){
+			if (t.equalsIgnoreCase(type)){
+				return true;
+			}
+			
+		}
+		return false;
 	}
 
 	public void setFrontImage(String filepath) {

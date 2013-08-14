@@ -16,6 +16,8 @@ tykepol.set_base_sp_attack(70);
 tykepol.set_base_sp_defense(50);
 tykepol.set_base_speed(45);
 
+tykepol.set_types("grass420xxxblazer" , "fightabro");
+
 tykepol.register_action("tackle" , "Tackle");
 tykepol.register_action("tailwhip" , "Tail Whip");
 tykepol.register_action("supertyke" , "Super Tyke");
@@ -23,7 +25,6 @@ tykepol.register_action("supertyke" , "Super Tyke");
 //Hmm... maybe there should be a better way to do this sort of thing...
 //Sets what happens on an tykepol's creation.
 function tykepol_on_spawn(){
-	THIS.set_type("Grass (Blazer 420xxx)");
 	THIS.set_action_allowed("tackle");
 	THIS.set_action_allowed("tailwhip");
 	set_iv_stats();

@@ -18,6 +18,10 @@ public class JSPokemonTypeHandler {
 	public void set_type_name(String name) {
 		pokemonType.setTypeName(name);
 	}
+	
+	public void set_types(String... types){
+		pokemonType.setTypes(types);
+	}
 
 	public void set_base_hp(int hp) {
 		pokemonType.setHP(hp);
