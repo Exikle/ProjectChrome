@@ -23,4 +23,7 @@
    eJztmLEOAiEQRPl0tFRLtdLTUi3VD3SuNSTsyLK7Z3jJJFNxxb2wwJRSuiBXZFpQvyF35LGw/kReyHthPcp/H57E7j3+o4SInkiI6IkEC09mTsiZ6BJq67R64kWrJ15oeOLB8MSWVk8yskLWwl6DXa/UJZ5skC2yE/Ya7HqlLvFkjxyQo7DXYNcrda/zCTtnvrvX+aQE8x2v80kJ5jtenpQYnvy/Jzm1zyZmDS03NGaT9tyxmk3ac2eGve/8eieSzqCo51iN/cQDjf3Eg+GJLRqe5NR+P9HuPWaKRe8xUyx6lHd41sko7/Csk1He4VknI7gxPInvyQfZs50v
   </data>
  </layer>
+ <objectgroup name="Collision" width="46" height="42"/>
+ <objectgroup name="Interaction" width="46" height="42"/>
+ <objectgroup name="Player" width="46" height="42"/>
 </map>
