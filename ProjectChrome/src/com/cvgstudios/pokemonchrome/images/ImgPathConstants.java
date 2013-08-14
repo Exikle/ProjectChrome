@@ -11,7 +11,7 @@ public abstract interface ImgPathConstants {
 	static final String MAP_PATH = PIC_FOLDER + "/Maps";
 
 	static final String PLAYER_SPRITE_PATH = SPRITES_PATH + "/Player";
-	static final String POKEMON_SPRITES_PATH = SPRITES_PATH + "/Pokemon";
+	static final String POKEMON_SPRITES_PATH = PIC_FOLDER + "/pokemon";
 	static final String POKEMONB_SPRITES_PATH = SPRITES_PATH + "/PokemonB";
 	static final String STUCTURES_SPRITES_PATH = SPRITES_PATH + "/Structures";
 	static final String MISC_SPRITES_PATH = SPRITES_PATH + "/Misc";
@@ -31,7 +31,7 @@ public abstract interface ImgPathConstants {
 
 	static final String START_BATTLE_PATH = BATTLE_SPRITES_PATH
 			+ "/BattleStart";
-	static final String MENU_BATTLE_PATH = BATTLE_SPRITES_PATH + "/BattleMenu";
+	static final String MENU_BATTLE_PATH = PIC_FOLDER + "/battlemenu";
 	static final String SPRITE_ATTACK_PATH = BATTLE_SPRITES_PATH + "/Attacks";
 
 }

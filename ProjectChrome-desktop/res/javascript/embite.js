@@ -3,8 +3,8 @@
 pokemon.register_pokemon("embite");
 
 //Sets embite's images
-embite.register_image_front("PokemonChrome/Pictures/Sprites/Pokemon/Embite.png");
-embite.register_image_back("PokemonChrome/Pictures/Sprites/PokemonB/EmbiteB.png");
+embite.register_image_front(PATH.POKEMON_SPRITES_PATH + "/Embite.png");
+embite.register_image_back(PATH.POKEMON_SPRITES_PATH + "/EmbiteB.png");
 
 //Sets embite's stats
 //Using torchic stats //???

@@ -4,7 +4,7 @@ pokemon.register_pokemon("tykepol");
 
 //Sets tykepol's images
 tykepol.register_image_front(PATH.POKEMON_SPRITES_PATH + "/Tykepol.png");
-tykepol.register_image_back(PATH.POKEMONB_SPRITES_PATH + "/TykepolB.png");
+tykepol.register_image_back(PATH.POKEMON_SPRITES_PATH + "/TykepolB.png");
 
 //Sets tykepol's stats
 //??? Unfinished. These stats are tykepol stats
