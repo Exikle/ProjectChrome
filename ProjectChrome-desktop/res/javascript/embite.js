@@ -16,13 +16,15 @@ embite.set_base_sp_attack(70);
 embite.set_base_sp_defense(50);
 embite.set_base_speed(45);
 
+embite.set_types("Fire",  "xXx_blazer_prosniper_XL_xXx");
+
 embite.register_action("tackle" , "Tackle");
 embite.register_action("growl" , "Growl");
 
 //Hmm... maybe there should be a better way to do this sort of thing...
 //Sets what happens on an embite's creation.
 function embite_on_spawn(){
-	THIS.set_type("Fire");
+
 	THIS.set_action_allowed("tackle");
 	THIS.set_action_allowed("growl");
 	set_iv_stats();

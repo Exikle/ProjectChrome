@@ -24,6 +24,7 @@ public class ChromeGame extends Game {
 			JSExecutor.initializeExecutor(new File("res/javascript").getAbsolutePath());
 			BattleScreen tempScreen = new BattleScreen();
 			tempScreen.setPlayerPokemon(PokemonCreature.makePokemon(PokemonType.getPokemon("tykepol")));
+			tempScreen.setEnemyPokemon(PokemonCreature.makePokemon(PokemonType.getPokemon("embite")));
 			setScreen(tempScreen);
 		} else {
 			setScreen(new PlayWorld(this));

@@ -17,8 +17,11 @@ import com.cvgstudios.pokemonchrome.images.Graphic;
 public class BattleScreen implements Screen, InputProcessor{
 
 	public static final int HUD_BAR_HEIGHT = 100;
-	public static final float PLAYER_POKEMON_Y_BACKGROUND_PERCENT_POSITION= 0.12f; //ten percent background height from the guibar
+	public static final float PLAYER_POKEMON_Y_BACKGROUND_PERCENT_POSITION= 0.12f; //twelve percent background height from the guibar
 	public static final float PLAYER_POKEMON_X_PERCENT_POSITION = 0.20f; //twenty percent screen width from the left
+	
+	public static final float ENEMY_POKEMON_Y_BACKGROUND_PERCENT_POSITION = 0.46f;
+	public static final float ENEMY_POKEMON_X_PERCENT_POSITION = 0.68f;
 	
 	BitmapFont guiFont;
 	SpriteBatch batch;
@@ -69,7 +72,6 @@ public class BattleScreen implements Screen, InputProcessor{
 		playerPokemonTexture = playerPokemon.getType().getBackTexture();
 		
 		for (int i = 0; i < pokemon.getType().getActions().size(); i ++){
-			System.out.println("YO YO YO THIS IS A NEW ACTION BRO");
 			if (pokemon.getActionAvailability(i)){
 				actionList.add(pokemon.getType().getActions().get(i));
 				actionNameList.add(pokemon.getType().getActionNames().get(i));
@@ -112,8 +114,10 @@ public class BattleScreen implements Screen, InputProcessor{
 			batch.draw(battleBackgroundTexture, 0, HUD_BAR_HEIGHT, displayWidth, displayHeight - HUD_BAR_HEIGHT);
 			//Draws choice menu
 			batch.draw(hudBar, 0, 0, displayWidth, HUD_BAR_HEIGHT);
-			
+			//Draws player pokemon
 			batch.draw(playerPokemonTexture , (displayWidth * PLAYER_POKEMON_X_PERCENT_POSITION) , (HUD_BAR_HEIGHT + PLAYER_POKEMON_Y_BACKGROUND_PERCENT_POSITION * (displayHeight - HUD_BAR_HEIGHT)));
+			//Draws enemy pokemon
+			batch.draw(enemyPokemonTexture, (displayWidth * ENEMY_POKEMON_X_PERCENT_POSITION) , (HUD_BAR_HEIGHT + ENEMY_POKEMON_Y_BACKGROUND_PERCENT_POSITION * (displayHeight - HUD_BAR_HEIGHT)));
 			break;
 		}
 		default:{
@@ -125,7 +129,6 @@ public class BattleScreen implements Screen, InputProcessor{
 		
 		
 		}
-		
 		
 		
 		batch.end();
