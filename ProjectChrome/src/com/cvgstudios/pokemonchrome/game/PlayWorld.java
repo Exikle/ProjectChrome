@@ -96,7 +96,8 @@ public class PlayWorld extends MapBase implements Screen {
 		user = new Rectangle(player.getX(), player.getY(), player.getWidth(),
 				player.getHeight());
 		if (collision()) {
-			// Gdx.app.log(ChromeGame.LOG, "");
+			xD = 0;
+			yD = 0;
 			player.setPosition(oPos.x, oPos.y);
 		}
 		checkPlayerInteraction();
@@ -104,18 +105,6 @@ public class PlayWorld extends MapBase implements Screen {
 		camera.position.set(player.getX(), player.getY(), 0);
 		// Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
 
-	}
-
-	private boolean collision() {
-		for (int x = 0; x < collisionAmount; x++) {
-			if (collsionRect[x].overlaps(user)) {
-				// Gdx.app.log(ChromeGame.LOG, "Collide");
-				xD = 0;
-				yD = 0;
-				return true;
-			}
-		}
-		return false;
 	}
 
 	public void setXD(float x) {
