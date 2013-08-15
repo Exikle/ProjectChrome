@@ -5,7 +5,7 @@
  </tileset>
  <layer name="Ground" width="45" height="30">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3OIQEAAAgDsJOC/k1JgEMgJuZXSQoAABb94AAAANcGPVr/lhgVAAA=
+   H4sIAAAAAAAAC+3OIQEAAAgDsLegfzpqkACHQEzMr5M0AAAs6sEBAACuDTIQK90YFQAA
   </data>
  </layer>
  <layer name="Path" width="45" height="30">
@@ -55,7 +55,7 @@
   <object x="800" y="363" width="72" height="18"/>
   <object x="638" y="3" width="164" height="3"/>
  </objectgroup>
- <objectgroup name="Interaction" width="45" height="30" visible="0">
+ <objectgroup name="Interaction" width="45" height="30">
   <object name="Welcome to Exitium" x="536" y="77" width="80" height="54"/>
   <object name="(CHANGEMAP):Route1:668,25" x="647" y="3" width="139" height="29"/>
  </objectgroup>
