@@ -6,15 +6,15 @@ import java.util.Map;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.cvgstudios.pokemonchrome.game.PlayWorld;
+import com.cvgstudios.pokemonchrome.game.PokemonWorld;
 
 public class InputHandler implements InputProcessor {
 
-	PlayWorld playScreen;
+	PokemonWorld playScreen;
 	OrthographicCamera camera;
 	private boolean keyNotDown = true;
 
-	public InputHandler(PlayWorld screen, OrthographicCamera camera) {
+	public InputHandler(PokemonWorld screen, OrthographicCamera camera) {
 		this.playScreen = screen;
 		this.camera = camera;
 	}
@@ -69,12 +69,12 @@ public class InputHandler implements InputProcessor {
 			if (MOVE_KEYS.containsKey(keycode)) {
 				final Direction dir = MOVE_KEYS.get(keycode);
 				if (dir.getXis().equals("HORIZONTAL")) {
-					playScreen.setXD(dir.getSpeed());
+//					playScreen.setXD(dir.getSpeed());
 				} else if (dir.getXis().equals("VERTICAL")) {
-					playScreen.setYD(dir.getSpeed());
+//					playScreen.setYD(dir.getSpeed());
 				}
 				keyNotDown = false;
-				playScreen.changePlayerDirection(dir.getDirection());
+//				playScreen.changePlayerDirection(dir.getDirection());
 
 			} else {
 				keyNotDown = false;
@@ -91,7 +91,7 @@ public class InputHandler implements InputProcessor {
 
 	@Override
 	public boolean keyUp(int keycode) {
-		playScreen.resetCameraDirection();
+//		playScreen.resetCameraDirection();
 		keyNotDown = true;
 		return false;
 	}

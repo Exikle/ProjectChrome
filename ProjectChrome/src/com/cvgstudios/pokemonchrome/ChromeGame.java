@@ -3,7 +3,7 @@ package com.cvgstudios.pokemonchrome;
 import java.io.File;
 
 import com.badlogic.gdx.Game;
-import com.cvgstudios.pokemonchrome.game.PlayWorld;
+import com.cvgstudios.pokemonchrome.game.PokemonWorld;
 import com.cvgstudios.pokemonchrome.gamelogic.PokemonCreature;
 import com.cvgstudios.pokemonchrome.gamelogic.PokemonType;
 import com.cvgstudios.pokemonchrome.javascript.JSExecutor;
@@ -30,7 +30,7 @@ public class ChromeGame extends Game {
 					.getPokemon("embite")));
 			setScreen(tempScreen);
 		} else {
-			setScreen(new PlayWorld(this));
+			setScreen(new PokemonWorld(this));
 		}
 
 	}
