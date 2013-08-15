@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="49" height="49" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="MapTileSheet" tilewidth="32" tileheight="32">
-  <image source="MapTileSheet.png" width="320" height="2625"/>
+  <image source="MapTileSheet.png" width="320" height="3500"/>
  </tileset>
  <layer name="Terrain 1" width="49" height="49">
   <data encoding="base64" compression="zlib">
@@ -10,7 +10,7 @@
  </layer>
  <layer name="Tall Grass 2" width="49" height="49">
   <data encoding="base64" compression="zlib">
-   eJzt1UsOgjAUheGaOnYjbMK9sRYfMx9x4mNxngGEm6tCGmmE+n/JCZOW3EMDhAAAAEpVm3jXRVjflLvyaJKyP5cqhrCK3bVvhoNmPion5dzEr7H7o+63jN01Fzt/NdBho5m3yk7ZK+r0wu6388eMHVLOoXV5M3vrF+eA+ak/ZE7ogD7+G/7NM/Z7/b8nF/8NH7OD//fkUsI5pM6WsnZK7z4d6DAWOkyjQ4oSOgAAAAAA/s8Tbx5WRw==
+   eJzt1kkKwkAQheGSdu1FcgnvlrM47Bxw43A4S0hIU2qk0EK7/T94ZJMO9dJkEAEAALVqs1jHicxPmrPm0sWzPkqTRGZpOI7NsNGZt5qdZt/FnpOvT3q9aRqOUfL5mxcdFjrzUrPSrDXa6U6+Pp8/BXbw7EPv8GD23jf2AeVpn6QkdMAY+w5/5x7btfbbE8W+wz/ZwX57otSwD97ZPOf+0rPv7XD7Fym9Qw37QIcYNXTwqKEDAAAAAOD/XAESmVZ5
   </data>
  </layer>
  <layer name="Fence 3" width="49" height="49">
