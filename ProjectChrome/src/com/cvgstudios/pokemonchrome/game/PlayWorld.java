@@ -28,6 +28,7 @@ public class PlayWorld implements Screen {
 	private SpriteBatch batch;
 
 	private String MAP_NAME = "Route2";
+	private final Vector2 STARTCOORD = new Vector2(50, 50);
 
 	private Sprite player = new Sprite();
 
@@ -44,7 +45,7 @@ public class PlayWorld implements Screen {
 	private RectangleMapObject[] interactObject;
 
 	public Rectangle user = new Rectangle(Gdx.graphics.getWidth() / 2,
-			Gdx.graphics.getHeight() / 2, player.getWidth(), player.getHeight());
+			Gdx.graphics.getHeight() / 2, 38, 42);;
 
 	private TextureRegion playerR = new TextureRegion(new Texture(
 			"imgs/MalePlayer.png"));
@@ -102,7 +103,7 @@ public class PlayWorld implements Screen {
 				step = 1;
 			}
 			changePlayerDirection(direction);
-			Gdx.app.log(ChromeGame.LOG, "Step " + step);
+			// Gdx.app.log(ChromeGame.LOG, "Step " + step);
 		}
 	}
 
@@ -116,7 +117,7 @@ public class PlayWorld implements Screen {
 		user = new Rectangle(player.getX(), player.getY(), player.getWidth(),
 				player.getHeight());
 		if (collision()) {
-			Gdx.app.log(ChromeGame.LOG, "");
+			// Gdx.app.log(ChromeGame.LOG, "");
 			player.setPosition(oPos.x, oPos.y);
 		}
 		checkPlayerInteraction();
@@ -167,7 +168,7 @@ public class PlayWorld implements Screen {
 	@Override
 	public void show() {
 
-		importMap(MAP_NAME, new Vector2(450, 500));
+		importMap(MAP_NAME, STARTCOORD);
 
 		camera = new OrthographicCamera();
 		camera.position.set(507, 525, 0);

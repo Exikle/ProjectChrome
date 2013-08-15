@@ -25,7 +25,8 @@ public class StartScreen implements Screen, InputProcessor {
 	SpriteBatch batch;
 	TweenManager manager;
 
-	BitmapFont font = new BitmapFont();
+	BitmapFont font = new BitmapFont(Gdx.files.internal("font/pokemon.fnt"),
+			Gdx.files.internal("font/pokemon.png"), false);
 
 	boolean startFading = false;
 	private int musicState = 0;
@@ -99,8 +100,8 @@ public class StartScreen implements Screen, InputProcessor {
 
 		manager = new TweenManager();
 
-		Tween.to(font, BitmapFontTween.BETA, 1f).target(1).repeatYoyo(1000000, .5f)
-				.start(manager);
+		Tween.to(font, BitmapFontTween.BETA, 1f).target(1)
+				.repeatYoyo(1000000, .5f).start(manager);
 	}
 
 	protected void tweenCompleted() {
