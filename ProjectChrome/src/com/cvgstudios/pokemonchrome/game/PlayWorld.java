@@ -28,8 +28,8 @@ public class PlayWorld implements Screen {
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
 
-	private String MAP_NAME = "Maple Lodge";
-	private final Vector2 STARTCOORD = new Vector2(50, 50);
+	private String MAP_NAME = "Exitium";
+	private final Vector2 STARTCOORD = new Vector2(650, 150);
 
 	private Sprite player = new Sprite();
 
