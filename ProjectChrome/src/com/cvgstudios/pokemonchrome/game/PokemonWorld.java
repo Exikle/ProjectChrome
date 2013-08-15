@@ -33,9 +33,11 @@ public class PokemonWorld extends MapBase implements Screen {
 	@Override
 	public void render(float delta) {
 		super.render(delta);
-		camera.update();
-		batch.setProjectionMatrix(camera.combined);
 
+		player.moveUser();
+		camera.update();
+
+		batch.setProjectionMatrix(camera.combined);
 		renderer.setView(camera);
 
 		renderer.render(bgLayers);
@@ -62,13 +64,13 @@ public class PokemonWorld extends MapBase implements Screen {
 				Gdx.files.internal("font/pokemon.png"), false);
 
 		camera = new OrthographicCamera();
-		camera.position.set(STARTCOORD.x, STARTCOORD.y, 0);
+		// camera.position.set(STARTCOORD.x, STARTCOORD.y, 0);
 		batch = new SpriteBatch();
 
-		player = new Player();
-		// player.setPosition(STARTCOORD.x, STARTCOORD.y);
+		player = new Player(camera);
+		player.setPosition(STARTCOORD.x, STARTCOORD.y);
 
-		Gdx.input.setInputProcessor(new InputHandler(this, camera));
+		Gdx.input.setInputProcessor(new InputHandler(this, camera, player));
 	}
 
 	@Override

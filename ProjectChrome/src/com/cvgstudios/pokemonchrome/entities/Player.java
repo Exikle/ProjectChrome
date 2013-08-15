@@ -1,6 +1,7 @@
 package com.cvgstudios.pokemonchrome.entities;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -9,21 +10,32 @@ import com.cvgstudios.pokemonchrome.ChromeGame;
 
 public class Player extends Sprite {
 
-	private int direction;
+	public int direction;
 
-	private TextureRegion playerR = new TextureRegion(new Texture(
+	public static TextureRegion playerR = new TextureRegion(new Texture(
 			"imgs/MalePlayer.png"));
 
-	private float xD = 0, yD = 0;
+	public float xD = 0, yD = 0;
 
-	private int currentStep;
-	private boolean keyDown = false;
+	public int currentStep;
+	public boolean keyDown = false;
 
-	private final int STEP_DELAY = 15;
+	public final int STEP_DELAY = 15;
 
-	private int counter = 0;
+	public int counter = 0;
 
-	private void changePlayerDirection(int d) {
+	OrthographicCamera camera;
+
+	public Player(OrthographicCamera camera) {
+		this.camera = camera;
+		changePlayerDirection(1);
+	}
+
+	public Player() {
+		super(playerR);
+	}
+
+	public void changePlayerDirection(int d) {
 		setDirection(d);
 		switch (d) {
 		case 1:// down
@@ -64,23 +76,15 @@ public class Player extends Sprite {
 		}
 	}
 
-	private void moveUser() {
+	public void moveUser() {
 		Vector2 oPos = new Vector2(this.getX(), this.getY());
 
 		this.translate(xD, yD);
 
-		Gdx.app.log(ChromeGame.LOG, currentStep + "");
-
-		// player.getHeight());
-		// if (collision()) {
-		// xD = 0;
-		// yD = 0;
-		// player.setPosition(oPos.x, oPos.y);
-		// }
 		// checkPlayerInteraction();
 		//
-		// camera.position.set(player.getX(), player.getY(), 0);
-		// Gdx.app.log(ChromeGame.LOG, player.getX() + "," + player.getY());
+		camera.position.set(this.getX(), this.getY(), 0);
+		Gdx.app.log(ChromeGame.LOG, this.getX() + "," + this.getY());
 
 	}
 
@@ -94,7 +98,7 @@ public class Player extends Sprite {
 		keyDown = true;
 	}
 
-	public void resetCameraDirection() {
+	public void stopMovement() {
 		yD = 0;
 		xD = 0;
 		keyDown = false;
@@ -103,17 +107,10 @@ public class Player extends Sprite {
 
 	}
 
-	/**
-	 * @return the direction the player is facing
-	 */
 	public int getDirection() {
 		return direction;
 	}
 
-	/**
-	 * @param direction
-	 *            to set the player to face
-	 */
 	public void setDirection(int direction) {
 		this.direction = direction;
 	}
