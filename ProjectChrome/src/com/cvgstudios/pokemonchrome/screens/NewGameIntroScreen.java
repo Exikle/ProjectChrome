@@ -25,7 +25,8 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 	private int counter = 0;
 	private int len;
 
-	BitmapFont font = new BitmapFont();
+	BitmapFont font = new BitmapFont(Gdx.files.internal("font/pokemon.fnt"),
+			Gdx.files.internal("font/pokemon.png"), false);
 	SpriteBatch batch;
 
 	private String lineOne = "";
@@ -48,7 +49,7 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 	public NewGameIntroScreen(ChromeGame game) {
 		this.game = game;
 		Gdx.input.setInputProcessor(this);
-		 m.play();
+		m.play();
 		m.setLooping(true);
 		script = NGScript.importScript();
 		len = script.length - 1;
@@ -60,6 +61,7 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
+		font.setColor(Color.BLACK);
 		batch.begin();
 		bg.draw(batch);
 		if (optionsBoxVisible) {

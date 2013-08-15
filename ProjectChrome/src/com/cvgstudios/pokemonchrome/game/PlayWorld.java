@@ -5,6 +5,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -27,9 +28,14 @@ public class PlayWorld implements Screen {
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
 
-	private String MAP_NAME = "Route2";
+	private String MAP_NAME = "Maple Lodge";
+	private final Vector2 STARTCOORD = new Vector2(50, 50);
 
 	private Sprite player = new Sprite();
+
+	private BitmapFont font = new BitmapFont(
+			Gdx.files.internal("font/pokemon.fnt"),
+			Gdx.files.internal("font/pokemon.png"), false);
 
 	private float xD = 0, yD = 0;
 
@@ -44,7 +50,7 @@ public class PlayWorld implements Screen {
 	private RectangleMapObject[] interactObject;
 
 	public Rectangle user = new Rectangle(Gdx.graphics.getWidth() / 2,
-			Gdx.graphics.getHeight() / 2, player.getWidth(), player.getHeight());
+			Gdx.graphics.getHeight() / 2, 38, 42);;
 
 	private TextureRegion playerR = new TextureRegion(new Texture(
 			"imgs/MalePlayer.png"));
@@ -87,6 +93,8 @@ public class PlayWorld implements Screen {
 
 		batch.draw(player, player.getX(), player.getY());
 
+		font.draw(batch, player.getX() + "," + player.getY(),
+				0 + player.getX(), 0 + player.getY());
 		batch.end();
 		renderer.render(fgLayers);
 
@@ -102,7 +110,7 @@ public class PlayWorld implements Screen {
 				step = 1;
 			}
 			changePlayerDirection(direction);
-			Gdx.app.log(ChromeGame.LOG, "Step " + step);
+			// Gdx.app.log(ChromeGame.LOG, "Step " + step);
 		}
 	}
 
@@ -116,7 +124,7 @@ public class PlayWorld implements Screen {
 		user = new Rectangle(player.getX(), player.getY(), player.getWidth(),
 				player.getHeight());
 		if (collision()) {
-			Gdx.app.log(ChromeGame.LOG, "");
+			// Gdx.app.log(ChromeGame.LOG, "");
 			player.setPosition(oPos.x, oPos.y);
 		}
 		checkPlayerInteraction();
@@ -167,7 +175,7 @@ public class PlayWorld implements Screen {
 	@Override
 	public void show() {
 
-		importMap(MAP_NAME, new Vector2(450, 500));
+		importMap(MAP_NAME, STARTCOORD);
 
 		camera = new OrthographicCamera();
 		camera.position.set(507, 525, 0);
