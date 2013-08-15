@@ -2,31 +2,20 @@ package com.cvgstudios.pokemonchrome.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.maps.MapObjects;
-import com.badlogic.gdx.maps.objects.RectangleMapObject;
-import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.InputHandler;
 
-public class PlayWorld implements Screen {
+public class PlayWorld extends MapBase implements Screen {
 	@SuppressWarnings("unused")
 	private ChromeGame game;
-
-	private TiledMap map;
-	private OrthogonalTiledMapRenderer renderer;
-	private OrthographicCamera camera;
-	private SpriteBatch batch;
 
 	private String MAP_NAME = "Exitium";
 	private final Vector2 STARTCOORD = new Vector2(650, 150);
@@ -39,23 +28,8 @@ public class PlayWorld implements Screen {
 
 	private float xD = 0, yD = 0;
 
-	private int collisionAmount;
-
-	private int[] bgLayers;
-	private int[] fgLayers;
-
-	private Rectangle[] collsionRect;
-	private Rectangle[] interactRect;
-
-	private RectangleMapObject[] interactObject;
-
-	public Rectangle user = new Rectangle(Gdx.graphics.getWidth() / 2,
-			Gdx.graphics.getHeight() / 2, 38, 42);;
-
 	private TextureRegion playerR = new TextureRegion(new Texture(
 			"imgs/MalePlayer.png"));
-
-	private int interactionAmount;
 
 	private int counter = 0;
 
@@ -74,9 +48,7 @@ public class PlayWorld implements Screen {
 
 	@Override
 	public void render(float delta) {
-
-		Gdx.gl.glClearColor(0, 0, 0, 1);
-		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		super.render(delta);
 
 		moveUser();
 		if (keyDown) {
@@ -174,103 +146,17 @@ public class PlayWorld implements Screen {
 
 	@Override
 	public void show() {
-
 		importMap(MAP_NAME, STARTCOORD);
-
 		camera = new OrthographicCamera();
-		camera.position.set(507, 525, 0);
+
 		Gdx.input.setInputProcessor(new InputHandler(this, camera));
 
 		batch = new SpriteBatch();
 
 		changePlayerDirection(1);
 
-	}
+		player.setPosition(STARTCOORD.x, STARTCOORD.y);
 
-	public void checkPlayerInteraction() {
-		for (int x = 0; x < interactionAmount; x++) {
-			if (interactRect[x].overlaps(user)) {
-				Gdx.app.log(ChromeGame.LOG, interactObject[x].getName());
-				checkIfAction(interactObject[x].getName());
-			}
-		}
-	}
-
-	private void checkIfAction(String s) {
-		if (s.contains("(CHANGEMAP)")) {
-			String[] fields;
-			fields = s.split(":");
-			String[] pos = (fields[2].split(","));
-			float x = Integer.parseInt(pos[0]);
-			float y = Integer.parseInt(pos[1]);
-
-			Vector2 playerPos = new Vector2(x, y);
-			importMap(fields[1], playerPos);
-		} else {
-
-		}
-	}
-
-	private void createInteractions() {
-		MapObjects mInteractions = map.getLayers().get("Interaction")
-				.getObjects();
-
-		interactionAmount = mInteractions.getCount();
-		interactObject = new RectangleMapObject[interactionAmount];
-
-		interactRect = new Rectangle[interactionAmount];
-
-		for (int x = 0; x < interactionAmount; x++) {
-			interactObject[x] = (RectangleMapObject) mInteractions.get(x);
-			interactRect[x] = interactObject[x].getRectangle();
-		}
-
-	}
-
-	private void createCollisions() {
-		MapObjects mCollisions = map.getLayers().get("Collision").getObjects();
-
-		RectangleMapObject gameObject = new RectangleMapObject();
-		collsionRect = new Rectangle[mCollisions.getCount()];
-
-		collisionAmount = mCollisions.getCount();
-
-		for (int x = 0; x < mCollisions.getCount(); x++) {
-			gameObject = (RectangleMapObject) mCollisions.get(x);
-			collsionRect[x] = gameObject.getRectangle();
-		}
-	}
-
-	public void importMap(String m, Vector2 pos) {
-		map = new TmxMapLoader().load("maps/" + m + ".tmx");
-
-		int index = 0;
-		int layerNum = map.getLayers().getCount() - 2;
-
-		for (int x = 0; x < layerNum; x++) {
-			if (map.getLayers().get(x).getName()
-					.equalsIgnoreCase("playerLayer")) {
-				index = x;
-			}
-		}
-		bgLayers = new int[index];
-		for (int x = 0; x < index; x++) {
-			bgLayers[x] = x;
-		}
-
-		fgLayers = new int[layerNum - (index + 1)];
-		int topLayerStart = index + 1;
-
-		for (int x = 0; x < fgLayers.length; x++) {
-			fgLayers[x] = x + topLayerStart;
-			Gdx.app.log(ChromeGame.LOG, fgLayers[x] + "");
-		}
-		renderer = new OrthogonalTiledMapRenderer(map);
-
-		createCollisions();
-		createInteractions();
-
-		player.setPosition(pos.x, pos.y);
 	}
 
 	public void changePlayerDirection(int d) {

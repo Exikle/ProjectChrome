@@ -58,6 +58,5 @@
  <objectgroup name="Interaction" width="45" height="30">
   <object name="Welcome to Exitium" x="536" y="77" width="80" height="54"/>
   <object name="(CHANGEMAP):Route1:668,25" x="647" y="3" width="139" height="29"/>
-  <object x="473" y="864" width="489" height="17"/>
  </objectgroup>
 </map>
