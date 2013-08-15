@@ -5,12 +5,12 @@
  </tileset>
  <layer name="Ground" width="40" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3DAQ0AAAzDoM6/6Qs5JKyaqqqqqqqqqj5/r8CI0kAfAAA=
+   H4sIAAAAAAAAC+3DAQ0AAAzDoPo3OhsXckhYNVVVVVVVVVV9/gC+1GOjQB8AAA==
   </data>
  </layer>
  <layer name="Path" width="40" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2XzU/CMBiHi3hAvg6AwAE9acLFRKOJnsgIFxL//39CRTj4yUH9NXFJrWx7S9/SAn2yJ9mh255sXbMJsd+MCWMe4CN8gjP4DOdw4bArhdL3Al/hG3yHH/ATLh12pVD6vuC33ClhgwewDA9LbtsklL4KOo5gFdZgHTZgM5C+FjrasAOPYRf2YN9Bn+y5UbzPGJfAuxWewXNFDsqKlPslGWnHpV4wNWVdx7aPm9hnx1TQ3gdJAq9/lcdNHPTYMPIdUEBofYn4++xD6Fs1513Of1N89CXwlqiPvorBWB99LYOxse8/u9RnQlXw9Of11RRN6QievgE8IToU9Pedq0+naI5R50Ps286+tue+S3hVoM8+rvUw9tHIWrtD6csi9tkR++zYlz59fQitTyf0PpPv1TxPHfVx4OqfhgvuvnX+f/JQ+7jPzUHoz5f6jW1LHTYINjfUo9OFPYL9He37AYHm2GZAHwAA
+   H4sIAAAAAAAAC+2XSUvDQBhAU+uhdju0te1BPSl4ERQFeyoRL4L//0+4H9wP6hswEENivsxiJnUefdBDZvJIJ8M0iv43Z4JrrvAab/AW7/AeHxx2JUj6HvEJn/EFX/EN3x12JUj6PvBTfWnxwTVs43rLbZtC0tehYwO72MM+DnDoSd+IjjFOcBOnOMO5gz7Vc5LysuC6GBc57uJeShu0U0qel2KZGZd4YKmp6D6mfbYJfWZcRLL3QRHj8bdq3LmDHhOWdQeU4FtfHP387X3oy1vzLtd/Veroi/FUqOu+vDk7huNd941CX+jToJtzL9t9vZRVmVjq28JtofuR/H3X6ZNQtsak6yH0NbNvXHPfIR6VWGefrf0w9Mko2rt96Ssi9Jmxin2SM1voq9aX3R9868vie1+V8+pv7jjq00H3DFY2T1P6dP7/SPuqzN3U52eK7hnblD4OBA7/qCfLFGcC5yva9wWg+fx3QB8AAA==
   </data>
  </layer>
  <layer name="PlayerLayer" width="40" height="50">
