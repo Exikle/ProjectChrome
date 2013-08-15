@@ -21,7 +21,7 @@ public class PokemonWorld extends MapBase implements Screen {
 	@SuppressWarnings("unused")
 	private ChromeGame game;
 
-	private String MAP_NAME = "Exitium";
+	private String MAP_NAME = "MiracleForest7";
 	private final Vector2 STARTCOORD = new Vector2(650, 150);
 
 	private BitmapFont font;
