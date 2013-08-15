@@ -12,7 +12,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.cvgstudios.pokemonchrome.ChromeGame;
-import com.cvgstudios.pokemonchrome.game.PlayWorld;
+import com.cvgstudios.pokemonchrome.game.PokemonWorld;
 
 public class NewGameIntroScreen implements Screen, InputProcessor {
 	ChromeGame game;
@@ -148,7 +148,7 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 				getLines();
 			} else {
 				m.stop();
-				game.setScreen(new PlayWorld(game));
+				game.setScreen(new PokemonWorld(game));
 			}
 			break;
 		case (Keys.UP):
