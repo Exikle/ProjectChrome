@@ -8,6 +8,7 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -44,6 +45,8 @@ public class StartScreen implements Screen, InputProcessor {
 		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
+
+		font.setColor(Color.LIGHT_GRAY);
 		manager.update(delta);
 		batch.begin();
 		bg.draw(batch);
@@ -94,7 +97,6 @@ public class StartScreen implements Screen, InputProcessor {
 		startBg = new Texture("imgs/WhiteTitleScreen.png");
 		bg = new Sprite(startBg);
 		batch = new SpriteBatch();
-		font.setScale(2f);
 
 		Tween.registerAccessor(BitmapFont.class, new BitmapFontTween());
 

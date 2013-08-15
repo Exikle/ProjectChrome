@@ -17,7 +17,8 @@ public class MainMenu implements Screen, InputProcessor {
 
 	Texture t, button, conButton;
 
-	BitmapFont font = new BitmapFont();
+	BitmapFont font = new BitmapFont(Gdx.files.internal("font/pokemon.fnt"),
+			Gdx.files.internal("font/pokemon.png"), false);
 
 	Texture selButton, selConButton;
 	SpriteBatch batch;

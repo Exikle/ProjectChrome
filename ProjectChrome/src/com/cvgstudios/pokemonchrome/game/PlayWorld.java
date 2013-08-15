@@ -5,6 +5,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -27,10 +28,14 @@ public class PlayWorld implements Screen {
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
 
-	private String MAP_NAME = "Route2";
+	private String MAP_NAME = "Maple Lodge";
 	private final Vector2 STARTCOORD = new Vector2(50, 50);
 
 	private Sprite player = new Sprite();
+
+	private BitmapFont font = new BitmapFont(
+			Gdx.files.internal("font/pokemon.fnt"),
+			Gdx.files.internal("font/pokemon.png"), false);
 
 	private float xD = 0, yD = 0;
 
@@ -88,6 +93,8 @@ public class PlayWorld implements Screen {
 
 		batch.draw(player, player.getX(), player.getY());
 
+		font.draw(batch, player.getX() + "," + player.getY(),
+				0 + player.getX(), 0 + player.getY());
 		batch.end();
 		renderer.render(fgLayers);
 
