@@ -1,20 +1,16 @@
 package com.cvgstudios.pokemonchrome.entities;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.math.Vector2;
-import com.cvgstudios.pokemonchrome.ChromeGame;
 
 public class Player extends Sprite {
 
-	public int direction;
+	public int direction = 1;
 
 	public static TextureRegion playerR = new TextureRegion(new Texture(
 			"imgs/MalePlayer.png"));
-
 	public float xD = 0, yD = 0;
 
 	public int currentStep;
@@ -29,10 +25,6 @@ public class Player extends Sprite {
 	public Player(OrthographicCamera camera) {
 		this.camera = camera;
 		changePlayerDirection(1);
-	}
-
-	public Player() {
-		super(playerR);
 	}
 
 	public void changePlayerDirection(int d) {
@@ -67,9 +59,9 @@ public class Player extends Sprite {
 		if (counter == STEP_DELAY) {
 			counter = 0;
 			if (currentStep == 1) {
-				currentStep = 2;
+				setCurrentStep(2);
 			} else {
-				currentStep = 1;
+				setCurrentStep(1);
 			}
 			changePlayerDirection(direction);
 			// Gdx.app.log(ChromeGame.LOG, "Step " + step);
@@ -77,14 +69,17 @@ public class Player extends Sprite {
 	}
 
 	public void moveUser() {
-		Vector2 oPos = new Vector2(this.getX(), this.getY());
+		// Vector2 oPos = new Vector2(this.getX(), this.getY());
 
 		this.translate(xD, yD);
+		if (keyDown) {
+			changeUserSteps();
+		}
 
 		// checkPlayerInteraction();
 		//
 		camera.position.set(this.getX(), this.getY(), 0);
-		Gdx.app.log(ChromeGame.LOG, this.getX() + "," + this.getY());
+		// Gdx.app.log(ChromeGame.LOG, this.getX() + "," + this.getY());
 
 	}
 

@@ -3,8 +3,10 @@ package com.cvgstudios.pokemonchrome.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.InputHandler;
@@ -43,7 +45,7 @@ public class PokemonWorld extends MapBase implements Screen {
 		renderer.render(bgLayers);
 
 		batch.begin();
-		// render player
+		batch.draw(player, player.getX(), player.getY());
 		batch.end();
 		renderer.render(fgLayers);
 
@@ -68,6 +70,7 @@ public class PokemonWorld extends MapBase implements Screen {
 		batch = new SpriteBatch();
 
 		player = new Player(camera);
+
 		player.setPosition(STARTCOORD.x, STARTCOORD.y);
 
 		Gdx.input.setInputProcessor(new InputHandler(this, camera, player));
