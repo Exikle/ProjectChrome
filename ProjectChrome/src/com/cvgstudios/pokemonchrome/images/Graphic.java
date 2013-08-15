@@ -37,7 +37,7 @@ public enum Graphic implements ImgPathConstants{
 
 	
 	//Battle Screen things + GUI
-	BattleScreenMenu(MENU_BATTLE_PATH + "/BattleMenu2.png"),
+	BattleScreenMenu(MENU_BATTLE_PATH + "/BossBattleMenu.png"),
 	PlayerPokemonStatBar(MENU_BATTLE_PATH + "/HpBarAlly.png"),
 	EnemyPokemonStatBar(MENU_BATTLE_PATH + "/HpBarEnemy.png"),
 	GrassBattleSetting(MENU_BATTLE_PATH + "/GreenBackground.png"),
