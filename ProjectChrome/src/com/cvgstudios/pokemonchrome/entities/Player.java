@@ -1,9 +1,11 @@
 package com.cvgstudios.pokemonchrome.entities;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.cvgstudios.pokemonchrome.ChromeGame;
 
 public class Player extends Sprite {
 
@@ -75,11 +77,8 @@ public class Player extends Sprite {
 		if (keyDown) {
 			changeUserSteps();
 		}
-
-		// checkPlayerInteraction();
-		//
+		 Gdx.app.log(ChromeGame.LOG, this.getX() + "," + this.getY());
 		camera.position.set(this.getX(), this.getY(), 0);
-		// Gdx.app.log(ChromeGame.LOG, this.getX() + "," + this.getY());
 
 	}
 

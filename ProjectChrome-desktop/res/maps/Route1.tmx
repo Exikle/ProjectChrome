@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="40" height="50" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="MapTileSheet" tilewidth="32" tileheight="32">
-  <image source="MapTileSheet.png" width="320" height="2625"/>
+  <image source="MapTileSheet.png" width="320" height="3500"/>
  </tileset>
  <layer name="Ground" width="40" height="50">
   <data encoding="base64" compression="gzip">
@@ -32,6 +32,6 @@
   <object x="865" y="1527" width="297" height="8"/>
  </objectgroup>
  <objectgroup name="Interaction" width="40" height="50">
-  <object name="(CHANGEMAP):Exitium:728,926" x="512" y="1588" width="355" height="18"/>
+  <object name="(CHANGEMAP):Exitium:728,840" x="512" y="1588" width="355" height="18"/>
  </objectgroup>
 </map>

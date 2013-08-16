@@ -2,9 +2,12 @@ package com.cvgstudios.pokemonchrome.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -13,6 +16,7 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.cvgstudios.pokemonchrome.ChromeGame;
+import com.cvgstudios.pokemonchrome.entities.Player;
 
 public abstract class MapBase implements Screen {
 
@@ -34,12 +38,15 @@ public abstract class MapBase implements Screen {
 	protected int interactionAmount;
 
 	protected Rectangle user = new Rectangle(Gdx.graphics.getWidth() / 2,
-			Gdx.graphics.getHeight() / 2, 38, 42);;
+			Gdx.graphics.getHeight() / 2, 38, 42);
+
+	private Player player;
 
 	@Override
 	public void render(float delta) {
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+
 	}
 
 	protected void importMap(String m, Vector2 pos) {
@@ -64,12 +71,14 @@ public abstract class MapBase implements Screen {
 
 		for (int x = 0; x < fgLayers.length; x++) {
 			fgLayers[x] = x + topLayerStart;
-			Gdx.app.log(ChromeGame.LOG, fgLayers[x] + "");
 		}
 		renderer = new OrthogonalTiledMapRenderer(map);
 
 		createCollisions();
 		createInteractions();
+		player.setPosition(pos.x, pos.y);
+		camera.position.set(player.getX(), player.getY(), 0);
+
 	}
 
 	protected void createInteractions() {
@@ -105,7 +114,6 @@ public abstract class MapBase implements Screen {
 	protected boolean collision() {
 		for (int x = 0; x < collisionAmount; x++) {
 			if (collsionRect[x].overlaps(user)) {
-				// Gdx.app.log(ChromeGame.LOG, "Collide");
 				return true;
 			}
 		}
@@ -116,12 +124,12 @@ public abstract class MapBase implements Screen {
 		for (int x = 0; x < interactionAmount; x++) {
 			if (interactRect[x].overlaps(user)) {
 				Gdx.app.log(ChromeGame.LOG, interactObject[x].getName());
-				checkIfInteractAction(interactObject[x].getName());
+				checkWhatInteractAction(interactObject[x].getName());
 			}
 		}
 	}
 
-	protected void checkIfInteractAction(String s) {
+	protected void checkWhatInteractAction(String s) {
 		if (s.contains("(CHANGEMAP)")) {
 			String[] fields;
 			fields = s.split(":");
@@ -138,6 +146,40 @@ public abstract class MapBase implements Screen {
 		} else {
 
 		}
+	}
+
+	protected void addPlayerToWorld(Player player) {
+		this.player = player;
+	}
+
+	protected void showPlayerRect(ShapeRenderer sRen) {
+
+		sRen.begin(ShapeType.Line);
+		sRen.setColor(Color.BLACK);
+		sRen.rect(player.getX(), player.getY(), 38, 42);
+		sRen.end();
+	}
+
+	protected void showInteractionRect(ShapeRenderer sRen) {
+		sRen.begin(ShapeType.Line);
+		sRen.setColor(Color.ORANGE);
+
+		for (int x = 0; x < interactRect.length; x++) {
+			sRen.rect(interactRect[x].x, interactRect[x].y,
+					interactRect[x].width, interactRect[x].height);
+		}
+		sRen.end();
+	}
+
+	protected void showCollisionRect(ShapeRenderer sRen) {
+		sRen.begin(ShapeType.Line);
+		sRen.setColor(Color.MAGENTA);
+
+		for (int x = 0; x < collsionRect.length; x++) {
+			sRen.rect(collsionRect[x].x, collsionRect[x].y,
+					collsionRect[x].width, collsionRect[x].height);
+		}
+		sRen.end();
 	}
 
 }

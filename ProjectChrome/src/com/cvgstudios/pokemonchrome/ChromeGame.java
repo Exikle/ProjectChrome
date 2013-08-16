@@ -11,7 +11,7 @@ import com.cvgstudios.pokemonchrome.screens.BattleScreen;
 
 public class ChromeGame extends Game {
 
-	public static final String POKECHROME_VERSION = "0.0.0.04 Pre-Alpha";
+	public static final String POKECHROME_VERSION = "0.0.0.05 Pre-Alpha";
 	public static final String LOG = "Pokemon Chrome";
 
 	public static DisplayInterface display;
