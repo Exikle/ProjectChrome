@@ -2,12 +2,10 @@ package com.cvgstudios.pokemonchrome.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.cvgstudios.pokemonchrome.ChromeGame;
@@ -20,14 +18,14 @@ import com.cvgstudios.pokemonchrome.entities.Player;
  * @author Dixon D'Cunha:Exikle @
  */
 public class PokemonWorld extends MapBase implements Screen {
-	@SuppressWarnings("unused")
+
+	private boolean DEBUG = false;
 	private ChromeGame game;
 
-	private String MAP_NAME = "Exitium";
+	private String START_MAP_NAME = "Exitium";
 	private final Vector2 STARTCOORD = new Vector2(650, 150);
 
 	private BitmapFont font;
-
 
 	private ShapeRenderer sRen = new ShapeRenderer();
 
@@ -54,6 +52,7 @@ public class PokemonWorld extends MapBase implements Screen {
 
 		checkPlayerInteraction();
 
+		// camera.zoom = 1.1f;
 		camera.update();
 
 		batch.setProjectionMatrix(camera.combined);
@@ -67,18 +66,39 @@ public class PokemonWorld extends MapBase implements Screen {
 		batch.end();
 
 		renderer.render(fgLayers);
-		
-		showRect(sRen);
+
+		if (DEBUG) {
+			showRect(sRen);
+
+		}
 
 	}
-	
-	private void showRect(ShapeRenderer sRen){
+
+	private void showRect(ShapeRenderer sRen) {
 		showCollisionRect(sRen);
 
 		showInteractionRect(sRen);
 
 		showPlayerRect(sRen);
+
+		batch.begin();
+
+		font.draw(batch, "Current Map: " + mapName, player.getX()
+				- Gdx.graphics.getWidth() / 3,
+				player.getY() - Gdx.graphics.getHeight() / 3);
+
+		font.draw(batch, "X: " + player.getX() + ", Y:" + player.getY(),
+				player.getX() - Gdx.graphics.getWidth() / 3, player.getY()
+						- Gdx.graphics.getHeight() / 3 - 25);
+
+		font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(),
+				player.getX() - Gdx.graphics.getWidth() / 3, player.getY()
+						- Gdx.graphics.getHeight() / 3 - 50);
+
+		batch.end();
+
 	}
+
 	@Override
 	public void resize(int width, int height) {
 		camera.viewportHeight = height;
@@ -91,7 +111,7 @@ public class PokemonWorld extends MapBase implements Screen {
 		camera = new OrthographicCamera();
 		player = new Player(camera);
 		addPlayerToWorld(player);
-		importMap(MAP_NAME, STARTCOORD);
+		importMap(START_MAP_NAME, STARTCOORD);
 
 		font = new BitmapFont(Gdx.files.internal("font/pokemon.fnt"),
 				Gdx.files.internal("font/pokemon.png"), false);
@@ -99,6 +119,7 @@ public class PokemonWorld extends MapBase implements Screen {
 		batch = new SpriteBatch();
 
 		Gdx.input.setInputProcessor(new InputHandler(this, camera, player));
+
 	}
 
 	@Override
