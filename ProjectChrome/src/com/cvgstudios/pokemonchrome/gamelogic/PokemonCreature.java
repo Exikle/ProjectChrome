@@ -13,28 +13,45 @@ public class PokemonCreature {
 	protected Vector<Boolean> actionsAvailable;
 
 	protected int currentHP;
+
 	protected int currentHPMax;
-	
-	//Battle stats are a pokemon's in-battle stats. These can change with different buffs/debuffs within a battle, such as what Leer does.
+
+	// Battle stats are a pokemon's in-battle stats. These can change with
+	// different buffs/debuffs within a battle, such as what Leer does.
 	protected int battleAttack;
+
 	protected int battleDefense;
+
 	protected int battleSpAttack;
+
 	protected int battleSpDefense;
+
 	protected int battleSpeed;
-	
-	//Pokemon stats are a pokemon's stats overall, as in, when they begin a new battle.
+
+	// Pokemon stats are a pokemon's stats overall, as in, when they begin a new
+	// battle.
 	protected int pokeAttack;
+
 	protected int pokeDefense;
+
 	protected int pokeSpAttack;
+
 	protected int pokeSpDefense;
+
 	protected int pokeSpeed;
-	
-	//IV stats are IndiVidual stats. They represent each pokemon's uniqueness in stat attributes.
+
+	// IV stats are IndiVidual stats. They represent each pokemon's uniqueness
+	// in stat attributes.
 	protected int ivHP;
+
 	protected int ivAttack;
+
 	protected int ivDefense;
+
 	protected int ivSpAttack;
+
 	protected int ivSpDefense;
+
 	protected int ivSpeed;
 
 	private PokemonCreature(PokemonType pokemonType) {
@@ -47,9 +64,11 @@ public class PokemonCreature {
 		JSExecutor.setThisScope(this);
 	}
 
-	public void setActionAvailability(String actionName, boolean availability) {
+	public void setActionAvailability(String actionName,
+			boolean availability) {
 		if (theBaseType.actions.contains(actionName)) {
-			actionsAvailable.set(theBaseType.actions.indexOf(actionName),
+			actionsAvailable.set(
+					theBaseType.actions.indexOf(actionName),
 					availability);
 		}
 	}
@@ -89,108 +108,117 @@ public class PokemonCreature {
 	public PokemonType getType() {
 		return theBaseType;
 	}
-	
-	public void setHP(int hp){
+
+	public void setHP(int hp) {
 		currentHP = hp;
 	}
-	
-	public void setMaxHP(int hp){
+
+	public void setMaxHP(int hp) {
 		currentHPMax = hp;
 	}
-	
-	public void setBattleAttack(int attack){
+
+	public void setBattleAttack(int attack) {
 		battleAttack = attack;
 	}
-	public void setBattleDefense(int defense){
+
+	public void setBattleDefense(int defense) {
 		battleDefense = defense;
 	}
-	public void setBattleSpAttack(int spAttack){
+
+	public void setBattleSpAttack(int spAttack) {
 		battleSpAttack = spAttack;
 	}
-	public void setBattleSpDefense(int spDefense){
+
+	public void setBattleSpDefense(int spDefense) {
 		battleSpDefense = spDefense;
 	}
-	public void setBattleSpeed(int speed){
+
+	public void setBattleSpeed(int speed) {
 		battleSpeed = speed;
 	}
-	public void setPokemonAttack(int attack){
+
+	public void setPokemonAttack(int attack) {
 		pokeAttack = attack;
 	}
-	public void setPokemonDefense(int defense){
+
+	public void setPokemonDefense(int defense) {
 		pokeDefense = defense;
 	}
-	public void setPokemonSpAttack(int spAttack){
+
+	public void setPokemonSpAttack(int spAttack) {
 		pokeSpAttack = spAttack;
 	}
-	public void setPokemonSpDefense(int spDefense){
+
+	public void setPokemonSpDefense(int spDefense) {
 		pokeSpDefense = spDefense;
 	}
-	public void setPokemonSpeed(int speed){
+
+	public void setPokemonSpeed(int speed) {
 		pokeSpeed = speed;
 	}
-	
 
 	public boolean getActionAvailability(int actionIndex) {
 		return actionsAvailable.get(actionIndex);
 	}
 
 	public boolean getActionAvailability(String actionCodeName) {
-		return actionsAvailable
-				.get(theBaseType.actions.indexOf(actionCodeName));
+		return actionsAvailable.get(theBaseType.actions
+				.indexOf(actionCodeName));
 	}
-	
-	public int getHP(){
+
+	public int getHP() {
 		return currentHP;
 	}
-	
-	public int getHPMax(){
+
+	public int getHPMax() {
 		return currentHPMax;
 	}
-	
-	public int getBattleAttack(){
+
+	public int getBattleAttack() {
 		return battleAttack;
 	}
-	
-	public int getBattleDefense(){
+
+	public int getBattleDefense() {
 		return battleDefense;
 	}
 
-	public int getBattleSpAttack(){
+	public int getBattleSpAttack() {
 		return battleSpAttack;
 	}
-	
-	public int getBattleSpDefense(){
+
+	public int getBattleSpDefense() {
 		return battleSpDefense;
 	}
-	
-	public int getBattleSpeed(){
+
+	public int getBattleSpeed() {
 		return battleSpeed;
 	}
-	
-	public int getPokeAttack(){
+
+	public int getPokeAttack() {
 		return pokeAttack;
 	}
-	
-	public int getPokeDefense(){
+
+	public int getPokeDefense() {
 		return pokeDefense;
 	}
 
-	public int getPokeSpAttack(){
+	public int getPokeSpAttack() {
 		return pokeSpAttack;
 	}
-	
-	public int getPokeSpDefense(){
+
+	public int getPokeSpDefense() {
 		return pokeSpDefense;
 	}
-	
-	public int getPokeSpeed(){
+
+	public int getPokeSpeed() {
 		return pokeSpeed;
 	}
-	
+
 	public static PokemonCreature makePokemon(PokemonType pokemonType) {
 		PokemonCreature newPokemon = new PokemonCreature(pokemonType);
 		JSExecutor.setThisScope(newPokemon);
-		JSExecutor.evaluate(pokemonType.baseName.concat("_on_spawn()"));
+		JSExecutor.evaluate(pokemonType.baseName
+				.concat("_on_spawn()"));
 		return newPokemon;
 	}
 

@@ -18,18 +18,26 @@ import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.tweenaccessors.BitmapFontTween;
 
 public class StartScreen implements Screen, InputProcessor {
+
 	ChromeGame game;
+
 	Music music = Gdx.audio.newMusic(Gdx.files
 			.internal("music/PokemonHGSS.mp3"));
+
 	Texture startBg;
+
 	Sprite bg;
+
 	SpriteBatch batch;
+
 	TweenManager manager;
 
-	BitmapFont font = new BitmapFont(Gdx.files.internal("font/pokemon.fnt"),
+	BitmapFont font = new BitmapFont(
+			Gdx.files.internal("font/pokemon.fnt"),
 			Gdx.files.internal("font/pokemon.png"), false);
 
 	boolean startFading = false;
+
 	private int musicState = 0;
 
 	public StartScreen(ChromeGame game) {
@@ -45,12 +53,12 @@ public class StartScreen implements Screen, InputProcessor {
 		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
-
 		font.setColor(Color.LIGHT_GRAY);
 		manager.update(delta);
 		batch.begin();
 		bg.draw(batch);
-		font.draw(batch, "Press Start", (Gdx.graphics.getWidth() / 2) - 45, 125);
+		font.draw(batch, "Press Start",
+				(Gdx.graphics.getWidth() / 2) - 45, 125);
 		batch.end();
 
 		changeMusicVol(delta);
@@ -59,26 +67,26 @@ public class StartScreen implements Screen, InputProcessor {
 	private void changeMusicVol(float delta) {
 		float volume = music.getVolume();
 		switch (musicState) {
-		case 1:
-			if (music.isLooping() || music.isPlaying()) {
-				if (volume > 0.10f)
-					volume -= delta;
-				else {
-					changeToMainMenu();
+			case 1:
+				if (music.isLooping() || music.isPlaying()) {
+					if (volume > 0.10f)
+						volume -= delta;
+					else {
+						changeToMainMenu();
+					}
+					music.setVolume(Math.abs(volume));
 				}
-				music.setVolume(Math.abs(volume));
-			}
-			break;
-		case 0:
-			if (music.isLooping() || music.isPlaying()) {
-				if (volume < 1.0f)
-					volume += delta * 3;
-				else {
-					volume = 1.0f;
+				break;
+			case 0:
+				if (music.isLooping() || music.isPlaying()) {
+					if (volume < 1.0f)
+						volume += delta * 3;
+					else {
+						volume = 1.0f;
+					}
+					music.setVolume(volume);
 				}
-				music.setVolume(volume);
-			}
-			break;
+				break;
 		}
 	}
 
@@ -98,7 +106,8 @@ public class StartScreen implements Screen, InputProcessor {
 		bg = new Sprite(startBg);
 		batch = new SpriteBatch();
 
-		Tween.registerAccessor(BitmapFont.class, new BitmapFontTween());
+		Tween.registerAccessor(BitmapFont.class,
+				new BitmapFontTween());
 
 		manager = new TweenManager();
 
@@ -151,12 +160,14 @@ public class StartScreen implements Screen, InputProcessor {
 	}
 
 	@Override
-	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+	public boolean touchDown(int screenX, int screenY, int pointer,
+			int button) {
 		return false;
 	}
 
 	@Override
-	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+	public boolean touchUp(int screenX, int screenY, int pointer,
+			int button) {
 		return false;
 	}
 

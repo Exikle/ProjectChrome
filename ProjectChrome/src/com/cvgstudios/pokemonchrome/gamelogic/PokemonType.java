@@ -21,26 +21,35 @@ public class PokemonType {
 	protected static Vector<PokemonType> typesOfPokemon;
 
 	protected Vector<String> actions;
+
 	protected Vector<String> actionNames;
 
 	protected String baseName;
+
 	protected String typeName;
 
 	protected String[] types;
-	
+
 	protected int typeID;
-	
+
 	protected int baseHP;
+
 	protected int baseAttack;
+
 	protected int baseDefense;
+
 	protected int baseSpAttack;
+
 	protected int baseSpDefense;
+
 	protected int baseSpeed;
 
 	protected Image frontImage;
+
 	protected Image backImage;
-	
+
 	protected Texture frontTexture;
+
 	protected Texture backTexture;
 
 	public PokemonType(String basePokemonName) {
@@ -60,11 +69,12 @@ public class PokemonType {
 	public Image getBackImage() {
 		return backImage;
 	}
-	
-	public Texture getFrontTexture(){
+
+	public Texture getFrontTexture() {
 		return frontTexture;
 	}
-	public Texture getBackTexture(){
+
+	public Texture getBackTexture() {
 		return backTexture;
 	}
 
@@ -79,21 +89,21 @@ public class PokemonType {
 	public void setTypeName(String name) {
 		typeName = name;
 	}
-	
-	public void setTypes(String[] type){
+
+	public void setTypes(String[] type) {
 		types = type;
 	}
 
 	public String getTypeName() {
 		return typeName;
 	}
-	
-	public boolean hasType(String type){
-		for (String t : types){
-			if (t.equalsIgnoreCase(type)){
+
+	public boolean hasType(String type) {
+		for (String t : types) {
+			if (t.equalsIgnoreCase(type)) {
 				return true;
 			}
-			
+
 		}
 		return false;
 	}
@@ -121,7 +131,7 @@ public class PokemonType {
 			System.out.println();
 		}
 	}
-	
+
 	public void setFrontTexture(String filepath) {
 		System.out.print("Loading " + filepath);
 		frontTexture = new Texture(filepath);
@@ -155,8 +165,8 @@ public class PokemonType {
 	public void setSpeed(int speed) {
 		baseSpeed = speed;
 	}
-	
-	public void setTypeID(int id){
+
+	public void setTypeID(int id) {
 		typeID = id;
 	}
 
@@ -164,8 +174,8 @@ public class PokemonType {
 		actions.add(actionname);
 		actionNames.add(actionTrueName);
 	}
-	
-	public int getTypeID(){
+
+	public int getTypeID() {
 		return typeID;
 	}
 
@@ -180,7 +190,8 @@ public class PokemonType {
 	public static PokemonType getPokemon(String pokemonName) {
 
 		for (int i = 0; i < typesOfPokemon.size(); i++) {
-			if (typesOfPokemon.get(i).baseName.equalsIgnoreCase(pokemonName)) {
+			if (typesOfPokemon.get(i).baseName
+					.equalsIgnoreCase(pokemonName)) {
 				return typesOfPokemon.get(i);
 			}
 		}

@@ -20,9 +20,11 @@ import com.cvgstudios.pokemonchrome.entities.Player;
 public class PokemonWorld extends MapBase implements Screen {
 
 	private boolean DEBUG = true;
+
 	private ChromeGame game;
 
 	private String START_MAP_NAME = "Route1";
+
 	private final Vector2 STARTCOORD = new Vector2(528, 504);
 
 	private BitmapFont font;
@@ -84,19 +86,21 @@ public class PokemonWorld extends MapBase implements Screen {
 		batch.begin();
 
 		font.draw(batch, "Current Map: " + mapName, player.getX()
-				- Gdx.graphics.getWidth() / 3,
-				player.getY() - Gdx.graphics.getHeight() / 3);
+				- Gdx.graphics.getWidth() / 3, player.getY()
+				- Gdx.graphics.getHeight() / 3);
 
-		font.draw(batch, "X: " + player.getX() + ", Y:" + player.getY(),
-				player.getX() - Gdx.graphics.getWidth() / 3, player.getY()
-						- Gdx.graphics.getHeight() / 3 - 25);
+		font.draw(batch,
+				"X: " + player.getX() + ", Y:" + player.getY(),
+				player.getX() - Gdx.graphics.getWidth() / 3,
+				player.getY() - Gdx.graphics.getHeight() / 3 - 25);
 
 		font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(),
-				player.getX() - Gdx.graphics.getWidth() / 3, player.getY()
-						- Gdx.graphics.getHeight() / 3 - 50);
+				player.getX() - Gdx.graphics.getWidth() / 3,
+				player.getY() - Gdx.graphics.getHeight() / 3 - 50);
 
-		font.draw(batch, "MSG: " + msg, player.getX() - Gdx.graphics.getWidth()
-				/ 3 + 100, player.getY() - Gdx.graphics.getHeight() / 3 - 50);
+		font.draw(batch, "MSG: " + msg,
+				player.getX() - Gdx.graphics.getWidth() / 3 + 100,
+				player.getY() - Gdx.graphics.getHeight() / 3 - 50);
 
 		batch.end();
 
@@ -121,7 +125,8 @@ public class PokemonWorld extends MapBase implements Screen {
 
 		batch = new SpriteBatch();
 
-		Gdx.input.setInputProcessor(new InputHandler(this, camera, player));
+		Gdx.input.setInputProcessor(new InputHandler(this, camera,
+				player));
 
 	}
 

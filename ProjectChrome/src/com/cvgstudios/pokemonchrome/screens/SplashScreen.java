@@ -19,9 +19,13 @@ import com.cvgstudios.pokemonchrome.tweenaccessors.SpriteTween;
 public class SplashScreen implements Screen {
 
 	Texture splashTexture;
+
 	Sprite splashSprite;
+
 	SpriteBatch batch;
+
 	ChromeGame game;
+
 	TweenManager manager;
 
 	public SplashScreen(ChromeGame game) {
@@ -48,7 +52,8 @@ public class SplashScreen implements Screen {
 	public void show() {
 		splashTexture = new Texture("imgs/copyright.png");
 
-		splashTexture.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		splashTexture.setFilter(TextureFilter.Linear,
+				TextureFilter.Linear);
 
 		splashSprite = new Sprite(splashTexture);
 		splashSprite.setColor(1, 1, 1, 0);
@@ -56,7 +61,7 @@ public class SplashScreen implements Screen {
 		batch = new SpriteBatch();
 
 		Tween.registerAccessor(Sprite.class, new SpriteTween());
-		
+
 		manager = new TweenManager();
 
 		TweenCallback cb = new TweenCallback() {
@@ -69,14 +74,15 @@ public class SplashScreen implements Screen {
 
 		Tween.to(splashSprite, SpriteTween.ALPHA, 1.5f).target(1)
 				.ease(TweenEquations.easeInQuad).repeatYoyo(1, 1.5f)
-				.setCallback(cb).setCallbackTriggers(TweenCallback.COMPLETE)
+				.setCallback(cb)
+				.setCallbackTriggers(TweenCallback.COMPLETE)
 				.start(manager);
 
 	}
 
 	private void tweenCompleted() {
 		// TODO Auto-generated method stub
-//		Gdx.app.log(ChromeGame.LOG, "Splash Tween Complete");
+		// Gdx.app.log(ChromeGame.LOG, "Splash Tween Complete");
 		game.setScreen(new StartScreen(game));
 	}
 

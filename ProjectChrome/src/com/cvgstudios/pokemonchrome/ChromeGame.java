@@ -12,6 +12,7 @@ import com.cvgstudios.pokemonchrome.screens.BattleScreen;
 public class ChromeGame extends Game {
 
 	public static final String POKECHROME_VERSION = "0.0.0.05 Pre-Alpha";
+
 	public static final String LOG = "Pokemon Chrome";
 
 	public static DisplayInterface display;
@@ -24,10 +25,10 @@ public class ChromeGame extends Game {
 			JSExecutor.initializeExecutor(new File("res/javascript")
 					.getAbsolutePath());
 			BattleScreen tempScreen = new BattleScreen();
-			tempScreen.setPlayerPokemon(PokemonCreature.makePokemon(PokemonType
-					.getPokemon("tykepol")));
-			tempScreen.setEnemyPokemon(PokemonCreature.makePokemon(PokemonType
-					.getPokemon("embite")));
+			tempScreen.setPlayerPokemon(PokemonCreature
+					.makePokemon(PokemonType.getPokemon("tykepol")));
+			tempScreen.setEnemyPokemon(PokemonCreature
+					.makePokemon(PokemonType.getPokemon("embite")));
 			setScreen(tempScreen);
 		} else {
 			setScreen(new PokemonWorld(this));

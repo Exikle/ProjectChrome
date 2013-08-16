@@ -12,18 +12,22 @@ import com.cvgstudios.pokemonchrome.game.PokemonWorld;
 public class InputHandler implements InputProcessor {
 
 	PokemonWorld playScreen;
+
 	OrthographicCamera camera;
+
 	Player player;
+
 	private boolean keyNotDown = true;
 
-	public InputHandler(PokemonWorld screen, OrthographicCamera camera,
-			Player player) {
+	public InputHandler(PokemonWorld screen,
+			OrthographicCamera camera, Player player) {
 		this.playScreen = screen;
 		this.camera = camera;
 		this.player = player;
 	}
 
 	private static final Map<Integer, Direction> MOVE_KEYS = new HashMap<Integer, Direction>() {
+
 		/**
 		 * 
 		 */
@@ -38,11 +42,13 @@ public class InputHandler implements InputProcessor {
 	};
 
 	private static enum Direction {
-		DOWN(1, -2, "VERTICAL"), UP(2, 2, "VERTICAL"), RIGHT(3, 2, "HORIZONTAL"), LEFT(
-				4, -2, "HORIZONTAL");
+		DOWN(1, -2, "VERTICAL"), UP(2, 2, "VERTICAL"), RIGHT(3, 2,
+				"HORIZONTAL"), LEFT(4, -2, "HORIZONTAL");
 
 		float speed;
+
 		int directionVal;
+
 		String axis;
 
 		private Direction(int d, float s, String a) {
@@ -85,9 +91,9 @@ public class InputHandler implements InputProcessor {
 			}
 		}
 		switch (keycode) {
-		case Keys.SPACE:
-			playScreen.checkPlayerInteraction();
-			break;
+			case Keys.SPACE:
+				playScreen.checkPlayerInteraction();
+				break;
 		}
 
 		return true;
@@ -106,13 +112,15 @@ public class InputHandler implements InputProcessor {
 	}
 
 	@Override
-	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+	public boolean touchDown(int screenX, int screenY, int pointer,
+			int button) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+	public boolean touchUp(int screenX, int screenY, int pointer,
+			int button) {
 		// TODO Auto-generated method stub
 		return false;
 	}

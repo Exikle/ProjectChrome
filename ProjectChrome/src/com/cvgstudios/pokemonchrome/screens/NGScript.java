@@ -58,7 +58,8 @@ public class NGScript {
 	}
 
 	private static int count(String filename) throws IOException {
-		InputStream is = new BufferedInputStream(new FileInputStream(filename));
+		InputStream is = new BufferedInputStream(new FileInputStream(
+				filename));
 		try {
 			byte[] c = new byte[1024];
 			int count = 0;

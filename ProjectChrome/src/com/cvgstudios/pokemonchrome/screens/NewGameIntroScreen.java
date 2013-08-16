@@ -15,29 +15,37 @@ import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.game.PokemonWorld;
 
 public class NewGameIntroScreen implements Screen, InputProcessor {
+
 	ChromeGame game;
 
 	String[] script;
+
 	String[] hold;
 
 	private Sprite optionBox;
 
 	private int counter = 0;
+
 	private int len;
 
-	BitmapFont font = new BitmapFont(Gdx.files.internal("font/pokemon.fnt"),
+	BitmapFont font = new BitmapFont(
+			Gdx.files.internal("font/pokemon.fnt"),
 			Gdx.files.internal("font/pokemon.png"), false);
+
 	SpriteBatch batch;
 
 	private String lineOne = "";
+
 	private String lineTwo = "";
 
 	String playerName = "Ash";
+
 	String playerGender = "male";
 
 	Sprite bg, box, prof;
 
 	private boolean optionsBoxVisible = false;
+
 	// private boolean profVisible = true;
 	private Music m = Gdx.audio.newMusic(Gdx.files
 			.internal("music/ProfessorIntro.mp3"));
@@ -122,45 +130,48 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 	@Override
 	public boolean keyDown(int keycode) {
 		switch (keycode) {
-		case (Keys.SPACE):
-			if (counter < len) {
+			case (Keys.SPACE):
+				if (counter < len) {
 
-				counter++;
-				optionsVisible = false;
+					counter++;
+					optionsVisible = false;
 
-				if (script[counter].contains("(NAME)")) {
-					script[counter] = script[counter].replace("(NAME)",
-							playerName);
-				} else if (script[counter].contains("(GENDERPICK)")) {
-					// allow user to choose gender
-				} else if (script[counter].contains("(NAME CREATION)")) {
-					// allow user to enter a name
-				} else if (script[counter].contains("(GENDER)")) {
-					script[counter] = script[counter].replace("(GENDER)",
-							playerGender);
+					if (script[counter].contains("(NAME)")) {
+						script[counter] = script[counter].replace(
+								"(NAME)", playerName);
+					} else if (script[counter]
+							.contains("(GENDERPICK)")) {
+						// allow user to choose gender
+					} else if (script[counter]
+							.contains("(NAME CREATION)")) {
+						// allow user to enter a name
+					} else if (script[counter].contains("(GENDER)")) {
+						script[counter] = script[counter].replace(
+								"(GENDER)", playerGender);
+					}
+
+					if (script[counter].contains("(OPTION)")) {
+						script[counter] = script[counter].replace(
+								"(OPTION)", "");
+						optionsVisible = true;
+					}
+
+					getLines();
+				} else {
+					m.stop();
+					game.setScreen(new PokemonWorld(game));
 				}
+				break;
+			case (Keys.UP):
+				if (optionsScreen == 1) {
 
-				if (script[counter].contains("(OPTION)")) {
-					script[counter] = script[counter].replace("(OPTION)", "");
-					optionsVisible = true;
 				}
+				break;
+			case (Keys.DOWN):
+				if (optionsScreen == 1) {
 
-				getLines();
-			} else {
-				m.stop();
-				game.setScreen(new PokemonWorld(game));
-			}
-			break;
-		case (Keys.UP):
-			if (optionsScreen == 1) {
-
-			}
-			break;
-		case (Keys.DOWN):
-			if (optionsScreen == 1) {
-
-			}
-			break;
+				}
+				break;
 		}
 
 		return false;
@@ -185,13 +196,15 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 	}
 
 	@Override
-	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+	public boolean touchDown(int screenX, int screenY, int pointer,
+			int button) {
 
 		return false;
 	}
 
 	@Override
-	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+	public boolean touchUp(int screenX, int screenY, int pointer,
+			int button) {
 
 		return false;
 	}

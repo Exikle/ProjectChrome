@@ -1,21 +1,27 @@
 package com.cvgstudios.pokemonchrome.entities;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.cvgstudios.pokemonchrome.ChromeGame;
 
+/**
+ * Player sprite that appears onto the screen
+ * 
+ * @author Dixon D'Cunha
+ *         Extension of {@link Sprite}
+ */
 public class Player extends Sprite {
 
 	public int direction = 1;
 
-	public static TextureRegion playerR = new TextureRegion(new Texture(
-			"imgs/MalePlayer.png"));
+	public static TextureRegion playerR = new TextureRegion(
+			new Texture("imgs/MalePlayer.png"));
+
 	public float xD = 0, yD = 0;
 
 	public int currentStep;
+
 	public boolean keyDown = false;
 
 	public final int STEP_DELAY = 15;
@@ -32,18 +38,18 @@ public class Player extends Sprite {
 	public void changePlayerDirection(int d) {
 		setDirection(d);
 		switch (d) {
-		case 1:// down
-			playerR.setRegion(0, 0 + (currentStep * 42), 37, 42);
-			break;
-		case 2:// up
-			playerR.setRegion(37, 0 + (currentStep * 42), 37, 42);
-			break;
-		case 3:// right
-			playerR.setRegion(74, 0 + (currentStep * 42), 37, 42);
-			break;
-		case 4:// left
-			playerR.setRegion(111, 0 + (currentStep * 42), 37, 42);
-			break;
+			case 1:// down
+				playerR.setRegion(0, 0 + (currentStep * 42), 37, 42);
+				break;
+			case 2:// up
+				playerR.setRegion(37, 0 + (currentStep * 42), 37, 42);
+				break;
+			case 3:// right
+				playerR.setRegion(74, 0 + (currentStep * 42), 37, 42);
+				break;
+			case 4:// left
+				playerR.setRegion(111, 0 + (currentStep * 42), 37, 42);
+				break;
 		}
 		this.setRegion(playerR);
 	}
@@ -77,7 +83,7 @@ public class Player extends Sprite {
 		if (keyDown) {
 			changeUserSteps();
 		}
-//		 Gdx.app.log(ChromeGame.LOG, this.getX() + "," + this.getY());
+		// Gdx.app.log(ChromeGame.LOG, this.getX() + "," + this.getY());
 		camera.position.set(this.getX(), this.getY(), 0);
 
 	}

@@ -13,15 +13,19 @@ import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.GameFile;
 
 public class MainMenu implements Screen, InputProcessor {
+
 	ChromeGame game;
 
 	Texture t, button, conButton;
 
-	BitmapFont font = new BitmapFont(Gdx.files.internal("font/pokemon.fnt"),
+	BitmapFont font = new BitmapFont(
+			Gdx.files.internal("font/pokemon.fnt"),
 			Gdx.files.internal("font/pokemon.png"), false);
 
 	Texture selButton, selConButton;
+
 	SpriteBatch batch;
+
 	Sprite bg, regButton, regButton2, regButton3, butContinue;
 
 	private boolean saveFileExists = GameFile.saveExits;
@@ -63,37 +67,37 @@ public class MainMenu implements Screen, InputProcessor {
 	private void updateSelection() {
 		resetSelection();
 		switch (choiceSelected) {
-		case 1:
-			if (saveFileExists) {
-				regButton = new Sprite(selConButton);
-				regButton.setX(150);
-				regButton.setY(250);
-			} else {
-				regButton = new Sprite(selButton);
-				regButton.setX(150);
-				regButton.setY(400);
-			}
-			break;
-		case 2:
-			regButton2 = new Sprite(selButton);
-			if (saveFileExists) {
-				regButton2.setX(150);
-				regButton2.setY(150);
-			} else {
-				regButton2.setX(150);
-				regButton2.setY(300);
-			}
-			break;
-		case 3:
-			regButton3 = new Sprite(selButton);
-			if (saveFileExists) {
-				regButton3.setX(150);
-				regButton3.setY(50);
-			} else {
-				regButton3.setX(150);
-				regButton3.setY(200);
-			}
-			break;
+			case 1:
+				if (saveFileExists) {
+					regButton = new Sprite(selConButton);
+					regButton.setX(150);
+					regButton.setY(250);
+				} else {
+					regButton = new Sprite(selButton);
+					regButton.setX(150);
+					regButton.setY(400);
+				}
+				break;
+			case 2:
+				regButton2 = new Sprite(selButton);
+				if (saveFileExists) {
+					regButton2.setX(150);
+					regButton2.setY(150);
+				} else {
+					regButton2.setX(150);
+					regButton2.setY(300);
+				}
+				break;
+			case 3:
+				regButton3 = new Sprite(selButton);
+				if (saveFileExists) {
+					regButton3.setX(150);
+					regButton3.setY(50);
+				} else {
+					regButton3.setX(150);
+					regButton3.setY(200);
+				}
+				break;
 
 		}
 
@@ -144,7 +148,8 @@ public class MainMenu implements Screen, InputProcessor {
 		conButton = new Texture("imgs/buttoncontinue.png");
 
 		selButton = new Texture("imgs/menubuttonselected.png");
-		selConButton = new Texture("imgs/PokemonMenuContinueSelected.png");
+		selConButton = new Texture(
+				"imgs/PokemonMenuContinueSelected.png");
 
 		regButton2 = new Sprite(button);
 		regButton3 = new Sprite(button);
@@ -198,22 +203,22 @@ public class MainMenu implements Screen, InputProcessor {
 	@Override
 	public boolean keyDown(int keycode) {
 		switch (keycode) {
-		case (Keys.UP):
-			if (choiceSelected != 1) {
-				choiceSelected -= 1;
-			}
-			break;
-		case (Keys.DOWN):
-			if (choiceSelected != 3) {
-				choiceSelected += 1;
-			}
-			break;
-		case (Keys.SPACE):
-			startAction(choiceSelected);
-			break;
-		case (Keys.ESCAPE):
-			Gdx.app.exit();
-			break;
+			case (Keys.UP):
+				if (choiceSelected != 1) {
+					choiceSelected -= 1;
+				}
+				break;
+			case (Keys.DOWN):
+				if (choiceSelected != 3) {
+					choiceSelected += 1;
+				}
+				break;
+			case (Keys.SPACE):
+				startAction(choiceSelected);
+				break;
+			case (Keys.ESCAPE):
+				Gdx.app.exit();
+				break;
 		}
 		return true;
 	}
@@ -251,12 +256,14 @@ public class MainMenu implements Screen, InputProcessor {
 	}
 
 	@Override
-	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+	public boolean touchDown(int screenX, int screenY, int pointer,
+			int button) {
 		return false;
 	}
 
 	@Override
-	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+	public boolean touchUp(int screenX, int screenY, int pointer,
+			int button) {
 		return false;
 	}
 

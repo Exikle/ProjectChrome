@@ -22,26 +22,33 @@ import com.cvgstudios.pokemonchrome.entities.Player;
 public abstract class MapBase implements Screen {
 
 	protected TiledMap map;
+
 	protected OrthogonalTiledMapRenderer renderer;
+
 	protected OrthographicCamera camera;
+
 	protected SpriteBatch batch;
 
 	protected int collisionAmount;
 
 	protected int[] bgLayers;
+
 	protected int[] fgLayers;
 
 	protected Rectangle[] collsionRect;
+
 	protected Rectangle[] interactRect;
 
 	protected RectangleMapObject[] interactObject;
 
 	protected int interactionAmount;
 
-	protected Rectangle user = new Rectangle(Gdx.graphics.getWidth() / 2,
+	protected Rectangle user = new Rectangle(
+			Gdx.graphics.getWidth() / 2,
 			Gdx.graphics.getHeight() / 2, 38, 42);
 
 	private Player player;
+
 	protected String mapName;
 
 	protected String msg;
@@ -95,14 +102,16 @@ public abstract class MapBase implements Screen {
 		interactRect = new Rectangle[interactionAmount];
 
 		for (int x = 0; x < interactionAmount; x++) {
-			interactObject[x] = (RectangleMapObject) mInteractions.get(x);
+			interactObject[x] = (RectangleMapObject) mInteractions
+					.get(x);
 			interactRect[x] = interactObject[x].getRectangle();
 		}
 
 	}
 
 	protected void createCollisions() {
-		MapObjects mCollisions = map.getLayers().get("Collision").getObjects();
+		MapObjects mCollisions = map.getLayers().get("Collision")
+				.getObjects();
 
 		RectangleMapObject gameObject = new RectangleMapObject();
 		collsionRect = new Rectangle[mCollisions.getCount()];

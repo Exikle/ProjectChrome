@@ -16,12 +16,13 @@ import com.badlogic.gdx.graphics.Texture;
  *            must be an operation that has registered itself with the object
  * @return imported Images that are imported
  */
-public enum Graphic implements ImgPathConstants{
+public enum Graphic implements ImgPathConstants {
 
 	// Stuff
 	StartMenuLogo("res/imgs/TitleScreen.png"),
 
-	StartMenuBG("res/imgs/MainMenuBG.png"), Box("res/imgs/PokemonMenuAll.png"), BoxHighLight(
+	StartMenuBG("res/imgs/MainMenuBG.png"), Box(
+			"res/imgs/PokemonMenuAll.png"), BoxHighLight(
 			"res/imgs/PokemonMenuAllSelected.png"), ContinueBox(
 			"res/imgs/PokemonMenuContinue.png"), ContinueBoxHighLight(
 			"res/imgs/PokemonMenuContinueSelected.png"),
@@ -31,23 +32,28 @@ public enum Graphic implements ImgPathConstants{
 	Professor("res/imgs/Professor.png"),
 
 	// Tiles
-	GrassTile("res/imgs/GrassTile.png"), DirtTile("res/imgs/DirtTile.png"), FenceLTile(
-			"res/imgs/FenceLTile.png"), FenceUTile("res/imgs/FenceUTile.png"), FenceRTile(
-			"res/imgs/FenceRTile.png"), FenceDTile("res/imgs/FenceDTile.png"),
+	GrassTile("res/imgs/GrassTile.png"), DirtTile(
+			"res/imgs/DirtTile.png"), FenceLTile(
+			"res/imgs/FenceLTile.png"), FenceUTile(
+			"res/imgs/FenceUTile.png"), FenceRTile(
+			"res/imgs/FenceRTile.png"), FenceDTile(
+			"res/imgs/FenceDTile.png"),
 
-	
-	//Battle Screen things + GUI
-	BattleScreenMenu(MENU_BATTLE_PATH + "/BossBattleMenu.png"),
-	BattleScreenMenuSelect(MENU_BATTLE_PATH + "/MenuSelect.png"),
-	PlayerPokemonStatBar(MENU_BATTLE_PATH + "/HpBarAlly.png"),
-	EnemyPokemonStatBar(MENU_BATTLE_PATH + "/HpBarEnemy.png"),
-	GrassBattleSetting(MENU_BATTLE_PATH + "/GreenBackground.png"),
-	
-	
+	// Battle Screen things + GUI
+	BattleScreenMenu(MENU_BATTLE_PATH + "/BossBattleMenu.png"), BattleScreenMenuSelect(
+			MENU_BATTLE_PATH + "/MenuSelect.png"), PlayerPokemonStatBar(
+			MENU_BATTLE_PATH + "/HpBarAlly.png"), EnemyPokemonStatBar(
+			MENU_BATTLE_PATH + "/HpBarEnemy.png"), GrassBattleSetting(
+			MENU_BATTLE_PATH + "/GreenBackground.png"),
+
 	;
+
 	private String filePath;
+
 	private Image image;
+
 	private Texture texture;
+
 	private boolean graphicLoaded;
 
 	private Graphic(String imagePath) {
@@ -63,9 +69,9 @@ public enum Graphic implements ImgPathConstants{
 		return image;
 
 	}
-	
-	public Texture getTexture(){
-		if (!graphicLoaded){
+
+	public Texture getTexture() {
+		if (!graphicLoaded) {
 			loadGraphic();
 		}
 		return texture;
