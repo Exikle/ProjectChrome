@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="67" height="53" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="MapTileSheet" tilewidth="32" tileheight="32">
+  <image source="MapTileSheet.png" width="320" height="3500"/>
+ </tileset>
+ <layer name="Terrain 1" width="67" height="53">
+  <data encoding="base64" compression="zlib">
+   eJzt0MEJADAMA7Fk/6W7Qn4HRYb7G+3M7OddV/9kwYJFHwsWLFiwYMGCBQsWLFiw6GPBggULFixYsGDBggULFn0sWLBgwYIFCxYsWLBgwaKPBQsWLFiwYMGCRW/xAK94C84=
+  </data>
+ </layer>
+ <layer name="Tall Grass 2" width="67" height="53">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T+1rCKAAAAAAAAAAAAAAAAAAgDc3fAAB
+  </data>
+ </layer>
+ <layer name="Fence 3" width="67" height="53">
+  <data encoding="base64" compression="zlib">
+   eJzt1sEOwUAQxvHum3k0Z8QJccWxOOKIIx7K9NBoNtLptNhp/H/JhCYVk5mvS5YhlVloXnOpRfDfZ9tep8b7V4lmYe2zYO11abw/TzQLa58Fa6/k4iWet/bM/VMu4ut4tqlyMZLvHYf3r+V7rXdNPO/4Op7tJmQDr785Wu8aay40+5ANd1JbKdsnu4t7L/Y2r+xG25c1F5qTzOAodUgwizZnSnXXn87FVWZwkTo7yEUT+Rdz8ZAZ3KVuPclFbshFeU5bqzjXJz8+O7v+B9Fm0Sddc6E9I33SZo91Oa7LfPzqLUMp9+gtQyl3s3Y2C2+7ScnbbgAAAAAAAAAAAAAAAACPnlb6a3U=
+  </data>
+ </layer>
+ <objectgroup name="Player" width="67" height="53"/>
+ <layer name="Tree 4" width="67" height="53">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T+1rCKAAAAAAAAAAAAAAAAAAgDc3fAAB
+  </data>
+ </layer>
+ <objectgroup name="Interaction" width="67" height="53"/>
+ <objectgroup name="Collision" width="67" height="53"/>
+</map>
