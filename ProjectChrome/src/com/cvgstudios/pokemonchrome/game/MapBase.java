@@ -41,6 +41,7 @@ public abstract class MapBase implements Screen {
 			Gdx.graphics.getHeight() / 2, 38, 42);
 
 	private Player player;
+	protected String mapName;
 
 	@Override
 	public void render(float delta) {
@@ -51,7 +52,7 @@ public abstract class MapBase implements Screen {
 
 	protected void importMap(String m, Vector2 pos) {
 		map = new TmxMapLoader().load("maps/" + m + ".tmx");
-
+		mapName = m;
 		int index = 0;
 		int layerNum = map.getLayers().getCount() - 2;
 

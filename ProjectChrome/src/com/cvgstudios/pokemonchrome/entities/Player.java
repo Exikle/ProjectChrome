@@ -77,7 +77,7 @@ public class Player extends Sprite {
 		if (keyDown) {
 			changeUserSteps();
 		}
-		 Gdx.app.log(ChromeGame.LOG, this.getX() + "," + this.getY());
+//		 Gdx.app.log(ChromeGame.LOG, this.getX() + "," + this.getY());
 		camera.position.set(this.getX(), this.getY(), 0);
 
 	}
