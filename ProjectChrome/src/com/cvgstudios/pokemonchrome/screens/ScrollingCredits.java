@@ -41,9 +41,9 @@ public class ScrollingCredits implements Screen {
 				middle - font.getBounds("Creative Director").width / 2, -175
 						+ movingY);
 
-		font.draw(batch, "Arvin Zaldivar",
-				middle - font.getBounds("Arvin Zaldivar").width / 2, -200
-						+ movingY);
+		font.draw(batch, "Arvin Zaldivar(AFK/MIA)",
+				middle - font.getBounds("Arvin Zaldivar(AFK/MIA)").width / 2,
+				-200 + movingY);
 
 		font.draw(batch, "Level Designer",
 				middle - font.getBounds("Level Designer").width / 2, -250
@@ -83,7 +83,7 @@ public class ScrollingCredits implements Screen {
 		font.draw(batch, "Dixon 'Exikle' D'Cunha",
 				middle - font.getBounds("Dixon 'Exikle' D'Cunha").width / 2,
 				-575 + movingY);
-		
+
 		font.draw(batch, "Battle Programmer",
 				middle - font.getBounds("Battle Programmer").width / 2, -625
 						+ movingY);
@@ -99,7 +99,7 @@ public class ScrollingCredits implements Screen {
 		font.draw(batch, "Dixon 'Exikle' D'Cunha",
 				middle - font.getBounds("Dixon 'Exikle' D'Cunha").width / 2,
 				-725 + movingY);
-		
+
 		font.draw(
 				batch,
 				"Artificial Intelligence Programmer",

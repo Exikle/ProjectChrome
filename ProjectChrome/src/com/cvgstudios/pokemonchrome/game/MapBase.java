@@ -102,6 +102,16 @@ public abstract class MapBase implements Screen {
 		}
 	}
 
+	protected boolean collision() {
+		for (int x = 0; x < collisionAmount; x++) {
+			if (collsionRect[x].overlaps(user)) {
+				// Gdx.app.log(ChromeGame.LOG, "Collide");
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public void checkPlayerInteraction() {
 		for (int x = 0; x < interactionAmount; x++) {
 			if (interactRect[x].overlaps(user)) {
