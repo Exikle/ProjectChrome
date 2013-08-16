@@ -22,7 +22,7 @@ public class PokemonWorld extends MapBase implements Screen {
 	private boolean DEBUG = true;
 	private ChromeGame game;
 
-	private String START_MAP_NAME = "Exitium";
+	private String START_MAP_NAME = "Route1";
 	private final Vector2 STARTCOORD = new Vector2(528, 504);
 
 	private BitmapFont font;
@@ -94,6 +94,9 @@ public class PokemonWorld extends MapBase implements Screen {
 		font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(),
 				player.getX() - Gdx.graphics.getWidth() / 3, player.getY()
 						- Gdx.graphics.getHeight() / 3 - 50);
+
+		font.draw(batch, "MSG: " + msg, player.getX() - Gdx.graphics.getWidth()
+				/ 3 + 100, player.getY() - Gdx.graphics.getHeight() / 3 - 50);
 
 		batch.end();
 

@@ -73,8 +73,7 @@
   <object x="608" y="767" width="6" height="426"/>
   <object x="639" y="1208" width="265" height="6"/>
   <object x="386" y="1" width="691" height="25"/>
-  <object x="1056" y="2" width="26" height="1404"/>
-  <object x="1060" y="1388" width="379" height="17"/>
+  <object x="1088" y="-2" width="26" height="1404"/>
   <object x="368" y="8" width="16" height="759"/>
   <object x="12" y="749" width="363" height="17"/>
   <object x="1748" y="845" width="12" height="753"/>
@@ -87,6 +86,8 @@
   <object x="375" y="897" width="231" height="13"/>
   <object x="158" y="1587" width="193" height="11"/>
   <object x="11" y="751" height="839"/>
+  <object x="1092" y="1381" width="340" height="25"/>
+  <object x="1069" y="1580" width="688" height="102"/>
  </objectgroup>
  <objectgroup name="Interaction" width="60" height="50">
   <object name="(JUMP)" x="365" y="907" width="11" height="339"/>

@@ -1,6 +1,7 @@
 package com.cvgstudios.pokemonchrome.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL10;
@@ -42,6 +43,8 @@ public abstract class MapBase implements Screen {
 
 	private Player player;
 	protected String mapName;
+
+	protected String msg;
 
 	@Override
 	public void render(float delta) {
@@ -115,6 +118,7 @@ public abstract class MapBase implements Screen {
 	protected boolean collision() {
 		for (int x = 0; x < collisionAmount; x++) {
 			if (collsionRect[x].overlaps(user)) {
+
 				return true;
 			}
 		}
@@ -124,7 +128,6 @@ public abstract class MapBase implements Screen {
 	public void checkPlayerInteraction() {
 		for (int x = 0; x < interactionAmount; x++) {
 			if (interactRect[x].overlaps(user)) {
-				Gdx.app.log(ChromeGame.LOG, interactObject[x].getName());
 				checkWhatInteractAction(interactObject[x].getName());
 			}
 		}
@@ -143,15 +146,24 @@ public abstract class MapBase implements Screen {
 		} else if (s.contains("(JUMP)")) {
 			float dX = player.xD;
 			float dY = player.yD;
-			player.setX(player.getX() + dX * 35);
-			player.setY(player.getY() + dY * 35);
+
+			player.setX(player.getX() + dX * 32);
+			player.setY(player.getY() + dY * 32);
+
 		} else if (s.contains("(SCRIPT)")) {
 			String[] fields = s.split(":");
 			int id = Integer.parseInt(fields[1]);
 			Gdx.app.log(ChromeGame.LOG, "" + id);
 		} else {
-
+			if (Gdx.input.isKeyPressed(Keys.SPACE)) {
+				onlyIfButton(s);
+			}
 		}
+	}
+
+	private void onlyIfButton(String s) {
+		Gdx.app.log(ChromeGame.LOG, s);
+		msg = s;
 	}
 
 	protected void addPlayerToWorld(Player player) {
