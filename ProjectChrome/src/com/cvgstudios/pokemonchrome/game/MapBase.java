@@ -140,6 +140,11 @@ public abstract class MapBase implements Screen {
 
 			Vector2 playerPos = new Vector2(x, y);
 			importMap(fields[1], playerPos);
+		} else if (s.contains("(JUMP)")) {
+			float dX = player.xD;
+			float dY = player.yD;
+			player.setX(player.getX() + dX * 35);
+			player.setY(player.getY() + dY * 35);
 		} else if (s.contains("(SCRIPT)")) {
 			String[] fields = s.split(":");
 			int id = Integer.parseInt(fields[1]);

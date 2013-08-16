@@ -19,11 +19,11 @@ import com.cvgstudios.pokemonchrome.entities.Player;
  */
 public class PokemonWorld extends MapBase implements Screen {
 
-	private boolean DEBUG = false;
+	private boolean DEBUG = true;
 	private ChromeGame game;
 
 	private String START_MAP_NAME = "Exitium";
-	private final Vector2 STARTCOORD = new Vector2(650, 150);
+	private final Vector2 STARTCOORD = new Vector2(528, 504);
 
 	private BitmapFont font;
 
