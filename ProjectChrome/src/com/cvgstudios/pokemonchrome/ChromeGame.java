@@ -9,14 +9,26 @@ import com.cvgstudios.pokemonchrome.gamelogic.PokemonType;
 import com.cvgstudios.pokemonchrome.javascript.JSExecutor;
 import com.cvgstudios.pokemonchrome.screens.BattleScreen;
 
+/**
+ * Class which contains info to start the game
+ */
 public class ChromeGame extends Game {
 
+	/**
+	 * Game Version
+	 */
 	public static final String POKECHROME_VERSION = "0.0.0.05 Pre-Alpha";
 
+	/**
+	 * Used for logging
+	 */
 	public static final String LOG = "Pokemon Chrome";
 
 	public static DisplayInterface display;
 
+	/**
+	 * Sets screen to the splash screen on the games start
+	 */
 	@SuppressWarnings("unused")
 	@Override
 	public void create() {
@@ -36,11 +48,17 @@ public class ChromeGame extends Game {
 
 	}
 
+	/**
+	 * Disposes resources
+	 */
 	@Override
 	public void dispose() {
 		super.dispose();
 	}
 
+	/**
+	 * Renders stuff to the screen
+	 */
 	@Override
 	public void render() {
 		super.render();

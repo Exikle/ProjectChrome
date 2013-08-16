@@ -19,6 +19,15 @@ public class InputHandler implements InputProcessor {
 
 	private boolean keyNotDown = true;
 
+	/**
+	 * Constructor
+	 * 
+	 * @param game
+	 *            screen
+	 * @param game
+	 *            camera
+	 * @para player
+	 */
 	public InputHandler(PokemonWorld screen,
 			OrthographicCamera camera, Player player) {
 		this.playScreen = screen;
@@ -26,12 +35,8 @@ public class InputHandler implements InputProcessor {
 		this.player = player;
 	}
 
+	@SuppressWarnings("serial")
 	private static final Map<Integer, Direction> MOVE_KEYS = new HashMap<Integer, Direction>() {
-
-		/**
-		 * 
-		 */
-		private static final long serialVersionUID = -136331640107565190L;
 
 		{
 			this.put(Keys.RIGHT, Direction.RIGHT);

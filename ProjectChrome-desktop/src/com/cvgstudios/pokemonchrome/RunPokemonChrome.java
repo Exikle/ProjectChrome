@@ -6,9 +6,20 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
 public class RunPokemonChrome implements DisplayInterface {
 
+	/**
+	 * Width of the screen
+	 */
 	public static final int WIDTH = 720;
+
+	/**
+	 * Height of the screen
+	 */
 	public static final int HEIGHT = 540;
 
+	
+	/**
+	 * The game instance
+	 */
 	static LwjglApplication gameInstance;
 
 	public static void main(String[] args) {
@@ -29,10 +40,16 @@ public class RunPokemonChrome implements DisplayInterface {
 
 	}
 
+	/**
+	 * @return display width
+	 */
 	public int getDisplayWidth() {
 		return gameInstance.getGraphics().getWidth();
 	}
 
+	/**
+	 * @return display height
+	 */
 	public int getDisplayHeight() {
 		return gameInstance.getGraphics().getHeight();
 	}
