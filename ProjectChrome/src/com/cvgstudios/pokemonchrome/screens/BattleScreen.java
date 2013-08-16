@@ -45,6 +45,16 @@ public class BattleScreen implements Screen, InputProcessor {
 	public static final float ENEMY_POKEMON_Y_BACKGROUND_PERCENT_POSITION = 0.46f;
 	public static final float ENEMY_POKEMON_X_PERCENT_POSITION = 0.68f;
 
+
+	public static float MENU_BUTTON_1_X_PERC = 0.295f;
+	public static float MENU_BUTTON_1_Y_PERC = 0.395f;
+	public static float MENU_BUTTON_2_X_PERC = 0.516f;
+	public static float MENU_BUTTON_2_Y_PERC = 0.395f;
+	public static float MENU_BUTTON_3_X_PERC = 0.313f;
+	public static float MENU_BUTTON_3_Y_PERC = 0.112f;
+	public static float MENU_BUTTON_4_X_PERC = 0.500f;
+	public static float MENU_BUTTON_4_Y_PERC = 0.112f;
+
 	BitmapFont guiFont;
 	SpriteBatch batch;
 
@@ -53,6 +63,8 @@ public class BattleScreen implements Screen, InputProcessor {
 
 	boolean downButton;
 	boolean upButton;
+
+	int buttonSelect = 1;
 
 	Vector<String> actionList;
 	Vector<String> actionNameList;
@@ -64,6 +76,7 @@ public class BattleScreen implements Screen, InputProcessor {
 	Texture statBarPlayer;
 	Texture statBarEnemy;
 	Texture hudBar;
+	Texture hudSelect;
 
 	Texture playerPokemonTexture;
 	Texture enemyPokemonTexture;
@@ -82,6 +95,7 @@ public class BattleScreen implements Screen, InputProcessor {
 		statBarPlayer = Graphic.PlayerPokemonStatBar.getTexture();
 		statBarEnemy = Graphic.EnemyPokemonStatBar.getTexture();
 		hudBar = Graphic.BattleScreenMenu.getTexture();
+		hudSelect = Graphic.BattleScreenMenuSelect.getTexture();
 	}
 
 	public void setPlayerPokemon(PokemonCreature pokemon) {
@@ -139,25 +153,50 @@ public class BattleScreen implements Screen, InputProcessor {
 
 			guiFont.setColor(Color.RED);
 			guiFont.setScale(1.2f);
-			
+
 			float x1 = 0.385f * displayWidth;
 			float y1 = 0.542f * HUD_BAR_HEIGHT;
-			
+
 			float x2 = 0.602f * displayWidth;
 			float y2 = 0.542f * HUD_BAR_HEIGHT;
-			
+
 			float x3 = 0.397f * displayWidth;
 			float y3 = 0.250f * HUD_BAR_HEIGHT;
-			
+
 			float x4 = 0.585f * displayWidth;
 			float y4 = 0.250f * HUD_BAR_HEIGHT;
-			
+
 			drawStringCentered(guiFont, STR_FIGHT, x1, y1);
 			drawStringCentered(guiFont, STR_POKEMON, x2, y2);
 
 			guiFont.setColor(Color.WHITE);
 			drawStringCentered(guiFont, STR_BAG, x3, y3);
 			drawStringCentered(guiFont, STR_RUN, x4, y4);
+
+			float hudStretch = ((float) hudBar.getHeight() / (float) HUD_BAR_HEIGHT);
+
+			switch (buttonSelect){
+			case 1:{
+				batch.draw(hudSelect, MENU_BUTTON_1_X_PERC * displayWidth, MENU_BUTTON_1_Y_PERC * HUD_BAR_HEIGHT, hudSelect.getWidth() * hudStretch, hudSelect.getHeight() * hudStretch);
+				break;
+			}
+			case 2:{
+				batch.draw(hudSelect, MENU_BUTTON_2_X_PERC * displayWidth, MENU_BUTTON_2_Y_PERC * HUD_BAR_HEIGHT, hudSelect.getWidth() * hudStretch, hudSelect.getHeight() * hudStretch);
+				break;
+			}
+			case 3:{
+				batch.draw(hudSelect, MENU_BUTTON_3_X_PERC * displayWidth, MENU_BUTTON_3_Y_PERC * HUD_BAR_HEIGHT, hudSelect.getWidth() * hudStretch, hudSelect.getHeight() * hudStretch);
+				break;
+			}
+			case 4:{
+				batch.draw(hudSelect, MENU_BUTTON_4_X_PERC * displayWidth, MENU_BUTTON_4_Y_PERC * HUD_BAR_HEIGHT, hudSelect.getWidth() * hudStretch, hudSelect.getHeight() * hudStretch);
+				break;
+			}
+			} 
+
+
+
+
 
 			break;
 		}
@@ -233,7 +272,84 @@ public class BattleScreen implements Screen, InputProcessor {
 
 			}
 
+		} else if (battleState == BattleState.PLAYER_CHOOSING_ACTION) {
+
+
+			switch (buttonSelect){
+			case 1:{
+				switch (keycode){
+				case Keys.DOWN:{
+					buttonSelect = 3;
+					break;
+				}
+				case Keys.RIGHT:{
+					buttonSelect = 2;
+					break;
+				}
+				case Keys.SPACE:{
+					battleState = BattleState.PLAYER_CHOOSING_ATTACK;
+					break;
+				}
+				}
+
+				break;	
+			}
+			case 2:{
+				switch (keycode){
+				case Keys.DOWN:{
+					buttonSelect = 4;
+					break;
+				}
+				case Keys.LEFT:{
+					buttonSelect = 1;
+					break;
+				}
+				}
+				
+				break;	
+			}
+			case 3:{
+				switch (keycode){
+				case Keys.UP:{
+					buttonSelect = 1;
+					break;
+				}
+				case Keys.RIGHT:{
+					buttonSelect = 4;
+					break;
+				}
+				}
+
+				break;	
+			}
+			case 4:{
+				switch (keycode){
+				case Keys.UP:{
+					buttonSelect = 2;
+					break;
+				}
+				case Keys.LEFT:{
+					buttonSelect = 3;
+					break;
+				}
+				}
+
+				break;	
+			}
+
+
+
+
+			}
+
+
+
+
+
+
 		}
+
+
 
 		return false;
 
@@ -249,7 +365,7 @@ public class BattleScreen implements Screen, InputProcessor {
 	}
 
 	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-		// TODO Auto-generated method stub
+		System.out.println("X: " + (screenX / (float) ChromeGame.display.getDisplayWidth()) + "  Y: " + ((ChromeGame.display.getDisplayHeight() - screenY) / (float)HUD_BAR_HEIGHT));
 		return false;
 	}
 
