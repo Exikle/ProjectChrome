@@ -25,6 +25,7 @@
  </layer>
  <objectgroup name="Interaction" width="40" height="50">
   <object name="(CHANGEMAP):Route1:200,1483" x="1269" y="1248" width="8" height="98"/>
+  <object name="(CHANGEMAP):Route2:66,73" x="206" y="2" width="109" height="29"/>
  </objectgroup>
  <objectgroup name="Collision" width="40" height="50"/>
 </map>

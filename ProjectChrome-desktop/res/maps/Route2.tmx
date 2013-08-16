@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="60" height="50" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="MapTileSheet" tilewidth="32" tileheight="32">
-  <image source="MapTileSheet.png" width="320" height="2625"/>
+  <image source="MapTileSheet.png" width="320" height="3500"/>
  </tileset>
  <layer name="Terrain" width="60" height="50">
   <data encoding="base64" compression="zlib">
@@ -40,7 +40,7 @@
  </layer>
  <layer name="Fence" width="60" height="50">
   <data encoding="base64" compression="zlib">
-   eJzt2jsKhEAUBdG3KPGTaE/s/vczDQ/BoAUHVMaiDtzEBrViLRExntgUqa8bLt527yfMDz7rH9jLZi+bvWz2stnLZi+bvWz2stnLZi+bvWz2sr2xt9R1dUvjbP/9o+WNvWd8Dq7by2BvspfB3mQvg73JXgZ7k70M9iZ7GexN9jLYm37tLXH9/953bD14/y+Z/iNS
+   eJzt2jEKhDAYBeEcSnS3cWO997+PWX6ELRKxkBCH+eA1BpSpY04pvS7sncJctty84909rB2/NQJ72exls5fNXjZ72exls5fNXjZ72exls5fNXrYn9uayqexTOfu//6h5Yu8VW+O5vQz2BnsZ7A32Mtgb7GWwN9jLYG+wl8HeYC+DvaHW2/ov+yefnI+0b6N3B6jBJJw=
   </data>
  </layer>
  <layer name="Tree Under" width="60" height="50">
@@ -72,7 +72,6 @@
   <object x="923" y="276" width="5" height="915"/>
   <object x="608" y="767" width="6" height="426"/>
   <object x="639" y="1208" width="265" height="6"/>
-  <object x="10" y="2" width="9" height="1601"/>
   <object x="386" y="1" width="691" height="25"/>
   <object x="1056" y="2" width="26" height="1404"/>
   <object x="1060" y="1388" width="379" height="17"/>
@@ -86,6 +85,13 @@
   <object x="160" y="911" width="64" height="49"/>
   <object x="1420" y="835" width="16" height="572"/>
   <object x="375" y="897" width="231" height="13"/>
+  <object x="158" y="1587" width="193" height="11"/>
+  <object x="11" y="751" height="839"/>
  </objectgroup>
- <objectgroup name="Interaction" width="60" height="50"/>
+ <objectgroup name="Interaction" width="60" height="50">
+  <object name="(JUMP)" x="365" y="907" width="11" height="339"/>
+  <object name="(JUMP)" x="363" y="1245" width="14" height="351"/>
+  <object name="(JUMP)" x="373" y="904" width="230" height="11"/>
+  <object name="(CHANGEMAP):Maple Lodge:240,1508" x="13" y="1559" width="145" height="28"/>
+ </objectgroup>
 </map>
