@@ -46,38 +46,6 @@ public class InputHandler implements InputProcessor {
 		}
 	};
 
-	private static enum Direction {
-		DOWN(1, -2, "VERTICAL"), UP(2, 2, "VERTICAL"), RIGHT(3, 2,
-				"HORIZONTAL"), LEFT(4, -2, "HORIZONTAL");
-
-		float speed;
-
-		int directionVal;
-
-		String axis;
-
-		private Direction(int d, float s, String a) {
-			speed = s;
-			directionVal = d;
-			axis = a;
-		}
-
-		private float getSpeed() {
-			return speed;
-
-		}
-
-		private int getDirection() {
-			return directionVal;
-
-		}
-
-		private String getXis() {
-			return axis;
-
-		}
-	}
-
 	@Override
 	public boolean keyDown(int keycode) {
 		while (keyNotDown) {
