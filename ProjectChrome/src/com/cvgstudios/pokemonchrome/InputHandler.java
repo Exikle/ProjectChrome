@@ -9,12 +9,24 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.cvgstudios.pokemonchrome.entities.Player;
 import com.cvgstudios.pokemonchrome.game.PokemonWorld;
 
+/**
+ * Handles all in-game input
+ */
 public class InputHandler implements InputProcessor {
 
+	/**
+	 * The game world
+	 */
 	PokemonWorld playScreen;
 
+	/**
+	 * The camera for the world
+	 */
 	OrthographicCamera camera;
 
+	/**
+	 * The player
+	 */
 	Player player;
 
 	private boolean keyNotDown = true;
@@ -35,6 +47,9 @@ public class InputHandler implements InputProcessor {
 		this.player = player;
 	}
 
+	/**
+	 * Contains the movement keys to move the player
+	 */
 	@SuppressWarnings("serial")
 	private static final Map<Integer, Direction> MOVE_KEYS = new HashMap<Integer, Direction>() {
 
@@ -46,6 +61,9 @@ public class InputHandler implements InputProcessor {
 		}
 	};
 
+	/**
+	 * Checks what keys are pressed and acts accordingly
+	 */
 	@Override
 	public boolean keyDown(int keycode) {
 		while (keyNotDown) {
@@ -72,6 +90,9 @@ public class InputHandler implements InputProcessor {
 		return true;
 	}
 
+	/**
+	 * Stops player movement and resets all animation
+	 */
 	@Override
 	public boolean keyUp(int keycode) {
 		player.stopMovement();
