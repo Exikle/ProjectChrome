@@ -117,16 +117,12 @@ public class PokemonWorld extends MapBase implements Screen {
 	 * Shows the debugging rectangles
 	 */
 	private void showRect(ShapeRenderer sRen) {
-		showCollisionRect(sRen);
-
-		showInteractionRect(sRen);
-
-		showPlayerRect(sRen);
+		MapDebugger.showCollisionRect(sRen, collsionRect);
+		MapDebugger.showInteractionRect(sRen, interactRect);
+		MapDebugger.showPlayerRect(sRen, player);
 
 		batch.begin();
-
-		showDebugText(batch, font);
-
+		MapDebugger.showDebugText(batch, font, mapName, player, msg);
 		batch.end();
 	}
 
