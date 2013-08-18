@@ -30,15 +30,7 @@ public enum Graphic implements ImgPathConstants {
 	WelcomeBG("res/imgs/WelcomeBG.png"),
 
 	Professor("res/imgs/Professor.png"),
-
-	// Tiles
-	GrassTile("res/imgs/GrassTile.png"), DirtTile(
-			"res/imgs/DirtTile.png"), FenceLTile(
-			"res/imgs/FenceLTile.png"), FenceUTile(
-			"res/imgs/FenceUTile.png"), FenceRTile(
-			"res/imgs/FenceRTile.png"), FenceDTile(
-			"res/imgs/FenceDTile.png"),
-
+	
 	// Battle Screen things + GUI
 	BattleScreenMenu(MENU_BATTLE_PATH + "/BossBattleMenu.png"), BattleScreenMenuSelect(
 			MENU_BATTLE_PATH + "/MenuSelect.png"), PlayerPokemonStatBar(

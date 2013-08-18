@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.cvgstudios.pokemonchrome.Direction;
 
 /**
  * Player sprite that appears onto the screen
@@ -17,6 +18,11 @@ public class Player extends Sprite {
 	 * Starts the player facing down
 	 */
 	public int direction = 1;
+
+	/**
+	 * Starts the player facing down
+	 */
+	public Direction currentDirection = Direction.DOWN;
 
 	/**
 	 * Gets the sprite sheet of the player
@@ -77,15 +83,19 @@ public class Player extends Sprite {
 		switch (d) {
 			case 1:// down
 				playerR.setRegion(0, 0 + (currentStep * 42), 37, 42);
+				currentDirection = Direction.DOWN;
 				break;
 			case 2:// up
 				playerR.setRegion(37, 0 + (currentStep * 42), 37, 42);
+				currentDirection = Direction.UP;
 				break;
 			case 3:// right
 				playerR.setRegion(74, 0 + (currentStep * 42), 37, 42);
+				currentDirection = Direction.RIGHT;
 				break;
 			case 4:// left
 				playerR.setRegion(111, 0 + (currentStep * 42), 37, 42);
+				currentDirection = Direction.LEFT;
 				break;
 		}
 		this.setRegion(playerR);

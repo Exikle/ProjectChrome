@@ -3,13 +3,9 @@ package com.cvgstudios.pokemonchrome.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -18,6 +14,7 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.cvgstudios.pokemonchrome.ChromeGame;
+import com.cvgstudios.pokemonchrome.Direction;
 import com.cvgstudios.pokemonchrome.entities.Player;
 
 public abstract class MapBase implements Screen {
@@ -38,7 +35,7 @@ public abstract class MapBase implements Screen {
 	protected OrthographicCamera camera;
 
 	/**
-	 * The spritebatch
+	 * The sprite batch
 	 */
 	protected SpriteBatch batch;
 
@@ -53,7 +50,7 @@ public abstract class MapBase implements Screen {
 	protected int[] bgLayers;
 
 	/**
-	 * The layers that were in the fore-ground, infront the player
+	 * The layers that were in the fore-ground, in front of the player
 	 */
 	protected int[] fgLayers;
 
@@ -73,12 +70,12 @@ public abstract class MapBase implements Screen {
 	protected RectangleMapObject[] interactObject;
 
 	/**
-	 * 
+	 * The amount of interaction rectangles
 	 */
 	protected int interactionAmount;
 
 	/**
-	 * 
+	 * The user boundaries
 	 */
 	protected Rectangle user = new Rectangle(
 			Gdx.graphics.getWidth() / 2,
@@ -230,11 +227,7 @@ public abstract class MapBase implements Screen {
 			Vector2 playerPos = new Vector2(x, y);
 			importMap(fields[1], playerPos);
 		} else if (s.contains("(JUMP)")) {
-			float dX = player.xD;
-			float dY = player.yD;
-
-			player.setX(player.getX() + dX * 32);
-			player.setY(player.getY() + dY * 32);
+			handleJump();
 
 		} else if (s.contains("(SCRIPT)")) {
 			String[] fields = s.split(":");
@@ -244,6 +237,18 @@ public abstract class MapBase implements Screen {
 			if (Gdx.input.isKeyPressed(Keys.SPACE)) {
 				onlyIfButton(s);
 			}
+		}
+	}
+
+	private void handleJump() {
+		if (player.currentDirection == Direction.RIGHT) {
+			player.setX(player.getX() + 75);
+		} else if (player.currentDirection == Direction.LEFT) {
+			player.setX(player.getX() - 75);
+		} else if (player.currentDirection == Direction.UP) {
+			player.setY(player.getY() + 75);
+		} else if (player.currentDirection == Direction.DOWN) {
+			player.setY(player.getY() - 75);
 		}
 	}
 

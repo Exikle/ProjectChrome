@@ -3,7 +3,7 @@ package com.cvgstudios.pokemonchrome;
 /**
  * The direction the user is facing
  */
-enum Direction {
+public enum Direction {
 
 	/**
 	 * The player facing down
