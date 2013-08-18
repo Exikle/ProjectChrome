@@ -15,28 +15,65 @@ import com.cvgstudios.pokemonchrome.entities.Player;
 /**
  * The Pokemon World
  * 
- * @author Dixon D'Cunha:Exikle @
+ * @author Dixon D'Cunha:Exikle
  */
 public class PokemonWorld extends MapBase implements Screen {
 
+	/**
+	 * Whether debugging information is displayed
+	 */
 	private boolean DEBUG = true;
 
+	/**
+	 * The game instance
+	 */
 	private ChromeGame game;
 
+	/*
+	 * Temp, will be getting info from save file
+	 */
+	/**
+	 * The map the player starts in
+	 */
 	private String START_MAP_NAME = "Route1";
 
+	/*
+	 * Temp, will be getting info from save file
+	 */
+	/**
+	 * The coordinates the player starts at
+	 */
 	private final Vector2 STARTCOORD = new Vector2(528, 504);
 
+	/**
+	 * The pokemon font file
+	 */
 	private BitmapFont font;
 
+	/**
+	 * Renderer for the debugger, render rectangles for boundaries
+	 */
 	private ShapeRenderer sRen = new ShapeRenderer();
 
+	/**
+	 * The player
+	 */
 	private Player player;
 
+	/**
+	 * Constructor
+	 * 
+	 * @param the
+	 *            game instance
+	 */
 	public PokemonWorld(ChromeGame game) {
 		this.game = game;
 	}
 
+	/**
+	 * Renders the map and the player on the map, if debugging, renders the
+	 * debug rectangles
+	 */
 	@Override
 	public void render(float delta) {
 		super.render(delta);
@@ -76,6 +113,9 @@ public class PokemonWorld extends MapBase implements Screen {
 
 	}
 
+	/**
+	 * Shows the debugging rectangles
+	 */
 	private void showRect(ShapeRenderer sRen) {
 		showCollisionRect(sRen);
 
@@ -85,27 +125,14 @@ public class PokemonWorld extends MapBase implements Screen {
 
 		batch.begin();
 
-		font.draw(batch, "Current Map: " + mapName, player.getX()
-				- Gdx.graphics.getWidth() / 3, player.getY()
-				- Gdx.graphics.getHeight() / 3);
-
-		font.draw(batch,
-				"X: " + player.getX() + ", Y:" + player.getY(),
-				player.getX() - Gdx.graphics.getWidth() / 3,
-				player.getY() - Gdx.graphics.getHeight() / 3 - 25);
-
-		font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(),
-				player.getX() - Gdx.graphics.getWidth() / 3,
-				player.getY() - Gdx.graphics.getHeight() / 3 - 50);
-
-		font.draw(batch, "MSG: " + msg,
-				player.getX() - Gdx.graphics.getWidth() / 3 + 100,
-				player.getY() - Gdx.graphics.getHeight() / 3 - 50);
+		showDebugText(batch, font);
 
 		batch.end();
-
 	}
 
+	/**
+	 * Updates the camera size if the window is resized
+	 */
 	@Override
 	public void resize(int width, int height) {
 		camera.viewportHeight = height;
@@ -113,6 +140,9 @@ public class PokemonWorld extends MapBase implements Screen {
 		camera.update();
 	}
 
+	/**
+	 * Initializes the world's variables when first run
+	 */
 	@Override
 	public void show() {
 		camera = new OrthographicCamera();

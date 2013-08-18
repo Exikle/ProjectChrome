@@ -6,6 +6,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
@@ -21,38 +22,86 @@ import com.cvgstudios.pokemonchrome.entities.Player;
 
 public abstract class MapBase implements Screen {
 
+	/**
+	 * The map
+	 */
 	protected TiledMap map;
 
+	/**
+	 * The map's renderer
+	 */
 	protected OrthogonalTiledMapRenderer renderer;
 
+	/**
+	 * The map's camera
+	 */
 	protected OrthographicCamera camera;
 
+	/**
+	 * The spritebatch
+	 */
 	protected SpriteBatch batch;
 
+	/**
+	 * The amount of collision rectangles there were
+	 */
 	protected int collisionAmount;
 
+	/**
+	 * The layers that were in the back ground, behind the player
+	 */
 	protected int[] bgLayers;
 
+	/**
+	 * The layers that were in the fore-ground, infront the player
+	 */
 	protected int[] fgLayers;
 
+	/**
+	 * The rectangles used for collisions
+	 */
 	protected Rectangle[] collsionRect;
 
+	/**
+	 * The rectangles used for collisions
+	 */
 	protected Rectangle[] interactRect;
 
+	/**
+	 * The interact objects
+	 */
 	protected RectangleMapObject[] interactObject;
 
+	/**
+	 * 
+	 */
 	protected int interactionAmount;
 
+	/**
+	 * 
+	 */
 	protected Rectangle user = new Rectangle(
 			Gdx.graphics.getWidth() / 2,
 			Gdx.graphics.getHeight() / 2, 38, 42);
 
+	/**
+	 * The player
+	 */
 	private Player player;
 
+	/**
+	 * The name of the map
+	 */
 	protected String mapName;
 
+	/**
+	 * The msg to display to the user
+	 */
 	protected String msg;
 
+	/**
+	 * Render a black BG
+	 */
 	@Override
 	public void render(float delta) {
 		Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -60,6 +109,14 @@ public abstract class MapBase implements Screen {
 
 	}
 
+	/**
+	 * Import the map
+	 * 
+	 * @param map
+	 *            name
+	 * @param the
+	 *            player's coordinates
+	 */
 	protected void importMap(String m, Vector2 pos) {
 		map = new TmxMapLoader().load("maps/" + m + ".tmx");
 		mapName = m;
@@ -92,6 +149,9 @@ public abstract class MapBase implements Screen {
 
 	}
 
+	/**
+	 * Create the interaction rectangles
+	 */
 	protected void createInteractions() {
 		MapObjects mInteractions = map.getLayers().get("Interaction")
 				.getObjects();
@@ -109,6 +169,9 @@ public abstract class MapBase implements Screen {
 
 	}
 
+	/**
+	 * Create the collision rectangles
+	 */
 	protected void createCollisions() {
 		MapObjects mCollisions = map.getLayers().get("Collision")
 				.getObjects();
@@ -124,6 +187,11 @@ public abstract class MapBase implements Screen {
 		}
 	}
 
+	/**
+	 * Check if there is a collisions
+	 * 
+	 * @return if there was a collision
+	 */
 	protected boolean collision() {
 		for (int x = 0; x < collisionAmount; x++) {
 			if (collsionRect[x].overlaps(user)) {
@@ -134,6 +202,9 @@ public abstract class MapBase implements Screen {
 		return false;
 	}
 
+	/**
+	 * Check if the player interacted with anything
+	 */
 	public void checkPlayerInteraction() {
 		for (int x = 0; x < interactionAmount; x++) {
 			if (interactRect[x].overlaps(user)) {
@@ -142,6 +213,12 @@ public abstract class MapBase implements Screen {
 		}
 	}
 
+	/**
+	 * Check what type of interaction the player did
+	 * 
+	 * @param the
+	 *            interaction type
+	 */
 	protected void checkWhatInteractAction(String s) {
 		if (s.contains("(CHANGEMAP)")) {
 			String[] fields;
@@ -170,15 +247,33 @@ public abstract class MapBase implements Screen {
 		}
 	}
 
+	/**
+	 * what to do if the interaction was on a key press
+	 * 
+	 * @param msg
+	 *            to display
+	 */
 	private void onlyIfButton(String s) {
 		Gdx.app.log(ChromeGame.LOG, s);
 		msg = s;
 	}
 
+	/**
+	 * Add the player onto the screen
+	 * 
+	 * @param the
+	 *            player
+	 */
 	protected void addPlayerToWorld(Player player) {
 		this.player = player;
 	}
 
+	/**
+	 * Show the player boundaries
+	 * 
+	 * @param the
+	 *            rectangle renderer
+	 */
 	protected void showPlayerRect(ShapeRenderer sRen) {
 
 		sRen.begin(ShapeType.Line);
@@ -187,6 +282,9 @@ public abstract class MapBase implements Screen {
 		sRen.end();
 	}
 
+	/**
+	 * Show the interaction boundaries
+	 */
 	protected void showInteractionRect(ShapeRenderer sRen) {
 		sRen.begin(ShapeType.Line);
 		sRen.setColor(Color.ORANGE);
@@ -198,6 +296,12 @@ public abstract class MapBase implements Screen {
 		sRen.end();
 	}
 
+	/**
+	 * Show the collision boundaries
+	 * 
+	 * @param the
+	 *            rectangle renderer
+	 */
 	protected void showCollisionRect(ShapeRenderer sRen) {
 		sRen.begin(ShapeType.Line);
 		sRen.setColor(Color.MAGENTA);
@@ -209,4 +313,31 @@ public abstract class MapBase implements Screen {
 		sRen.end();
 	}
 
+	/**
+	 * Show the player boundaries
+	 * The text to display on screen. X/Y Coord, Map name and the Msg
+	 * 
+	 * @param the
+	 *            Sprite batch
+	 * @param the
+	 *            font
+	 */
+	protected void showDebugText(SpriteBatch batch, BitmapFont font) {
+		font.draw(batch, "Current Map: " + mapName, player.getX()
+				- Gdx.graphics.getWidth() / 3, player.getY()
+				- Gdx.graphics.getHeight() / 3);
+
+		font.draw(batch,
+				"X: " + player.getX() + ", Y:" + player.getY(),
+				player.getX() - Gdx.graphics.getWidth() / 3,
+				player.getY() - Gdx.graphics.getHeight() / 3 - 25);
+
+		font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(),
+				player.getX() - Gdx.graphics.getWidth() / 3,
+				player.getY() - Gdx.graphics.getHeight() / 3 - 50);
+
+		font.draw(batch, "MSG: " + msg,
+				player.getX() - Gdx.graphics.getWidth() / 3 + 100,
+				player.getY() - Gdx.graphics.getHeight() / 3 - 50);
+	}
 }
