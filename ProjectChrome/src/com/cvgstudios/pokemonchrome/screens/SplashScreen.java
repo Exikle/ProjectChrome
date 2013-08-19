@@ -14,7 +14,7 @@ import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.cvgstudios.pokemonchrome.ChromeGame;
-import com.cvgstudios.pokemonchrome.tweenaccessors.SpriteTween;
+import com.cvgstudios.pokemonchrome.tweenaccessors.ScreenTween;
 
 public class SplashScreen implements Screen {
 
@@ -60,7 +60,7 @@ public class SplashScreen implements Screen {
 
 		batch = new SpriteBatch();
 
-		Tween.registerAccessor(Sprite.class, new SpriteTween());
+		Tween.registerAccessor(Sprite.class, new ScreenTween());
 
 		manager = new TweenManager();
 
@@ -72,7 +72,7 @@ public class SplashScreen implements Screen {
 			}
 		};
 
-		Tween.to(splashSprite, SpriteTween.ALPHA, 1.5f).target(1)
+		Tween.to(splashSprite, ScreenTween.ALPHA, 1.5f).target(1)
 				.ease(TweenEquations.easeInQuad).repeatYoyo(1, 1.5f)
 				.setCallback(cb)
 				.setCallbackTriggers(TweenCallback.COMPLETE)

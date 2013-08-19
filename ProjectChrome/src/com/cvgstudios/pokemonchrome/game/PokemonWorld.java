@@ -141,6 +141,7 @@ public class PokemonWorld extends MapBase implements Screen {
 	 */
 	@Override
 	public void show() {
+		super.show();
 		camera = new OrthographicCamera();
 		player = new Player(camera);
 		addPlayerToWorld(player);
