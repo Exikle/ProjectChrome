@@ -285,7 +285,7 @@ public abstract class MapBase implements Screen {
 	}
 
 	/**
-	 * what to do if the interaction was on a key press
+	 * What to do if the interaction was on a key press
 	 * 
 	 * @param msg
 	 *            to display

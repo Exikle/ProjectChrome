@@ -13,20 +13,17 @@ public class NGScript {
 
 	static String[] script;
 
-	public NGScript() {
-		importScript();
-	}
-
-	public static String[] importScript() {
+	public static String[] importScript(String scriptName) {
 		String l = "";
 
 		BufferedReader in = null;
 		String line = "A B 1";
-		File f = new File("res/script/newgame.script");
+		String path = "res/script/" + scriptName;
+		File f = new File(path);
 		int counter = 0;
 		int lines = 0;
 		try {
-			lines = count("res/script/newgame.script") + 1;
+			lines = count(path) + 1;
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}

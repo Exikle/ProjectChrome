@@ -59,7 +59,7 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 		Gdx.input.setInputProcessor(this);
 		m.play();
 		m.setLooping(true);
-		script = NGScript.importScript();
+		script = NGScript.importScript("newgame.script");
 		len = script.length - 1;
 		getLines();
 	}
