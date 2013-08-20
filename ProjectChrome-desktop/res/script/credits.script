@@ -1,98 +1,90 @@
- LOGO
- 
- 
- DESIGN/WRITING
- =================
- -Creative Director
- --Arvin Zaldivar
- 
- -Level Designer
- --Gabriel Marc
- --Julius D'Silva
- 
- 
- PROGRAMMING/ENGINEERING
- =================
- -Program Manager
- --Julius D'Silva
- 
- -Lead Programmer
- --Mark "qmpzaltb" Bouchkevitch
- --Dixon "Exikle" D'Cunha
- 
- -Battle Programmer
- --Mark "qmpzaltb" Bouchkevitch
- 
- -Gameplay Programmer
- --Dixon "Exikle" D'Cunha
- 
- -Artificial Intelligence Programmer
- --Mark "qmpzaltb" Bouchkevitch
- 
- -Graphics Programmer
- --Dixon "Exikle" D'Cunha
- --Julius D'Silva
- 
- -User Interface Programmer
- --Dixon "Exikle" D'Cunha
- 
- 
- VISUAL ARTS
- =================
- -Art Director
- --Niko Katerelos
- 
- -Graphics Designer
- --Rofel Ganado
- --Julius D'Silva 
- 
- -Sprite Designer
- --Tommy Huynh
- --Niko Katerelos
- 
- -Animator
- --Mark "qmpzaltb" Bouchkevitch
- --Julius D'Silva
- 
- -Interface Artist
- --Julius D'Silva
- 
- AUDIO
- =================
- -Sound Design Manager
- --Arvin Zaldivar
- 
- -Sound Designer
- --Rofel Ganado
- 
+DES_DEPT
+LINE:1
+Creative Director
+RVIN
+LINE:1
+Level Designer
+GABE
+JULIUS
+LINE:2
 
- QUALITY ASSURANCE TESTING
- =================
- -Pre-Alpha
- -- People
- 
- -Alpha
- -- People
- 
- -Beta
- -- People
- 
- -Release Candidate
- -- People
+PROG_DEPT
 
- COLLABORATOR(S)
- =================
- Xid Studios
+Program Manager
+JULIUS
+
+Lead Programmer
+MARK
+DIXON
+
+Battle Programmer
+MARK
+
+Gameplay Programmer
+DIXON
+
+Artificial Intelligence Programmer
+MARK
+
+Graphics Programmer
+DIXON
+JULIUS
+
+User Interface Programmer
+DIXON
 
 
- Special Thanks To
- =================
- Justin Baradi(Programmer)
- Mudassir Mohammad(Pokemon Designer)
- Gabriel Ramos(Graphic Helper)
- Nidrax(Maple Trees)
- XDinky(Fountain)
- Justin Lau(Faggot)
- LotusKing(PokemonCenter)
- chimcharsfireworkd(PokemonLab)
- Eli-eli76(Battle Backgrounds)
+VISUAL ARTS
+
+Art Director
+Niko Katerelos
+
+Graphics Designer
+ROFEL
+JULIUS 
+
+Sprite Designer
+Tommy Huynh
+Niko Katerelos
+
+Animator
+MARK
+JULIUS
+
+Interface Artist
+JULIUS
+
+AUDIO
+
+Sound Design Manager
+ARVIN
+
+Sound Designer
+ROFEL
+
+QUALITY ASSURANCE TESTING
+
+PreAlpha
+People
+Alpha
+People
+
+Beta
+People
+
+Release Candidate
+People
+COLLABORATOR(S)
+XID
+
+Special Thanks To
+ 
+Justin Baradi(Programmer)
+Mudassir Mohammad(Pokemon Designer)
+Gabriel Ramos(Graphic Helper)
+Nidrax(Maple Trees)
+XDinky(Fountain)
+Justin Lau(Faggot)
+LotusKing(PokemonCenter)
+chimcharsfireworkd(PokemonLab)
+Elieli76(Battle Backgrounds)
