@@ -9,8 +9,8 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.cvgstudios.pokemonchrome.ChromeGame;
-import com.cvgstudios.pokemonchrome.InputHandler;
 import com.cvgstudios.pokemonchrome.entities.Player;
+import com.cvgstudios.pokemonchrome.input.WorldHandler;
 
 /**
  * The Pokemon World
@@ -22,7 +22,7 @@ public class PokemonWorld extends MapBase implements Screen {
 	/**
 	 * Whether debugging information is displayed
 	 */
-	private boolean DEBUG = true;
+	private boolean DEBUG = false;
 
 	/**
 	 * The game instance
@@ -152,8 +152,7 @@ public class PokemonWorld extends MapBase implements Screen {
 
 		batch = new SpriteBatch();
 
-		Gdx.input.setInputProcessor(new InputHandler(this, camera,
-				player));
+		Gdx.input.setInputProcessor(new WorldHandler(this, camera, player));
 
 	}
 

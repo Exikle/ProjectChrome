@@ -1,5 +1,6 @@
 package com.cvgstudios.pokemonchrome;
 
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.math.Vector2;
 
 /**
@@ -10,19 +11,14 @@ import com.badlogic.gdx.math.Vector2;
 public class GameFile {
 
 	/**
-	 * Player's X Position
+	 * Player's coordinates on a 2D plane
 	 */
-	static float locX = 0;
-
-	/**
-	 * Player's Y Position
-	 */
-	static float locY = 0;
+	static Vector2 playerPosition;
 
 	/**
 	 * Player's coordinates on a 2D plane
 	 */
-	static Vector2 PlayerPosition;
+	static Music musicPlaying;
 
 	/**
 	 * Player's current map location
