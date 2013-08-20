@@ -229,12 +229,12 @@ public class MainMenu implements Screen, InputProcessor {
 				Gdx.app.log(ChromeGame.LOG, "Run Game From Save File");
 			} else {
 				Gdx.app.log(ChromeGame.LOG, "Create a New Game");
-				game.setScreen(new NewGameIntroScreen(game));
+				game.setScreen(new NGIntro(game));
 			}
 		} else if (i == 2) {
 			if (saveFileExists) {
 				Gdx.app.log(ChromeGame.LOG, "Create a New Game");
-				game.setScreen(new NewGameIntroScreen(game));
+				game.setScreen(new NGIntro(game));
 			} else {
 				Gdx.app.log(ChromeGame.LOG, "No Save File!");
 

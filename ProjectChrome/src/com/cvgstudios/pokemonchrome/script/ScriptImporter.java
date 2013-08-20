@@ -1,4 +1,4 @@
-package com.cvgstudios.pokemonchrome.screens;
+package com.cvgstudios.pokemonchrome.script;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -9,11 +9,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class NGScript {
+public class ScriptImporter {
 
 	static String[] script;
 
-	public static String[] importScript(String scriptName) {
+	public static String[] iScript(String scriptName) {
 		String l = "";
 
 		BufferedReader in = null;

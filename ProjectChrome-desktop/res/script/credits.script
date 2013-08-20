@@ -1,90 +1,64 @@
-DES_DEPT
+DEPT:DES_DEPT
 LINE:1
-Creative Director
-RVIN
+POS:Creative Director
+EMPLOYE:ARVIN
 LINE:1
-Level Designer
-GABE
-JULIUS
-LINE:2
-
-PROG_DEPT
-
-Program Manager
-JULIUS
-
-Lead Programmer
-MARK
-DIXON
-
-Battle Programmer
-MARK
-
-Gameplay Programmer
-DIXON
-
-Artificial Intelligence Programmer
-MARK
-
-Graphics Programmer
-DIXON
-JULIUS
-
-User Interface Programmer
-DIXON
-
-
-VISUAL ARTS
-
-Art Director
-Niko Katerelos
-
-Graphics Designer
-ROFEL
-JULIUS 
-
-Sprite Designer
-Tommy Huynh
-Niko Katerelos
-
-Animator
-MARK
-JULIUS
-
-Interface Artist
-JULIUS
-
-AUDIO
-
-Sound Design Manager
-ARVIN
-
-Sound Designer
-ROFEL
-
-QUALITY ASSURANCE TESTING
-
-PreAlpha
-People
-Alpha
-People
-
-Beta
-People
-
-Release Candidate
-People
-COLLABORATOR(S)
-XID
-
-Special Thanks To
- 
-Justin Baradi(Programmer)
-Mudassir Mohammad(Pokemon Designer)
-Gabriel Ramos(Graphic Helper)
-Nidrax(Maple Trees)
-XDinky(Fountain)
-Justin Lau(Faggot)
-LotusKing(PokemonCenter)
-chimcharsfireworkd(PokemonLab)
-Elieli76(Battle Backgrounds)
+POS:Level Designer
+EMPLOYE:GABE:
+EMPLOYE:JULIUS: 
+LINE:1
+LINE:1
+DEPT:PROG_DEPT: 
+LINE:1
+POS:Program Manager: 
+EMPLOYE:JULIUS: 
+LINE:1
+POS:Lead Programmer 
+EMPLOYE:MARK: 
+EMPLOYE:DIXON: 
+LINE:1
+POS:Battle Programmer: 
+EMPLOYE:MARK: 
+LINE:1
+POS:Gameplay Programmer: 
+EMPLOYE:DIXON: 
+LINE:1
+POS:Artificial Intelligence Programmer: 
+EMPLOYE:MARK: 
+LINE:1
+POS:Graphics Programmer: 
+EMPLOYE:DIXON: 
+EMPLOYE:JULIUS: 
+LINE:1
+POS:User Interface Programmer: 
+EMPLOYE:DIXON: 
+LINE:1
+LINE:1
+DEPT:ART_DEPT: 
+LINE:1
+POS:Art Director: 
+EMPLOYE:NIKO:
+LINE:1
+POS:Graphics Designer: 
+EMPLOYE:ROFEL: 
+EMPLOYE:JULIUS: 
+LINE:1
+POS:Sprite Designer:
+EMPLOYE:TOMMY: 
+EMPLOYE:NIKO:
+LINE:1
+POS:Animator: 
+EMPLOYE:MARK: 
+EMPLOYE:JULIUS: 
+LINE:1
+POS:Interface Artist: 
+EMPLOYE:JULIUS: 
+LINE:1
+DEPT:SOUND_DEPT: 
+LINE:1
+POS:Sound Design Manager: 
+EMPLOYE:ARVIN: 
+LINE:1
+POS:Sound Designer: 
+EMPLOYE:ROFEL: 
+LINE:1

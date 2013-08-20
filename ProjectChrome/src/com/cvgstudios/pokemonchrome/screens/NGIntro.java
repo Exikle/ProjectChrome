@@ -13,8 +13,9 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.game.PokemonWorld;
+import com.cvgstudios.pokemonchrome.script.ScriptImporter;
 
-public class NewGameIntroScreen implements Screen, InputProcessor {
+public class NGIntro implements Screen, InputProcessor {
 
 	ChromeGame game;
 
@@ -22,11 +23,11 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 
 	String[] hold;
 
-	private Sprite optionBox;
-
 	private int counter = 0;
 
 	private int len;
+
+	private Sprite optionBox;
 
 	BitmapFont font = new BitmapFont(
 			Gdx.files.internal("font/pokemon.fnt"),
@@ -54,14 +55,24 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 
 	private boolean optionsVisible = false;
 
-	public NewGameIntroScreen(ChromeGame game) {
+	public NGIntro(ChromeGame game) {
 		this.game = game;
 		Gdx.input.setInputProcessor(this);
 		m.play();
 		m.setLooping(true);
-		script = NGScript.importScript("newgame.script");
+		processScript();
+	}
+
+	private void processScript() {
+		script = ScriptImporter.iScript("newgame.script");
 		len = script.length - 1;
 		getLines();
+	}
+
+	private void getLines() {
+		hold = script[counter].split(";");
+		lineOne = hold[0];
+		lineTwo = hold[1];
 	}
 
 	@Override
@@ -175,12 +186,6 @@ public class NewGameIntroScreen implements Screen, InputProcessor {
 		}
 
 		return false;
-	}
-
-	private void getLines() {
-		hold = script[counter].split(";");
-		lineOne = hold[0];
-		lineTwo = hold[1];
 	}
 
 	@Override

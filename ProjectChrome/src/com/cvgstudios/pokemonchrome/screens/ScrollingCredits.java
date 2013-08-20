@@ -11,32 +11,36 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.cvgstudios.pokemonchrome.ChromeGame;
+import com.cvgstudios.pokemonchrome.script.ScriptImporter;
 
 public class ScrollingCredits implements Screen {
 
-	ChromeGame game;
+	private ChromeGame game;
 
-	Sprite logo = new Sprite(new Texture("imgs/BlackTitleScreen.png"));
+	private final Sprite logo = new Sprite(new Texture(
+			"imgs/BlackTitleScreen.png"));
 
-	SpriteBatch batch;
+	private SpriteBatch batch;
 
-	BitmapFont font = new BitmapFont();
+	private BitmapFont font = new BitmapFont();
 
-	float movingY = 0;
+	private String[] script;
 
-	float m = Gdx.graphics.getWidth() / 2;
+	private String[] hold;
 
-	private final String MARK = "Mark 'qmpzaltb' Bouchkevitch";
+	private int counter = 0;
 
-	private final String DIXON = "Dixon 'Exikle' D'Cunha";
+	private int len;
 
-	private final String JULIUS = "Julius D'Silva";
+	private float movingY = 0;
 
-	private final String GABE = "Gabriel Marc";
+	private int lineNum = 0;
 
-	private final String ARVIN = "Arvin Zaldivar(AFK/MIA)";
+	private final float mid = Gdx.graphics.getWidth() / 2;
 
 	private final String XID = "Xid Studios";
+
+	private String string;
 
 	private final Map<String, String> EMPLOYES = new HashMap<String, String>();
 	{
@@ -47,6 +51,8 @@ public class ScrollingCredits implements Screen {
 		EMPLOYES.put("ARVIN", "Arvin Zaldivar(AFK/MIA)");
 		EMPLOYES.put("NIKO", "Niko Katerelos");
 		EMPLOYES.put("ROFEL", "Rofel Ganado");
+		EMPLOYES.put("TOMMY", "Tommy Huynh");
+
 	}
 
 	private final Map<String, String> DEPT = new HashMap<String, String>();
@@ -59,9 +65,27 @@ public class ScrollingCredits implements Screen {
 
 	public ScrollingCredits(ChromeGame game) {
 		this.game = game;
-		// String dept = "PROG_DEPT";
-		// String deptName = DEPT.get(dept);
-		// System.out.println(deptName); // outputs "PROGRAMMING/ENGINEERING"
+		processScript();
+	}
+
+	private void processScript() {
+		script = ScriptImporter.iScript("credits.script");
+		len = script.length - 1;
+		Gdx.app.log(ChromeGame.LOG, "Processed Credits Script");
+	}
+
+	private String getLine(int n) {
+		String[] hold = script[n].split(":");
+		switch (hold[0]) {
+			case "DEPT":
+				return DEPT.get(hold[1]);
+			case "POS":
+				return hold[1];
+			case "EMPLOYE":
+				return EMPLOYES.get(hold[1]);
+			default:
+				return "";
+		}
 	}
 
 	@Override
@@ -71,104 +95,51 @@ public class ScrollingCredits implements Screen {
 
 		batch.begin();
 		batch.draw(logo, 0, 0 + movingY);
-
-		// TODO make a shorter version of this all
-
-		// font.draw(batch, STRING,
-		// m - font.getBounds(STRING).width / 2, (-125-(50*lineNum))
-		// + movingY);
-
-		font.setScale(1.1f);
-		font.draw(batch, "DESIGN/WRITING",
-				m - font.getBounds("DESIGN/WRITING").width / 2, -125
-						+ movingY);
-
-		font.setScale(.9f);
-		font.draw(batch, "Creative Director",
-				m - font.getBounds("Creative Director").width / 2,
-				-175 + movingY);
-
-		font.draw(batch, ARVIN, m - font.getBounds(ARVIN).width / 2,
-				-200 + movingY);
-
-		font.draw(batch, "Level Designer",
-				m - font.getBounds("Level Designer").width / 2, -250
-						+ movingY);
-
-		font.draw(batch, GABE, m - font.getBounds(GABE).width / 2,
-				-275 + movingY);
-
-		font.draw(batch, JULIUS,
-				m - font.getBounds(JULIUS).width / 2, -300 + movingY);
-		// ///
-
-		font.setScale(1.1f);
-		font.draw(batch, "PROGRAMMING/ENGINEERING",
-				m - font.getBounds("PROGRAMMING/ENGINEERING").width
-						/ 2, -400 + movingY);
-
-		font.setScale(.9f);
-		font.draw(batch, "Program Manager",
-				m - font.getBounds("Program Manager").width / 2, -450
-						+ movingY);
-
-		font.draw(batch, JULIUS,
-				m - font.getBounds(JULIUS).width / 2, -475 + movingY);
-
-		font.draw(batch, "Lead Programmer",
-				m - font.getBounds("Lead Programmer").width / 2, -525
-						+ movingY);
-
-		font.draw(batch, MARK, m - font.getBounds(MARK).width / 2,
-				-550 + movingY);
-
-		font.draw(batch, DIXON, m - font.getBounds(DIXON).width / 2,
-				-575 + movingY);
-
-		font.draw(batch, "Battle Programmer",
-				m - font.getBounds("Battle Programmer").width / 2,
-				-625 + movingY);
-
-		font.draw(batch, MARK, m - font.getBounds(MARK).width / 2,
-				-650 + movingY);
-
-		font.draw(batch, "Gameplay Programmer",
-				m - font.getBounds("Gameplay Programmer").width / 2,
-				-700 + movingY);
-
-		font.draw(batch, DIXON, m - font.getBounds(DIXON).width / 2,
-				-725 + movingY);
-
-		font.draw(
-				batch,
-				"Artificial Intelligence Programmer",
-				m
-						- font.getBounds("Artificial Intelligence Programmer").width
-						/ 2, -775 + movingY);
-
-		font.draw(batch, MARK, m - font.getBounds(MARK).width / 2,
-				-800 + movingY);
-
-		font.draw(batch, "Graphics Programmer",
-				m - font.getBounds("Graphics Programmer").width / 2,
-				-850 + movingY);
-
-		font.draw(batch, DIXON, m - font.getBounds(DIXON).width / 2,
-				-875 + movingY);
-
-		font.draw(batch, JULIUS,
-				m - font.getBounds(JULIUS).width / 2, -900 + movingY);
-
-		font.draw(batch, "User Interface Programmer",
-				m - font.getBounds("User Interface Programmer").width
-						/ 2, -950 + movingY);
-
-		font.draw(batch, DIXON, m - font.getBounds(DIXON).width / 2,
-				-975 + movingY);
-
+		renderScript(batch);
 		batch.end();
 
 		movingY += 1.5f;
+		Gdx.app.log(ChromeGame.LOG, movingY + "");
+
+		checkChangeScreen();
+
+	}
+
+	private void checkChangeScreen() {
+		if (movingY == 3000) {
+			game.setScreen(new MainMenu(game));
+		}
+	}
+
+	private void renderScript(SpriteBatch batch) {
+		for (int x = 0; x < len; x++) {
+			string = getLine(x);
+			float t = setFontScale(x);
+			font.scale(t);
+			font.draw(batch, string, mid
+					- font.getBounds(string).width / 2,
+					(-100 - (35 * lineNum)) + movingY);
+			lineNum++;
+			font.setScale(1f);
+		}
+		lineNum = 0;
+	}
+
+	private float setFontScale(int line) {
+		String[] hold = script[line].split(":");
+		float scale = 1;
+		switch (hold[0]) {
+			case "POS":
+				scale = 1f;
+				break;
+			case "EMPLOYE":
+				scale = .5f;
+				break;
+			case "DEPT":
+				scale = 1.5f;
+				break;
+		}
+		return scale;
 
 	}
 
