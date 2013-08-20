@@ -1,98 +1,97 @@
- LOGO
- 
- 
- DESIGN/WRITING
- =================
- -Creative Director
- --Arvin Zaldivar
- 
- -Level Designer
- --Gabriel Marc
- --Julius D'Silva
- 
- 
- PROGRAMMING/ENGINEERING
- =================
- -Program Manager
- --Julius D'Silva
- 
- -Lead Programmer
- --Mark "qmpzaltb" Bouchkevitch
- --Dixon "Exikle" D'Cunha
- 
- -Battle Programmer
- --Mark "qmpzaltb" Bouchkevitch
- 
- -Gameplay Programmer
- --Dixon "Exikle" D'Cunha
- 
- -Artificial Intelligence Programmer
- --Mark "qmpzaltb" Bouchkevitch
- 
- -Graphics Programmer
- --Dixon "Exikle" D'Cunha
- --Julius D'Silva
- 
- -User Interface Programmer
- --Dixon "Exikle" D'Cunha
- 
- 
- VISUAL ARTS
- =================
- -Art Director
- --Niko Katerelos
- 
- -Graphics Designer
- --Rofel Ganado
- --Julius D'Silva 
- 
- -Sprite Designer
- --Tommy Huynh
- --Niko Katerelos
- 
- -Animator
- --Mark "qmpzaltb" Bouchkevitch
- --Julius D'Silva
- 
- -Interface Artist
- --Julius D'Silva
- 
- AUDIO
- =================
- -Sound Design Manager
- --Arvin Zaldivar
- 
- -Sound Designer
- --Rofel Ganado
- 
+DEPT:DES_DEPT
+LINE: 
+POS:Creative Director
+EMPLOYE:ARVIN
+LINE: 
+POS:Level Designer
+EMPLOYE:GABE:
+EMPLOYE:JULIUS: 
+LINE: 
+LINE: 
+DEPT:PROG_DEPT: 
+LINE: 
+POS:Program Manager: 
+EMPLOYE:JULIUS: 
+LINE: 
+POS:Lead Programmer 
+EMPLOYE:MARK: 
+EMPLOYE:DIXON: 
+LINE: 
+POS:Battle Programmer: 
+EMPLOYE:MARK: 
+LINE: 
+POS:Gameplay Programmer: 
+EMPLOYE:DIXON: 
+LINE: 
+POS:Artificial Intelligence Programmer: 
+EMPLOYE:MARK: 
+LINE: 
+POS:Graphics Programmer: 
+EMPLOYE:DIXON: 
+EMPLOYE:JULIUS: 
+LINE: 
+POS:User Interface Programmer: 
+EMPLOYE:DIXON: 
+LINE: 
+LINE: 
+DEPT:ART_DEPT: 
+LINE: 
+POS:Art Director: 
+EMPLOYE:NIKO:
+LINE: 
+POS:Graphics Designer: 
+EMPLOYE:ROFEL: 
+EMPLOYE:JULIUS: 
+LINE: 
+POS:Sprite Designer:
+EMPLOYE:TOMMY: 
+EMPLOYE:NIKO:
+LINE: 
+POS:Animator: 
+EMPLOYE:MARK: 
+EMPLOYE:JULIUS: 
+LINE: 
+POS:Interface Artist: 
+EMPLOYE:JULIUS: 
+LINE: 
+DEPT:SOUND_DEPT: 
+LINE: 
+POS:Sound Design Manager: 
+EMPLOYE:ARVIN: 
+LINE: 
+POS:Sound Designer: 
+EMPLOYE:ROFEL: 
+LINE: 
+LINE: 
+DEPT:QUALITY_DEPT:
+LINE: 
+STAGE:Pre Alpha: 
+GROUP:Pre Alpha Testers: 
+STAGE:Alpha: 
+GROUP:Alpha Testers: 
+STAGE:Beta: 
+GROUP:Beta Testers: 
+STAGE:RC: 
+GROUP:RC Testers:
+LINE: 
+LINE: 
+LINE: 
+DEPT:COLLAB_DEPT:
+LINE: 
+LINE:Xid Studios
+LINE: 
+LINE: 
+LINE: 
+LINE: 
+LINE: Special Thanks To
+LINE: 
+LINE:Justin Baradi (Programmer): 
+LINE:Mudassir Mohammad (Pokemon Designer): 
+LINE:Gabriel Ramos (Graphic Helper): 
+LINE:Nidrax (Maple Trees): 
+LINE:XDinky (Fountain): 
+LINE:LotusKing (PokemonCenter): 
+LINE:chimcharsfireworkd (PokemonLab): 
+LINE:Elieli76 (Battle Backgrounds): 
 
- QUALITY ASSURANCE TESTING
- =================
- -Pre-Alpha
- -- People
- 
- -Alpha
- -- People
- 
- -Beta
- -- People
- 
- -Release Candidate
- -- People
 
- COLLABORATOR(S)
- =================
- Xid Studios
-
-
- Special Thanks To
- =================
- Justin Baradi(Programmer)
- Mudassir Mohammad(Pokemon Designer)
- Gabriel Ramos(Graphic Helper)
- Nidrax(Maple Trees)
- XDinky(Fountain)
- Justin Lau(Faggot)
- LotusKing(PokemonCenter)
- chimcharsfireworkd(PokemonLab)
- Eli-eli76(Battle Backgrounds)

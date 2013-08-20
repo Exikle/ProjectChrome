@@ -1,30 +1,107 @@
 package com.cvgstudios.pokemonchrome.screens;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.cvgstudios.pokemonchrome.ChromeGame;
+import com.cvgstudios.pokemonchrome.script.ScriptImporter;
 
 public class ScrollingCredits implements Screen {
 
-	ChromeGame game;
+	private ChromeGame game;
 
-	Sprite logo = new Sprite(new Texture("imgs/BlackTitleScreen.png"));
+	private final Sprite logo = new Sprite(new Texture(
+			"imgs/BlackTitleScreen.png"));
 
-	SpriteBatch batch;
+	private SpriteBatch batch;
 
-	BitmapFont font = new BitmapFont();
+	private BitmapFont font = new BitmapFont();
 
-	float movingY = 0;
+	private String[] script;
 
-	float middle = Gdx.graphics.getWidth() / 2;
+	private String[] hold;
+
+	private int counter = 0;
+
+	private int len;
+
+	private float movingY = 0;
+
+	private int lineNum = 0;
+
+	private final float mid = Gdx.graphics.getWidth() / 2;
+
+	private final String XID = "Xid Studios";
+
+	private String string;
+
+	private Music m = Gdx.audio.newMusic(Gdx.files
+			.internal("music/Credits.mp3"));
+
+	private final Map<String, String> EMPLOYES = new HashMap<String, String>();
+	{
+		EMPLOYES.put("MARK", "Mark 'qmpzaltb' Bouchkevitch");
+		EMPLOYES.put("DIXON", "Dixon 'Exikle' D'Cunha");
+		EMPLOYES.put("JULIUS", "Julius D'Silva");
+		EMPLOYES.put("GABE", "Gabriel Marc");
+		EMPLOYES.put("ARVIN", "Arvin Zaldivar(AFK/MIA)");
+		EMPLOYES.put("NIKO", "Niko Katerelos");
+		EMPLOYES.put("ROFEL", "Rofel Ganado");
+		EMPLOYES.put("TOMMY", "Tommy Huynh");
+
+	}
+
+	private final Map<String, String> DEPT = new HashMap<String, String>();
+	{
+		DEPT.put("PROG_DEPT", "PROGRAMMING/ENGINEERING");
+		DEPT.put("DES_DEPT", "DESIGN/WRITING");
+		DEPT.put("ART_DEPT", "VISUAL ARTS");
+		DEPT.put("SOUND_DEPT", "AUDIO");
+		DEPT.put("QUALITY_DEPT", "QUALITY ASSURANCE TESTING");
+		DEPT.put("COLLAB_DEPT", "COLLABORATOR(S)");
+	}
 
 	public ScrollingCredits(ChromeGame game) {
 		this.game = game;
+		processScript();
+//		m.play();
+		m.setLooping(true);
+	}
+
+	private void processScript() {
+		script = ScriptImporter.iScript("credits.script");
+		len = script.length - 1;
+		Gdx.app.log(ChromeGame.LOG, "Processed Credits Script");
+	}
+
+	private String getLine(int n) {
+		String[] hold = script[n].split(":");
+		switch (hold[0]) {
+			case "DEPT":
+				return DEPT.get(hold[1]);
+			case "POS":
+				return hold[1];
+			case "COLLAB":
+				return hold[1];
+			case "GROUP":
+				return hold[1];
+			case "STAGE":
+				return hold[1];
+			case "EMPLOYE":
+				return EMPLOYES.get(hold[1]);
+			case "LINE":
+				return hold[1];
+			default:
+				return "";
+		}
 	}
 
 	@Override
@@ -34,140 +111,61 @@ public class ScrollingCredits implements Screen {
 
 		batch.begin();
 		batch.draw(logo, 0, 0 + movingY);
-
-		font.setScale(1.1f);
-		font.draw(batch, "DESIGN/WRITING",
-				middle - font.getBounds("DESIGN/WRITING").width / 2,
-				-125 + movingY);
-
-		font.setScale(.9f);
-		font.draw(batch, "Creative Director",
-				middle - font.getBounds("Creative Director").width
-						/ 2, -175 + movingY);
-
-		font.draw(
-				batch,
-				"Arvin Zaldivar(AFK/MIA)",
-				middle
-						- font.getBounds("Arvin Zaldivar(AFK/MIA)").width
-						/ 2, -200 + movingY);
-
-		font.draw(batch, "Level Designer",
-				middle - font.getBounds("Level Designer").width / 2,
-				-250 + movingY);
-
-		font.draw(batch, "Gabriel Marc",
-				middle - font.getBounds("Gabriel Marc").width / 2,
-				-275 + movingY);
-
-		font.draw(batch, "Julius D'Silva",
-				middle - font.getBounds("Julius D'Silva").width / 2,
-				-300 + movingY);
-		// ///
-
-		font.setScale(1.1f);
-		font.draw(
-				batch,
-				"PROGRAMMING/ENGINEERING",
-				middle
-						- font.getBounds("PROGRAMMING/ENGINEERING").width
-						/ 2, -400 + movingY);
-
-		font.setScale(.9f);
-		font.draw(batch, "Program Manager",
-				middle - font.getBounds("Program Manager").width / 2,
-				-450 + movingY);
-
-		font.draw(batch, "Julius D'Silva",
-				middle - font.getBounds("Julius D'Silva").width / 2,
-				-475 + movingY);
-
-		font.draw(batch, "Lead Programmer",
-				middle - font.getBounds("Lead Programmer").width / 2,
-				-525 + movingY);
-
-		font.draw(
-				batch,
-				"Mark 'qmpzaltb' Bouchkevitch",
-				middle
-						- font.getBounds("Mark 'qmpzaltb' Bouchkevitch").width
-						/ 2, -550 + movingY);
-
-		font.draw(
-				batch,
-				"Dixon 'Exikle' D'Cunha",
-				middle
-						- font.getBounds("Dixon 'Exikle' D'Cunha").width
-						/ 2, -575 + movingY);
-
-		font.draw(batch, "Battle Programmer",
-				middle - font.getBounds("Battle Programmer").width
-						/ 2, -625 + movingY);
-
-		font.draw(
-				batch,
-				"Mark 'qmpzaltb' Bouchkevitch",
-				middle
-						- font.getBounds("Mark 'qmpzaltb' Bouchkevitch").width
-						/ 2, -650 + movingY);
-
-		font.draw(batch, "Gameplay Programmer",
-				middle - font.getBounds("Gameplay Programmer").width
-						/ 2, -700 + movingY);
-
-		font.draw(
-				batch,
-				"Dixon 'Exikle' D'Cunha",
-				middle
-						- font.getBounds("Dixon 'Exikle' D'Cunha").width
-						/ 2, -725 + movingY);
-
-		font.draw(
-				batch,
-				"Artificial Intelligence Programmer",
-				middle
-						- font.getBounds("Artificial Intelligence Programmer").width
-						/ 2, -775 + movingY);
-
-		font.draw(
-				batch,
-				"Mark 'qmpzaltb' Bouchkevitch",
-				middle
-						- font.getBounds("Mark 'qmpzaltb' Bouchkevitch").width
-						/ 2, -800 + movingY);
-
-		font.draw(batch, "Graphics Programmer",
-				middle - font.getBounds("Graphics Programmer").width
-						/ 2, -850 + movingY);
-
-		font.draw(
-				batch,
-				"Dixon 'Exikle' D'Cunha",
-				middle
-						- font.getBounds("Dixon 'Exikle' D'Cunha").width
-						/ 2, -875 + movingY);
-
-		font.draw(batch, "Julius D'Silva",
-				middle - font.getBounds("Julius D'Silva").width / 2,
-				-900 + movingY);
-
-		font.draw(
-				batch,
-				"User Interface Programmer",
-				middle
-						- font.getBounds("User Interface Programmer").width
-						/ 2, -950 + movingY);
-
-		font.draw(
-				batch,
-				"Dixon 'Exikle' D'Cunha",
-				middle
-						- font.getBounds("Dixon 'Exikle' D'Cunha").width
-						/ 2, -975 + movingY);
-
+		renderScript(batch);
 		batch.end();
 
 		movingY += 1.5f;
+		Gdx.app.log(ChromeGame.LOG, movingY + "");
+
+		checkChangeScreen();
+
+	}
+
+	private void checkChangeScreen() {
+		if (movingY == 3500) {
+			game.setScreen(new MainMenu(game));
+		}
+	}
+
+	private void renderScript(SpriteBatch batch) {
+		for (int x = 0; x < len; x++) {
+			Gdx.app.log(ChromeGame.LOG, x + "");
+			string = getLine(x);
+			float t = setFontScale(x);
+			font.scale(t);
+			font.draw(batch, string, mid
+					- font.getBounds(string).width / 2,
+					(-100 - (37.5f * lineNum)) + movingY);
+			lineNum++;
+			font.setScale(1f);
+		}
+		lineNum = 0;
+	}
+
+	private float setFontScale(int line) {
+		String[] hold = script[line].split(":");
+		float scale = 1;
+		switch (hold[0]) {
+			case "POS":
+				scale = 1f;
+				break;
+			case "EMPLOYE":
+				scale = .5f;
+				break;
+			case "DEPT":
+				scale = 1.5f;
+				break;
+			case "STAGE":
+				scale = 1f;
+				break;
+			case "COLLAB":
+				scale = 1f;
+				break;
+			case "GROUP":
+				scale = .5f;
+				break;
+		}
+		return scale;
 
 	}
 
