@@ -17,6 +17,8 @@ import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.actions.AddAction;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.Direction;
 import com.cvgstudios.pokemonchrome.entities.Player;
@@ -97,11 +99,13 @@ public abstract class MapBase implements Screen {
 	protected String mapName;
 
 	/**
-	 * The msg to display to the user
+	 * The message to display to the user
 	 */
 	protected String msg;
 
 	protected TweenManager manager;
+
+	protected MenuActor menu;
 
 	/**
 	 * Render a black BG
@@ -126,6 +130,11 @@ public abstract class MapBase implements Screen {
 	public void show() {
 		Tween.registerAccessor(Sprite.class, new SpriteTween());
 		manager = new TweenManager();
+		createMenu();
+	}
+
+	protected void createMenu() {
+		menu = new MenuActor();
 	}
 
 	protected void importMap(String m, Vector2 pos) {

@@ -1,12 +1,5 @@
 package com.cvgstudios.pokemonchrome.game;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -15,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.GameFile;
 import com.cvgstudios.pokemonchrome.entities.Player;
@@ -68,6 +62,8 @@ public class PokemonWorld extends MapBase implements Screen {
 	 */
 	private Player player;
 
+	private boolean menuVisible = true;
+
 	/**
 	 * Constructor
 	 * 
@@ -76,17 +72,8 @@ public class PokemonWorld extends MapBase implements Screen {
 	 */
 	public PokemonWorld(ChromeGame game) {
 		this.game = game;
-
-		// read files
-		try {
-			readFile();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	private void readFile() throws Exception {
+		GameFile.load();
+		createMenu();
 	}
 
 	/**
@@ -121,9 +108,15 @@ public class PokemonWorld extends MapBase implements Screen {
 
 		batch.begin();
 		batch.draw(player, player.getX(), player.getY());
-		batch.end();
 
+		batch.end();
 		renderer.render(fgLayers);
+
+		batch.begin();
+		if (menuVisible) {
+			// menu visible
+		}
+		batch.end();
 
 		if (DEBUG) {
 			showRect(sRen);
