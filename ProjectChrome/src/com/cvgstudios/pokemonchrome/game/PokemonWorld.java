@@ -1,5 +1,12 @@
 package com.cvgstudios.pokemonchrome.game;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -9,6 +16,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.cvgstudios.pokemonchrome.ChromeGame;
+import com.cvgstudios.pokemonchrome.GameFile;
 import com.cvgstudios.pokemonchrome.entities.Player;
 import com.cvgstudios.pokemonchrome.input.WorldHandler;
 
@@ -68,6 +76,17 @@ public class PokemonWorld extends MapBase implements Screen {
 	 */
 	public PokemonWorld(ChromeGame game) {
 		this.game = game;
+
+		// read files
+		try {
+			readFile();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private void readFile() throws Exception {
 	}
 
 	/**
@@ -152,7 +171,8 @@ public class PokemonWorld extends MapBase implements Screen {
 
 		batch = new SpriteBatch();
 
-		Gdx.input.setInputProcessor(new WorldHandler(this, camera, player));
+		Gdx.input.setInputProcessor(new WorldHandler(this, camera,
+				player));
 
 	}
 
