@@ -34,6 +34,7 @@ public class MainMenu implements Screen, InputProcessor {
 
 	public MainMenu(ChromeGame game) {
 		this.game = game;
+		GameFile.musicPlaying = null;
 	}
 
 	@Override

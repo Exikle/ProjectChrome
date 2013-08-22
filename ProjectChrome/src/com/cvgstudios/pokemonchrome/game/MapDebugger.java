@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.Rectangle;
+import com.cvgstudios.pokemonchrome.GameFile;
 import com.cvgstudios.pokemonchrome.entities.Player;
 
 /**
@@ -59,15 +60,19 @@ public class MapDebugger {
 		font.draw(batch,
 				"X: " + player.getX() + ", Y:" + player.getY(),
 				player.getX() - Gdx.graphics.getWidth() / 3,
-				player.getY() - Gdx.graphics.getHeight() / 3 - 25);
+				player.getY() - Gdx.graphics.getHeight() / 3 - 20);
 
 		font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(),
 				player.getX() - Gdx.graphics.getWidth() / 3,
-				player.getY() - Gdx.graphics.getHeight() / 3 - 50);
+				player.getY() - Gdx.graphics.getHeight() / 3 - 45);
 
 		font.draw(batch, "MSG: " + msg,
 				player.getX() - Gdx.graphics.getWidth() / 3 + 100,
-				player.getY() - Gdx.graphics.getHeight() / 3 - 50);
+				player.getY() - Gdx.graphics.getHeight() / 3 - 45);
+		font.draw(batch,
+				"CUURENT MUSIC: " + GameFile.musicPlaying.toString(),
+				player.getX() - Gdx.graphics.getWidth() / 3,
+				player.getY() - Gdx.graphics.getHeight() / 3 - 70);
 	}
 
 	/**
@@ -78,7 +83,8 @@ public class MapDebugger {
 	 * @param the
 	 *            player
 	 */
-	protected static void showPlayerRect(ShapeRenderer sRen, Player player) {
+	protected static void showPlayerRect(ShapeRenderer sRen,
+			Player player) {
 
 		sRen.begin(ShapeType.Line);
 		sRen.setColor(Color.BLACK);

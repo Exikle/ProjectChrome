@@ -1,7 +1,9 @@
 package com.cvgstudios.pokemonchrome.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -12,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.GameFile;
 import com.cvgstudios.pokemonchrome.entities.Player;
+import com.cvgstudios.pokemonchrome.input.MenuHandler;
 import com.cvgstudios.pokemonchrome.input.WorldHandler;
 
 /**
@@ -24,7 +27,7 @@ public class PokemonWorld extends MapBase implements Screen {
 	/**
 	 * Whether debugging information is displayed
 	 */
-	private boolean DEBUG = false;
+	private boolean DEBUG = true;
 
 	/**
 	 * The game instance
@@ -54,6 +57,11 @@ public class PokemonWorld extends MapBase implements Screen {
 	private BitmapFont font;
 
 	/**
+	 * The music currently playing
+	 */
+	private Music music;
+
+	/**
 	 * Renderer for the debugger, render rectangles for boundaries
 	 */
 	private ShapeRenderer sRen = new ShapeRenderer();
@@ -79,6 +87,9 @@ public class PokemonWorld extends MapBase implements Screen {
 		this.game = game;
 		GameFile.load();
 		createMenu();
+		music = Gdx.audio.newMusic(Gdx.files
+				.internal("music/"+GameFile.musicName+".mp3"));
+		music.play();
 	}
 
 	protected void createMenu() {
@@ -90,6 +101,7 @@ public class PokemonWorld extends MapBase implements Screen {
 		stage.setViewport(190, ChromeGame.display.getDisplayHeight(),
 				false, 540 - 350, 0, 350, 720);
 		stage.addActor(menu);
+
 		Gdx.app.log(ChromeGame.LOG, "Menu Created");
 
 	}
@@ -173,6 +185,7 @@ public class PokemonWorld extends MapBase implements Screen {
 
 		batch.begin();
 		MapDebugger.showDebugText(batch, font, mapName, player, msg);
+
 		batch.end();
 	}
 

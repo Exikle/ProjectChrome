@@ -25,6 +25,11 @@ public class GameFile {
 	public static Music musicPlaying;
 
 	/**
+	 * The name of the BG music currently playing
+	 */
+	public static String musicName;
+
+	/**
 	 * Player's current map location
 	 */
 	public static String currentMap;

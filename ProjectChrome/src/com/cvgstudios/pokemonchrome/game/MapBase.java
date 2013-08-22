@@ -19,6 +19,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.Direction;
+import com.cvgstudios.pokemonchrome.GameFile;
 import com.cvgstudios.pokemonchrome.entities.Player;
 import com.cvgstudios.pokemonchrome.tweenaccessors.SpriteTween;
 
@@ -94,7 +95,7 @@ public abstract class MapBase implements Screen {
 	/**
 	 * The name of the map
 	 */
-	protected String mapName;
+	public String mapName;
 
 	/**
 	 * The message to display to the user

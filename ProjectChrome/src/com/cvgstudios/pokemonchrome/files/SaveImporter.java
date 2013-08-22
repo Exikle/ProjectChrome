@@ -48,6 +48,7 @@ public class SaveImporter {
 					GameFile.playerGender = hold[1];
 					break;
 				case "MUSIC":
+					GameFile.musicName = hold[1];
 					GameFile.musicPlaying = Gdx.audio
 							.newMusic(Gdx.files.internal("music/"
 									+ hold[1] + ".mp3"));

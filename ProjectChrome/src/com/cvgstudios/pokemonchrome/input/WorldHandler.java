@@ -4,10 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.math.Vector2;
+import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.Direction;
+import com.cvgstudios.pokemonchrome.GameFile;
 import com.cvgstudios.pokemonchrome.entities.Player;
+import com.cvgstudios.pokemonchrome.files.GameSaver;
 import com.cvgstudios.pokemonchrome.game.PokemonWorld;
 
 /**
@@ -89,6 +94,29 @@ public class WorldHandler implements InputProcessor {
 			case Keys.ENTER:
 				boolean visible = playScreen.isMenuVisible();
 				playScreen.setMenuVisible(!visible);
+				break;
+			case Keys.A:
+				boolean menuVisible = playScreen.isMenuVisible();
+				if (menuVisible) {
+					Gdx.app.log(ChromeGame.LOG, "Save Pressed");
+
+					Gdx.app.log(ChromeGame.LOG, GameFile.playerName);
+					Gdx.app.log(ChromeGame.LOG, GameFile.playerMoney
+							+ "");
+
+					GameFile.playerPosition = new Vector2(
+							player.getX(), player.getY());
+					Gdx.app.log(ChromeGame.LOG,
+							GameFile.playerPosition.x + ","
+									+ GameFile.playerPosition.y);
+
+					GameFile.currentMap = playScreen.mapName;
+					Gdx.app.log(ChromeGame.LOG, GameFile.currentMap);
+
+					Gdx.app.log(ChromeGame.LOG, GameFile.musicName);
+					
+					GameSaver.save();
+				}
 				break;
 		}
 

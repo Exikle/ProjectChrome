@@ -3,13 +3,18 @@
  */
 package com.cvgstudios.pokemonchrome.game;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.cvgstudios.pokemonchrome.ChromeGame;
 
 /**
  * @author Dixon D'Cunha
@@ -31,7 +36,12 @@ public class MenuActor extends Actor {
 		font = new BitmapFont(Gdx.files.internal("font/pokemon.fnt"),
 				Gdx.files.internal("font/pokemon.png"), false);
 		font.setScale(2f);
+
 		mid = this.getWidth() / 2;
+	}
+
+	public void save() {
+		Gdx.app.log(ChromeGame.LOG, "Saved");
 	}
 
 	@Override
@@ -39,7 +49,7 @@ public class MenuActor extends Actor {
 		super.draw(batch, parentAlpha);
 		batch.draw(region, 0, 0, region.getRegionWidth(),
 				region.getRegionHeight());
-		font.setColor(Color.BLUE);
+		font.setColor(Color.BLACK);
 		font.draw(batch, "SAVE", mid + font.getBounds("SAVE").width
 				/ 2, 150);
 
