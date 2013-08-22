@@ -20,13 +20,14 @@ tykepol.set_types("grass420xxxblazer" , "fightabro");
 
 tykepol.register_action("tackle" , "Tackle");
 tykepol.register_action("tailwhip" , "Tail Whip");
-tykepol.register_action("supertyke" , "Super Tyke");
+tykepol.register_action("supertyke" , "Super Tyke long name test test test");
 
 //Hmm... maybe there should be a better way to do this sort of thing...
 //Sets what happens on an tykepol's creation.
 function tykepol_on_spawn(){
 	THIS.set_action_allowed("tackle");
 	THIS.set_action_allowed("tailwhip");
+	THIS.set_action_allowed("supertyke");
 	set_iv_stats();
 }
 

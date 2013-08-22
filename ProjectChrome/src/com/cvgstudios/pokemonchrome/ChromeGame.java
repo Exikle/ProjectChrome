@@ -43,7 +43,7 @@ public class ChromeGame extends Game {
 	@Override
 	public void create() {
 
-		if (false) {
+		if (true) {
 			JSExecutor.initializeExecutor(new File("res/javascript")
 					.getAbsolutePath());
 			BattleScreen tempScreen = new BattleScreen();
