@@ -97,7 +97,10 @@ public class JSExecutor {
 
 	public static void setThisScope(PokemonCreature scope) {
 		pokemonHandlerTHIS.setHandle(scope);
-
+	}
+	
+	public static void setTargetScope(PokemonCreature scope) {
+		pokemonHandlerTARGET.setHandle(scope);
 	}
 
 }

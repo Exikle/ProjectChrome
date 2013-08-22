@@ -11,10 +11,12 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.BitmapFont.TextBounds;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.gamelogic.PokemonCreature;
 import com.cvgstudios.pokemonchrome.images.Graphic;
+import com.cvgstudios.pokemonchrome.javascript.JSExecutor;
 
 public class BattleScreen implements Screen, InputProcessor {
 
@@ -39,21 +41,14 @@ public class BattleScreen implements Screen, InputProcessor {
 	public static final float ENEMY_POKEMON_X_PERCENT_POSITION = 0.68f;
 
 	public static float MENU_BUTTON_1_X_PERC = 0.295f;
-
 	public static float MENU_BUTTON_1_Y_PERC = 0.395f;
-
 	public static float MENU_BUTTON_2_X_PERC = 0.516f;
-
 	public static float MENU_BUTTON_2_Y_PERC = 0.395f;
-
 	public static float MENU_BUTTON_3_X_PERC = 0.313f;
-
 	public static float MENU_BUTTON_3_Y_PERC = 0.112f;
-
 	public static float MENU_BUTTON_4_X_PERC = 0.500f;
-
 	public static float MENU_BUTTON_4_Y_PERC = 0.112f;
-	
+
 	public static float MENU_ATTACK_1_X_PERC = 0.270f;
 	public static float MENU_ATTACK_1_Y_PERC = 0.4171123f;
 	public static float MENU_ATTACK_2_X_PERC = 0.55138886f;
@@ -66,49 +61,39 @@ public class BattleScreen implements Screen, InputProcessor {
 	public static float MENU_ATTACK_5_Y_PERC = 0.390f;
 
 	BitmapFont guiFont;
-
 	SpriteBatch batch;
 
 	PokemonCreature playerPokemon;
-
 	PokemonCreature enemyPokemon;
 
 	boolean downButton;
-
 	boolean upButton;
 
 	int buttonSelect = 1;
 
 	Vector<String> actionList;
-
 	Vector<String> actionNameList;
 
-	int selectedActionIndex;
+	int actionListScroll; //0 means 0-1 are on the top row, 1 means 2-3 are on the top row, etc...
 
 	BattleState battleState;
 
 	Texture battleBackgroundTexture;
 
 	Texture statBarPlayer;
-
 	Texture statBarEnemy;
 
 	Texture hudBar;
-
 	Texture hudAttackBar;
 
 	Texture hudSelect;
-
 	Texture hudSelectAttackBig;
-
 	Texture hudSelectAttackSmall;
 
 	Texture playerPokemonTexture;
-
 	Texture enemyPokemonTexture;
 
 	Texture playerCharacter;
-
 	Texture enemyCharacter;
 
 	public BattleScreen() {
@@ -144,7 +129,7 @@ public class BattleScreen implements Screen, InputProcessor {
 		}
 
 		battleState = BattleState.PLAYER_CHOOSING_ACTION;
-
+		JSExecutor.setThisScope(pokemon);
 	}
 
 	public void setEnemyPokemon(PokemonCreature pokemon) {
@@ -154,6 +139,7 @@ public class BattleScreen implements Screen, InputProcessor {
 		enemyPokemonTexture = enemyPokemon.getType().getFrontTexture();
 
 		battleState = BattleState.PLAYER_CHOOSING_ACTION;
+		JSExecutor.setTargetScope(pokemon);
 	}
 
 	public void render(float delta) {
@@ -179,7 +165,7 @@ public class BattleScreen implements Screen, InputProcessor {
 			batch.draw(playerPokemonTexture, (displayWidth * PLAYER_POKEMON_X_PERCENT_POSITION), (HUD_BAR_HEIGHT + PLAYER_POKEMON_Y_BACKGROUND_PERCENT_POSITION * (displayHeight - HUD_BAR_HEIGHT)));
 			// Draws enemy pokemon
 			batch.draw(enemyPokemonTexture, (displayWidth * ENEMY_POKEMON_X_PERCENT_POSITION), (HUD_BAR_HEIGHT + ENEMY_POKEMON_Y_BACKGROUND_PERCENT_POSITION * (displayHeight - HUD_BAR_HEIGHT)));
-			
+
 			guiFont.setColor(Color.RED);
 			guiFont.setScale(1.2f);
 
@@ -234,7 +220,7 @@ public class BattleScreen implements Screen, InputProcessor {
 			batch.draw(playerPokemonTexture, (displayWidth * PLAYER_POKEMON_X_PERCENT_POSITION), (HUD_BAR_HEIGHT + PLAYER_POKEMON_Y_BACKGROUND_PERCENT_POSITION * (displayHeight - HUD_BAR_HEIGHT)));
 			// Draws enemy pokemon
 			batch.draw(enemyPokemonTexture, (displayWidth * ENEMY_POKEMON_X_PERCENT_POSITION), (HUD_BAR_HEIGHT + ENEMY_POKEMON_Y_BACKGROUND_PERCENT_POSITION * (displayHeight - HUD_BAR_HEIGHT)));
-			
+
 			float hudStretch = ((float) HUD_BAR_HEIGHT /(float) hudBar.getHeight() );
 
 			switch (buttonSelect) {
@@ -259,8 +245,63 @@ public class BattleScreen implements Screen, InputProcessor {
 				break;
 			}
 			}
+
+
+			//guiFont.setScale(1.2f);
+
+			float x1a = 0.282f * displayWidth;
+			float y1a = 0.470f * HUD_BAR_HEIGHT;
+			float x1b = 0.420f * displayWidth;
+			float y1b = 0.647f * HUD_BAR_HEIGHT;
 			
-			
+			float x2a = 0.558f * displayWidth;
+			float y2a = 0.470f * HUD_BAR_HEIGHT;
+			float x2b = 0.711f * displayWidth;
+			float y2b = 0.647f * HUD_BAR_HEIGHT;
+
+			float x3a = 0.325f * displayWidth;
+			float y3a = 0.139f * HUD_BAR_HEIGHT;
+			float x3b = 0.475f * displayWidth;
+			float y3b = 0.336f * HUD_BAR_HEIGHT;
+
+			float x4a = 0.512f * displayWidth;
+			float y4a = 0.139f * HUD_BAR_HEIGHT;
+			float x4b = 0.666f * displayWidth;
+			float y4b = 0.336f * HUD_BAR_HEIGHT;
+
+			//This for loop looks really unneccessary. It probably is. (no, it definetley is)
+			for (int i = 0, j = actionListScroll * 2; i < 4 && j < actionNameList.size(); j += 1, i += 1){
+				switch (i - actionListScroll * 2){
+				case 0:{
+					guiFont.setColor(Color.WHITE);
+					drawStringBounded(guiFont, actionNameList.get(i), x1a, y1a, x1b, y1b);	
+					break;
+				}
+				case 1:{
+					guiFont.setColor(Color.WHITE);
+					drawStringBounded(guiFont, actionNameList.get(i), x2a, y2a, x2b, y2b);	
+					break;
+				}
+				case 2:{
+					guiFont.setColor(Color.RED);
+					drawStringBounded(guiFont, actionNameList.get(i), x3a, y3a, x3b, y3b);	
+					break;
+				}
+				case 3:{
+					guiFont.setColor(Color.RED);
+					drawStringBounded(guiFont, actionNameList.get(i), x4a, y4a, x4b, y4b);	
+					break;
+				}
+
+
+
+				}
+
+
+
+			}
+
+
 			break;
 		}
 		default: {
@@ -304,7 +345,7 @@ public class BattleScreen implements Screen, InputProcessor {
 			// currently
 			// your turn
 
-			
+
 
 			/*//Old code
 			case (Keys.UP): {
@@ -321,7 +362,7 @@ public class BattleScreen implements Screen, InputProcessor {
 				break;
 
 			}
-*/
+			 */
 
 			switch (buttonSelect) {
 			case 1: {
@@ -332,6 +373,10 @@ public class BattleScreen implements Screen, InputProcessor {
 				}
 				case Keys.DOWN:{
 					buttonSelect = 3;
+					break;
+				}
+				case Keys.SPACE:{
+					startActionFromButton();
 					break;
 				}
 				}
@@ -347,6 +392,10 @@ public class BattleScreen implements Screen, InputProcessor {
 					buttonSelect = 4;
 					break;
 				}
+				case Keys.SPACE:{
+					startActionFromButton();
+					break;
+				}
 				}
 				break;
 			}
@@ -360,6 +409,10 @@ public class BattleScreen implements Screen, InputProcessor {
 					buttonSelect = 4;
 					break;
 				}
+				case Keys.SPACE:{
+					startActionFromButton();
+					break;
+				}
 				}
 				break;
 			}
@@ -371,6 +424,10 @@ public class BattleScreen implements Screen, InputProcessor {
 				}
 				case Keys.LEFT:{
 					buttonSelect = 3;
+					break;
+				}
+				case Keys.SPACE:{
+					startActionFromButton();
 					break;
 				}
 				}
@@ -398,7 +455,7 @@ public class BattleScreen implements Screen, InputProcessor {
 				}
 				break;
 			}
-			
+
 			}
 
 		} else if (battleState == BattleState.PLAYER_CHOOSING_ACTION) {
@@ -416,6 +473,7 @@ public class BattleScreen implements Screen, InputProcessor {
 				}
 				case Keys.SPACE: {
 					battleState = BattleState.PLAYER_CHOOSING_ATTACK;
+					buttonSelect = 5;
 					break;
 				}
 				}
@@ -509,7 +567,31 @@ public class BattleScreen implements Screen, InputProcessor {
 
 	private void drawStringCentered(BitmapFont fnt, String str, float x, float y) {
 		fnt.draw(batch, str, x - fnt.getBounds(str).width / 2, y + fnt.getBounds(str).height / 2);
-
+	}
+	
+	private void drawStringBounded(BitmapFont fnt, String str, float x1, float y1, float x2, float y2){
+		
+		float baseScaleX = fnt.getScaleX();
+		float baseScaleY = fnt.getScaleY();
+		
+		float boundWidth = x2 - x1;
+		float boundHeight = y2 - y1;
+		
+		TextBounds bnd = fnt.getBounds(str);
+		
+		if (bnd.width > boundWidth){
+			fnt.setScale(baseScaleX * (boundWidth / bnd.width), baseScaleY);			
+		}
+		
+		drawStringCentered(fnt, str, (x1 + x2) / 2, (y1 + y2) / 2); 
+		
+		fnt.setScale(baseScaleX, baseScaleY);
+		
+		
+	}
+	
+	private void startActionFromButton(){
+		JSExecutor.evaluate(playerPokemon.getType().getTypeName() + "_" + actionList.get(actionListScroll * 2 + buttonSelect - 1) + "();");
 	}
 
 }
