@@ -97,7 +97,7 @@ public abstract class MapBase implements Screen {
 	protected String mapName;
 
 	/**
-	 * The msg to display to the user
+	 * The message to display to the user
 	 */
 	protected String msg;
 

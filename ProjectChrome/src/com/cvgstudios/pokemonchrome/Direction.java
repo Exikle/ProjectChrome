@@ -57,7 +57,7 @@ public enum Direction {
 	 * 
 	 * @return speed
 	 */
-	float getSpeed() {
+	public float getSpeed() {
 		return speed;
 
 	}
@@ -67,12 +67,12 @@ public enum Direction {
 	 * 
 	 * @return direction's value
 	 */
-	int getDirection() {
+	public int getDirection() {
 		return directionVal;
 
 	}
 
-	String getXis() {
+	public String getXis() {
 		return axis;
 
 	}

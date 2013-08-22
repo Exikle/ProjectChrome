@@ -1,4 +1,4 @@
-package com.cvgstudios.pokemonchrome;
+package com.cvgstudios.pokemonchrome.input;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,13 +6,14 @@ import java.util.Map;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.cvgstudios.pokemonchrome.Direction;
 import com.cvgstudios.pokemonchrome.entities.Player;
 import com.cvgstudios.pokemonchrome.game.PokemonWorld;
 
 /**
  * Handles all in-game input
  */
-public class InputHandler implements InputProcessor {
+public class WorldHandler implements InputProcessor {
 
 	/**
 	 * The game world
@@ -40,7 +41,7 @@ public class InputHandler implements InputProcessor {
 	 *            camera
 	 * @para player
 	 */
-	public InputHandler(PokemonWorld screen,
+	public WorldHandler(PokemonWorld screen,
 			OrthographicCamera camera, Player player) {
 		this.playScreen = screen;
 		this.camera = camera;
@@ -84,6 +85,10 @@ public class InputHandler implements InputProcessor {
 		switch (keycode) {
 			case Keys.SPACE:
 				playScreen.checkPlayerInteraction();
+				break;
+			case Keys.ENTER:
+				boolean visible = playScreen.isMenuVisible();
+				playScreen.setMenuVisible(!visible);
 				break;
 		}
 

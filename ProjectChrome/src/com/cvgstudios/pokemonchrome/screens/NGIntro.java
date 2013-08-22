@@ -69,7 +69,7 @@ public class NGIntro implements Screen, InputProcessor {
 		getLines();
 	}
 
-	private void getLines() {
+	public void getLines() {
 		hold = script[counter].split(";");
 		lineOne = hold[0];
 		lineTwo = hold[1];
