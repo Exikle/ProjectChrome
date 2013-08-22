@@ -86,6 +86,10 @@ public class WorldHandler implements InputProcessor {
 			case Keys.SPACE:
 				playScreen.checkPlayerInteraction();
 				break;
+			case Keys.ENTER:
+				boolean visible = playScreen.isMenuVisible();
+				playScreen.setMenuVisible(!visible);
+				break;
 		}
 
 		return true;

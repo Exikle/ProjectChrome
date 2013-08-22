@@ -27,10 +27,6 @@ public class ScrollingCredits implements Screen {
 
 	private String[] script;
 
-	private String[] hold;
-
-	private int counter = 0;
-
 	private int len;
 
 	private float movingY = 0;
@@ -38,8 +34,6 @@ public class ScrollingCredits implements Screen {
 	private int lineNum = 0;
 
 	private final float mid = Gdx.graphics.getWidth() / 2;
-
-	private final String XID = "Xid Studios";
 
 	private String string;
 

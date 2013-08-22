@@ -24,6 +24,16 @@ public class ChromeGame extends Game {
 	 */
 	public static final String LOG = "Pokemon Chrome";
 
+	/**
+	 * Width of the screen
+	 */
+	public static final int WIDTH = 720;
+
+	/**
+	 * Height of the screen
+	 */
+	public static final int HEIGHT = 540;
+
 	public static DisplayInterface display;
 
 	/**

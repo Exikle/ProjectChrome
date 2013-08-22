@@ -1,7 +1,6 @@
 package com.cvgstudios.pokemonchrome;
 
 import java.io.File;
-import java.io.IOException;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
@@ -58,7 +57,7 @@ public class GameFile {
 		File f = new File(System.getenv("APPDATA")
 				+ "//.pokechrome/player.sav");
 		if (f.exists()) {
-			Gdx.app.log(ChromeGame.LOG, "Exists");
+			// Gdx.app.log(ChromeGame.LOG, "Exists");
 			saveExits = true;
 			try {
 				SaveImporter.impt();

@@ -3,12 +3,10 @@ package com.cvgstudios.pokemonchrome.files;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
-import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.GameFile;
 
 /**
@@ -28,7 +26,7 @@ public class SaveImporter {
 
 		String strLine;
 		while ((strLine = br.readLine()) != null) {
-			Gdx.app.log(ChromeGame.LOG, strLine);
+			// Gdx.app.log(ChromeGame.LOG, strLine);
 			String[] hold = strLine.split(":");
 			switch (hold[0]) {
 				case "NAME":

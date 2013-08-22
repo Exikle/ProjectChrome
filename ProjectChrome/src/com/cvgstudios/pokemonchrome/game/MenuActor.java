@@ -6,6 +6,7 @@ package com.cvgstudios.pokemonchrome.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
 /**
@@ -13,15 +14,22 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
  */
 public class MenuActor extends Actor {
 
-	Texture region;
+	TextureRegion region;
 
 	public MenuActor() {
-		region = new Texture(
-				Gdx.files.internal("imgs/OptionBox.png"));
+		super();
+		region = new TextureRegion();
+
+		region.setRegion(new Texture(Gdx.files
+				.internal("imgs/MenuBox.png")));
 	}
 
-	public void draw(SpriteBatch batch) {
-		batch.draw(region, getX(), getY(), getOriginX(), getOriginY());
+	@Override
+	public void draw(SpriteBatch batch, float parentAlpha) {
+		super.draw(batch, parentAlpha);
+		batch.draw(region, 0, 0, region.getRegionWidth(),
+				region.getRegionHeight());
+
 	}
 
 }

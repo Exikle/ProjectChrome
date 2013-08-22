@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.GameFile;
 import com.cvgstudios.pokemonchrome.entities.Player;
@@ -29,6 +29,7 @@ public class PokemonWorld extends MapBase implements Screen {
 	/**
 	 * The game instance
 	 */
+	@SuppressWarnings("unused")
 	private ChromeGame game;
 
 	/*
@@ -62,7 +63,11 @@ public class PokemonWorld extends MapBase implements Screen {
 	 */
 	private Player player;
 
-	private boolean menuVisible = true;
+	private boolean menuVisible = false;
+
+	protected MenuActor menu;
+
+	protected Stage stage;
 
 	/**
 	 * Constructor
@@ -76,13 +81,74 @@ public class PokemonWorld extends MapBase implements Screen {
 		createMenu();
 	}
 
+	protected void createMenu() {
+		menu = new MenuActor();
+		menu.setWidth(90);
+		// menu.set
+
+		stage = new Stage();
+		stage.setViewport(190, ChromeGame.display.getDisplayHeight(),
+				false, 540 - 350, 0, 350, 720);
+		stage.addActor(menu);
+		Gdx.app.log(ChromeGame.LOG, "Menu Created");
+
+	}
+
 	/**
-	 * Renders the map and the player on the map, if debugging, renders the
-	 * debug rectangles
+	 * Renders the map and the player on the map
+	 * If debugging, renders the debug rectangles
 	 */
 	@Override
 	public void render(float delta) {
 		super.render(delta);
+		if (!menuVisible) {
+			movementCalc();
+		}
+		cameraUpdater();
+
+		drawWorld();
+
+		if (menuVisible) {
+			stage.act(delta);
+			stage.draw();
+		}
+
+		if (DEBUG) {
+			showRect(sRen);
+		}
+
+	}
+
+	/**
+	 * @param Set
+	 *            the menuVisible with menuVisible
+	 */
+	public void setMenuVisible(boolean menuVisible) {
+		this.menuVisible = menuVisible;
+	}
+
+	private void drawWorld() {
+		renderer.render(bgLayers);
+
+		batch.begin();
+
+		batch.draw(player, player.getX(), player.getY());
+
+		batch.end();
+
+		renderer.render(fgLayers);
+	}
+
+	private void cameraUpdater() {
+		// camera.zoom = 1.1f;
+		camera.update();
+
+		batch.setProjectionMatrix(camera.combined);
+		renderer.setView(camera);
+		sRen.setProjectionMatrix(camera.combined);
+	}
+
+	private void movementCalc() {
 		Vector2 oPos = new Vector2(player.getX(), player.getY());
 
 		user = new Rectangle(player.getX() + player.xD, player.getY()
@@ -94,35 +160,7 @@ public class PokemonWorld extends MapBase implements Screen {
 			player.setPosition(oPos.x, oPos.y);
 		}
 		player.moveUser();
-
 		checkPlayerInteraction();
-
-		// camera.zoom = 1.1f;
-		camera.update();
-
-		batch.setProjectionMatrix(camera.combined);
-		renderer.setView(camera);
-		sRen.setProjectionMatrix(camera.combined);
-
-		renderer.render(bgLayers);
-
-		batch.begin();
-		batch.draw(player, player.getX(), player.getY());
-
-		batch.end();
-		renderer.render(fgLayers);
-
-		batch.begin();
-		if (menuVisible) {
-			// menu visible
-		}
-		batch.end();
-
-		if (DEBUG) {
-			showRect(sRen);
-
-		}
-
 	}
 
 	/**
@@ -143,6 +181,7 @@ public class PokemonWorld extends MapBase implements Screen {
 	 */
 	@Override
 	public void resize(int width, int height) {
+		stage.setViewport(width, height, true);
 		camera.viewportHeight = height;
 		camera.viewportWidth = width;
 		camera.update();
@@ -167,6 +206,13 @@ public class PokemonWorld extends MapBase implements Screen {
 		Gdx.input.setInputProcessor(new WorldHandler(this, camera,
 				player));
 
+	}
+
+	/**
+	 * @return the menuVisible
+	 */
+	public boolean isMenuVisible() {
+		return menuVisible;
 	}
 
 	@Override
