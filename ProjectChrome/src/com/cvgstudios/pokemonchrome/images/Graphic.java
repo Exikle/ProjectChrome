@@ -21,22 +21,21 @@ public enum Graphic implements ImgPathConstants {
 	// Stuff
 	StartMenuLogo("res/imgs/TitleScreen.png"),
 
-	StartMenuBG("res/imgs/MainMenuBG.png"), Box(
-			"res/imgs/PokemonMenuAll.png"), BoxHighLight(
-			"res/imgs/PokemonMenuAllSelected.png"), ContinueBox(
-			"res/imgs/PokemonMenuContinue.png"), ContinueBoxHighLight(
-			"res/imgs/PokemonMenuContinueSelected.png"),
+	StartMenuBG("res/imgs/MainMenuBG.png"), Box("res/imgs/PokemonMenuAll.png"), BoxHighLight("res/imgs/PokemonMenuAllSelected.png"), ContinueBox("res/imgs/PokemonMenuContinue.png"), ContinueBoxHighLight("res/imgs/PokemonMenuContinueSelected.png"),
 
 	WelcomeBG("res/imgs/WelcomeBG.png"),
 
 	Professor("res/imgs/Professor.png"),
-	
+
 	// Battle Screen things + GUI
-	BattleScreenMenu(MENU_BATTLE_PATH + "/BossBattleMenu.png"), BattleScreenMenuSelect(
-			MENU_BATTLE_PATH + "/MenuSelect.png"), PlayerPokemonStatBar(
-			MENU_BATTLE_PATH + "/HpBarAlly.png"), EnemyPokemonStatBar(
-			MENU_BATTLE_PATH + "/HpBarEnemy.png"), GrassBattleSetting(
-			MENU_BATTLE_PATH + "/GreenBackground.png"),
+	BattleScreenMenu(MENU_BATTLE_PATH + "/BossBattleMenu.png"),
+	BattleScreenMenuSelect(MENU_BATTLE_PATH + "/MenuSelect.png"),
+	BattleScreenAttackMenu(MENU_BATTLE_PATH + "/BossAttackMenu.png"),
+	BattleScreenAttackMenuSelectBig(MENU_BATTLE_PATH + "/MenuSelectAttackBig.png"),
+	BattleScreenAttackMenuSelectSmall(MENU_BATTLE_PATH + "/MenuSelectAttackSmall.png"), 
+	PlayerPokemonStatBar(MENU_BATTLE_PATH + "/HpBarAlly.png"),
+	EnemyPokemonStatBar(MENU_BATTLE_PATH + "/HpBarEnemy.png"),
+	GrassBattleSetting(MENU_BATTLE_PATH + "/GreenBackground.png"),
 
 	;
 
