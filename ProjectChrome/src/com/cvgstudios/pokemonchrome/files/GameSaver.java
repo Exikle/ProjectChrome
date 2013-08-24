@@ -13,7 +13,6 @@ import com.cvgstudios.pokemonchrome.GameFile;
  * 
  * @author Dixon D'Cunha
  */
-@SuppressWarnings("unused")
 public class GameSaver {
 
 	// NAME:Ash

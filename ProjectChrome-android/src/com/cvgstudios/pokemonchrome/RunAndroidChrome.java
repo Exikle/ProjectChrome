@@ -16,6 +16,6 @@ public class RunAndroidChrome extends AndroidApplication {
 
 		Gdx.app.log(ChromeGame.LOG,
 				"Attempting to make Android Chrome Work");
-		initialize(new com.cvgstudios.pokemonchrome.ChromeGame(), cfg);
+		initialize(new ChromeGame(), cfg);
 	}
 }
