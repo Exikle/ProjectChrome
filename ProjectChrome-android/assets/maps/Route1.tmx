@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="MapTileSheet" tilewidth="32" tileheight="32">
+  <image source="MapTileSheet.png" width="320" height="3500"/>
+ </tileset>
+ <layer name="Ground" width="40" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3DAQ0AAAzDoPo3OhsXckhYNVVVVVVVVVV9/gC+1GOjQB8AAA==
+  </data>
+ </layer>
+ <layer name="Path" width="40" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2XSUvDQBhAU+uhdju0te1BPSl4ERQFeyoRL4L//0+4H9wP6hswEENivsxiJnUefdBDZvJIJ8M0iv43Z4JrrvAab/AW7/AeHxx2JUj6HvEJn/EFX/EN3x12JUj6PvBTfWnxwTVs43rLbZtC0tehYwO72MM+DnDoSd+IjjFOcBOnOMO5gz7Vc5LysuC6GBc57uJeShu0U0qel2KZGZd4YKmp6D6mfbYJfWZcRLL3QRHj8bdq3LmDHhOWdQeU4FtfHP387X3oy1vzLtd/Veroi/FUqOu+vDk7huNd941CX+jToJtzL9t9vZRVmVjq28JtofuR/H3X6ZNQtsak6yH0NbNvXHPfIR6VWGefrf0w9Mko2rt96Ssi9Jmxin2SM1voq9aX3R9868vie1+V8+pv7jjq00H3DFY2T1P6dP7/SPuqzN3U52eK7hnblD4OBA7/qCfLFGcC5yva9wWg+fx3QB8AAA==
+  </data>
+ </layer>
+ <layer name="PlayerLayer" width="40" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BAQEAAACAkP6v7ggKAAAAAAAAABhk6EtKQB8AAA==
+  </data>
+ </layer>
+ <layer name="Tree" width="40" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2ZsQrCUAxFs/sbdrNzi7oI6iJUR/Uz+v+DqUUIQmvSC22Ee+DCm/IuOY8urUSkShxClqQOZIn3ugrkwH5vtpqdZp+wX6k5ak6as6YwaWX8W3mZqV+juWpumrv0u3xqNjPc/4uuX9fpIX0nu8ss/Wwnu8ss/b79fnaZpR/9Tod+MegXg34x6BeDfjHoF4N+MegXg34x6BeDfjHoF4N+MegXg34x/t1vEUgbvHvtmDnm1/4X8Zyj+y6dc4f82t6e85R+nrm20ws70kNQQB8AAA==
+  </data>
+ </layer>
+ <objectgroup name="Collision" width="40" height="50">
+  <object x="120" y="293" width="5" height="1061"/>
+  <object x="118" y="1353" width="7" height="188"/>
+  <object x="128" y="1526" width="381" height="8"/>
+  <object x="503" y="1526" width="5" height="84"/>
+  <object x="865" y="1533" width="9" height="69"/>
+  <object x="865" y="1526" width="296" height="9"/>
+  <object x="1155" y="195" width="27" height="993"/>
+  <object x="1154" y="1174" width="26" height="361"/>
+  <object x="125" y="296" width="255" height="7"/>
+  <object x="374" y="188" width="5" height="113"/>
+  <object x="3" y="187" width="374" height="2"/>
+  <object x="514" y="257" width="7" height="111"/>
+  <object x="513" y="371" width="157"/>
+  <object x="661" y="201" width="7" height="169"/>
+  <object x="668" y="206" width="128" height="7"/>
+  <object x="789" y="9" width="9" height="201"/>
+  <object x="1" y="4" width="793" height="7"/>
+  <object x="795" y="5" width="479" height="7"/>
+  <object x="1091" y="13" width="33" height="42"/>
+  <object x="1102" y="159" width="27" height="37"/>
+  <object x="967" y="208" width="184" height="5"/>
+  <object x="965" y="210" width="2" height="155"/>
+  <object x="867" y="369" width="151" height="3"/>
+  <object x="867" y="370" width="5" height="91"/>
+  <object x="738" y="466" width="134" height="1"/>
+  <object x="292" y="562" width="345" height="6"/>
+  <object x="289" y="574" width="16" height="223"/>
+  <object x="292" y="781" width="397" height="16"/>
+  <object x="673" y="797" width="16" height="132"/>
+  <object x="417" y="929" width="272" height="13"/>
+  <object x="417" y="941" width="15" height="401"/>
+  <object x="419" y="1328" width="603" height="14"/>
+  <object x="958" y="1343" width="20" height="183"/>
+  <object x="1004" y="704" width="19" height="417"/>
+  <object x="1003" y="1116" width="19" height="223"/>
+ </objectgroup>
+ <objectgroup name="Interaction" width="40" height="50">
+  <object name="(CHANGEMAP):Exitium:728,840" x="512" y="1588" width="355" height="18"/>
+  <object name="(CHANGEMAP):Maple Lodge:1214,290" x="148" y="29" width="36" height="137"/>
+  <object name="(JUMP)" x="307" y="580" width="12" height="201"/>
+  <object name="(JUMP)" x="306" y="769" width="366" height="13"/>
+  <object name="(JUMP)" x="687" y="799" width="13" height="127"/>
+  <object name="(JUMP)" x="434" y="942" width="239" height="9"/>
+  <object name="(JUMP)" x="434" y="946" width="7" height="380"/>
+  <object name="(JUMP)" x="435" y="1319" width="568" height="7"/>
+  <object name="(JUMP)" x="975" y="1340" width="11" height="164"/>
+  <object name="(JUMP)" x="1000" y="952" width="11" height="381"/>
+  <object name="(JUMP)" x="999" y="707" width="11" height="244"/>
+ </objectgroup>
+</map>

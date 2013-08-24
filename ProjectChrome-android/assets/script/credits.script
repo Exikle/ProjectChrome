@@ -1,0 +1,97 @@
+DEPT:DES_DEPT
+LINE: 
+POS:Creative Director
+EMPLOYE:ARVIN
+LINE: 
+POS:Level Designer
+EMPLOYE:GABE:
+EMPLOYE:JULIUS: 
+LINE: 
+LINE: 
+DEPT:PROG_DEPT: 
+LINE: 
+POS:Program Manager: 
+EMPLOYE:JULIUS: 
+LINE: 
+POS:Lead Programmer 
+EMPLOYE:MARK: 
+EMPLOYE:DIXON: 
+LINE: 
+POS:Battle Programmer: 
+EMPLOYE:MARK: 
+LINE: 
+POS:Gameplay Programmer: 
+EMPLOYE:DIXON: 
+LINE: 
+POS:Artificial Intelligence Programmer: 
+EMPLOYE:MARK: 
+LINE: 
+POS:Graphics Programmer: 
+EMPLOYE:DIXON: 
+EMPLOYE:JULIUS: 
+LINE: 
+POS:User Interface Programmer: 
+EMPLOYE:DIXON: 
+LINE: 
+LINE: 
+DEPT:ART_DEPT: 
+LINE: 
+POS:Art Director: 
+EMPLOYE:NIKO:
+LINE: 
+POS:Graphics Designer: 
+EMPLOYE:ROFEL: 
+EMPLOYE:JULIUS: 
+LINE: 
+POS:Sprite Designer:
+EMPLOYE:TOMMY: 
+EMPLOYE:NIKO:
+LINE: 
+POS:Animator: 
+EMPLOYE:MARK: 
+EMPLOYE:JULIUS: 
+LINE: 
+POS:Interface Artist: 
+EMPLOYE:JULIUS: 
+LINE: 
+DEPT:SOUND_DEPT: 
+LINE: 
+POS:Sound Design Manager: 
+EMPLOYE:ARVIN: 
+LINE: 
+POS:Sound Designer: 
+EMPLOYE:ROFEL: 
+LINE: 
+LINE: 
+DEPT:QUALITY_DEPT:
+LINE: 
+STAGE:Pre Alpha: 
+GROUP:Pre Alpha Testers: 
+STAGE:Alpha: 
+GROUP:Alpha Testers: 
+STAGE:Beta: 
+GROUP:Beta Testers: 
+STAGE:RC: 
+GROUP:RC Testers:
+LINE: 
+LINE: 
+LINE: 
+DEPT:COLLAB_DEPT:
+LINE: 
+LINE:Xid Studios
+LINE: 
+LINE: 
+LINE: 
+LINE: 
+LINE: Special Thanks To
+LINE: 
+LINE:Justin Baradi (Programmer): 
+LINE:Mudassir Mohammad (Pokemon Designer): 
+LINE:Gabriel Ramos (Graphic Helper): 
+LINE:Nidrax (Maple Trees): 
+LINE:XDinky (Fountain): 
+LINE:LotusKing (PokemonCenter): 
+LINE:chimcharsfireworkd (PokemonLab): 
+LINE:Elieli76 (Battle Backgrounds): 
+
+

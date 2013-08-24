@@ -87,7 +87,7 @@ public class PokemonWorld extends MapBase implements Screen {
 		createMenu();
 		music = Gdx.audio.newMusic(Gdx.files
 				.internal("music/"+GameFile.musicName+".mp3"));
-		music.play();
+//		music.play();
 	}
 
 	protected void createMenu() {

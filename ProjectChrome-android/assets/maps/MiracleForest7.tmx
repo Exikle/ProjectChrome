@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="53" height="49" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="MapTileSheet" tilewidth="32" tileheight="32">
+  <image source="MapTileSheet.png" width="320" height="3500"/>
+ </tileset>
+ <layer name="Terrain 1" width="53" height="49">
+  <data encoding="base64" compression="zlib">
+   eJztzzERADAMxLCEP9HCKIVuvU80aLe7qhqAFc6D342ePKXwlMFTholPAAAAAAAAsNUFsDZTPQ==
+  </data>
+ </layer>
+ <layer name="Tall Grass 2" width="53" height="49">
+  <data encoding="base64" compression="zlib">
+   eJztlz0PgjAQhkvqir/ZxE2NszujH6M6qqP6ozyDjY0B4SAtd+V9kjeF6Xhy5QrGAAAAAEAb84poB046gFPJOgv6SIOwUeI0tcbktlyb0NIn55O3cBpDn6TOmT59kuo09j4V5LT4ZOldu/uVkPctxbnHIUUnLbOcwzYhJ6nzrQ9wGgb/fPldmyLpHAL6cHvonSLBPdXlHK2aGZLmRpfvHelO6FNJbKe6enX1QzsdMjPbU3YUfqX/9erqh957Z3I5UY6RnPxvCE6/OE43crlSLhGcLP3XTux35fSL4/QklwflHsHJ97Et/tvb1AAAAABS4QWKeoCi
+  </data>
+ </layer>
+ <layer name="PlayerLayer" width="53" height="49">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20IX6AAAAAAAAAAAAAAfgMolAAB
+  </data>
+ </layer>
+ <layer name="Fence 3" width="53" height="49">
+  <data encoding="base64" compression="zlib">
+   eJztmLtOAzEQRWeztPBNfBo1kagSSAspeZRACYgqPFr4HK4VLLzWjtaxZ7wbNEcaWVpZdq6vPRObyDAMwzCMqbBuiE4R86g9Qxy0RG27bbl+vs2NcJz577ylXDJjrJo/Pa5dCcyVgsQ818wY8RpeVdLE/Z5d4Hwai7uGTm4RN4jcMXBOjpfQdT4RbY/Q8oC4L9Dkz8yQX4tmG8ugvVBYhxdoeUY8FWjyOWBoH7t8dNh2v2ns23doeUNsKvjk8tFRpCn3PMd+h3tA4gz4sXJ8kqglffOUkrp/+nzSqFma9SlmH3xC/ifUAVcPkueauk/I/4Q64OpB8lyxTxI1P6bEJ+R/Qh1w9aADV3N8bQ7zlYamEp+Q/wl1wNWDDmP/V9LIexprvwsaec98kkfDp1p3Pw4Jn/ydvPbdj0NiTcc+PzESPo19fmLMp360fArft3xwb2jhN/OpHztP+vxHnySYmk8SOJ9eZ8P91nuk/QN6PhM0abw9aPEFPd8z/s2Nu9O6e+8i6pcTGu97hmEYhlGbHww6iME=
+  </data>
+ </layer>
+ <layer name="Trees 4" width="53" height="49">
+  <data encoding="base64" compression="zlib">
+   eJzt2rsNgDAQBFH3XwO/EAiBAjkyx2CxyzEjrXQFvMASzKWUJbbG5iT3FttjR6J7iI2xKdGtdoI97DmYwd4ze1ddrDe879pz7q49557Ycw172FOFPey9WYv3nlst3ntutXrvOYU97KnCHvZUYQ97qrCHPVXYw55DWezVZbFXhz3sqeJ77ndv9bdX/iXAnoMZ7P3L3gm7vpRW
+  </data>
+ </layer>
+ <objectgroup name="Collision" width="53" height="49"/>
+ <objectgroup name="Interaction" width="53" height="49"/>
+</map>

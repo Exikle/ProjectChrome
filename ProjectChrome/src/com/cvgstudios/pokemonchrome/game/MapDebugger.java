@@ -69,8 +69,8 @@ public class MapDebugger {
 		font.draw(batch, "MSG: " + msg,
 				player.getX() - Gdx.graphics.getWidth() / 3 + 100,
 				player.getY() - Gdx.graphics.getHeight() / 3 - 45);
-		font.draw(batch,
-				"CUURENT MUSIC: " + GameFile.musicPlaying.toString(),
+
+		font.draw(batch, "CUURENT MUSIC: " + GameFile.musicName,
 				player.getX() - Gdx.graphics.getWidth() / 3,
 				player.getY() - Gdx.graphics.getHeight() / 3 - 70);
 	}

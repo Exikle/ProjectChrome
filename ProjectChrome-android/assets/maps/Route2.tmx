@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="60" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="MapTileSheet" tilewidth="32" tileheight="32">
+  <image source="MapTileSheet.png" width="320" height="3500"/>
+ </tileset>
+ <layer name="Terrain" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztwzENAAAMBKHzr/mHyugCCaumqqqqqqqqqqqqqqrPD/jcicY=
+  </data>
+ </layer>
+ <layer name="Water" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt17EOQDAYReG+AUY8H0aMeHl/01EabdBqe05yR02/wVCl/lElqx3WxLrgy+HFizfd8OL9g3eQjR6bLOek4p1li8dWyzl48eINH168eK/hxYs3fKV5N1WWV+djzsGrczXn4tW5/Mt4TXjx4o0bXrx4TXjx4o1baV79Rtpvdli+TdH7JLx48aZbad5W1jmsj3VBIiL6tBNfZ7Wf
+  </data>
+ </layer>
+ <layer name="Path" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztmb0OwjAMhF3EzwKMwFjY4P1fDBgBiYxpVbWx4ziJcifd6Mt9QyrFJYIgqBXtnQ+KPtrWZ+vkfFb0xbY+Wy3zrpyvAq+pTl5pV40MK4E3T4aVwDvU0/nl+S3IKElLXT/OX88/QUZJAu9QrfFuOqKt513HzyhJ+D7nybASePNkWAm8eTKsVDsvdx/18LreSbaHysmrtZ/h9Aavnca80p3UTXhmDO/4LobcqTEv53z/vBz3V9I9hlfaG7wygTfNzNQsePXn5nLAqzczNQte/bm5HPDqzUzN+m8lzhurVl6pwSs/PzVvT2H/8OfeXJx3lUb3GN7Q3FRvXPCmmeF24Xy7pbu0knitDN7lXlq8Pcn2YDEO+dan4i1VrfH+AXiHWXc=
+  </data>
+ </layer>
+ <layer name="Flowers" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt2jEOgCAQBEB6a///VQtqohKOM95MYu9qWJKD1qCuI+ABAJh1Zr/ABhUy0lX511VyAnxZtS4+W73MAE/dzegjZvjVzgWy8+7eA7PzjkR9h6/mjZKZV1/Fy86rrzp9tYa++rfsvKN1av2u8faOkftI8zL6CoBYF/5lA4U=
+  </data>
+ </layer>
+ <layer name="Sign Under" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt16ENAEAIA0D25PefAyTyBQnmLqlvUtUIAAAAAAAAYMrOuy7BF1sBAADc882ATQUbcgIm
+  </data>
+ </layer>
+ <layer name="WildGrass" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt2jEKwDAQA0FD/v/nFOlTBB1W1rvgVjC1by176xp6rZ3mnUgvO73s9LLTy04vO73s9LLTy04vO73s9LLTy05vTxP/H3p70pvZbE1vZrM1vZnN1vRmNlvTm9lsTW9ms7Wv92N/vTc77V5Or94Tvbuf3qcbv4EC+w==
+  </data>
+ </layer>
+ <layer name="Ridge" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztz7ENwCAMBVFmQGmhTZuw/3CwABIUicXpnvQ7F76U1l0btwT2stnLZi+bvWz2stnLZi+bvWz2stnLZu957rGyuBr0oyTtesbeyVrgX1/J0Q/8zF42e9nsZbOXzV42e9nsZbOXzV42e8/TATGFBjY=
+  </data>
+ </layer>
+ <layer name="Fence" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt2jEKhDAYBeEcSnS3cWO997+PWX6ELRKxkBCH+eA1BpSpY04pvS7sncJctty84909rB2/NQJ72exls5fNXjZ72exls5fNXjZ72exls5fNXrYn9uayqexTOfu//6h5Yu8VW+O5vQz2BnsZ7A32Mtgb7GWwN9jLYG+wl8HeYC+DvaHW2/ov+yefnI+0b6N3B6jBJJw=
+  </data>
+ </layer>
+ <layer name="Tree Under" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztxrEJACAMAMHsP45aqrOZOqV2cgcPHwEAAAAA8K5lPRvlfzWzle3yAAAAAAAA3Dvm8Qih
+  </data>
+ </layer>
+ <layer name="PlayerLayer" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAOBvLuAAAQ==
+  </data>
+ </layer>
+ <layer name="Sign Up" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt17EJAEAIA0BX9PcfRieQx8bmDtIHUiUCAAAAAAAAZtl51yX4YisAAIB7vhnAXgGgvAHq
+  </data>
+ </layer>
+ <layer name="Trees" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt0rdKBUEYhuG9OLU82hxTY2yMjfEa1NJjBLNgFsyCem2+xRayrDK7wzIzv98HD/zFNANvK8uyXvSh5XCH3iY62Kp5D2IIw4536B3gEEc17y50o8fxDr01rGOj5u3SsHoON/WsntWzelbP6lk9l6+Nfgz4fq5kMfY8glGMef6tbDH2PIVpzHj867fF2PMCFrHk+7mSxdhzk4ux5yYXY89NTj1Xu8cxgUnHO/R8e57FHOYd79Dz7XkZK1h1vEPvZ5/b2MFubg/72d89p7YLXOIKxzjBae4M54U3xZ5T2wMe8YRr3OA2d4f7wptiz6ntA5/4wjNe8Jp7w3vhTeo9V13qPVdd6j1XnXq2PfVse+rZ9tSz7aln21PPtqeebU892556tj31bHv/vedvQn2Mvg==
+  </data>
+ </layer>
+ <objectgroup name="Collision" width="60" height="50">
+  <object x="355" y="896" width="16" height="704"/>
+  <object x="354" y="1576" width="717" height="28"/>
+  <object x="512" y="274" width="6" height="410"/>
+  <object x="534" y="254" width="373" height="6"/>
+  <object x="921" y="272" height="1"/>
+  <object x="923" y="276" width="5" height="915"/>
+  <object x="608" y="767" width="6" height="426"/>
+  <object x="639" y="1208" width="265" height="6"/>
+  <object x="386" y="1" width="691" height="25"/>
+  <object x="1088" y="-2" width="26" height="1404"/>
+  <object x="368" y="8" width="16" height="759"/>
+  <object x="12" y="749" width="363" height="17"/>
+  <object x="1748" y="845" width="12" height="753"/>
+  <object x="1436" y="837" width="97" height="25"/>
+  <object x="1671" y="837" width="85" height="24"/>
+  <object x="1664" y="943" width="64" height="47"/>
+  <object x="739" y="1424" width="63" height="48"/>
+  <object x="160" y="911" width="64" height="49"/>
+  <object x="1420" y="835" width="16" height="572"/>
+  <object x="375" y="897" width="231" height="13"/>
+  <object x="158" y="1587" width="193" height="11"/>
+  <object x="11" y="751" height="839"/>
+  <object x="1092" y="1381" width="340" height="25"/>
+  <object x="1069" y="1580" width="688" height="102"/>
+ </objectgroup>
+ <objectgroup name="Interaction" width="60" height="50">
+  <object name="(JUMP)" x="365" y="907" width="11" height="339"/>
+  <object name="(JUMP)" x="363" y="1245" width="14" height="351"/>
+  <object name="(JUMP)" x="373" y="904" width="230" height="11"/>
+  <object name="(CHANGEMAP):Maple Lodge:240,1508" x="13" y="1559" width="145" height="28"/>
+ </objectgroup>
+</map>

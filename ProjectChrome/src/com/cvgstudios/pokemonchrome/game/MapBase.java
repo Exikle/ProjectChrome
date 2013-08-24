@@ -19,6 +19,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.Direction;
+import com.cvgstudios.pokemonchrome.GameFile;
 import com.cvgstudios.pokemonchrome.entities.Player;
 import com.cvgstudios.pokemonchrome.tweenaccessors.SpriteTween;
 
@@ -131,6 +132,7 @@ public abstract class MapBase implements Screen {
 	protected void importMap(String m, Vector2 pos) {
 		map = new TmxMapLoader().load("maps/" + m + ".tmx");
 		mapName = m;
+		GameFile.currentMap = mapName;
 		int index = 0;
 		int layerNum = map.getLayers().getCount() - 2;
 
@@ -241,7 +243,6 @@ public abstract class MapBase implements Screen {
 			String[] pos = (fields[2].split(","));
 			float x = Integer.parseInt(pos[0]);
 			float y = Integer.parseInt(pos[1]);
-
 			Vector2 playerPos = new Vector2(x, y);
 			importMap(fields[1], playerPos);
 		} else if (s.contains("(JUMP)")) {

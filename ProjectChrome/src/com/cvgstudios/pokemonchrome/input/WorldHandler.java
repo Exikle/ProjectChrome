@@ -100,22 +100,22 @@ public class WorldHandler implements InputProcessor {
 				if (menuVisible) {
 					Gdx.app.log(ChromeGame.LOG, "Save Pressed");
 
-					Gdx.app.log(ChromeGame.LOG, GameFile.playerName);
-					Gdx.app.log(ChromeGame.LOG, GameFile.playerMoney
-							+ "");
-
-					GameFile.playerPosition = new Vector2(
-							player.getX(), player.getY());
-					Gdx.app.log(ChromeGame.LOG,
-							GameFile.playerPosition.x + ","
-									+ GameFile.playerPosition.y);
-
-					GameFile.currentMap = playScreen.mapName;
-					Gdx.app.log(ChromeGame.LOG, GameFile.currentMap);
-
-					Gdx.app.log(ChromeGame.LOG, GameFile.musicName);
-					
-					GameSaver.save();
+					// Gdx.app.log(ChromeGame.LOG, GameFile.playerName);
+					// Gdx.app.log(ChromeGame.LOG, GameFile.playerMoney
+					// + "");
+					//
+					// GameFile.playerPosition = new Vector2(
+					// player.getX(), player.getY());
+					// Gdx.app.log(ChromeGame.LOG,
+					// GameFile.playerPosition.x + ","
+					// + GameFile.playerPosition.y);
+					//
+					// GameFile.currentMap = playScreen.mapName;
+					// Gdx.app.log(ChromeGame.LOG, GameFile.currentMap);
+					//
+					// Gdx.app.log(ChromeGame.LOG, GameFile.musicName);
+					//
+					// GameSaver.save();
 				}
 				break;
 		}

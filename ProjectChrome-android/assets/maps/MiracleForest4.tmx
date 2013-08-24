@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="55" height="42" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="MapTileSheet" tilewidth="32" tileheight="32">
+  <image source="MapTileSheet.png" width="320" height="2625"/>
+ </tileset>
+ <layer name="Terrian 1" width="55" height="42">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMBKHrn/RjrMdQcNVUVVVVVVVVVdVXDydbLek=
+  </data>
+ </layer>
+ <layer name="Tall Grass2" width="55" height="42">
+  <data encoding="base64" compression="zlib">
+   eJzt1EEKgCAQQFE7e1foOnW2cmdCEOiimd6DATeCX8FSAADG7NccE9bAO2sz2URr25b7mdtz9/9btLbqqS0DbTGNtvX7v3Q/mdtGzW7Lek+VNiLJ/KbaYsrcBgDAv51r4zHX
+  </data>
+ </layer>
+ <layer name="Fence 3" width="55" height="42">
+  <data encoding="base64" compression="zlib">
+   eJztmMtuwjAQRe0/66exbqWsgGZLKx5S+gAWfQALYAl8FLdElqJqjGxPHEfWHOkqZjQODDceOVZKEARBEOLzrNXgV6uHDbSFdhBiWTBBbZ+oZwmtoDU0yaS2CrVNUc8MmkMLqLLUNkR8pO9fzbgP3v/5RsRsuT73TU5F1GbzzRanEN/iEupbc22NifyiB7WF+mYbG0pGbUPtp5ElRvlm64NN3wrL+F7MldSeN32hPOL4xpnbBjn7VmTsW9mhb769hdOL/veV2L6lfEZj+5byGRXfwu+XsrbYvnX1TJpe0hS1/2zTt0d8ftLuV9/vfkP+O/ThOI9TG9cn3/lfyP+GfhzncX4fd335zt8j/wAdM/TthPwzdAn0zaxTF1zWlRm/Eu8xof+r6x7G5/yBQ0nUlno/2hZFfU6nZtAcWgT0yb5S1ueragmtoLXOx7eX+lxcbaAttNO3mCAIgiB0yhWdmptU
+  </data>
+ </layer>
+ <layer name="Tree 4" width="55" height="42">
+  <data encoding="base64" compression="zlib">
+   eJztmMkKAjEQROfHXS+uF9fj6FE9qsfRb7MEBRnSZJkknbQpKCgYaZLmkbSpq6o6wEe4Zso9uA8PPNc/wWf4wpgn8BSeea5/hW/wnTGv4DW88Vyfi8MYOQUmQ+UUmAyVY3Ly1gN+trIEJilJYJKSFCZVMvmNi1Jj0kVUL1Nj0kVULyUwSfUyByZ1e8+ZSd3euzAZWo3mu27vXZjkVkgmuZUzkzoVJguT7cyt2ExyvRXYrMWVSa63Apu1uPaK663AZi0uvWo+/r4JmGRb9nSzyq+4z0lfc7VN7VjnpK+52qZ2rLvb1389m9r/zuQQHsFjw6xSqkzO4QW8NMwqUX0Lec+b9HAL7+C9YVaJ6lvIez7WXET1LeQ9H2suSpVJH+eAFCZVWQqTqiyFSVUuTBYmTbNkJl+Vzm9I
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1" width="55" height="42"/>
+ <objectgroup name="Interaction" width="55" height="42"/>
+ <objectgroup name="Player" width="55" height="42"/>
+</map>

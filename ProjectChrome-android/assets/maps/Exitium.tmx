@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="45" height="30" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="ChromeTiles" tilewidth="32" tileheight="32">
+  <image source="MapTileSheet.png" width="320" height="2625"/>
+ </tileset>
+ <layer name="Ground" width="45" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3OIQEAAAgDsLegfzpqkACHQEzMr5M0AAAs6sEBAACuDTIQK90YFQAA
+  </data>
+ </layer>
+ <layer name="Path" width="45" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2XS0/CQBRGpwU0vHGDLoHEBUR/jG4l/HdeulBAFyDgQo8JJFWG9LadGav2JicB8s2dE0LzBaXMTxPO4cLCblvzG5xv4DbwPg3OlyHcQX/3+lp9db4SnA9iaipQjUBv59yNeK5m0Hn/vdnG5G8p6OxDO4R8jKxNZ8neKM9g1N3S0e0dekqNYAwTmMI9PHiHzpKsC+dH7nuCGcxhAc/wonGWZF04L7lvBa+whg1s4U3jLMm6cH7nvs+HzAMfcpCHgn/oLMm6cC5yXwnKUIEq1KCucZZkbTp/74nekc902f0OXdams5RBjDNZp/yNTpHk0+ac9WDWg8ecsx5024NJ/1ulqQfj8N+dWyq8g03QMeismwKcJODUsp9u6tBIwJl75R91/gB71K+rGBUAAA==
+  </data>
+ </layer>
+ <layer name="PlayerLayer" width="45" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BAQEAAACCIP+vbkhAAQAAAAB8GRy7eecYFQAA
+  </data>
+ </layer>
+ <layer name="Fence" width="45" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3RMQrAIBAFUS+TSpP7H89+QQXZTJDMAwub74Cl5LrDvSXvv+HE5uiLZvrN+E87bF6zmWEzw2aGzQybGTYzbGbYzLCZYTMjq/kanGdzs042M5r1Xx38t7Y1GBUAAA==
+  </data>
+ </layer>
+ <layer name="Trees" width="45" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2WOw7CQAxENwfiAkAZKIGCAij4lEAJOSa/UPC/C0OBtIqSYLNrVx7pSVPYWUs78iZ1znVAF6QVfgbmYEH0vri9VTP4vgf6YFDjl2AF1kTvi9tLmWcExmBS4zdgCzKCbxRm5vRmxHkod6GpWNnQVKxsaEoyG7vEuT04gCM4gRyck7BayWxccN4V3MAdPMATvErm4NRaNnRke0NHlg2ehn/2WTZ0JJkNqXdQMhtS76BlQ0e2N3Rk2dCRZaNc3P+KX/WxstEELdAu+I+mzJm/9VXfjJUNicyEnEu5C4l9EnIu5S4k9knIuW+DsdaQGBUAAA==
+  </data>
+ </layer>
+ <objectgroup name="Collision" width="45" height="30">
+  <object x="272" y="97" width="14" height="765"/>
+  <object x="286" y="849" width="200" height="13"/>
+  <object x="518" y="843" width="18" height="18"/>
+  <object x="902" y="843" width="20" height="18"/>
+  <object x="951" y="847" width="209" height="16"/>
+  <object x="1149" y="96" width="11" height="764"/>
+  <object x="284" y="96" width="364" height="6"/>
+  <object x="800" y="98" width="358" height="8"/>
+  <object x="790" y="0" width="9" height="106"/>
+  <object x="641" y="2" width="6" height="99"/>
+  <object x="799" y="258" width="195" height="105"/>
+  <object x="919" y="364" width="75" height="19"/>
+  <object x="452" y="254" width="190" height="109"/>
+  <object x="448" y="362" width="75" height="19"/>
+  <object x="568" y="364" width="74" height="18"/>
+  <object x="449" y="576" width="193" height="104"/>
+  <object x="567" y="683" width="76" height="21"/>
+  <object x="450" y="680" width="71" height="23"/>
+  <object x="800" y="575" width="195" height="110"/>
+  <object x="920" y="683" width="74" height="19"/>
+  <object x="799" y="685" width="73" height="19"/>
+  <object x="474" y="874" width="487" height="17"/>
+  <object x="713" y="448" width="15" height="7"/>
+  <object x="800" y="363" width="72" height="18"/>
+  <object x="638" y="3" width="164" height="3"/>
+ </objectgroup>
+ <objectgroup name="Interaction" width="45" height="30">
+  <object name="Welcome to Exitium" x="536" y="77" width="80" height="54"/>
+  <object name="(CHANGEMAP):Route1:668,25" x="647" y="3" width="139" height="29"/>
+ </objectgroup>
+</map>
