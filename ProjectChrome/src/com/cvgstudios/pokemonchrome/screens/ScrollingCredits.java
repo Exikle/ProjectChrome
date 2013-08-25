@@ -78,25 +78,24 @@ public class ScrollingCredits implements Screen {
 
 	private String getLine(int n) {
 		String[] hold = script[n].split(":");
-//		switch (hold[0]) {
-//			case "DEPT":
-//				return DEPT.get(hold[1]);
-//			case "POS":
-//				return hold[1];
-//			case "COLLAB":
-//				return hold[1];
-//			case "GROUP":
-//				return hold[1];
-//			case "STAGE":
-//				return hold[1];
-//			case "EMPLOYE":
-//				return EMPLOYES.get(hold[1]);
-//			case "LINE":
-//				return hold[1];
-//			default:
-//				return "";
-//		}
-		return string;
+		switch (hold[0]) {
+			case "DEPT":
+				return DEPT.get(hold[1]);
+			case "POS":
+				return hold[1];
+			case "COLLAB":
+				return hold[1];
+			case "GROUP":
+				return hold[1];
+			case "STAGE":
+				return hold[1];
+			case "EMPLOYE":
+				return EMPLOYES.get(hold[1]);
+			case "LINE":
+				return hold[1];
+			default:
+				return "";
+		}
 	}
 
 	@Override
@@ -139,26 +138,26 @@ public class ScrollingCredits implements Screen {
 	private float setFontScale(int line) {
 		String[] hold = script[line].split(":");
 		float scale = 1;
-//		switch (hold[0]) {
-//			case "POS":
-//				scale = 1f;
-//				break;
-//			case "EMPLOYE":
-//				scale = .5f;
-//				break;
-//			case "DEPT":
-//				scale = 1.5f;
-//				break;
-//			case "STAGE":
-//				scale = 1f;
-//				break;
-//			case "COLLAB":
-//				scale = 1f;
-//				break;
-//			case "GROUP":
-//				scale = .5f;
-//				break;
-//		}
+		switch (hold[0]) {
+			case "POS":
+				scale = 1f;
+				break;
+			case "EMPLOYE":
+				scale = .5f;
+				break;
+			case "DEPT":
+				scale = 1.5f;
+				break;
+			case "STAGE":
+				scale = 1f;
+				break;
+			case "COLLAB":
+				scale = 1f;
+				break;
+			case "GROUP":
+				scale = .5f;
+				break;
+		}
 		return scale;
 
 	}
