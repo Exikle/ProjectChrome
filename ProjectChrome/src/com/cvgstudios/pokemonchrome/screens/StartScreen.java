@@ -15,6 +15,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.cvgstudios.pokemonchrome.ChromeGame;
+import com.cvgstudios.pokemonchrome.game.PokemonWorld;
 import com.cvgstudios.pokemonchrome.tweenaccessors.BitmapFontTween;
 
 public class StartScreen implements Screen, InputProcessor {
@@ -162,6 +163,8 @@ public class StartScreen implements Screen, InputProcessor {
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer,
 			int button) {
+		game.setScreen(new PokemonWorld(game));
+
 		return false;
 	}
 
