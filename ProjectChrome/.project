@@ -14,17 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>res</name>
-			<type>2</type>
-			<location>C:/Users/Dixon D&apos;Cunha/git/ProjectChromeLibgdx/ProjectChrome-desktop/res</location>
-		</link>
-	</linkedResources>
-	<variableList>
-		<variable>
-			<name>GIT_REPOS</name>
-			<value>file:/C:/Users/Dixon%20D&apos;Cunha/git</value>
-		</variable>
-	</variableList>
 </projectDescription>
