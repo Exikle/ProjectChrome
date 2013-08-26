@@ -39,7 +39,7 @@ public class PokemonWorld extends MapBase implements Screen {
 	/**
 	 * The map the player starts in
 	 */
-	private String START_MAP_NAME = "Route1";
+	private String START_MAP_NAME = "Route2";
 
 	/*
 	 * Temp, will be getting info from save file

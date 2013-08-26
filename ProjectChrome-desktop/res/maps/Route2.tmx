@@ -40,12 +40,12 @@
  </layer>
  <layer name="Fence" width="60" height="50">
   <data encoding="base64" compression="zlib">
-   eJzt2jEKhDAYBeEcSnS3cWO997+PWX6ELRKxkBCH+eA1BpSpY04pvS7sncJctty84909rB2/NQJ72exls5fNXjZ72exls5fNXjZ72exls5fNXrYn9uayqexTOfu//6h5Yu8VW+O5vQz2BnsZ7A32Mtgb7GWwN9jLYG+wl8HeYC+DvaHW2/ov+yefnI+0b6N3B6jBJJw=
+   eJzt2sEKwjAQRdF8lFjdaFz7o+rSutR+myODm9CEIlIyj3vgQWih5a7bnFLaLdg+ua1t+PO+z17DYcV39YBebfRqo1cbvdrojeNiu9puxbklcu/dNtoexbklcu/T9rJNxbklcu8v6NVGrzZ6tdGrjV5t9PYv2za2Y3G9/PYxJ2LvEqfKdXo10Ovo1UCvo1cDvY5eDfQ6ejXQ6+jVQK+jVwO9bq639l/2R27c72nnSu8bn2oxaQ==
   </data>
  </layer>
  <layer name="Tree Under" width="60" height="50">
   <data encoding="base64" compression="zlib">
-   eJztxrEJACAMAMHsP45aqrOZOqV2cgcPHwEAAAAA8K5lPRvlfzWzle3yAAAAAAAA3Dvm8Qih
+   eJzt0TlPQkEYRuHBe/n/f8AexIrFSsQKhIrFSsSKxQqXiq3hFCRUlDcThvMkJ5nyezMhSJIkSWf3F966fpUshCo9UI0es9gXFavOvgY1qUVPie99Zl+bXqhDr4nv7bKvR2/Up8FpbyPuWYUZsm9EY5rQe+L/+8G+KX3SjL4S3+v/xr6oWP5v7IuKNWffgpa0ou/E967Z90O/9Ef/ie/dsG9LO9rTIfG9pTyEO8oop3Ie+yJJkiRJkiRJ0q06AmLQOEY=
   </data>
  </layer>
  <layer name="PlayerLayer" width="60" height="50">
@@ -60,7 +60,12 @@
  </layer>
  <layer name="Trees" width="60" height="50">
   <data encoding="base64" compression="zlib">
-   eJzt0rdKBUEYhuG9OLU82hxTY2yMjfEa1NJjBLNgFsyCem2+xRayrDK7wzIzv98HD/zFNANvK8uyXvSh5XCH3iY62Kp5D2IIw4536B3gEEc17y50o8fxDr01rGOj5u3SsHoON/WsntWzelbP6lk9l6+Nfgz4fq5kMfY8glGMef6tbDH2PIVpzHj867fF2PMCFrHk+7mSxdhzk4ux5yYXY89NTj1Xu8cxgUnHO/R8e57FHOYd79Dz7XkZK1h1vEPvZ5/b2MFubg/72d89p7YLXOIKxzjBae4M54U3xZ5T2wMe8YRr3OA2d4f7wptiz6ntA5/4wjNe8Jp7w3vhTeo9V13qPVdd6j1XnXq2PfVse+rZ9tSz7aln21PPtqeebU892556tj31bHv/vedvQn2Mvg==
+   eJztkrtuwkAQRffjIKWhITwaCKRJAjQ8v4GkTFISSpKSUALfxm0sIQvsWVv2eod7pCPdYpqRTmCMqcE6DATbNZ/wC36n3C3Yhh3hds0a/sBNyl2BVfgg3K5ZwXf4kXJLGmbP7mDP7Jk9s2f27G/PJubG557jKLLnBnyETYs/pFz2GUeRPXdhDz7J3xAT7fYWRfb8Al/hm/QJC8rY8wRO4cziDyll7DlPythznpSx5zxhz9e51XMfDuCzcLsma89DOIJj4XZN1p7ncAGXwu2arD37xhb+wr+Eu/Am2rNv7OA/3CfchTfRnn3jAI/wlHAX3vjesy2+92yL7z3bwp51w551w551w551w551w551w551w551w551w551c+89nwFOCk0s
+  </data>
+ </layer>
+ <layer name="Tile Layer 13" width="60" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt1KERgEAUQ8ErHY1Go9FUSAfIZObfbgVPZLIWAAD8u9sBYU87IOxqB4TZM5Mc7YCwsx0Q5p9n2+2f33ZAmD3PttueAQAAAAAg7QNc9Qiv
   </data>
  </layer>
  <objectgroup name="Collision" width="60" height="50">
@@ -88,11 +93,15 @@
   <object x="11" y="751" height="839"/>
   <object x="1092" y="1381" width="340" height="25"/>
   <object x="1069" y="1580" width="688" height="102"/>
+  <object x="1481" y="299" width="53" height="537"/>
+  <object x="1629" y="352" width="111" height="484"/>
+  <object x="1635" y="839" width="33" height="21"/>
  </objectgroup>
  <objectgroup name="Interaction" width="60" height="50">
   <object name="(JUMP)" x="365" y="907" width="11" height="339"/>
   <object name="(JUMP)" x="363" y="1245" width="14" height="351"/>
   <object name="(JUMP)" x="373" y="904" width="230" height="11"/>
   <object name="(CHANGEMAP):Maple Lodge:240,1508" x="13" y="1559" width="145" height="28"/>
+  <object name="(CHANGEMAP):MiracleForest1:566,250" x="1533" y="588" width="157" height="82"/>
  </objectgroup>
 </map>

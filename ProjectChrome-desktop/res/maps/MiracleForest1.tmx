@@ -8,12 +8,16 @@
    eJztw0ENAAAMA6Hzr7QyJmMfSFg1VVVVVfX1ATo4dE0=
   </data>
  </layer>
+ <layer name="PlayerLayer" width="37" height="34">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAgLcBE6gAAQ==
+  </data>
+ </layer>
  <layer name="Fence 2" width="37" height="34">
   <data encoding="base64" compression="zlib">
    eJztlslOwzAURWNlzbRiWkHhP/ghJgnEJIqZxCRVYmYBC+iywLJlWVgWPoobNZYsYyfPQ0gXudJRJCfOO0mcl0RRFdfcMDq3FsfKcxLuGd3pWTp2OO7jm6G4j6lOXlr/5NTKcXrF/jfwbuHuG9TiqMlRm+v2t+HSAR9EpxD3DrU4avK2wakLl0/w5XifxuE4YemJWhw1edfg1IPLN/hxdJqBz6ylE2px1OQ9g5OchuSlrkufqM+74dgLTNkFdbBHHNflwcKpyaKFpKfdZcw5AafgjDguR/TNvF6gi7gO3fq9BFfgOqKN687rEjHXtH4fwZNmnmk8pJOIzVrJOj6kk7pWxDs5gu0oGIuzjy/CybRWJuEyBaaJay6kU5I1sK6M1eAyB+YlJ9GLdGsrtJOIT38qysmnP4Vw0v0DuPQn8U4UdZ+ShOxP1D7jcz2256U88yTnLJsL9vfb3pT2yVt5zovGifJNokb9hyjq3tpkEJ3U/41BcNrHv9YBOARH4DilTKcN1N8EW2Ab7KSU6bSI+ktgGayA1ZQynapUkfMLxyeE2g==
   </data>
  </layer>
- <objectgroup name="Player" width="37" height="34"/>
  <layer name="Tree 3" width="37" height="34">
   <data encoding="base64" compression="zlib">
    eJztlsEOgjAQRPvRelSPylG9gnBUj+pR/R4/wzGxyabZDVsWaKO8ZJKBlG7agS2Fc24NbaAiE7+HttAuI7+EVtCC+LGgNann9m4spOy4vRuLtuxSw2WXGi671NDsZtC8Zfwr8n5XSqhy6fqAh+sHXfuAtI7Y9XH9oGsfkNYRuz6uHzTQAaoZPxRSPe/P0BE6MX4opHre36ALdGV8SOy7Io2X6nnfOH12se+KNP7Xs+uLPrOjWPrTUNlZ+tM/ZWdh+u50WLLT+BDLXJrsND7EMpcmO40Pscw1ZTdl94GecblkR8+4XLKj//l9ZFd95y0Nnl7foQf0VPjwWe/fcwi4ow==

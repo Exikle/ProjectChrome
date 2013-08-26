@@ -8,7 +8,6 @@ import com.cvgstudios.pokemonchrome.gamelogic.PokemonCreature;
 import com.cvgstudios.pokemonchrome.gamelogic.PokemonType;
 import com.cvgstudios.pokemonchrome.javascript.JSExecutor;
 import com.cvgstudios.pokemonchrome.screens.BattleScreen;
-import com.cvgstudios.pokemonchrome.screens.SplashScreen;
 
 /**
  * Class which contains info to start the game
@@ -54,7 +53,7 @@ public class ChromeGame extends Game {
 					.makePokemon(PokemonType.getPokemon("embite")));
 			setScreen(tempScreen);
 		} else {
-			setScreen(new SplashScreen(this));
+			setScreen(new PokemonWorld(this));
 		}
 
 	}
