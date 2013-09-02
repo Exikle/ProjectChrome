@@ -16,7 +16,7 @@ import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.game.PokemonWorld;
 import com.cvgstudios.pokemonchrome.script.ScriptImporter;
 
-public class NGIntro implements Screen, InputProcessor {
+public class NGIntro extends ScreenBase implements InputProcessor {
 
 	ChromeGame game;
 
@@ -78,8 +78,7 @@ public class NGIntro implements Screen, InputProcessor {
 
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(0, 0, 0, 1);
-		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		super.render(delta);
 
 		font.setColor(Color.BLACK);
 		batch.begin();

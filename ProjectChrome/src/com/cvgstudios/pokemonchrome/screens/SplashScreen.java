@@ -8,15 +8,13 @@ import aurelienribon.tweenengine.TweenManager;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.cvgstudios.pokemonchrome.tweenaccessors.ScreenTween;
 
-public class SplashScreen implements Screen {
+public class SplashScreen extends ScreenBase {
 
 	Texture splashTexture;
 
@@ -30,9 +28,8 @@ public class SplashScreen implements Screen {
 
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(0, 0, 0, 1);
-		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
-
+		super.render(delta);
+		
 		manager.update(delta);
 		batch.begin();
 		splashSprite.draw(batch);

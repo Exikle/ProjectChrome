@@ -5,7 +5,6 @@ import java.util.Vector;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
@@ -17,7 +16,7 @@ import com.cvgstudios.pokemonchrome.gamelogic.PokemonCreature;
 import com.cvgstudios.pokemonchrome.images.Graphic;
 import com.cvgstudios.pokemonchrome.javascript.JSExecutor;
 
-public class BattleScreen implements Screen, InputProcessor {
+public class BattleScreen extends ScreenBase implements InputProcessor {
 
 	public static final String STR_FIGHT = "FIGHT";
 
@@ -180,8 +179,8 @@ public class BattleScreen implements Screen, InputProcessor {
 		int displayWidth = ChromeGame.display.getDisplayWidth();
 		int displayHeight = ChromeGame.display.getDisplayHeight();
 
-		Gdx.gl.glClearColor(0, 0, 0, 1);
-		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		super.render(delta);
+		
 		batch.begin();
 
 		switch (battleState) {

@@ -5,8 +5,6 @@ import aurelienribon.tweenengine.TweenManager;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -21,9 +19,10 @@ import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.Direction;
 import com.cvgstudios.pokemonchrome.GameFile;
 import com.cvgstudios.pokemonchrome.entities.Player;
+import com.cvgstudios.pokemonchrome.screens.ScreenBase;
 import com.cvgstudios.pokemonchrome.tweenaccessors.SpriteTween;
 
-public abstract class MapBase implements Screen {
+public abstract class MapBase extends ScreenBase {
 
 	/**
 	 * The map
@@ -109,8 +108,7 @@ public abstract class MapBase implements Screen {
 	 */
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(0, 0, 0, 1);
-		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		super.render(delta);
 		manager.update(delta);
 
 	}

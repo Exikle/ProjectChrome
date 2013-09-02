@@ -76,13 +76,6 @@ public class PokemonWorld extends MapBase implements Screen {
 	protected Stage stage;
 
 	/**
-	 * Constructor
-	 * 
-	 * @param the
-	 *            game instance
-	 */
-
-	/**
 	 * Initializes the world's variables when first run
 	 */
 	@Override

@@ -4,8 +4,6 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -13,7 +11,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.GameFile;
 
-public class MainMenu implements Screen, InputProcessor {
+public class MainMenu extends ScreenBase implements InputProcessor {
 
 	ChromeGame game;
 
@@ -39,8 +37,7 @@ public class MainMenu implements Screen, InputProcessor {
 
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(0, 0, 0, 1);
-		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		super.render(delta);
 
 		batch.begin();
 

@@ -5,9 +5,7 @@ import java.util.Map;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -15,7 +13,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.script.ScriptImporter;
 
-public class ScrollingCredits implements Screen {
+public class ScrollingCredits extends ScreenBase {
 
 	private final Sprite logo = new Sprite(new Texture(
 			"imgs/BlackTitleScreen.png"));
@@ -98,8 +96,7 @@ public class ScrollingCredits implements Screen {
 
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(0, 0, 0, 1);
-		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		super.render(delta);
 
 		batch.begin();
 		batch.draw(logo, 0, movingY);

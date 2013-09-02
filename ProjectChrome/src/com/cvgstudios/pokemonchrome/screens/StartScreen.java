@@ -3,14 +3,12 @@ package com.cvgstudios.pokemonchrome.screens;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -19,7 +17,7 @@ import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.game.PokemonWorld;
 import com.cvgstudios.pokemonchrome.tweenaccessors.BitmapFontTween;
 
-public class StartScreen implements Screen, InputProcessor {
+public class StartScreen extends ScreenBase implements  InputProcessor {
 
 	ChromeGame game;
 
@@ -51,8 +49,7 @@ public class StartScreen implements Screen, InputProcessor {
 
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(1, 1, 1, 1);
-		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		super.render(delta);
 
 		font.setColor(Color.LIGHT_GRAY);
 		manager.update(delta);
