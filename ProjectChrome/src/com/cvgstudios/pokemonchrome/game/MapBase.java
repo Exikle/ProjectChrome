@@ -159,7 +159,6 @@ public abstract class MapBase implements Screen {
 		createInteractions();
 		player.setPosition(pos.x, pos.y);
 		camera.position.set(player.getX(), player.getY(), 0);
-
 	}
 
 	/**

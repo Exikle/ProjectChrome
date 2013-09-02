@@ -2,6 +2,7 @@ package com.cvgstudios.pokemonchrome.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
@@ -170,7 +171,8 @@ public class NGIntro implements Screen, InputProcessor {
 					getLines();
 				} else {
 					m.stop();
-					game.setScreen(new PokemonWorld(game));
+					((Game) Gdx.app.getApplicationListener())
+							.setScreen(new PokemonWorld());
 				}
 				break;
 			case (Keys.UP):

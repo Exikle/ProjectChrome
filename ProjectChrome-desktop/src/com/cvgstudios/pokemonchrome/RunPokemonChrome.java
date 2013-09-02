@@ -25,7 +25,7 @@ public class RunPokemonChrome implements DisplayInterface {
 	public static void main(String[] args) {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
 		cfg.title = "Pokemon Chrome - CVG Studios "
-				+ ChromeGame.POKECHROME_VERSION;
+				+ ChromeGame.VERISON;
 
 		cfg.useGL20 = true;
 		cfg.width = WIDTH;

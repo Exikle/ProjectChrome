@@ -6,6 +6,7 @@ import aurelienribon.tweenengine.TweenCallback;
 import aurelienribon.tweenengine.TweenEquations;
 import aurelienribon.tweenengine.TweenManager;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
@@ -13,7 +14,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.tweenaccessors.ScreenTween;
 
 public class SplashScreen implements Screen {
@@ -24,13 +24,9 @@ public class SplashScreen implements Screen {
 
 	SpriteBatch batch;
 
-	ChromeGame game;
-
 	TweenManager manager;
 
-	public SplashScreen(ChromeGame game) {
-		this.game = game;
-	}
+	public SplashScreen() {}
 
 	@Override
 	public void render(float delta) {
@@ -81,9 +77,9 @@ public class SplashScreen implements Screen {
 	}
 
 	private void tweenCompleted() {
-		// TODO Auto-generated method stub
 		// Gdx.app.log(ChromeGame.LOG, "Splash Tween Complete");
-		game.setScreen(new StartScreen(game));
+		((Game) Gdx.app.getApplicationListener())
+				.setScreen(new StartScreen());
 	}
 
 	@Override

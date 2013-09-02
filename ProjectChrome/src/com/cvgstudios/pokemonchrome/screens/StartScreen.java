@@ -5,6 +5,7 @@ import aurelienribon.tweenengine.TweenManager;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
@@ -41,8 +42,7 @@ public class StartScreen implements Screen, InputProcessor {
 
 	private int musicState = 0;
 
-	public StartScreen(ChromeGame game) {
-		this.game = game;
+	public StartScreen() {
 		music.play();
 		music.setLooping(true);
 		music.setVolume(0.01f);
@@ -93,7 +93,8 @@ public class StartScreen implements Screen, InputProcessor {
 
 	private void changeToMainMenu() {
 		music.stop();
-		game.setScreen(new MainMenu(game));
+		((Game) Gdx.app.getApplicationListener())
+				.setScreen(new MainMenu());
 	}
 
 	@Override
@@ -163,7 +164,8 @@ public class StartScreen implements Screen, InputProcessor {
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer,
 			int button) {
-		game.setScreen(new PokemonWorld(game));
+		((Game) Gdx.app.getApplicationListener())
+				.setScreen(new PokemonWorld());
 
 		return false;
 	}

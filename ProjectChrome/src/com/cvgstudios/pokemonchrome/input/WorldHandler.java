@@ -3,16 +3,13 @@ package com.cvgstudios.pokemonchrome.input;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.math.Vector2;
 import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.Direction;
-import com.cvgstudios.pokemonchrome.GameFile;
 import com.cvgstudios.pokemonchrome.entities.Player;
-import com.cvgstudios.pokemonchrome.files.GameSaver;
 import com.cvgstudios.pokemonchrome.game.PokemonWorld;
 
 /**

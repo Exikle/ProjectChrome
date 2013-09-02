@@ -81,13 +81,33 @@ public class PokemonWorld extends MapBase implements Screen {
 	 * @param the
 	 *            game instance
 	 */
-	public PokemonWorld(ChromeGame game) {
-		this.game = game;
+
+	/**
+	 * Initializes the world's variables when first run
+	 */
+	@Override
+	public void show() {
+		super.show();
+
 		GameFile.load();
 		createMenu();
-		music = Gdx.audio.newMusic(Gdx.files
-				.internal("music/"+GameFile.musicName+".mp3"));
-//		music.play();
+		music = Gdx.audio.newMusic(Gdx.files.internal("music/"
+				+ GameFile.musicName + ".mp3"));
+		// music.play();
+
+		camera = new OrthographicCamera();
+		player = new Player(camera);
+		addPlayerToWorld(player);
+		importMap(START_MAP_NAME, STARTCOORD);
+
+		font = new BitmapFont(Gdx.files.internal("font/pokemon.fnt"),
+				Gdx.files.internal("font/pokemon.png"), false);
+
+		batch = new SpriteBatch();
+
+		Gdx.input.setInputProcessor(new WorldHandler(this, camera,
+				player));
+
 	}
 
 	protected void createMenu() {
@@ -196,27 +216,6 @@ public class PokemonWorld extends MapBase implements Screen {
 		camera.viewportHeight = height;
 		camera.viewportWidth = width;
 		camera.update();
-	}
-
-	/**
-	 * Initializes the world's variables when first run
-	 */
-	@Override
-	public void show() {
-		super.show();
-		camera = new OrthographicCamera();
-		player = new Player(camera);
-		addPlayerToWorld(player);
-		importMap(START_MAP_NAME, STARTCOORD);
-
-		font = new BitmapFont(Gdx.files.internal("font/pokemon.fnt"),
-				Gdx.files.internal("font/pokemon.png"), false);
-
-		batch = new SpriteBatch();
-
-		Gdx.input.setInputProcessor(new WorldHandler(this, camera,
-				player));
-
 	}
 
 	/**

@@ -3,6 +3,7 @@ package com.cvgstudios.pokemonchrome.screens;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
@@ -15,8 +16,6 @@ import com.cvgstudios.pokemonchrome.ChromeGame;
 import com.cvgstudios.pokemonchrome.script.ScriptImporter;
 
 public class ScrollingCredits implements Screen {
-
-	private ChromeGame game;
 
 	private final Sprite logo = new Sprite(new Texture(
 			"imgs/BlackTitleScreen.png"));
@@ -63,8 +62,7 @@ public class ScrollingCredits implements Screen {
 		DEPT.put("COLLAB_DEPT", "COLLABORATOR(S)");
 	}
 
-	public ScrollingCredits(ChromeGame game) {
-		this.game = game;
+	public ScrollingCredits() {
 		processScript();
 		// m.play();
 		m.setLooping(true);
@@ -116,9 +114,9 @@ public class ScrollingCredits implements Screen {
 	}
 
 	private void checkChangeScreen() {
-		if (movingY == 3500) {
-			game.setScreen(new MainMenu(game));
-		}
+		if (movingY == 3500)
+			((Game) Gdx.app.getApplicationListener())
+					.setScreen(new MainMenu());
 	}
 
 	private void renderScript(SpriteBatch batch) {

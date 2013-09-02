@@ -1,5 +1,6 @@
 package com.cvgstudios.pokemonchrome.screens;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
@@ -32,8 +33,7 @@ public class MainMenu implements Screen, InputProcessor {
 
 	private int choiceSelected = 1;
 
-	public MainMenu(ChromeGame game) {
-		this.game = game;
+	public MainMenu() {
 		GameFile.musicPlaying = null;
 	}
 
@@ -242,7 +242,8 @@ public class MainMenu implements Screen, InputProcessor {
 			}
 		} else if (i == 3) {
 			Gdx.app.log(ChromeGame.LOG, "Credits");
-			game.setScreen(new ScrollingCredits(game));
+			((Game) Gdx.app.getApplicationListener())
+					.setScreen(new ScrollingCredits());
 		}
 	}
 
