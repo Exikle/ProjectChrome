@@ -57,6 +57,7 @@ public class PokemonWorld extends MapBase implements Screen {
 	/**
 	 * The music currently playing
 	 */
+	@SuppressWarnings("unused")
 	private Music music;
 
 	/**

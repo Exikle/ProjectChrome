@@ -3,7 +3,6 @@ package com.cvgstudios.pokemonchrome;
 import java.io.File;
 
 import com.badlogic.gdx.Game;
-import com.cvgstudios.pokemonchrome.game.PokemonWorld;
 import com.cvgstudios.pokemonchrome.gamelogic.PokemonCreature;
 import com.cvgstudios.pokemonchrome.gamelogic.PokemonType;
 import com.cvgstudios.pokemonchrome.javascript.JSExecutor;
